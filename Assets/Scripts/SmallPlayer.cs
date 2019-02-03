@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BallUserComponent))]
+[RequireComponent(typeof(PlayerMover))]
 public class SmallPlayer : MonoBehaviour, IBallUser {
   private IBallUser ballUserComponent;
+  private IXzController xzController;
 
   public SmallPlayer Above { get; private set; }
   public SmallPlayer Below { get; private set; }
 
   private void Awake() {
     ballUserComponent = GetComponent<BallUserComponent>();
+    //xzController = GetComponent<PlayerMover>();
   }
 
   private bool JumpOffPlayer() {
