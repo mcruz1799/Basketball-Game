@@ -22,7 +22,7 @@ public class CubeMover : MonoBehaviour
     {
         if (Time.time % 2 == 0)Debug.Log(rb.velocity);
         movementVector.x = Input.GetAxis("LeftJoystickX") * movementSpeed;
-        movementVector.z = Input.GetAxis("LeftJoystickY") * movementSpeed;
+        movementVector.z = -(Input.GetAxis("LeftJoystickY") * movementSpeed);
         //if (transform.position.y == startY){
         if (Input.GetButtonDown("A")){
             if (rb.velocity.y < .25 && rb.velocity.y > -.25)
