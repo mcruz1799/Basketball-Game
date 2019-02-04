@@ -8,6 +8,9 @@ public class SmallPlayer : MonoBehaviour, IBallUser {
   //Not necessary --yet--.  If we ever add animations for this stuff, will probably need it then.
   //private enum State { Transitioning }
 
+#pragma warning disable 0649
+  [SerializeField] private BoxCollider grabHitbox;
+#pragma warning restore 0649
 
   private IBallUser ballUserComponent;
   private IXzController xzController;
@@ -76,10 +79,9 @@ public class SmallPlayer : MonoBehaviour, IBallUser {
     }
 
     //Check PickUpPlayer action's hitbox
-    SmallPlayer[] smallPlayersInFrontOf;
-    smallPlayersInFrontOf = null; //TODO: Implement this
-
-    foreach (SmallPlayer other in smallPlayersInFrontOf) {
+    RaycastHit[] hits = Physics.BoxCastAll(grabHitbox.center, grabHitbox.bounds.extents, Vector3.zero);
+    foreach (RaycastHit h in hits) {
+      SmallPlayer other = h.collider.GetComponent<SmallPlayer>();
       if (other.Below == null) {
         other.Below = this;
         Above = other;
@@ -105,7 +107,6 @@ public class SmallPlayer : MonoBehaviour, IBallUser {
   }
 
   private void OnHeightChanged() {
-    //TODO: Adjust y position
     Vector3 newPos = transform.position;
     newPos.y = NumberBelow * transform.lossyScale.y + (transform.lossyScale.y / 2);
 
