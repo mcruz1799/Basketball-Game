@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 
 public class PlayerMover : MonoBehaviour
 {   
@@ -23,16 +24,19 @@ public class PlayerMover : MonoBehaviour
     {   
         if (grounded){
             Move();
-            float Xrotation = Input.GetAxis("RightJoystickX");
-            float Zrotation = Input.GetAxis("RightJoystickY");
+            //  float Xrotation = Input.GetAxis("RightStickX");
+            // float Zrotation = Input.GetAxis("RightStickY");
+            float Xrotation = XCI.GetAxis(XboxAxis.RightStickX);
+            float Zrotation = XCI.GetAxis(XboxAxis.RightStickY);
             SetRotation(Xrotation,Zrotation);
         }
     }
     void Move()
     {
-        movementVector.x = Input.GetAxis("LeftJoystickX") * movementSpeed;
-        movementVector.z = -(Input.GetAxis("LeftJoystickY") * movementSpeed);
-
+        //movementVector.x = Input.GetAxis("LeftStickX") * movementSpeed;
+        //movementVector.z = -(Input.GetAxis("LeftStickY") * movementSpeed);
+        movementVector.x = XCI.GetAxis(XboxAxis.LeftStickX) * movementSpeed;
+        movementVector.z = -(XCI.GetAxis(XboxAxis.LeftStickY) * movementSpeed);
         transform.Translate(movementVector);
     }
 
