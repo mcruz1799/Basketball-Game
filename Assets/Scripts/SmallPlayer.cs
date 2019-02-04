@@ -12,7 +12,7 @@ public class SmallPlayer : MonoBehaviour, IBallUser {
   [SerializeField] private BoxCollider grabHitbox;
 #pragma warning restore 0649
 
-  private IBallUser ballUserComponent;
+  private BallUserComponent ballUserComponent;
   private IXzController xzController;
 
   public SmallPlayer Above { get; private set; }
@@ -152,10 +152,10 @@ public class SmallPlayer : MonoBehaviour, IBallUser {
   public bool HasBall => ballUserComponent.HasBall;
 
   public void Pass() {
-    ballUserComponent.Pass();
+    ballUserComponent.Pass(xzController.xLook, xzController.zLook);
   }
 
   public void Steal() {
-    ballUserComponent.Steal();
+    ballUserComponent.Steal(grabHitbox);
   }
 }
