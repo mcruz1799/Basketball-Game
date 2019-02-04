@@ -9,6 +9,6 @@ public interface IXzController {
   float xLook { get; }
   float zLook { get; }
 
-  void Move(float speed);
-  void Turn(float amt, bool isDegrees = true);
+  void Move();
+  void setRotation(Vector3 rotation);
 }
