@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMover))]
 public class SmallPlayer : MonoBehaviour, IBallUser {
   //Not necessary --yet--.  If we ever add animations for this stuff, will probably need it then.
-  //private enum State { Transitioning }
+  //private enum State { Throwing, Jumping, Moving, Falling }
 
 #pragma warning disable 0649
   [SerializeField] private BoxCollider grabHitbox;
@@ -40,6 +40,7 @@ public class SmallPlayer : MonoBehaviour, IBallUser {
     }
   }
 
+  //Equals NumberBelow + 1 + NumberAbove
   public int TotemHeight {
     get {
       return NumberBelow + 1 + NumberAbove;
@@ -51,7 +52,13 @@ public class SmallPlayer : MonoBehaviour, IBallUser {
     //xzController = GetComponent<PlayerMover>();
   }
 
-  private bool JumpOffPlayer() {
+
+  //
+  //Actions to be associated with an input in InputManager
+  //
+
+  public bool JumpOffPlayer() {
+    Debug.LogWarning("TODO: Change xz-position of player(s)");
 
     //Can't jump off if you're not being carried
     if (Below == null) {
@@ -71,10 +78,13 @@ public class SmallPlayer : MonoBehaviour, IBallUser {
     return true;
   }
 
-  private bool PickUpPlayer() {
+  public bool PickUpPlayer() {
+    Debug.LogWarning("TODO: Change xz-position of picked up player(s)");
 
-    //Can't pick up a another SmallPlayer unless your hands are free and you're not being carried
-    if (Above != null || Below != null || HasBall) {
+    //Can't pick up another SmallPlayer unless your hands are free and you're not being carried
+    bool beingCarried = Below != null;
+    bool handsFree = !HasBall && Above == null;
+    if (!beingCarried && handsFree) {
       return false;
     }
 
@@ -98,13 +108,18 @@ public class SmallPlayer : MonoBehaviour, IBallUser {
     return true;
   }
 
-  private bool ThrowPlayer() {
+  public bool ThrowPlayer() {
     if (Above == null) {
       return false;
     }
 
     return Above.JumpOffPlayer();
   }
+
+
+  //
+  //Miscellaneous helpers
+  //
 
   private void OnHeightChanged() {
     Vector3 newPos = transform.position;
