@@ -5,34 +5,30 @@ using UnityEngine;
 public class PlayerMover : MonoBehaviour
 {   
     public float movementSpeed = 1.0f;
-    private Vector3 movementVector;
-    private Vector3 rotationVector;
     public SmallPlayer smallPlayer;
     private bool grounded = true;
-    private float timeCount = 0.0f;
     // Start is called before the first frame update
     void Awake()
     {
-        movementVector = Vector3.zero;
-        rotationVector = Vector3.zero;
         //grounded = (smallPlayer.Below == null);   
     }
 
     // Update is called once per frame
     void Update()
     {   
-        if (grounded){
-            Move();
+        if (grounded)
+        {
+            float xMove = Input.GetAxis("LeftJoystickX") * movementSpeed;
+            float zMove = -(Input.GetAxis("LeftJoystickY") * movementSpeed);
+            Move(xMove,zMove);
             float Xrotation = Input.GetAxis("RightJoystickX");
             float Zrotation = Input.GetAxis("RightJoystickY");
             SetRotation(Xrotation,Zrotation);
         }
     }
-    void Move()
+    void Move(float xmove, float zmove)
     {
-        movementVector.x = Input.GetAxis("LeftJoystickX") * movementSpeed;
-        movementVector.z = -(Input.GetAxis("LeftJoystickY") * movementSpeed);
-
+        Vector3 movementVector = new Vector3(xmove,0,zmove);
         transform.Translate(movementVector);
     }
 

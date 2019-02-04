@@ -388,7 +388,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 1
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: RightJoystickX
     descriptiveName: 
@@ -404,7 +404,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 2
-    joyNum: 0
+    joyNum: 2
   - serializedVersion: 3
     m_Name: RightJoystickY
     descriptiveName: 
@@ -420,7 +420,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 3
-    joyNum: 0
+    joyNum: 2
   - serializedVersion: 3
     m_Name: DPadUp
     descriptiveName: 
