@@ -5,6 +5,7 @@ using UnityEngine;
 public interface IBallUser {
   bool HasBall { get; }
 
-  void Steal();
   void Pass();
+  void Steal();
+  //void PickupBall();
 }
