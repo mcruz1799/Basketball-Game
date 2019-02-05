@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(BallUserComponent))]
 [RequireComponent(typeof(PlayerMover))]
-public class SmallPlayer : MonoBehaviour, IBallUser {
+public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
   //Not necessary --yet--.  If we ever add animations for this stuff, will probably need it then.
   //private enum State { Throwing, Jumping, Moving, Falling }
 
@@ -49,7 +49,7 @@ public class SmallPlayer : MonoBehaviour, IBallUser {
 
   private void Awake() {
     ballUserComponent = GetComponent<BallUserComponent>();
-    //xzController = GetComponent<PlayerMover>();
+    xzController = GetComponent<PlayerMover>();
   }
 
 
@@ -152,10 +152,29 @@ public class SmallPlayer : MonoBehaviour, IBallUser {
   public bool HasBall => ballUserComponent.HasBall;
 
   public void Pass() {
-    ballUserComponent.Pass(xzController.xLook, xzController.zLook);
+    ballUserComponent.Pass(xzController.XLook, xzController.ZLook);
   }
 
-  public void Steal() {
-    ballUserComponent.Steal(grabHitbox);
+  public bool Steal() {
+    return ballUserComponent.Steal(grabHitbox);
+  }
+
+
+  //
+  //IXzController
+  //
+
+  public float X => xzController.X;
+  public float Z => xzController.Z;
+
+  public float XLook => xzController.XLook;
+  public float ZLook => xzController.ZLook;
+
+  public void Move(float xMove, float zMove) {
+    xzController.Move(xMove, zMove);
+  }
+
+  public void SetRotation(float xrotation, float zrotation) {
+    xzController.SetRotation(xrotation, zrotation);
   }
 }
