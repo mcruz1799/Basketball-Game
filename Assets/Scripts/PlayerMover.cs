@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 
 public class PlayerMover : MonoBehaviour, IXzController {
   public float movementSpeed = 1.0f;
@@ -10,6 +11,22 @@ public class PlayerMover : MonoBehaviour, IXzController {
 
   public float XLook { get { return transform.forward.x; } }
   public float ZLook { get { return transform.forward.z; } }
+  private bool grounded = true;
+    // Update is called once per frame
+    void Update()
+    {   
+        if (grounded){
+            float Xmove = XCI.GetAxis(XboxAxis.LeftStickX);
+            float Zmove = XCI.GetAxis(XboxAxis.LeftStickY);
+            Move(Xmove,Zmove);
+            //  float Xrotation = Input.GetAxis("RightStickX");
+            // float Zrotation = Input.GetAxis("RightStickY");
+            float Xrotation = XCI.GetAxis(XboxAxis.RightStickX);
+            float Zrotation = XCI.GetAxis(XboxAxis.RightStickY);
+            SetRotation(Xrotation,Zrotation);
+        }
+    }
+    
 
   public void Move(float xMove, float zMove) {
     Vector3 movementVector = new Vector3(xMove, 0, zMove);
