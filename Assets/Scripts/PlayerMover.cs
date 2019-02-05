@@ -16,8 +16,8 @@ public class PlayerMover : MonoBehaviour, IXzController {
     transform.Translate(movementVector.normalized * movementSpeed);
   }
 
-  public void SetRotation(float xrotation, float zrotation) {
-    Vector3 target = new Vector3(-xrotation, 0, zrotation);
+  public void SetRotation(float xLook, float zLook) {
+    Vector3 target = new Vector3(-xLook, 0, zLook);
     transform.forward = target;
   }
 }

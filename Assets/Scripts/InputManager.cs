@@ -12,10 +12,10 @@ public class InputManager : MonoBehaviour {
     float zMove = -Input.GetAxis("LeftJoystickY");
     smallPlayer1.Move(xMove, zMove);
 
-    float Xrotation = Input.GetAxis("RightJoystickX");
-    float Zrotation = Input.GetAxis("RightJoystickY");
-    if (!(Xrotation == 0 && Zrotation == 0)) {
-      smallPlayer1.SetRotation(Xrotation, Zrotation);
+    float xlook = Input.GetAxis("RightJoystickX");
+    float zLook = Input.GetAxis("RightJoystickY");
+    if (!(xlook == 0 && zLook == 0)) {
+      smallPlayer1.SetRotation(xlook, zLook);
     }
   }
 }

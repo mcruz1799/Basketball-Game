@@ -10,5 +10,5 @@ public interface IXzController {
   float ZLook { get; }
 
   void Move(float xMove, float zMove);
-  void SetRotation(float xrotation, float zrotation);
+  void SetRotation(float xLook, float zLook);
 }

@@ -10,6 +10,7 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
 
 #pragma warning disable 0649
   [SerializeField] private BoxCollider grabHitbox;
+  [SerializeField] private float throwDistance;
 #pragma warning restore 0649
 
   private BallUserComponent ballUserComponent;
@@ -58,7 +59,6 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
   //
 
   public bool JumpOffPlayer() {
-    Debug.LogWarning("TODO: Change xz-position of player(s)");
 
     //Can't jump off if you're not being carried
     if (Below == null) {
@@ -79,7 +79,6 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
   }
 
   public bool PickUpPlayer() {
-    Debug.LogWarning("TODO: Change xz-position of picked up player(s)");
 
     //Can't pick up another SmallPlayer unless your hands are free and you're not being carried
     bool beingCarried = Below != null;
@@ -121,9 +120,21 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
   //Miscellaneous helpers
   //
 
+  //Called in response to being grabbed or thrown
   private void OnHeightChanged() {
+    Debug.LogWarning("TODO: Change xz-position of grabbed/thrown up player(s)");
+
     Vector3 newPos = transform.position;
-    newPos.y = NumberBelow * transform.lossyScale.y + (transform.lossyScale.y / 2);
+
+    //Assumes ground is at y = 0 and adjusts for height of self.
+    //Alternative: enable rigidbody y-constraint iff Below == null?
+    newPos.y = transform.lossyScale.y / 2; 
+
+    foreach (SmallPlayer below in GetBelow()) {
+      newPos.y += below.transform.lossyScale.y;
+    }
+
+    //newPos += new Vector3(XLook, 0, ZLook) * throwDistance;
 
     transform.position = newPos;
   }
@@ -174,7 +185,7 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
     xzController.Move(xMove, zMove);
   }
 
-  public void SetRotation(float xrotation, float zrotation) {
-    xzController.SetRotation(xrotation, zrotation);
+  public void SetRotation(float xLook, float zLook) {
+    xzController.SetRotation(xLook, zLook);
   }
 }
