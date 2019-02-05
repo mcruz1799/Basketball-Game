@@ -22,7 +22,7 @@ public class PlayerMover : MonoBehaviour, IXzController {
   }
 
   public void SetRotation(float xLook, float zLook) {
-    Vector3 target = new Vector3(-xLook, 0, zLook);
+    Vector3 target = new Vector3(xLook, 0, zLook);
     transform.forward = target;
   }
 }
