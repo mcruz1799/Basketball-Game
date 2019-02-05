@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 
 public class InputManager : MonoBehaviour {
   [SerializeField] private SmallPlayer smallPlayer1;
@@ -8,14 +9,14 @@ public class InputManager : MonoBehaviour {
   //[SerializeField] private SmallPlayer smallPlayer3;
 
   private void Update() {
-    float xMove = Input.GetAxis("LeftJoystickX");
-    float zMove = -Input.GetAxis("LeftJoystickY");
+    float xMove = XCI.GetAxis(XboxAxis.LeftStickX);
+    float zMove = XCI.GetAxis(XboxAxis.LeftStickY);
     smallPlayer1.Move(xMove, zMove);
 
-    float xlook = Input.GetAxis("RightJoystickX");
-    float zLook = Input.GetAxis("RightJoystickY");
-    if (!(xlook == 0 && zLook == 0)) {
-      smallPlayer1.SetRotation(xlook, zLook);
+    float Xrotation = XCI.GetAxis(XboxAxis.RightStickX);
+    float Zrotation = XCI.GetAxis(XboxAxis.RightStickY);
+    if (!(Xrotation == 0 && Zrotation == 0)) {
+      smallPlayer1.SetRotation(Xrotation, Zrotation);
     }
   }
 }
