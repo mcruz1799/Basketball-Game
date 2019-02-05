@@ -23,7 +23,9 @@ public class PlayerMover : MonoBehaviour
     void Update()
     {   
         if (grounded){
-            Move();
+            float Xmove = XCI.GetAxis(XboxAxis.LeftStickX) * movementSpeed;
+            float Zmove = XCI.GetAxis(XboxAxis.LeftStickY) * movementSpeed;
+            Move(Xmove,Zmove);
             //  float Xrotation = Input.GetAxis("RightStickX");
             // float Zrotation = Input.GetAxis("RightStickY");
             float Xrotation = XCI.GetAxis(XboxAxis.RightStickX);
@@ -31,13 +33,10 @@ public class PlayerMover : MonoBehaviour
             SetRotation(Xrotation,Zrotation);
         }
     }
-    void Move()
+    void Move(float xmove, float zmove)
     {
-        //movementVector.x = Input.GetAxis("LeftStickX") * movementSpeed;
-        //movementVector.z = -(Input.GetAxis("LeftStickY") * movementSpeed);
-        movementVector.x = XCI.GetAxis(XboxAxis.LeftStickX) * movementSpeed;
-        movementVector.z = -(XCI.GetAxis(XboxAxis.LeftStickY) * movementSpeed);
-        transform.Translate(movementVector);
+        Vector3 translate = new Vector3(xmove,0,zmove);
+        transform.Translate(translate);
     }
 
     void SetRotation(float xrotation, float zrotation)
