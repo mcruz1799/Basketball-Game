@@ -6,6 +6,6 @@ public interface IBallUser {
   bool HasBall { get; }
 
   void Pass();
-  void Steal();
+  bool Steal();
   //void PickupBall();
 }
