@@ -4,7 +4,7 @@ using UnityEngine;
 using XboxCtrlrInput;
 
 public class PlayerMover : MonoBehaviour, IXzController {
-  public float movementSpeed = 1.0f;
+  public float movementSpeed = 10.0f;
 
   public float X { get { return transform.position.x; } }
   public float Z { get { return transform.position.z; } }
@@ -30,7 +30,8 @@ public class PlayerMover : MonoBehaviour, IXzController {
 
   public void Move(float xMove, float zMove) {
     Vector3 movementVector = new Vector3(xMove, 0, zMove);
-    transform.Translate(movementVector.normalized * movementSpeed);
+    transform.Translate(movementVector.normalized * Time.deltaTime * movementSpeed, Space.World);
+    //moves on world axis, deltatime to smoothen movement ^^
   }
 
   public void SetRotation(float xLook, float zLook) {
