@@ -6,9 +6,9 @@ public interface IXzController {
   float X { get; }
   float Z { get; }
 
-  float xLook { get; }
-  float zLook { get; }
+  float XLook { get; }
+  float ZLook { get; }
 
-  void Move(float xmove, float zmove);
-  void setRotation(float xrotation, float zrotation);
+  void Move(float xMove, float zMove);
+  void SetRotation(float xrotation, float zrotation);
 }
