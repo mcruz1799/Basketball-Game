@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour {
-  SmallPlayer smallPlayer1;
-  //SmallPlayer smallPlayer2;
-  //SmallPlayer smallPlayer3;
+  [SerializeField] private SmallPlayer smallPlayer1;
+  //[SerializeField] private SmallPlayer smallPlayer2;
+  //[SerializeField] private SmallPlayer smallPlayer3;
 
   private void Update() {
     float xMove = Input.GetAxis("LeftJoystickX");
@@ -14,6 +14,8 @@ public class InputManager : MonoBehaviour {
 
     float Xrotation = Input.GetAxis("RightJoystickX");
     float Zrotation = Input.GetAxis("RightJoystickY");
-    smallPlayer1.SetRotation(Xrotation, Zrotation);
+    if (!(Xrotation == 0 && Zrotation == 0)) {
+      smallPlayer1.SetRotation(Xrotation, Zrotation);
+    }
   }
 }
