@@ -9,11 +9,12 @@ public class GameManager : MonoBehaviour {
     [SerializeField] static float game_time;
     [SerializeField] static int winning_score;
     static bool overtime;
+    //this is pointless, only needed to call StopCoroutine
+    static GameManager gm;
 
     /********************************************************
                        UI ELEMENTS TO ADD:
      * Main Menu
-     * In SmallPlayer, if player collides with Basket, update score
      * Ending game for tall [with quit or restart button]
      * Ending game for small [with quit or restart button]
      * Overtime display
@@ -22,12 +23,18 @@ public class GameManager : MonoBehaviour {
      ********************************************************/
 
     void Start(){
-        StartCoroutine(GameTime());
+        gm = this;
+    }
+
+    static void start_game(){
+        gm.StartCoroutine(GameTime());
         score_small = 0;
         score_tall = 0;
         overtime = false;
     }
+
     static void end_game(){
+        gm.StopCoroutine(GameTime());
         overtime = false;
         if (score_tall > score_small){
             //TODO: ending seq where tall wins, eventually quit
@@ -43,17 +50,16 @@ public class GameManager : MonoBehaviour {
         }
     }
     //scoring, to be called from player script
-    public void update_score_small(int i){
-        score_small += i;
-        if (score_small >= winning_score || overtime){
-            StopAllCoroutines();
-            end_game();
+    public static void update_score(ScoreComponent.PlayerType p, int i){
+        if (p == ScoreComponent.PlayerType.small) {
+            score_small += i;
         }
-    }
-    public void update_score_tall(int i){
-        score_tall += i;
-        if (score_tall >= winning_score || overtime){
-            StopAllCoroutines();
+        else {
+            score_tall += i;
+        }
+        if (score_small >= winning_score || score_tall >= winning_score 
+            || overtime)
+        {
             end_game();
         }
     }
@@ -68,8 +74,9 @@ public class GameManager : MonoBehaviour {
             LoadSceneMode.Single);
     }
 
-    IEnumerator GameTime(){
+    static IEnumerator GameTime(){
         yield return new WaitForSeconds(game_time);
+        Debug.Log("Game Time Up");
         end_game();
     }
 }
