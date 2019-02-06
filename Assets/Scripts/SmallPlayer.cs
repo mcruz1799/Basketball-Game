@@ -83,7 +83,7 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
     //Can't pick up another SmallPlayer unless your hands are free and you're not being carried
     bool beingCarried = Below != null;
     bool handsFree = !HasBall && Above == null;
-    if (!beingCarried && handsFree) {
+    if (beingCarried || !handsFree) {
       return false;
     }
 
