@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     static int score_small;
     static int score_tall;
     [SerializeField] static float game_time;
     [SerializeField] static int winning_score;
+    [SerializeField] static Text small_score_text;
+    [SerializeField] static Text tall_score_text;
     static bool overtime;
     //this is pointless, only needed to call StopCoroutine
     static GameManager gm;
@@ -53,9 +56,11 @@ public class GameManager : MonoBehaviour {
     public static void update_score(ScoreComponent.PlayerType p, int i){
         if (p == ScoreComponent.PlayerType.small) {
             score_small += i;
+            small_score_text.text = score_small.ToString();
         }
         else {
             score_tall += i;
+            tall_score_text.text = score_tall.ToString();
         }
         if (score_small >= winning_score || score_tall >= winning_score 
             || overtime)
