@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //To be used by MonoBehaviours implementing IBallUser
+//Doesn't actually implement the IBallUser itself.  This is because it needs additional parameters for Pass/Steal
 [RequireComponent(typeof(PlayerMover))]
 public class BallUserComponent : MonoBehaviour {
   [SerializeField] private float heightToHoldBallAt;
@@ -18,7 +19,7 @@ public class BallUserComponent : MonoBehaviour {
 
   public void Pass(float xDirection, float zDirection) {
     //HasBall = false;
-    throw new System.NotImplementedException();
+    Debug.LogWarning("Pass is not yet implemented");
   }
 
   public bool Steal(BoxCollider grabHitbox) {
@@ -28,11 +29,13 @@ public class BallUserComponent : MonoBehaviour {
       if (ball != null) {
         //ball.SetPosition(new Vector3(???, heightToHoldBallAt, ???));
         //ball.SetParent(transform);
-        //return true;
+
+        Debug.LogWarning("Steal successfully detected the ball, but doesn't do anything with it due to only being partially implemented");
+        return true;
       }
     }
 
-    throw new System.NotImplementedException();
-    //return false;
+    Debug.LogWarning("Steal isn't implemented yet");
+    return false;
   }
 }

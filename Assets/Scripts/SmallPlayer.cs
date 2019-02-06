@@ -122,7 +122,7 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
 
   //Called in response to being grabbed or thrown
   private void OnHeightChanged() {
-    Debug.LogWarning("TODO: Change xz-position of grabbed/thrown up player(s)");
+    Debug.LogWarning("TODO: Change xz-position of grabbed/thrown player(s)");
 
     Vector3 newPos = transform.position;
 
