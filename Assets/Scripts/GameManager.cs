@@ -32,12 +32,12 @@ public class GameManager : MonoBehaviour {
 
     void Start(){
         gm = this;
-        team1_score_text = GameObject.Find("HUDCanvas/team1/team1_pts/Pts").GetComponent<Text>();
-        team2_score_text = GameObject.Find("HUDCanvas/team2/team2_pts/Pts").GetComponent<Text>();
+        team1_score_text = GameObject.Find("HUDCanvas/Team1/team1_pts/Pts").GetComponent<Text>();
+        team2_score_text = GameObject.Find("HUDCanvas/Team2/team2_pts/Pts").GetComponent<Text>();
         game_time_text = GameObject.Find("HUDCanvas/game_time/time").GetComponent<Text>();
         game_time = 30.0f;
         start_game();
-        Debug.Log("Starting Game with " + game_time + "Seconds");
+        Debug.Log("Starting Game with " + game_time + " Seconds");
         winning_screen.SetActive(false);
     }
 
