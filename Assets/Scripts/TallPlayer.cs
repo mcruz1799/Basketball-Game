@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TallPlayer : MonoBehaviour
+public class TallPlayer : MonoBehaviour, IXzController
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  public float X { get; }
+  public float Z { get; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  public float XLook { get; }
+  public float ZLook { get; }
+
+  public void Move(float xMove, float zMove){
+      return;
+  }
+  public void SetRotation(float xLook, float zLook){
+      return;
+  }
 }
