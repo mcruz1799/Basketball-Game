@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
   //this is pointless, only needed to call StopCoroutine
   public static GameManager S;
   [SerializeField] GameObject winning_screen;
+  [SerializeField] GameObject tipoff_screen;
 
   /********************************************************
                      UI ELEMENTS TO ADD:
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour {
 
   private void start_game() {
     S.StartCoroutine(TipOff());
+    tipoff_screen.SetActive(true);
     score_team1 = 0;
     score_team2 = 0;
     overtime = false;
@@ -153,6 +155,7 @@ public class GameManager : MonoBehaviour {
             S.ball.SetPosition(player4.transform.position);
             break;
         }
+        tipoff_screen.SetActive(false);
         break;
       }
     }
