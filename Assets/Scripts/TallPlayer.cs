@@ -10,6 +10,7 @@ public class TallPlayer : MonoBehaviour, IBallUser, IXzController
     public SmallPlayer above {get; private set;}
     private IXzController xzController;
     private BallUserComponent ballUserComponent;
+    private BoxCollider hitbox;
     // Start is called before the first frame update
     void Awake()
     {
@@ -27,6 +28,9 @@ public class TallPlayer : MonoBehaviour, IBallUser, IXzController
     {
 
     }
+
+    //IBallUser
+    //-----------------------------------------------
     public void Pass()
     {
         ballUserComponent.Pass(xzController.XLook, xzController.ZLook);
@@ -34,10 +38,13 @@ public class TallPlayer : MonoBehaviour, IBallUser, IXzController
 
     public bool Steal()
     {
-        return false; 
+        return ballUserComponent.Steal(hitbox);
     }
     public bool HasBall => ballUserComponent.HasBall;
+    
+    
     //IXzController
+    //------------------------------------------
     public float X => xzController.X;
     public float Z => xzController.Z;
 
@@ -47,7 +54,7 @@ public class TallPlayer : MonoBehaviour, IBallUser, IXzController
         xzController.Move(xMove, zMove);
     }
     public void SetRotation(float xLook, float zLook) {
-    xzController.SetRotation(xLook, zLook);
+        xzController.SetRotation(xLook, zLook);
     }
 
 
