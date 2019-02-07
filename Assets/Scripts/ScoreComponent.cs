@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreComponent : MonoBehaviour
 {
-    public enum PlayerType {small, tall};
+    public enum PlayerType {team1, team2};
     [SerializeField] PlayerType current_player;
     void update_score_local(int i){
         GameManager.update_score(current_player, i);
