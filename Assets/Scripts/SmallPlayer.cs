@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 
 [RequireComponent(typeof(BallUserComponent))]
 [RequireComponent(typeof(PlayerMover))]
@@ -118,7 +119,7 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
    Tip-Off: Gain control of the ball.
    Pass: If Player has the ball, pass it.
                                                    */
-  public void PressA()
+  public void PressA(XboxController controller)
   {
         if (HasBall)
         {

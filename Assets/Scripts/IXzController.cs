@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 
 public interface IXzController {
   float X { get; }
@@ -11,5 +12,5 @@ public interface IXzController {
 
   void Move(float xMove, float zMove);
   void SetRotation(float xLook, float zLook);
-  void PressA();
+  void PressA(XboxController controller);
 }

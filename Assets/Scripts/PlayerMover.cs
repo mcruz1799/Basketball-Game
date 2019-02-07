@@ -26,7 +26,7 @@ public class PlayerMover : MonoBehaviour, IXzController {
     transform.forward = target;
   }
 
-  public void PressA()
+  public void PressA(XboxController controller)
   {
         //Added to remove compile-time issues.
   }

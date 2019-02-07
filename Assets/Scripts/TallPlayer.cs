@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 
 [RequireComponent(typeof(BallUserComponent))]
 [RequireComponent(typeof(PlayerMover))]
@@ -88,7 +89,7 @@ public class TallPlayer : MonoBehaviour, IPlayer {
    Pass: If Player has the ball, pass it.
    Pick-Up Small Player: If Player is in range, can pickup the small player.
                                                    */
-  public void PressA()
+  public void PressA(XboxController controller)
   {
         if (HasBall)
         {
