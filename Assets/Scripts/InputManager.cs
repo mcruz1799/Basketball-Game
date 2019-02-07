@@ -39,6 +39,7 @@ public class InputManager : MonoBehaviour {
     //Check Button Presses
     if (XCI.GetButton(XboxButton.A,controller))
     {
+      player.PressA();
     }
   }
 }
