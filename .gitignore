@@ -48,3 +48,4 @@ sysinfo.txt
 crashlytics-build.properties
 ProjectSettings/*.asset
 hooks/*
+Assets/Plugins/GitHub/*
