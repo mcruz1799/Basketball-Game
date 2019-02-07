@@ -19,35 +19,6 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
   public SmallPlayer Above { get; private set; }
   public SmallPlayer Below { get; private set; }
 
-  //Returns the number of SmallPlayers below this
-  public int NumberBelow {
-    get {
-      int result = 0;
-      foreach (SmallPlayer p in GetBelow()) {
-        result += 1;
-      }
-      return result;
-    }
-  }
-
-  //Returns the number of SmallPlayers above this
-  public int NumberAbove {
-    get {
-      int result = 0;
-      foreach (SmallPlayer p in GetAbove()) {
-        result += 1;
-      }
-      return result;
-    }
-  }
-
-  //Equals NumberBelow + 1 + NumberAbove
-  public int TotemHeight {
-    get {
-      return NumberBelow + 1 + NumberAbove;
-    }
-  }
-
   private void Awake() {
     ballUserComponent = GetComponent<BallUserComponent>();
     xzController = GetComponent<PlayerMover>();
@@ -71,9 +42,6 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
     //Set Below to null and notify self + anyone being carried that their height has changed
     Below = null;
     this.OnHeightChanged();
-    foreach (SmallPlayer p in GetAbove()) {
-      p.OnHeightChanged();
-    }
 
     return true;
   }
@@ -94,10 +62,6 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
       if (other.Below == null) {
         other.Below = this;
         Above = other;
-
-        foreach (SmallPlayer p in GetAbove()) {
-          p.OnHeightChanged();
-        }
 
         //Can only pick up one person
         break;
@@ -130,29 +94,9 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
     //Alternative: enable rigidbody y-constraint iff Below == null?
     newPos.y = transform.lossyScale.y / 2; 
 
-    foreach (SmallPlayer below in GetBelow()) {
-      newPos.y += below.transform.lossyScale.y;
-    }
-
     //newPos += new Vector3(XLook, 0, ZLook) * throwDistance;
 
     transform.position = newPos;
-  }
-
-  private IEnumerable<SmallPlayer> GetAbove() {
-    SmallPlayer temp = this;
-    while (temp.Above != null) {
-      yield return temp.Above;
-      temp = temp.Above;
-    }
-  }
-
-  private IEnumerable<SmallPlayer> GetBelow() {
-    SmallPlayer temp = this;
-    while (temp.Below != null) {
-      yield return temp.Below;
-      temp = temp.Below;
-    }
   }
 
 

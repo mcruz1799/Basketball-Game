@@ -15,7 +15,7 @@ public class BallUserComponent : MonoBehaviour {
     xzController = GetComponent<PlayerMover>();
   }
 
-  public bool HasBall => throw new System.NotImplementedException();
+  public bool HasBall => GameManager.S.ball.Owner == this;
 
   public void Pass(float xDirection, float zDirection) {
     //HasBall = false;
