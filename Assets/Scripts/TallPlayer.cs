@@ -82,4 +82,20 @@ public class TallPlayer : MonoBehaviour, IPlayer {
   public void SetRotation(float xLook, float zLook) {
     xzController.SetRotation(xLook, zLook);
   }
+  
+  /*Possibilities of Pressing A:
+   Tip-Off: Gain control of the ball.
+   Pass: If Player has the ball, pass it.
+   Pick-Up Small Player: If Player is in range, can pickup the small player.
+                                                   */
+  public void PressA()
+  {
+        if (HasBall)
+        {
+            Pass();
+        } else
+        {
+            //TODO: Check Tip-Off, or attempt to pick-up small player.
+        }
+  }
 }

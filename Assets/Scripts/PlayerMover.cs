@@ -25,4 +25,9 @@ public class PlayerMover : MonoBehaviour, IXzController {
     Vector3 target = new Vector3(xLook, 0, zLook);
     transform.forward = target;
   }
+
+  public void PressA()
+  {
+        //Added to remove compile-time issues.
+  }
 }
