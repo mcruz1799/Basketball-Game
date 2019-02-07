@@ -15,9 +15,3 @@ public class Ball : MonoBehaviour, IBall {
     transform.SetParent(newParent, true);
   }
 }
-
-public interface IBall {
-  float Radius { get; }
-  void SetPosition(Vector3 newPosition);
-  void SetParent(Transform newParent);
-}
