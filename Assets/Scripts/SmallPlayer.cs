@@ -113,4 +113,19 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   public void SetRotation(float xLook, float zLook) {
     xzController.SetRotation(xLook, zLook);
   }
+  
+  /*Possibilities of Pressing A:
+   Tip-Off: Gain control of the ball.
+   Pass: If Player has the ball, pass it.
+                                                   */
+  public void PressA()
+  {
+        if (HasBall)
+        {
+            Pass();
+        } else
+        {
+            //TODO: Check for Tip-Off.
+        }
+  }
 }

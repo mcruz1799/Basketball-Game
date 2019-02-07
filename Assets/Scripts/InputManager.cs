@@ -16,22 +16,30 @@ public class InputManager : MonoBehaviour {
 
     //For four controllers connected to the machine.
     for (int i = 0; i < 4; i++) {
-      if (i % 2 == 0) checkInputs(controllers[i], players[i]);
-      else checkInputs(controllers[i], players2[i]);
+      if (i % 2 == 0) checkInputs(controllers[i], players[i], "small");
+      else checkInputs(controllers[i], players2[i], "tall");
     }
   }
 
   //Checks for inputs from a specific controller, and applies movement to the s
-  private void checkInputs(XboxController controller, IXzController player) {
-
+  private void checkInputs(XboxController controller, IXzController player, string PlayerType) {
+    
+    //Check Movement Inputs
     float xMove = XCI.GetAxis(XboxAxis.LeftStickX, controller);
     float zMove = XCI.GetAxis(XboxAxis.LeftStickY, controller);
     player.Move(xMove, zMove);
-
+    
+    //Check Rotation Inputs
     float Xrotation = XCI.GetAxis(XboxAxis.RightStickX, controller);
     float Zrotation = XCI.GetAxis(XboxAxis.RightStickY, controller);
     if (!(Xrotation == 0 && Zrotation == 0)) {
       player.SetRotation(Xrotation, Zrotation);
+    }
+
+    //Check Button Presses
+    if (XCI.GetButton(XboxButton.A,controller))
+    {
+      player.PressA();
     }
   }
 }
