@@ -16,8 +16,16 @@ public class InputManager : MonoBehaviour {
 
     //For four controllers connected to the machine.
     for (int i = 0; i < 4; i++) {
-      if (i % 2 == 0) checkInputs(controllers[i], players[i], "small");
-      else checkInputs(controllers[i], players2[i], "tall");
+      try
+      {
+        XboxController control = controllers[i];
+        if (i % 2 == 0) checkInputs(controllers[i], players[i], "small");
+        else checkInputs(controllers[i], players2[i], "tall");
+      } catch (System.Exception e)
+      {
+        //TODO: Add UI message to prompt connecting controller.
+        continue;
+      } 
     }
   }
 
