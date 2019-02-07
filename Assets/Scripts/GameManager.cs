@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour {
   public static GameManager S;
   [SerializeField] GameObject winning_screen;
   [SerializeField] GameObject tipoff_screen;
+  [SerializeField] GameObject overtime_screen;
 
   /********************************************************
                      UI ELEMENTS TO ADD:
@@ -45,10 +46,11 @@ public class GameManager : MonoBehaviour {
     team1ScoreText = GameObject.Find("HUDCanvas/Team1/team1_pts/Pts").GetComponent<Text>();
     team2ScoreText = GameObject.Find("HUDCanvas/Team2/team2_pts/Pts").GetComponent<Text>();
     gameTimeText = GameObject.Find("HUDCanvas/game_time/time").GetComponent<Text>();
-    game_time = 30.0f;
     start_game();
     Debug.Log("Starting Game with " + game_time + " Seconds");
     winning_screen.SetActive(false);
+    overtime_screen.SetActive(false);
+    tipoff_screen.SetActive(true);
     player1 = S.GetComponent<InputManager>().players[0].transform;
     player2 = S.GetComponent<InputManager>().players2[0].transform;
     player3 = S.GetComponent<InputManager>().players[1].transform;
@@ -56,19 +58,18 @@ public class GameManager : MonoBehaviour {
   }
 
   private void start_game() {
-    S.StartCoroutine(TipOff());
-    tipoff_screen.SetActive(true);
+    game_time = S.game_time_ins;
+    winning_score = S.winning_score_ins;
     score_team1 = 0;
     score_team2 = 0;
     overtime = false;
-    game_time = S.game_time_ins;
-    winning_score = S.winning_score_ins;
     curr_time = game_time;
     setGameTime(curr_time);
+    S.StartCoroutine(TipOff());
   }
 
   private void end_game() {
-    S.StopCoroutine(GameTime());
+    S.StopAllCoroutines();
     overtime = false;
     if (score_team2 > score_team1) {
       S.winning_screen.GetComponent<Text>().text =
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour {
       S.winning_screen.SetActive(true);
     } else {
       overtime = true;
+      S.StartCoroutine(OvertimeGame());
       //TODO: display a screen saying WHOEVER SCORES NEXT WINS
     }
   }
@@ -114,7 +116,8 @@ public class GameManager : MonoBehaviour {
     //TODO: change to load scene of main menu
     score_team1 = 0;
     score_team2 = 0;
-    curr_time = 0;
+    curr_time = game_time;
+    overtime = false;
     //somehow reset player positions?
     SceneManager.LoadScene(SceneManager.GetActiveScene().name,
         LoadSceneMode.Single);
@@ -134,8 +137,14 @@ public class GameManager : MonoBehaviour {
     }
   }
 
+  private IEnumerator OvertimeGame(){
+    overtime_screen.SetActive(true);
+    yield return new WaitForSeconds(5);
+    overtime_screen.SetActive(false);
+  }
+
   private IEnumerator TipOff() {
-    while (true) {
+    while (false) {
       if (XCI.GetButtonDown(XboxButton.A)) {
         switch (S.controller) {
           case XboxController.First: //small1
@@ -158,6 +167,7 @@ public class GameManager : MonoBehaviour {
         tipoff_screen.SetActive(false);
         break;
       }
+      yield return new WaitForSeconds(0);
     }
     S.StartCoroutine(GameTime()); //start counting the game
     S.StartCoroutine(UpdateTime()); //start updating the game
@@ -167,6 +177,10 @@ public class GameManager : MonoBehaviour {
   private void setGameTime(float time) {
     float minutes = Mathf.Floor(curr_time / 60);
     float seconds = curr_time % 60;
-    gameTimeText.text = minutes + " : " + seconds;
+    string min_str = minutes.ToString();
+    string sec_str = seconds.ToString();
+    if (minutes < 10) min_str = "0" + min_str;
+    if (seconds < 10) sec_str = "0" + sec_str;
+    gameTimeText.text = min_str + ":" + sec_str;
   }
 }
