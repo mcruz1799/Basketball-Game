@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour, IBall {
   public float Radius { get { return transform.lossyScale.x; } }
 
   public void SetPosition(Vector3 newPosition) {
-    transform.position = newPosition;
+    transform.localPosition = newPosition;
   }
 
   public void SetParent(Transform newParent) {
