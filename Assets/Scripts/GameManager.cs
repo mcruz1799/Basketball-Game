@@ -8,10 +8,10 @@ using XboxCtrlrInput;
 public class GameManager : MonoBehaviour {
     public XboxController controller;
     public GameObject ball;
-    public Transform player1;
-    public Transform player2;
-    public Transform player3;
-    public Transform player4;
+    Transform player1;
+    Transform player2;
+    Transform player3;
+    Transform player4;
     static int score_team1;
     static int score_team2;
     [SerializeField] int game_time_ins;
@@ -46,6 +46,10 @@ public class GameManager : MonoBehaviour {
         start_game();
         Debug.Log("Starting Game with " + game_time + " Seconds");
         winning_screen.SetActive(false);
+        player1 = gm.GetComponent<InputManager>().players[0].transform;
+        player2 = gm.GetComponent<InputManager>().players2[0].transform;
+        player3 = gm.GetComponent<InputManager>().players[1].transform;
+        player4 = gm.GetComponent<InputManager>().players2[1].transform;
     }
 
     static void start_game(){
@@ -132,24 +136,25 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    IEnumerator TipOff(){
+    static IEnumerator TipOff(){
         while (true){
             if (XCI.GetButtonDown(XboxButton.A)){
-                switch(controller)
+                switch(gm.controller)
                 {
                     case XboxController.First:
-                        ball.GetComponent<Ball>().SetParent(player1);
+                        gm.ball.GetComponent<Ball>().SetParent(gm.player1);
                         break;
                     case XboxController.Second:
-                        ball.GetComponent<Ball>().SetParent(player2);
+                        gm.ball.GetComponent<Ball>().SetParent(gm.player2);
                         break;
                     case XboxController.Third:
-                        ball.GetComponent<Ball>().SetParent(player3);
+                        gm.ball.GetComponent<Ball>().SetParent(gm.player3);
                         break;
                     case XboxController.Fourth:
-                        ball.GetComponent<Ball>().SetParent(player4);
+                        gm.ball.GetComponent<Ball>().SetParent(gm.player4);
                         break;
                 }
+                break;
             }
         }
         gm.StartCoroutine(GameTime()); //start counting the game
