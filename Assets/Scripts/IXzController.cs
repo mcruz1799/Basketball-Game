@@ -11,4 +11,5 @@ public interface IXzController {
 
   void Move(float xMove, float zMove);
   void SetRotation(float xLook, float zLook);
+  void PressA();
 }
