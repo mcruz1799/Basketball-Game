@@ -16,8 +16,7 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
   private BallUserComponent ballUserComponent;
   private IXzController xzController;
 
-  public SmallPlayer Above { get; private set; }
-  public SmallPlayer Below { get; private set; }
+  public TallPlayer Below { get; private set; }
 
   private void Awake() {
     ballUserComponent = GetComponent<BallUserComponent>();
@@ -50,7 +49,7 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
 
     //Can't pick up another SmallPlayer unless your hands are free and you're not being carried
     bool beingCarried = Below != null;
-    bool handsFree = !HasBall && Above == null;
+    bool handsFree = !HasBall;
     if (beingCarried || !handsFree) {
       return false;
     }
@@ -58,10 +57,9 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
     //Check PickUpPlayer action's hitbox
     RaycastHit[] hits = Physics.BoxCastAll(grabHitbox.center, grabHitbox.bounds.extents, Vector3.zero);
     foreach (RaycastHit h in hits) {
-      SmallPlayer other = h.collider.GetComponent<SmallPlayer>();
+      TallPlayer other = h.collider.GetComponent<TallPlayer>();
       if (other.Below == null) {
         other.Below = this;
-        Above = other;
 
         //Can only pick up one person
         break;
@@ -69,14 +67,6 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
     }
 
     return true;
-  }
-
-  public bool ThrowPlayer() {
-    if (Above == null) {
-      return false;
-    }
-
-    return Above.JumpOffPlayer();
   }
 
 
