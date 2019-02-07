@@ -136,17 +136,21 @@ public class GameManager : MonoBehaviour {
     while (true) {
       if (XCI.GetButtonDown(XboxButton.A)) {
         switch (S.controller) {
-          case XboxController.First:
-            S.ball.GetComponent<Ball>().SetParent(S.player1);
+          case XboxController.First: //small1
+            S.ball.SetParent(S.player1);
+            S.ball.SetPosition(player1.transform.position);
             break;
-          case XboxController.Second:
-            S.ball.GetComponent<Ball>().SetParent(S.player2);
+          case XboxController.Second: //tall1
+            S.ball.SetParent(S.player2);
+            S.ball.SetPosition(player2.transform.position);
             break;
-          case XboxController.Third:
-            S.ball.GetComponent<Ball>().SetParent(S.player3);
+          case XboxController.Third: //small2
+            S.ball.SetParent(S.player3);
+            S.ball.SetPosition(player3.transform.position);
             break;
-          case XboxController.Fourth:
-            S.ball.GetComponent<Ball>().SetParent(S.player4);
+          case XboxController.Fourth: //tall2
+            S.ball.SetParent(S.player4);
+            S.ball.SetPosition(player4.transform.position);
             break;
         }
         break;
