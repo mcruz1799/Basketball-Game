@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour {
    * HUD (current scores, current time left)
    ********************************************************/
 
-  void Start() {
+  void Awake() {
     S = this;
     team1ScoreText = GameObject.Find("HUDCanvas/Team1/team1_pts/Pts").GetComponent<Text>();
     team2ScoreText = GameObject.Find("HUDCanvas/Team2/team2_pts/Pts").GetComponent<Text>();
