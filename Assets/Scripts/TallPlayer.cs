@@ -31,12 +31,26 @@ public class TallPlayer : MonoBehaviour, IBallUser, IXzController
     {
         ballUserComponent.Pass(xzController.XLook, xzController.ZLook);
     }
-    //IXzController
 
-    
+    public bool Steal()
+    {
+        return false; 
+    }
+    public bool HasBall => ballUserComponent.HasBall;
+    //IXzController
     public float X => xzController.X;
     public float Z => xzController.Z;
 
     public float XLook => xzController.XLook;
     public float ZLook => xzController.ZLook;
+    public void Move(float xMove, float zMove) {
+        xzController.Move(xMove, zMove);
+    }
+    public void SetRotation(float xLook, float zLook) {
+    xzController.SetRotation(xLook, zLook);
+    }
+
+
+
+
 }
