@@ -4,21 +4,24 @@ using UnityEngine;
 
 [RequireComponent(typeof(BallUserComponent))]
 [RequireComponent(typeof(PlayerMover))]
-public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
+public class SmallPlayer : MonoBehaviour, IPlayer {
   //Not necessary --yet--.  If we ever add animations for this stuff, will probably need it then.
   //private enum State { Throwing, Jumping, Moving, Falling }
-
 #pragma warning disable 0649
   [SerializeField] private BoxCollider grabHitbox;
-  [SerializeField] private float throwDistance;
+  [SerializeField] private float jumpDistance;
+  [SerializeField] private ScoreComponent.PlayerType _team;
 #pragma warning restore 0649
 
   private BallUserComponent ballUserComponent;
   private IXzController xzController;
 
+  public ScoreComponent.PlayerType Team { get; private set; }
   public TallPlayer Below { get; private set; }
 
+
   private void Awake() {
+    Team = _team;
     ballUserComponent = GetComponent<BallUserComponent>();
     xzController = GetComponent<PlayerMover>();
   }
@@ -36,37 +39,25 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
     }
 
     //Below is no longer carrying me
-    Below.Above = null;
-
-    //Set Below to null and notify self + anyone being carried that their height has changed
+    Below.OnAboveJumpingOff();
     Below = null;
-    this.OnHeightChanged();
+
+    Debug.LogWarning("SmallPlayer.JumpOffPlayer is not yet implemented");
+    //Change height, change xz-position
 
     return true;
   }
 
-  public bool PickUpPlayer() {
+  public void OnPickedUp(TallPlayer player) {
+    Below = player;
+    Debug.LogWarning("SmallPlayer.OnPickedUp is not yet implemented");
+    //Change height, change xz-position
+  }
 
-    //Can't pick up another SmallPlayer unless your hands are free and you're not being carried
-    bool beingCarried = Below != null;
-    bool handsFree = !HasBall;
-    if (beingCarried || !handsFree) {
-      return false;
-    }
-
-    //Check PickUpPlayer action's hitbox
-    RaycastHit[] hits = Physics.BoxCastAll(grabHitbox.center, grabHitbox.bounds.extents, Vector3.zero);
-    foreach (RaycastHit h in hits) {
-      TallPlayer other = h.collider.GetComponent<TallPlayer>();
-      if (other.Below == null) {
-        other.Below = this;
-
-        //Can only pick up one person
-        break;
-      }
-    }
-
-    return true;
+  public void OnThrown() {
+    Below = null;
+    Debug.LogWarning("SmallPlayer.OnThrown is not yet implemented");
+    //Change height, change xz-position
   }
 
 
@@ -76,7 +67,7 @@ public class SmallPlayer : MonoBehaviour, IBallUser, IXzController {
 
   //Called in response to being grabbed or thrown
   private void OnHeightChanged() {
-    Debug.LogWarning("TODO: Change xz-position of grabbed/thrown player(s)");
+    Debug.LogWarning("TODO: Change xz-position of SmallPlayer");
 
     Vector3 newPos = transform.position;
 
