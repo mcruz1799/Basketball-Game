@@ -16,6 +16,10 @@ public class BallUserComponent : MonoBehaviour {
   }
 
   public void HoldBall(IBall ball) {
+    if (ball == null) {
+      ball.SetParent(null);
+    }
+
     ball.SetParent(transform);
     Vector3 ballPosition = Vector3.zero;
     ballPosition.x = transform.lossyScale.x / 2 + ball.Radius;

@@ -87,8 +87,10 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   }
 
   public void HoldBall(IBall ball) {
-    ball.Owner = this;
     ballUserComponent.HoldBall(ball);
+    if (ball != null) {
+      ball.Owner = this;
+    }
   }
 
 
