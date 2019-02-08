@@ -177,19 +177,19 @@ public class GameManager : MonoBehaviour {
                     S.ball.SetPosition(S.player2.transform.position);
                     S.ball.SetParent(S.player2);
                     S.ball.transform.localPosition += new Vector3(0.5f, 0.5f, 0.5f);
-                    S.ball.SetOwner((IPlayer)S.player1.gameObject.GetComponent<TallPlayer>());
+                    S.ball.SetOwner((IPlayer)S.player2.gameObject.GetComponent<TallPlayer>());
                     break;
                 case XboxController.Third: //small2
                     S.ball.SetPosition(S.player3.transform.position);
                     S.ball.SetParent(S.player3);
                     S.ball.transform.localPosition += new Vector3(0.5f, 0.5f, 0.5f);
-                    S.ball.SetOwner((IPlayer)S.player1.gameObject.GetComponent<SmallPlayer>());
+                    S.ball.SetOwner((IPlayer)S.player3.gameObject.GetComponent<SmallPlayer>());
                     break;
                 case XboxController.Fourth: //tall2
                     S.ball.SetPosition(S.player4.transform.position);
                     S.ball.SetParent(S.player4);
                     S.ball.transform.localPosition += new Vector3(0.5f, 0.5f, 0.5f);
-                    S.ball.SetOwner((IPlayer)S.player1.gameObject.GetComponent<TallPlayer>());
+                    S.ball.SetOwner((IPlayer)S.player4.gameObject.GetComponent<TallPlayer>());
                     break;
             }
             S.tipoff_screen.SetActive(false);
