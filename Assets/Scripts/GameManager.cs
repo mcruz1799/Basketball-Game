@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
   private Text gameTimeText;
   private Text team1ScoreText;
   private Text team2ScoreText;
+  private bool tipoff;
 
   static bool overtime;
   //this is pointless, only needed to call StopCoroutine
@@ -65,7 +66,10 @@ public class GameManager : MonoBehaviour {
     overtime = false;
     curr_time = game_time;
     setGameTime(curr_time);
-    S.StartCoroutine(TipOff());
+    S.tipoff = true;
+    S.tipoff_screen.SetActive(true);
+    S.StartCoroutine(UpdateTime()); //start updating the game
+    S.StartCoroutine(GameTime()); //start counting the game
   }
 
   private void end_game() {
@@ -143,38 +147,6 @@ public class GameManager : MonoBehaviour {
     overtime_screen.SetActive(false);
   }
 
-  private IEnumerator TipOff() {
-    //tipoff_screen.SetActive(true);
-    while (false) {
-      if (XCI.GetButtonDown(XboxButton.A)) {
-        switch (S.controller) {
-          case XboxController.First: //small1
-            S.ball.SetParent(S.player1);
-            S.ball.SetPosition(player1.transform.position);
-            break;
-          case XboxController.Second: //tall1
-            S.ball.SetParent(S.player2);
-            S.ball.SetPosition(player2.transform.position);
-            break;
-          case XboxController.Third: //small2
-            S.ball.SetParent(S.player3);
-            S.ball.SetPosition(player3.transform.position);
-            break;
-          case XboxController.Fourth: //tall2
-            S.ball.SetParent(S.player4);
-            S.ball.SetPosition(player4.transform.position);
-            break;
-        }
-        tipoff_screen.SetActive(false);
-        break;
-      }
-      yield return new WaitForSeconds(0);
-    }
-    S.StartCoroutine(UpdateTime()); //start updating the game
-    S.StartCoroutine(GameTime()); //start counting the game
-    yield return new WaitForSeconds(0);
-  }
-
   private void setGameTime(float time) {
     float minutes = Mathf.Floor(time / 60);
     float seconds = time % 60;
@@ -183,5 +155,44 @@ public class GameManager : MonoBehaviour {
     if (minutes < 10) min_str = "0" + min_str;
     if (seconds < 10) sec_str = "0" + sec_str;
     gameTimeText.text = min_str + ":" + sec_str;
+  }
+  
+  //Players can check for tip-off priority.
+  public void CheckTipOff(XboxController controller)
+  {
+        Debug.Log("Checking TipOff...");
+    if (S.tipoff)
+    {
+            S.tipoff = false;
+            switch (controller)
+            {
+                case XboxController.First: //small1
+                    S.ball.SetPosition(S.player1.transform.position);
+                    S.ball.SetParent(S.player1);
+                    S.ball.transform.localPosition += new Vector3(0.5f, 0.5f, 0.5f);
+                    S.ball.SetOwner((IPlayer)S.player1.gameObject.GetComponent<SmallPlayer>());
+                    
+                    break;
+                case XboxController.Second: //tall1
+                    S.ball.SetPosition(S.player2.transform.position);
+                    S.ball.SetParent(S.player2);
+                    S.ball.transform.localPosition += new Vector3(0.5f, 0.5f, 0.5f);
+                    S.ball.SetOwner((IPlayer)S.player1.gameObject.GetComponent<TallPlayer>());
+                    break;
+                case XboxController.Third: //small2
+                    S.ball.SetPosition(S.player3.transform.position);
+                    S.ball.SetParent(S.player3);
+                    S.ball.transform.localPosition += new Vector3(0.5f, 0.5f, 0.5f);
+                    S.ball.SetOwner((IPlayer)S.player1.gameObject.GetComponent<SmallPlayer>());
+                    break;
+                case XboxController.Fourth: //tall2
+                    S.ball.SetPosition(S.player4.transform.position);
+                    S.ball.SetParent(S.player4);
+                    S.ball.transform.localPosition += new Vector3(0.5f, 0.5f, 0.5f);
+                    S.ball.SetOwner((IPlayer)S.player1.gameObject.GetComponent<TallPlayer>());
+                    break;
+            }
+            S.tipoff_screen.SetActive(false);
+    }
   }
 }

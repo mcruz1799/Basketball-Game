@@ -97,6 +97,8 @@ public class TallPlayer : MonoBehaviour, IPlayer {
         } else
         {
             //TODO: Check Tip-Off, or attempt to pick-up small player.
+            GameManager.S.CheckTipOff(controller);
+            PickUpSmallPlayer();
         }
   }
 }

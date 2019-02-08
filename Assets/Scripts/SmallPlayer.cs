@@ -127,6 +127,7 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
         } else
         {
             //TODO: Check for Tip-Off.
+            GameManager.S.CheckTipOff(controller);
         }
   }
 }

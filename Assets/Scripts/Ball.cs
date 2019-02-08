@@ -14,4 +14,8 @@ public class Ball : MonoBehaviour, IBall {
   public void SetParent(Transform newParent) {
     transform.SetParent(newParent, true);
   }
+  public void SetOwner(IPlayer player)
+  {
+        Owner = player;
+  }
 }
