@@ -1334,7 +1334,7 @@ MonoBehaviour:
   game_time_ins: 10
   winning_score_ins: 5
   winning_screen: {fileID: 875067515}
-  winning_text: {fileID: 0}
+  winning_text: {fileID: 225023743}
   tipoff_screen: {fileID: 1090851727}
   overtime_screen: {fileID: 1674055789}
 --- !u!4 &755832800
@@ -1364,11 +1364,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players:
-  - {fileID: 206142134}
   - {fileID: 986456962}
+  - {fileID: 206142134}
   players2:
-  - {fileID: 1645638339}
   - {fileID: 492249969}
+  - {fileID: 1645638339}
 --- !u!1 &875067515
 GameObject:
   m_ObjectHideFlags: 0
