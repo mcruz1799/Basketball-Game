@@ -8,7 +8,6 @@ using XboxCtrlrInput;
 public class TallPlayer : MonoBehaviour, IPlayer {
 #pragma warning disable 0649
   [SerializeField] private BoxCollider grabHitbox;
-  [SerializeField] private float throwDistance;
   [SerializeField] private ScoreComponent.PlayerType _team;
 
 #pragma warning restore 0649
@@ -25,15 +24,19 @@ public class TallPlayer : MonoBehaviour, IPlayer {
     ballUserComponent = GetComponent<BallUserComponent>();
   }
 
-  public void ThrowSmallPlayer() {
-    Above.OnThrown();
+  public bool ThrowSmallPlayer() {
+    if (Above == null || !Above.OnThrown(XLook, ZLook)) {
+      return false;
+    }
+
     Above = null;
+    return true;
   }
 
   public bool PickUpSmallPlayer() {
 
     //Can't pick up SmallPlayer unless your hands are free and you're not being carried
-    bool handsFree = !HasBall;
+    bool handsFree = !HasBall && Above == null;
     if (!handsFree) {
       return false;
     }
@@ -53,8 +56,6 @@ public class TallPlayer : MonoBehaviour, IPlayer {
 
   public void OnAboveJumpingOff() {
     Above = null;
-    Debug.LogWarning("TallPlayer.OnAboveJumpingOff not yet implemented");
-    //Anything else to actually do...?
   }
 
   //IBallUser
