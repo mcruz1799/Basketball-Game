@@ -1329,14 +1329,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d629f638e848d9d4a8429cea29065796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: 0
-  ball: {fileID: 12438800}
-  game_time_ins: 10
-  winning_score_ins: 5
-  winning_screen: {fileID: 875067515}
-  winning_text: {fileID: 225023743}
-  tipoff_screen: {fileID: 1090851727}
-  overtime_screen: {fileID: 1674055789}
+  _ball: {fileID: 12438800}
+  _smallPlayer1: {fileID: 986456962}
+  _tallPlayer1: {fileID: 492249969}
+  _smallPlayer2: {fileID: 206142134}
+  _tallPlayer2: {fileID: 1645638339}
+  gameLength: 30
+  winningScore: 2
+  winningScreen: {fileID: 875067515}
+  winningText: {fileID: 225023743}
+  tipoffScreen: {fileID: 1090851727}
+  overtimeScreen: {fileID: 1674055789}
 --- !u!4 &755832800
 Transform:
   m_ObjectHideFlags: 0
@@ -1363,12 +1366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c552a7c2e1fe0cd43854f670899a6733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players:
-  - {fileID: 986456962}
-  - {fileID: 206142134}
-  players2:
-  - {fileID: 492249969}
-  - {fileID: 1645638339}
 --- !u!1 &875067515
 GameObject:
   m_ObjectHideFlags: 0

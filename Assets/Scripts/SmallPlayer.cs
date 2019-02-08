@@ -76,7 +76,7 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   //IBallUser
   //
 
-  public bool HasBall => GameManager.S.Ball.Owner.Equals(this);
+  public bool HasBall => GameManager.S.Ball.Owner != null && GameManager.S.Ball.Owner.Equals(this);
 
   public void Pass() {
     ballUserComponent.Pass(xzController.XLook, xzController.ZLook);
@@ -120,6 +120,7 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   */
   public void PressA(XboxController controller)
   {
+        Debug.Log(HasBall);
         if (HasBall)
         {
             Pass();
@@ -127,6 +128,7 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
         {
             //TODO: Check for Tip-Off.
             GameManager.S.CheckTipOff(controller);
+            JumpOffPlayer();
         }
   }
 }

@@ -64,9 +64,10 @@ public class TallPlayer : MonoBehaviour, IPlayer {
   //IBallUser
   //-----------------------------------------------
 
-  public bool HasBall => GameManager.S.Ball.Owner.Equals(this);
+  public bool HasBall => GameManager.S.Ball.Owner != null  && GameManager.S.Ball.Owner.Equals(this);
 
   public void Pass() {
+    Debug.Log("Pass");
     ballUserComponent.Pass(xzController.XLook, xzController.ZLook);
   }
 
@@ -104,6 +105,7 @@ public class TallPlayer : MonoBehaviour, IPlayer {
                                                    */
   public void PressA(XboxController controller)
   {
+        
         if (HasBall)
         {
             Pass();

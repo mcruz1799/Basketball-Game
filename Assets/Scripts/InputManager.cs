@@ -3,16 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
 
-public class InputManager : MonoBehaviour {
+public class InputManager : MonoBehaviour
+{
   //[SerializeField] private SmallPlayer smallPlayer1;
   //[SerializeField] private SmallPlayer smallPlayer2;
   //[SerializeField] private SmallPlayer smallPlayer3;
   //[SerializeField] private SmallPlayer smallPlayer4;
-  public SmallPlayer[] players = new SmallPlayer[2];
-  public TallPlayer[] players2 = new TallPlayer[2];
-  private XboxController[] controllers = new XboxController[] { XboxController.First, XboxController.Second, XboxController.Third, XboxController.Fourth };
+  //public SmallPlayer[] players = new SmallPlayer[2];
+  //public TallPlayer[] players2 = new TallPlayer[2];
+    private SmallPlayer[] players = new SmallPlayer[2];
+    private TallPlayer[] players2 = new TallPlayer[2];
+    private XboxController[] controllers = new XboxController[] { XboxController.First, XboxController.Second, XboxController.Third, XboxController.Fourth };
 
-  private void Update() {
+
+    private void Start()
+    {
+        players[0] = (SmallPlayer)GameManager.S.SmallPlayer1;
+        players[1] = (SmallPlayer)GameManager.S.SmallPlayer2;
+        players2[0] = (TallPlayer)GameManager.S.TallPlayer2;
+        players2[1] = (TallPlayer)GameManager.S.TallPlayer1;
+    }
+    private void Update() {
 
     //For four controllers connected to the machine.
     for (int i = 0; i < 4; i++) {
@@ -48,7 +59,8 @@ public class InputManager : MonoBehaviour {
     //Check Button Presses
     if (XCI.GetButton(XboxButton.A,controller))
     {
-      Debug.Log("A Pressed.");
+     // Debug.Log("A Pressed.");
+      Debug.Log("Player" + player + "Controller" + controller);
       player.PressA(controller);
     }
   }

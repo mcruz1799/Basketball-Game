@@ -16,6 +16,7 @@ public class BallUserComponent : MonoBehaviour {
   }
 
   public void HoldBall(IBall ball) {
+    Debug.Log("Ball:" + ball);
     if (ball == null) {
       ball.SetParent(null);
     }
