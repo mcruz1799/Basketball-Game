@@ -12,9 +12,9 @@ public class InputManager : MonoBehaviour
     private void Start()
     {
         players[0] = GameManager.S.SmallPlayer1;
-        players[1] = GameManager.S.SmallPlayer2;
-        players[2] = GameManager.S.TallPlayer2;
-        players[3] = GameManager.S.TallPlayer1;
+        players[1] = GameManager.S.TallPlayer1;
+        players[2] = GameManager.S.SmallPlayer2;
+        players[3] = GameManager.S.TallPlayer2;
     }
     private void Update() {
 

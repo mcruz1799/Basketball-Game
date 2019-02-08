@@ -189,7 +189,7 @@ public class GameManager : MonoBehaviour {
           break;
 
         case XboxController.Fourth: //tall2
-          TallPlayer1.HoldBall(Ball);
+          TallPlayer2.HoldBall(Ball);
           break;
       }
       S.tipoffScreen.SetActive(false);
