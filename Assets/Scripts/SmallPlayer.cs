@@ -110,6 +110,7 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   public float ZLook => xzController.ZLook;
 
   public void Move(float xMove, float zMove) {
+    if (Below != null) return;
     xzController.Move(xMove, zMove);
   }
 
