@@ -7,5 +7,5 @@ public interface IBallUser {
 
   void Pass();
   bool Steal();
-  void HoldBall();
+  void HoldBall(IBall ball);
 }

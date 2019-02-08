@@ -63,6 +63,9 @@ public class TallPlayer : MonoBehaviour, IPlayer {
 
   //IBallUser
   //-----------------------------------------------
+
+  public bool HasBall => GameManager.S.Ball.Owner.Equals(this);
+
   public void Pass() {
     ballUserComponent.Pass(xzController.XLook, xzController.ZLook);
   }
@@ -70,7 +73,10 @@ public class TallPlayer : MonoBehaviour, IPlayer {
   public bool Steal() {
     return ballUserComponent.Steal(grabHitbox);
   }
-  public bool HasBall => ballUserComponent.HasBall;
+
+  public void HoldBall(IBall ball) {
+    ballUserComponent.HoldBall(ball);
+  }
 
 
   //IXzController

@@ -15,13 +15,6 @@ public class BallUserComponent : MonoBehaviour {
     xzController = GetComponent<PlayerMover>();
   }
 
-  public bool HasBall {
-    get {
-      Debug.LogWarning("BallUserComponent.HasBall is broken; implementation needs to be in SmallPlayer/TallPlayer");
-      return false;
-    }
-  }
-
   public void HoldBall(IBall ball) {
     ball.SetParent(transform);
     Vector3 ballPosition = Vector3.zero;

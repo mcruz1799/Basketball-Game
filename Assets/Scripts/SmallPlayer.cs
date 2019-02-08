@@ -77,7 +77,7 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   //IBallUser
   //
 
-  public bool HasBall => ballUserComponent.HasBall;
+  public bool HasBall => GameManager.S.Ball.Owner.Equals(this);
 
   public void Pass() {
     ballUserComponent.Pass(xzController.XLook, xzController.ZLook);
@@ -85,6 +85,10 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
 
   public bool Steal() {
     return ballUserComponent.Steal(grabHitbox);
+  }
+
+  public void HoldBall(IBall ball) {
+    ballUserComponent.HoldBall(ball);
   }
 
 
