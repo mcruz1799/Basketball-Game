@@ -20,7 +20,6 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   public ScoreComponent.PlayerType Team { get; private set; }
   public TallPlayer Below { get; private set; }
 
-
   private void Awake() {
     Team = _team;
     ballUserComponent = GetComponent<BallUserComponent>();
@@ -88,6 +87,7 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   }
 
   public void HoldBall(IBall ball) {
+    ball.Owner = this;
     ballUserComponent.HoldBall(ball);
   }
 

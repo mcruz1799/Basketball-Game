@@ -24,7 +24,6 @@ public class BallUserComponent : MonoBehaviour {
   }
 
   public void Pass(float xDirection, float zDirection) {
-    //HasBall = false;
     Debug.LogWarning("Pass is not yet implemented");
   }
 
@@ -33,15 +32,11 @@ public class BallUserComponent : MonoBehaviour {
     foreach (RaycastHit h in hits) {
       IBall ball = h.collider.GetComponent<Ball>();
       if (ball != null) {
-        //ball.SetPosition(new Vector3(???, heightToHoldBallAt, ???));
-        //ball.SetParent(transform);
-
-        Debug.LogWarning("Steal successfully detected the ball, but doesn't do anything with it due to only being partially implemented");
+        HoldBall(ball);
         return true;
       }
     }
 
-    Debug.LogWarning("Steal isn't implemented yet");
     return false;
   }
 }

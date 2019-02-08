@@ -75,6 +75,7 @@ public class TallPlayer : MonoBehaviour, IPlayer {
   }
 
   public void HoldBall(IBall ball) {
+    ball.Owner = this;
     ballUserComponent.HoldBall(ball);
   }
 
