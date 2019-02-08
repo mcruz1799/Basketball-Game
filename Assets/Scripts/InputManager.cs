@@ -24,6 +24,7 @@ public class InputManager : MonoBehaviour {
       } catch (System.Exception e)
       {
         //TODO: Add UI message to prompt connecting controller.
+        //Debug.Log("Error receiving input.");
         continue;
       } 
     }
@@ -47,6 +48,7 @@ public class InputManager : MonoBehaviour {
     //Check Button Presses
     if (XCI.GetButton(XboxButton.A,controller))
     {
+      Debug.Log("A Pressed.");
       player.PressA(controller);
     }
   }

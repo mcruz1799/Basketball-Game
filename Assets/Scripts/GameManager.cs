@@ -53,9 +53,9 @@ public class GameManager : MonoBehaviour {
     winning_screen.SetActive(false);
     overtime_screen.SetActive(false);
     player1 = S.GetComponent<InputManager>().players[0].transform;
-    player2 = S.GetComponent<InputManager>().players2[0].transform;
+    player2 = S.GetComponent<InputManager>().players2[1].transform;
     player3 = S.GetComponent<InputManager>().players[1].transform;
-    player4 = S.GetComponent<InputManager>().players2[1].transform;
+    player4 = S.GetComponent<InputManager>().players2[0].transform;
   }
 
   private void start_game() {
