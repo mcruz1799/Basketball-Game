@@ -35,50 +35,41 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   public bool JumpOffPlayer() {
 
     //Can't jump off if you're not being carried
-    if (Below == null) {
+    if (Below == null || !OnThrown(XLook, ZLook)) {
       return false;
     }
 
     //Below is no longer carrying me
     Below.OnAboveJumpingOff();
     Below = null;
-
-    Debug.LogWarning("SmallPlayer.JumpOffPlayer is not yet implemented");
-    //Change height, change xz-position
-
     return true;
   }
 
   public void OnPickedUp(TallPlayer player) {
     Below = player;
-    Debug.LogWarning("SmallPlayer.OnPickedUp is not yet implemented");
-    //Change height, change xz-position
+    transform.SetParent(Below.transform, true);
+
+    Vector3 newPosition = Vector3.zero;
+
+    newPosition.y += (this.transform.lossyScale.y + Below.transform.lossyScale.y) / 2;
+    transform.localPosition = newPosition;
   }
 
-  public void OnThrown() {
+  public bool OnThrown(float xDirection, float zDirection) {
     Below = null;
-    Debug.LogWarning("SmallPlayer.OnThrown is not yet implemented");
-    //Change height, change xz-position
-  }
 
+    //Assumes ground is at y = 0
+    float yGround = 0;
+    Vector3 newPosition = transform.position;
+    newPosition.y = yGround + transform.lossyScale.y / 2;
 
-  //
-  //Miscellaneous helpers
-  //
+    Vector3 throwDirection = new Vector3(xDirection, 0, zDirection).normalized;
+    newPosition += throwDirection * jumpDistance;
 
-  //Called in response to being grabbed or thrown
-  private void OnHeightChanged() {
-    Debug.LogWarning("TODO: Change xz-position of SmallPlayer");
-
-    Vector3 newPos = transform.position;
-
-    //Assumes ground is at y = 0 and adjusts for height of self.
-    //Alternative: enable rigidbody y-constraint iff Below == null?
-    newPos.y = transform.lossyScale.y / 2; 
-
-    //newPos += new Vector3(XLook, 0, ZLook) * throwDistance;
-
-    transform.position = newPos;
+    //TODO: Check if throw is in bounds?
+    transform.SetParent(null, true);
+    transform.position = newPosition;
+    return true;
   }
 
 
@@ -115,10 +106,12 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
     xzController.SetRotation(xLook, zLook);
   }
   
-  /*Possibilities of Pressing A:
+  //TODO: Move this functionality into the InputController
+  /*
+   Possibilities of Pressing A:
    Tip-Off: Gain control of the ball.
    Pass: If Player has the ball, pass it.
-                                                   */
+  */
   public void PressA(XboxController controller)
   {
         if (HasBall)
