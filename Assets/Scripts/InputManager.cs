@@ -5,23 +5,16 @@ using XboxCtrlrInput;
 
 public class InputManager : MonoBehaviour
 {
-  //[SerializeField] private SmallPlayer smallPlayer1;
-  //[SerializeField] private SmallPlayer smallPlayer2;
-  //[SerializeField] private SmallPlayer smallPlayer3;
-  //[SerializeField] private SmallPlayer smallPlayer4;
-  //public SmallPlayer[] players = new SmallPlayer[2];
-  //public TallPlayer[] players2 = new TallPlayer[2];
-    private SmallPlayer[] players = new SmallPlayer[2];
-    private TallPlayer[] players2 = new TallPlayer[2];
+    private IPlayer[] players = new IPlayer[4];
     private XboxController[] controllers = new XboxController[] { XboxController.First, XboxController.Second, XboxController.Third, XboxController.Fourth };
 
 
     private void Start()
     {
-        players[0] = (SmallPlayer)GameManager.S.SmallPlayer1;
-        players[1] = (SmallPlayer)GameManager.S.SmallPlayer2;
-        players2[0] = (TallPlayer)GameManager.S.TallPlayer2;
-        players2[1] = (TallPlayer)GameManager.S.TallPlayer1;
+        players[0] = GameManager.S.SmallPlayer1;
+        players[1] = GameManager.S.SmallPlayer2;
+        players[2] = GameManager.S.TallPlayer2;
+        players[3] = GameManager.S.TallPlayer1;
     }
     private void Update() {
 
@@ -29,9 +22,7 @@ public class InputManager : MonoBehaviour
     for (int i = 0; i < 4; i++) {
       try
       {
-        XboxController control = controllers[i % 2];
-        if (i % 2 == 0) checkInputs(control, players[i % 2], "small");
-        else checkInputs(control, players2[i % 2], "tall");
+                checkInputs(controllers[i], players[i]);
       } catch (System.Exception e)
       {
         //TODO: Add UI message to prompt connecting controller.
@@ -42,7 +33,7 @@ public class InputManager : MonoBehaviour
   }
 
   //Checks for inputs from a specific controller, and applies movement to the s
-  private void checkInputs(XboxController controller, IPlayer player, string PlayerType) {
+  private void checkInputs(XboxController controller, IPlayer player) {
     
     //Check Movement Inputs
     float xMove = XCI.GetAxis(XboxAxis.LeftStickX, controller);
