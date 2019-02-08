@@ -34,7 +34,7 @@ public class TallPlayer : MonoBehaviour, IPlayer {
   }
 
   public bool PickUpSmallPlayer() {
-
+    Debug.Log("Picking up.");
     //Can't pick up SmallPlayer unless your hands are free and you're not being carried
     bool handsFree = !HasBall && Above == null;
     if (!handsFree) {
@@ -42,9 +42,12 @@ public class TallPlayer : MonoBehaviour, IPlayer {
     }
 
     //Check grab hitbox
-    RaycastHit[] hits = Physics.BoxCastAll(grabHitbox.center, grabHitbox.bounds.extents, Vector3.zero);
+    Vector3 distance = grabHitbox.transform.position - transform.position;
+    RaycastHit[] hits = Physics.BoxCastAll(transform.position, grabHitbox.bounds.extents,distance);
+    Debug.Log("Hits: " + hits.Length);
     foreach (RaycastHit h in hits) {
       SmallPlayer other = h.collider.GetComponent<SmallPlayer>();
+      Debug.Log("Other:" + other);
       if (other != null && other.Team == Team && other.Below == null) {
         other.OnPickedUp(this);
         break;
