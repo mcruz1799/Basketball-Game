@@ -42,8 +42,8 @@ public class TallPlayer : MonoBehaviour, IPlayer {
     }
 
     //Check grab hitbox
-    Vector3 distance = grabHitbox.transform.position - transform.position;
-    RaycastHit[] hits = Physics.BoxCastAll(transform.position, grabHitbox.bounds.extents,distance);
+    Vector3 selfToHitbox = grabHitbox.transform.position - transform.position;
+    RaycastHit[] hits = Physics.BoxCastAll(transform.position, grabHitbox.bounds.extents, selfToHitbox, Quaternion.identity, selfToHitbox.magnitude);
     Debug.Log("Hits: " + hits.Length);
     foreach (RaycastHit h in hits) {
       SmallPlayer other = h.collider.GetComponent<SmallPlayer>();
