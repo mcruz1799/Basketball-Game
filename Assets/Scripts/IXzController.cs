@@ -11,6 +11,5 @@ public interface IXzController {
   float ZLook { get; }
 
   void Move(float xMove, float zMove);
-  void SetRotation(float xLook, float zLook);
-  void PressA(XboxController controller);
+    void SetRotation(float xLook, float zLook);
 }

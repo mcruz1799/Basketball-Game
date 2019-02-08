@@ -23,7 +23,6 @@ public class BallUserComponent : MonoBehaviour {
 
     ball.SetParent(transform);
     Vector3 ballPosition = Vector3.zero;
-    ballPosition.x = transform.lossyScale.x / 2 + ball.Radius;
     ballPosition.z = transform.lossyScale.z / 2 + ball.Radius;
     ball.SetPosition(ballPosition);
   }

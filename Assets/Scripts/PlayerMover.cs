@@ -30,4 +30,9 @@ public class PlayerMover : MonoBehaviour, IXzController {
   {
         //Added to remove compile-time issues.
   }
+  
+  public void PressB(XboxController controller)
+  {
+
+  }
 }

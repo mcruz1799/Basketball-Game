@@ -72,7 +72,11 @@ public class TallPlayer : MonoBehaviour, IPlayer {
   }
 
   public bool Steal() {
-    return ballUserComponent.Steal(grabHitbox);
+    if (ballUserComponent.Steal(grabHitbox))
+        {
+            GameManager.S.Ball.Owner = this;
+            return true;
+        } return false;
   }
 
   public void HoldBall(IBall ball) {
@@ -115,5 +119,10 @@ public class TallPlayer : MonoBehaviour, IPlayer {
             GameManager.S.CheckTipOff(controller);
             PickUpSmallPlayer();
         }
+  }
+  public void PressB(XboxController controller)
+  {
+        //TODO: Add B press for tall player.
+        Steal();
   }
 }

@@ -42,7 +42,7 @@ public class InputManager : MonoBehaviour
   }
 
   //Checks for inputs from a specific controller, and applies movement to the s
-  private void checkInputs(XboxController controller, IXzController player, string PlayerType) {
+  private void checkInputs(XboxController controller, IPlayer player, string PlayerType) {
     
     //Check Movement Inputs
     float xMove = XCI.GetAxis(XboxAxis.LeftStickX, controller);
@@ -63,5 +63,11 @@ public class InputManager : MonoBehaviour
       Debug.Log("Player" + player + "Controller" + controller);
       player.PressA(controller);
     }
-  }
+    if (XCI.GetButton(XboxButton.B, controller))
+    {
+        // Debug.Log("B Pressed.");
+        Debug.Log("Player" + player + "Controller" + controller);
+        player.PressB(controller);
+    }
+    }
 }

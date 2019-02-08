@@ -83,8 +83,13 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   }
 
   public bool Steal() {
-    return ballUserComponent.Steal(grabHitbox);
-  }
+        if (ballUserComponent.Steal(grabHitbox))
+        {
+            GameManager.S.Ball.Owner = this;
+            return true;
+        }
+        return false;
+    }
 
   public void HoldBall(IBall ball) {
     ballUserComponent.HoldBall(ball);
@@ -130,5 +135,9 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
             GameManager.S.CheckTipOff(controller);
             JumpOffPlayer();
         }
+  }
+  public void PressB(XboxController controller)
+  {
+        Steal();
   }
 }
