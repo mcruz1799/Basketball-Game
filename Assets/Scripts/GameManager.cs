@@ -27,9 +27,10 @@ public class GameManager : MonoBehaviour {
   static bool overtime;
   //this is pointless, only needed to call StopCoroutine
   public static GameManager S;
-  [SerializeField] GameObject winning_screen;
-  [SerializeField] GameObject tipoff_screen;
-  [SerializeField] GameObject overtime_screen;
+  [SerializeField] private GameObject winning_screen;
+  [SerializeField] private Text winning_text;
+  [SerializeField] private GameObject tipoff_screen;
+  [SerializeField] private GameObject overtime_screen;
 
   /********************************************************
                      UI ELEMENTS TO ADD:
@@ -50,7 +51,6 @@ public class GameManager : MonoBehaviour {
     Debug.Log("Starting Game with " + game_time + " Seconds");
     winning_screen.SetActive(false);
     overtime_screen.SetActive(false);
-    tipoff_screen.SetActive(true);
     player1 = S.GetComponent<InputManager>().players[0].transform;
     player2 = S.GetComponent<InputManager>().players2[0].transform;
     player3 = S.GetComponent<InputManager>().players[1].transform;
@@ -69,20 +69,19 @@ public class GameManager : MonoBehaviour {
   }
 
   private void end_game() {
+    //TODO: disable player movements
     S.StopAllCoroutines();
+    overtime_screen.SetActive(false);
     overtime = false;
     if (score_team2 > score_team1) {
-      S.winning_screen.GetComponent<Text>().text =
-          "Congratulations to Team 2!";
+      S.winning_text.text = "Congratulations to \nTeam 2!";
       S.winning_screen.SetActive(true);
     } else if (score_team1 > score_team2) {
-      S.winning_screen.GetComponent<Text>().text =
-          "Congratulations to Team 1!";
+      S.winning_text.text = "Congratulations to \nTeam 1!";
       S.winning_screen.SetActive(true);
     } else {
       overtime = true;
       S.StartCoroutine(OvertimeGame());
-      //TODO: display a screen saying WHOEVER SCORES NEXT WINS
     }
   }
   //scoring, to be called from player script
@@ -126,6 +125,7 @@ public class GameManager : MonoBehaviour {
   private IEnumerator GameTime() {
     yield return new WaitForSeconds(game_time);
     Debug.Log("Game Time Up");
+    setGameTime(0);
     end_game();
   }
 
@@ -139,11 +139,12 @@ public class GameManager : MonoBehaviour {
 
   private IEnumerator OvertimeGame(){
     overtime_screen.SetActive(true);
-    yield return new WaitForSeconds(5);
+    yield return new WaitForSeconds(3);
     overtime_screen.SetActive(false);
   }
 
   private IEnumerator TipOff() {
+    //tipoff_screen.SetActive(true);
     while (false) {
       if (XCI.GetButtonDown(XboxButton.A)) {
         switch (S.controller) {
@@ -169,14 +170,14 @@ public class GameManager : MonoBehaviour {
       }
       yield return new WaitForSeconds(0);
     }
-    S.StartCoroutine(GameTime()); //start counting the game
     S.StartCoroutine(UpdateTime()); //start updating the game
+    S.StartCoroutine(GameTime()); //start counting the game
     yield return new WaitForSeconds(0);
   }
 
   private void setGameTime(float time) {
-    float minutes = Mathf.Floor(curr_time / 60);
-    float seconds = curr_time % 60;
+    float minutes = Mathf.Floor(time / 60);
+    float seconds = time % 60;
     string min_str = minutes.ToString();
     string sec_str = seconds.ToString();
     if (minutes < 10) min_str = "0" + min_str;
