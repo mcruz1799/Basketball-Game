@@ -15,7 +15,20 @@ public class BallUserComponent : MonoBehaviour {
     xzController = GetComponent<PlayerMover>();
   }
 
-  public bool HasBall => GameManager.S.ball.Owner == this.gameObject.GetComponent<IPlayer>();
+  public bool HasBall {
+    get {
+      Debug.LogWarning("BallUserComponent.HasBall is broken; implementation needs to be in SmallPlayer/TallPlayer");
+      return false;
+    }
+  }
+
+  public void HoldBall(IBall ball) {
+    ball.SetParent(transform);
+    Vector3 ballPosition = Vector3.zero;
+    ballPosition.x = transform.lossyScale.x / 2 + ball.Radius;
+    ballPosition.z = transform.lossyScale.z / 2 + ball.Radius;
+    ball.SetPosition(ballPosition);
+  }
 
   public void Pass(float xDirection, float zDirection) {
     //HasBall = false;

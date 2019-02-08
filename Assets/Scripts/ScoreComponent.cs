@@ -7,7 +7,7 @@ public class ScoreComponent : MonoBehaviour
     public enum PlayerType {team1, team2};
     [SerializeField] PlayerType current_player;
     void update_score_local(int i){
-        GameManager.S.update_score(current_player, i);
+        GameManager.S.UpdateScore(current_player, i);
     }
 
     void OnTriggerEnter(Collider other){

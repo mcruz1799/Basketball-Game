@@ -6,32 +6,46 @@ using UnityEngine.UI;
 using XboxCtrlrInput;
 
 public class GameManager : MonoBehaviour {
-  public XboxController controller;
-  public Ball ball;
+  public static GameManager S;
 
-  private Transform player1;
-  private Transform player2;
-  private Transform player3;
-  private Transform player4;
-  private static int score_team1;
-  private static int score_team2;
-  [SerializeField] private int game_time_ins;
-  [SerializeField] private int winning_score_ins;
+#pragma warning disable 0649
+  [SerializeField] private Ball _ball;
+
+  [SerializeField] private SmallPlayer _smallPlayer1;
+  [SerializeField] private TallPlayer _tallPlayer1;
+  [SerializeField] private SmallPlayer _smallPlayer2;
+  [SerializeField] private TallPlayer _tallPlayer2;
+
+  [SerializeField] private int gameLength;
+  [SerializeField] private int winningScore;
+
+  [SerializeField] private GameObject winningScreen;
+  [SerializeField] private Text winningText;
+  [SerializeField] private GameObject tipoffScreen;
+  [SerializeField] private GameObject overtimeScreen;
+#pragma warning restore 0649
+
+  public IBall Ball { get; private set; }
+
+  public IPlayer SmallPlayer1 { get; private set; }
+  public IPlayer TallPlayer1 { get; private set; }
+  public IPlayer SmallPlayer2 { get; private set; }
+  public IPlayer TallPlayer2 { get; private set; }
+
+  private int score_team1;
+  private int score_team2;
+  private int winning_score;
+
   private float game_time;
   private float curr_time;
-  private int winning_score;
+
   private Text gameTimeText;
   private Text team1ScoreText;
   private Text team2ScoreText;
   private bool tipoff;
 
-  static bool overtime;
+  private bool overtime;
   //this is pointless, only needed to call StopCoroutine
-  public static GameManager S;
-  [SerializeField] private GameObject winning_screen;
-  [SerializeField] private Text winning_text;
-  [SerializeField] private GameObject tipoff_screen;
-  [SerializeField] private GameObject overtime_screen;
 
   /********************************************************
                      UI ELEMENTS TO ADD:
@@ -43,53 +57,61 @@ public class GameManager : MonoBehaviour {
    * HUD (current scores, current time left)
    ********************************************************/
 
-  void Awake() {
+  private void Awake() {
     S = this;
+
+    Ball = _ball;
+
+    SmallPlayer1 = _smallPlayer1;
+    TallPlayer1 = _tallPlayer1;
+    SmallPlayer2 = _smallPlayer2;
+    TallPlayer2 = _tallPlayer2;
+
     team1ScoreText = GameObject.Find("HUDCanvas/Team1/team1_pts/Pts").GetComponent<Text>();
     team2ScoreText = GameObject.Find("HUDCanvas/Team2/team2_pts/Pts").GetComponent<Text>();
     gameTimeText = GameObject.Find("HUDCanvas/game_time/time").GetComponent<Text>();
-    start_game();
-    Debug.Log("Starting Game with " + game_time + " Seconds");
-    winning_screen.SetActive(false);
-    overtime_screen.SetActive(false);
-    player1 = S.GetComponent<InputManager>().players[0].transform;
-    player2 = S.GetComponent<InputManager>().players2[0].transform;
-    player3 = S.GetComponent<InputManager>().players[1].transform;
-    player4 = S.GetComponent<InputManager>().players2[1].transform;
+
+    StartGame();
   }
 
-  private void start_game() {
-    game_time = S.game_time_ins;
-    winning_score = S.winning_score_ins;
+  private void StartGame() {
+    Debug.Log("Starting Game with " + game_time + " Seconds");
+
+    winningScreen.SetActive(false);
+    overtimeScreen.SetActive(false);
+
+    game_time = gameLength;
+    winning_score = winningScore;
     score_team1 = 0;
     score_team2 = 0;
     overtime = false;
     curr_time = game_time;
-    setGameTime(curr_time);
-    S.tipoff = true;
-    S.tipoff_screen.SetActive(true);
-    S.StartCoroutine(UpdateTime()); //start updating the game
-    S.StartCoroutine(GameTime()); //start counting the game
+    SetGameTime(curr_time);
+    tipoff = true;
+    tipoffScreen.SetActive(true);
+    StartCoroutine(UpdateTime()); //start updating the game
+    StartCoroutine(GameTime()); //start counting the game
   }
 
-  private void end_game() {
+  private void EndGame() {
     //TODO: disable player movements
     S.StopAllCoroutines();
-    overtime_screen.SetActive(false);
+    overtimeScreen.SetActive(false);
     overtime = false;
     if (score_team2 > score_team1) {
-      S.winning_text.text = "Congratulations to \nTeam 2!";
-      S.winning_screen.SetActive(true);
+      S.winningText.text = "Congratulations to \nTeam 2!";
+      S.winningScreen.SetActive(true);
     } else if (score_team1 > score_team2) {
-      S.winning_text.text = "Congratulations to \nTeam 1!";
-      S.winning_screen.SetActive(true);
+      S.winningText.text = "Congratulations to \nTeam 1!";
+      S.winningScreen.SetActive(true);
     } else {
       overtime = true;
       S.StartCoroutine(OvertimeGame());
     }
   }
+
   //scoring, to be called from player script
-  public void update_score(ScoreComponent.PlayerType p, int i) {
+  public void UpdateScore(ScoreComponent.PlayerType p, int i) {
     if (p == ScoreComponent.PlayerType.team1) {
       score_team1 += i;
       team1ScoreText.text = score_team1.ToString();
@@ -99,55 +121,46 @@ public class GameManager : MonoBehaviour {
     }
     if (score_team1 >= winning_score || score_team2 >= winning_score
         || overtime) {
-      end_game();
+      EndGame();
     }
   }
 
   public void QuitGame() {
-    quit_game();
-  }
-
-  private void quit_game() {
     Application.Quit();
   }
 
   public void RestartGame() {
-    restart_game();
-  }
-
-  private void restart_game() {
     //TODO: change to load scene of main menu
     score_team1 = 0;
     score_team2 = 0;
     curr_time = game_time;
     overtime = false;
     //somehow reset player positions?
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name,
-        LoadSceneMode.Single);
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
   }
 
   private IEnumerator GameTime() {
     yield return new WaitForSeconds(game_time);
     Debug.Log("Game Time Up");
-    setGameTime(0);
-    end_game();
+    SetGameTime(0);
+    EndGame();
   }
 
   private IEnumerator UpdateTime() {
     while (curr_time > 0) {
       curr_time -= 1;
       yield return new WaitForSeconds(1);
-      setGameTime(curr_time);
+      SetGameTime(curr_time);
     }
   }
 
-  private IEnumerator OvertimeGame(){
-    overtime_screen.SetActive(true);
+  private IEnumerator OvertimeGame() {
+    overtimeScreen.SetActive(true);
     yield return new WaitForSeconds(3);
-    overtime_screen.SetActive(false);
+    overtimeScreen.SetActive(false);
   }
 
-  private void setGameTime(float time) {
+  private void SetGameTime(float time) {
     float minutes = Mathf.Floor(time / 60);
     float seconds = time % 60;
     string min_str = minutes.ToString();
@@ -156,43 +169,30 @@ public class GameManager : MonoBehaviour {
     if (seconds < 10) sec_str = "0" + sec_str;
     gameTimeText.text = min_str + ":" + sec_str;
   }
-  
+
   //Players can check for tip-off priority.
-  public void CheckTipOff(XboxController controller)
-  {
-        Debug.Log("Checking TipOff...");
-    if (S.tipoff)
-    {
-            S.tipoff = false;
-            switch (controller)
-            {
-                case XboxController.First: //small1
-                    S.ball.SetPosition(S.player1.transform.position);
-                    S.ball.SetParent(S.player1);
-                    S.ball.transform.localPosition += new Vector3(0.5f, 0.5f, 0.5f);
-                    S.ball.SetOwner((IPlayer)S.player1.gameObject.GetComponent<SmallPlayer>());
-                    
-                    break;
-                case XboxController.Second: //tall1
-                    S.ball.SetPosition(S.player2.transform.position);
-                    S.ball.SetParent(S.player2);
-                    S.ball.transform.localPosition += new Vector3(0.5f, 0.5f, 0.5f);
-                    S.ball.SetOwner((IPlayer)S.player2.gameObject.GetComponent<TallPlayer>());
-                    break;
-                case XboxController.Third: //small2
-                    S.ball.SetPosition(S.player3.transform.position);
-                    S.ball.SetParent(S.player3);
-                    S.ball.transform.localPosition += new Vector3(0.5f, 0.5f, 0.5f);
-                    S.ball.SetOwner((IPlayer)S.player3.gameObject.GetComponent<SmallPlayer>());
-                    break;
-                case XboxController.Fourth: //tall2
-                    S.ball.SetPosition(S.player4.transform.position);
-                    S.ball.SetParent(S.player4);
-                    S.ball.transform.localPosition += new Vector3(0.5f, 0.5f, 0.5f);
-                    S.ball.SetOwner((IPlayer)S.player4.gameObject.GetComponent<TallPlayer>());
-                    break;
-            }
-            S.tipoff_screen.SetActive(false);
+  public void CheckTipOff(XboxController controller) {
+    Debug.Log("Checking TipOff...");
+    if (S.tipoff) {
+      S.tipoff = false;
+      switch (controller) {
+        case XboxController.First: //small1
+          SmallPlayer1.HoldBall(Ball);
+          break;
+
+        case XboxController.Second: //tall1
+          TallPlayer1.HoldBall(Ball);
+          break;
+
+        case XboxController.Third: //small2
+          SmallPlayer2.HoldBall(Ball);
+          break;
+
+        case XboxController.Fourth: //tall2
+          TallPlayer1.HoldBall(Ball);
+          break;
+      }
+      S.tipoffScreen.SetActive(false);
     }
   }
 }
