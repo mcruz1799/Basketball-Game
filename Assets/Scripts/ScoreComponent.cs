@@ -5,15 +5,16 @@ using UnityEngine;
 public class ScoreComponent : MonoBehaviour
 {
     public enum PlayerType {team1, team2};
-    [SerializeField] PlayerType current_player;
-    void update_score_local(int i){
-        GameManager.S.UpdateScore(current_player, i);
-    }
+    //[SerializeField] PlayerType current_player;
 
     void OnTriggerEnter(Collider other){
-        if (other.tag == "Basket"){
+        if (other.tag == "Basket1"){
             //TODO: update score based on distance
-            update_score_local(1);
+            GameManager.S.UpdateScore(PlayerType.team1, 1);
+        }
+        else if (other.tag == "Basket2"){
+            //TODO: update score based on distance
+            GameManager.S.UpdateScore(PlayerType.team2, 1);
         }
     }
 }
