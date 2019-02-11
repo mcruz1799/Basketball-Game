@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour {
 #pragma warning restore 0649
 
   public IBall Ball { get; private set; }
+  public Vector3 ball_pos;
 
   public IPlayer SmallPlayer1 { get; private set; }
   public IPlayer TallPlayer1 { get; private set; }
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour {
     S = this;
 
     Ball = _ball;
+    ball_pos = new Vector3(7, 0.8f, 10.5f);
 
     SmallPlayer1 = _smallPlayer1;
     TallPlayer1 = _tallPlayer1;
@@ -80,6 +82,7 @@ public class GameManager : MonoBehaviour {
     winningScreen.SetActive(false);
     overtimeScreen.SetActive(false);
 
+    Ball.SetPosition(ball_pos);
     game_time = gameLength;
     winning_score = winningScore;
     score_team1 = 0;
@@ -123,6 +126,7 @@ public class GameManager : MonoBehaviour {
         || overtime) {
       EndGame();
     }
+    Ball.SetPosition(ball_pos);
   }
 
   public void QuitGame() {
