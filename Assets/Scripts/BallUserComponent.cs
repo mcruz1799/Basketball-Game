@@ -35,6 +35,10 @@ public class BallUserComponent : MonoBehaviour {
   }
 
   public bool Steal(BoxCollider grabHitbox) {
+    if (HasBall) {
+      return false;
+    }
+
     Vector3 selfToHitbox = grabHitbox.center - transform.position;
     RaycastHit[] hits = Physics.BoxCastAll(transform.position, grabHitbox.bounds.extents, selfToHitbox, Quaternion.identity, selfToHitbox.magnitude);
     foreach (RaycastHit h in hits) {
