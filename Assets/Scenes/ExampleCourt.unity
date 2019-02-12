@@ -931,7 +931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localHeightToHoldBallAt: 0
-  maxPassDistance: 0
+  maxPassDistance: 15
 --- !u!54 &478278672
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1188,7 +1188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localHeightToHoldBallAt: 0
-  maxPassDistance: 0
+  maxPassDistance: 15
 --- !u!1 &603025953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,7 +1950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localHeightToHoldBallAt: 0
-  maxPassDistance: 0
+  maxPassDistance: 15
 --- !u!114 &986456964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3648,7 +3648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localHeightToHoldBallAt: 0
-  maxPassDistance: 0
+  maxPassDistance: 15
 --- !u!114 &1860496312
 MonoBehaviour:
   m_ObjectHideFlags: 0
