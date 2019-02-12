@@ -6,11 +6,6 @@ using XboxCtrlrInput;
 [RequireComponent(typeof(BallUserComponent))]
 [RequireComponent(typeof(PlayerMover))]
 public class TallPlayer : Player {
-#pragma warning disable 0649
-  [SerializeField] private BoxCollider grabHitbox; //Used ONLY in Awake().  Changing this field mid-game does NOTHING.
-  [SerializeField] private ScoreComponent.PlayerType _team;
-#pragma warning restore 0649
-
   public SmallPlayer Above { get; private set; }
 
   public bool ThrowSmallPlayer() {

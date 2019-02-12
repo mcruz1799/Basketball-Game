@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private SmallPlayer _smallPlayer2;
   [SerializeField] private TallPlayer _tallPlayer2;
 
+  [SerializeField] private GameObject basket1;
+  [SerializeField] private GameObject basket2;
+
   [SerializeField] private int gameLength;
   [SerializeField] private int winningScore;
 
@@ -60,6 +63,10 @@ public class GameManager : MonoBehaviour {
 
   private void Awake() {
     S = this;
+
+    if (basket1 == null || basket2 == null) {
+      Debug.LogError("Baskets need to be initialized via inspector in GameManager!");
+    }
 
     Ball = _ball;
     ball_pos = new Vector3(7, 0.8f, 10.5f);
@@ -110,6 +117,19 @@ public class GameManager : MonoBehaviour {
     } else {
       overtime = true;
       S.StartCoroutine(OvertimeGame());
+    }
+  }
+
+  public GameObject BasketFromTeam(ScoreComponent.PlayerType team) {
+    switch (team) {
+      case ScoreComponent.PlayerType.team1:
+        return basket1;
+      case ScoreComponent.PlayerType.team2:
+        return basket2;
+      default:
+        string errorMessage = "Undefined enum value";
+        Debug.LogError(errorMessage);
+        throw new System.Exception(errorMessage);
     }
   }
 

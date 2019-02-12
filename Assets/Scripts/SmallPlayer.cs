@@ -9,9 +9,7 @@ public class SmallPlayer : Player {
   //Not necessary --yet--.  If we ever add animations for this stuff, will probably need it then.
   //private enum State { Throwing, Jumping, Moving, Falling }
 #pragma warning disable 0649
-  [SerializeField] private BoxCollider grabHitbox; //Used ONLY in Awake().  Changing this field mid-game does NOTHING.
   [SerializeField] private float jumpDistance;
-  [SerializeField] private ScoreComponent.PlayerType _team;
 #pragma warning restore 0649
 
   private BallUserComponent ballUserComponent;
@@ -76,7 +74,7 @@ public class SmallPlayer : Player {
     //  SmallPlayer has the ball AND
     //  The basket is close enough
     if (HasBall) {
-      GameObject basket = GameManager.BasketFromTeam(Team);
+      GameObject basket = GameManager.S.BasketFromTeam(Team);
       Vector3 from = new Vector3(throwOrigin.x, basket.transform.position.y, throwOrigin.z);
       Vector3 direction = basket.transform.position - from;
       hits = Physics.RaycastAll(from, direction, scoreDistance);

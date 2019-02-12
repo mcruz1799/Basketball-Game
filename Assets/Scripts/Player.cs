@@ -12,7 +12,7 @@ public interface IPlayer : IBallUser, IXzController {
 //Exists only so GetComponent can be used.  When defining variables/fields/properties, please use IPlayer instead.
 public abstract class Player : MonoBehaviour, IPlayer {
 #pragma warning disable 0649
-  [SerializeField] private BoxCollider grabHitbox; //Used ONLY in Awake().  Changing this field mid-game does NOTHING.
+  [SerializeField] protected BoxCollider grabHitbox;
   [SerializeField] private ScoreComponent.PlayerType _team;
 #pragma warning restore 0649
 
