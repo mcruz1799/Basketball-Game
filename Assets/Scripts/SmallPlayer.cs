@@ -9,7 +9,7 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   //Not necessary --yet--.  If we ever add animations for this stuff, will probably need it then.
   //private enum State { Throwing, Jumping, Moving, Falling }
 #pragma warning disable 0649
-  [SerializeField] private BoxCollider grabHitbox;
+  [SerializeField] private BoxCollider grabHitbox; //Used ONLY in Awake().  Changing this field mid-game does NOTHING.
   [SerializeField] private float jumpDistance;
   [SerializeField] private ScoreComponent.PlayerType _team;
 #pragma warning restore 0649
@@ -22,8 +22,8 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
 
   private void Awake() {
     Team = _team;
-    ballUserComponent = GetComponent<BallUserComponent>();
     xzController = GetComponent<PlayerMover>();
+    ballUserComponent = GetComponent<BallUserComponent>();
   }
 
 
@@ -81,25 +81,18 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   //IBallUser
   //
 
-  public bool HasBall => GameManager.S.Ball.Owner != null && GameManager.S.Ball.Owner.Equals(this);
+  public bool HasBall => ballUserComponent.HasBall;
 
   public void Pass() {
-    ballUserComponent.Pass(xzController.XLook, xzController.ZLook);
+    ballUserComponent.Pass();
   }
 
   public bool Steal() {
-    if (ballUserComponent.Steal(grabHitbox)) {
-      GameManager.S.Ball.Owner = this;
-      return true;
-    }
-    return false;
+    return ballUserComponent.Steal(grabHitbox);
   }
 
   public void HoldBall(IBall ball) {
     ballUserComponent.HoldBall(ball);
-    if (ball != null) {
-      ball.Owner = this;
-    }
   }
 
 

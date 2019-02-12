@@ -7,7 +7,7 @@ using XboxCtrlrInput;
 [RequireComponent(typeof(PlayerMover))]
 public class TallPlayer : MonoBehaviour, IPlayer {
 #pragma warning disable 0649
-  [SerializeField] private BoxCollider grabHitbox;
+  [SerializeField] private BoxCollider grabHitbox; //Used ONLY in Awake().  Changing this field mid-game does NOTHING.
   [SerializeField] private ScoreComponent.PlayerType _team;
 #pragma warning restore 0649
 
@@ -57,34 +57,29 @@ public class TallPlayer : MonoBehaviour, IPlayer {
     Above = null;
   }
 
+  //
   //IBallUser
-  //-----------------------------------------------
+  //
 
-  public bool HasBall => GameManager.S.Ball.Owner != null && GameManager.S.Ball.Owner.Equals(this);
+  public bool HasBall => ballUserComponent.HasBall;
 
   public void Pass() {
-    Debug.Log("Pass");
-    ballUserComponent.Pass(xzController.XLook, xzController.ZLook);
+    ballUserComponent.Pass();
   }
 
   public bool Steal() {
-    if (ballUserComponent.Steal(grabHitbox)) {
-      GameManager.S.Ball.Owner = this;
-      return true;
-    }
-    return false;
+    return ballUserComponent.Steal(grabHitbox);
   }
 
   public void HoldBall(IBall ball) {
     ballUserComponent.HoldBall(ball);
-    if (ball != null) {
-      ball.Owner = this;
-    }
   }
 
 
+  //
   //IXzController
-  //------------------------------------------
+  //
+
   public float X => xzController.X;
   public float Z => xzController.Z;
 
