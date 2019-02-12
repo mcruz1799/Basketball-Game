@@ -9,7 +9,6 @@ public class TallPlayer : MonoBehaviour, IPlayer {
 #pragma warning disable 0649
   [SerializeField] private BoxCollider grabHitbox;
   [SerializeField] private ScoreComponent.PlayerType _team;
-
 #pragma warning restore 0649
 
   private IXzController xzController;
@@ -34,7 +33,6 @@ public class TallPlayer : MonoBehaviour, IPlayer {
   }
 
   public bool PickUpSmallPlayer() {
-    Debug.Log("Picking up.");
     //Can't pick up SmallPlayer unless your hands are free and you're not being carried
     bool handsFree = !HasBall && Above == null;
     if (!handsFree) {
@@ -44,10 +42,8 @@ public class TallPlayer : MonoBehaviour, IPlayer {
     //Check grab hitbox
     Vector3 selfToHitbox = grabHitbox.transform.position - transform.position;
     RaycastHit[] hits = Physics.BoxCastAll(transform.position, grabHitbox.bounds.extents, selfToHitbox, Quaternion.identity, selfToHitbox.magnitude);
-    Debug.Log("Hits: " + hits.Length);
     foreach (RaycastHit h in hits) {
       SmallPlayer other = h.collider.GetComponent<SmallPlayer>();
-      Debug.Log("Other:" + other);
       if (other != null && other.Team == Team && other.Below == null) {
         other.OnPickedUp(this);
         break;
@@ -64,7 +60,7 @@ public class TallPlayer : MonoBehaviour, IPlayer {
   //IBallUser
   //-----------------------------------------------
 
-  public bool HasBall => GameManager.S.Ball.Owner != null  && GameManager.S.Ball.Owner.Equals(this);
+  public bool HasBall => GameManager.S.Ball.Owner != null && GameManager.S.Ball.Owner.Equals(this);
 
   public void Pass() {
     Debug.Log("Pass");
@@ -72,11 +68,11 @@ public class TallPlayer : MonoBehaviour, IPlayer {
   }
 
   public bool Steal() {
-    if (ballUserComponent.Steal(grabHitbox))
-        {
-            GameManager.S.Ball.Owner = this;
-            return true;
-        } return false;
+    if (ballUserComponent.Steal(grabHitbox)) {
+      GameManager.S.Ball.Owner = this;
+      return true;
+    }
+    return false;
   }
 
   public void HoldBall(IBall ball) {
@@ -101,28 +97,22 @@ public class TallPlayer : MonoBehaviour, IPlayer {
   public void SetRotation(float xLook, float zLook) {
     xzController.SetRotation(xLook, zLook);
   }
-  
-  /*Possibilities of Pressing A:
+
+  /*
+   Possibilities of Pressing A:
    Tip-Off: Gain control of the ball.
    Pass: If Player has the ball, pass it.
    Pick-Up Small Player: If Player is in range, can pickup the small player.
-                                                   */
-  public void PressA(XboxController controller)
-  {
-        
-        if (HasBall)
-        {
-            Pass();
-        } else
-        {
-            //TODO: Check Tip-Off, or attempt to pick-up small player.
-            GameManager.S.CheckTipOff(controller);
-            PickUpSmallPlayer();
-        }
+  */
+  public void PressA(XboxController controller) {
+    if (HasBall) {
+      Pass();
+    } else {
+      GameManager.S.CheckTipOff(controller);
+      PickUpSmallPlayer();
+    }
   }
-  public void PressB(XboxController controller)
-  {
-        //TODO: Add B press for tall player.
-        Steal();
+  public void PressB(XboxController controller) {
+    Steal();
   }
 }

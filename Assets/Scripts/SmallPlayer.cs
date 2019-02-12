@@ -44,6 +44,11 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
     return true;
   }
 
+
+  //
+  //For use by TallPlayer
+  //
+
   public void OnPickedUp(TallPlayer player) {
     Below = player;
     transform.SetParent(Below.transform, true);
@@ -83,13 +88,12 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   }
 
   public bool Steal() {
-        if (ballUserComponent.Steal(grabHitbox))
-        {
-            GameManager.S.Ball.Owner = this;
-            return true;
-        }
-        return false;
+    if (ballUserComponent.Steal(grabHitbox)) {
+      GameManager.S.Ball.Owner = this;
+      return true;
     }
+    return false;
+  }
 
   public void HoldBall(IBall ball) {
     ballUserComponent.HoldBall(ball);
@@ -117,28 +121,22 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   public void SetRotation(float xLook, float zLook) {
     xzController.SetRotation(xLook, zLook);
   }
-  
-  //TODO: Move this functionality into the InputController
+
   /*
    Possibilities of Pressing A:
    Tip-Off: Gain control of the ball.
    Pass: If Player has the ball, pass it.
   */
-  public void PressA(XboxController controller)
-  {
-        Debug.Log(HasBall);
-        if (HasBall)
-        {
-            Pass();
-        } else
-        {
-            //TODO: Check for Tip-Off.
-            GameManager.S.CheckTipOff(controller);
-            JumpOffPlayer();
-        }
+  public void PressA(XboxController controller) {
+    Debug.Log(HasBall);
+    if (HasBall) {
+      Pass();
+    } else {
+      GameManager.S.CheckTipOff(controller);
+      JumpOffPlayer();
+    }
   }
-  public void PressB(XboxController controller)
-  {
-        Steal();
+  public void PressB(XboxController controller) {
+    Steal();
   }
 }
