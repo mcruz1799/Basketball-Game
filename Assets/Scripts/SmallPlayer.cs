@@ -5,7 +5,7 @@ using XboxCtrlrInput;
 
 [RequireComponent(typeof(BallUserComponent))]
 [RequireComponent(typeof(PlayerMover))]
-public class SmallPlayer : MonoBehaviour, IPlayer {
+public class SmallPlayer : Player {
   //Not necessary --yet--.  If we ever add animations for this stuff, will probably need it then.
   //private enum State { Throwing, Jumping, Moving, Falling }
 #pragma warning disable 0649
@@ -17,7 +17,7 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   private BallUserComponent ballUserComponent;
   private IXzController xzController;
 
-  public ScoreComponent.PlayerType Team { get; private set; }
+  public override ScoreComponent.PlayerType Team { get; protected set; }
   public TallPlayer Below { get; private set; }
 
   private void Awake() {
@@ -81,17 +81,17 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   //IBallUser
   //
 
-  public bool HasBall => ballUserComponent.HasBall;
+  public override bool HasBall => ballUserComponent.HasBall;
 
-  public void Pass() {
+  public override void Pass() {
     ballUserComponent.Pass();
   }
 
-  public bool Steal() {
+  public override bool Steal() {
     return ballUserComponent.Steal(grabHitbox);
   }
 
-  public void HoldBall(IBall ball) {
+  public override void HoldBall(IBall ball) {
     ballUserComponent.HoldBall(ball);
   }
 
@@ -100,18 +100,18 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
   //IXzController
   //
 
-  public float X => xzController.X;
-  public float Z => xzController.Z;
+  public override float X => xzController.X;
+  public override float Z => xzController.Z;
 
-  public float XLook => xzController.XLook;
-  public float ZLook => xzController.ZLook;
+  public override float XLook => xzController.XLook;
+  public override float ZLook => xzController.ZLook;
 
-  public void Move(float xMove, float zMove) {
+  public override void Move(float xMove, float zMove) {
     if (Below != null) return;
     xzController.Move(xMove, zMove);
   }
 
-  public void SetRotation(float xLook, float zLook) {
+  public override void SetRotation(float xLook, float zLook) {
     xzController.SetRotation(xLook, zLook);
   }
 
@@ -120,7 +120,7 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
    Tip-Off: Gain control of the ball.
    Pass: If Player has the ball, pass it.
   */
-  public void PressA(XboxController controller) {
+  public override void PressA(XboxController controller) {
     Debug.Log(HasBall);
     if (HasBall) {
       Pass();
@@ -129,7 +129,7 @@ public class SmallPlayer : MonoBehaviour, IPlayer {
       JumpOffPlayer();
     }
   }
-  public void PressB(XboxController controller) {
+  public override void PressB(XboxController controller) {
     Steal();
   }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class BallUserComponent : MonoBehaviour {
 #pragma warning disable 0649
   [SerializeField] private float localHeightToHoldBallAt;
+  [SerializeField] private float maxPassDistance;
 #pragma warning restore 0649
 
   private IXzController xzController; //Needed only for XLook and ZLook
@@ -14,6 +15,10 @@ public class BallUserComponent : MonoBehaviour {
 
   private void Awake() {
     xzController = GetComponent<PlayerMover>();
+
+    if (maxPassDistance == 0) {
+      Debug.LogWarning("BallUserComponent.maxPassDistance equals 0.  HMMMM  <_<");
+    }
   }
 
   public bool HasBall { get { return heldBall != null; } }
@@ -44,7 +49,26 @@ public class BallUserComponent : MonoBehaviour {
   }
 
   public void Pass() {
-    Vector3 PassDirection = new Vector3(xzController.XLook, 0, xzController.ZLook);
-    Debug.LogWarning("Pass is not yet implemented");
+    float yGround = 0;
+
+    Vector3 passOrigin = transform.position;
+    passOrigin.y = yGround;
+    Vector3 passDirection = new Vector3(xzController.XLook, 0, xzController.ZLook);
+
+    RaycastHit[] hits = Physics.RaycastAll(passOrigin, passDirection, maxPassDistance);
+    float nearestPlayerHitDistance = Mathf.Infinity;
+    Player nearestPlayerHit = null;
+    foreach (RaycastHit hit in hits) {
+      Player player = hit.collider.GetComponent<Player>();
+      if (player != null && hit.distance < nearestPlayerHitDistance) {
+        nearestPlayerHitDistance = hit.distance;
+        nearestPlayerHit = player;
+      }
+    }
+
+    if (!nearestPlayerHit.HasBall) {
+      nearestPlayerHit.HoldBall(heldBall);
+      heldBall = null;
+    }
   }
 }

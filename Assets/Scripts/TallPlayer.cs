@@ -5,7 +5,7 @@ using XboxCtrlrInput;
 
 [RequireComponent(typeof(BallUserComponent))]
 [RequireComponent(typeof(PlayerMover))]
-public class TallPlayer : MonoBehaviour, IPlayer {
+public class TallPlayer : Player {
 #pragma warning disable 0649
   [SerializeField] private BoxCollider grabHitbox; //Used ONLY in Awake().  Changing this field mid-game does NOTHING.
   [SerializeField] private ScoreComponent.PlayerType _team;
@@ -14,7 +14,7 @@ public class TallPlayer : MonoBehaviour, IPlayer {
   private IXzController xzController;
   private BallUserComponent ballUserComponent;
 
-  public ScoreComponent.PlayerType Team { get; private set; }
+  public override ScoreComponent.PlayerType Team { get; protected set; }
   public SmallPlayer Above { get; private set; }
 
   private void Awake() {
@@ -61,17 +61,17 @@ public class TallPlayer : MonoBehaviour, IPlayer {
   //IBallUser
   //
 
-  public bool HasBall => ballUserComponent.HasBall;
+  public override bool HasBall => ballUserComponent.HasBall;
 
-  public void Pass() {
+  public override void Pass() {
     ballUserComponent.Pass();
   }
 
-  public bool Steal() {
+  public override bool Steal() {
     return ballUserComponent.Steal(grabHitbox);
   }
 
-  public void HoldBall(IBall ball) {
+  public override void HoldBall(IBall ball) {
     ballUserComponent.HoldBall(ball);
   }
 
@@ -80,16 +80,16 @@ public class TallPlayer : MonoBehaviour, IPlayer {
   //IXzController
   //
 
-  public float X => xzController.X;
-  public float Z => xzController.Z;
+  public override float X => xzController.X;
+  public override float Z => xzController.Z;
 
-  public float XLook => xzController.XLook;
-  public float ZLook => xzController.ZLook;
+  public override float XLook => xzController.XLook;
+  public override float ZLook => xzController.ZLook;
 
-  public void Move(float xMove, float zMove) {
+  public override void Move(float xMove, float zMove) {
     xzController.Move(xMove, zMove);
   }
-  public void SetRotation(float xLook, float zLook) {
+  public override void SetRotation(float xLook, float zLook) {
     xzController.SetRotation(xLook, zLook);
   }
 
@@ -99,7 +99,7 @@ public class TallPlayer : MonoBehaviour, IPlayer {
    Pass: If Player has the ball, pass it.
    Pick-Up Small Player: If Player is in range, can pickup the small player.
   */
-  public void PressA(XboxController controller) {
+  public override void PressA(XboxController controller) {
     if (HasBall) {
       Pass();
     } else {
@@ -107,7 +107,7 @@ public class TallPlayer : MonoBehaviour, IPlayer {
       PickUpSmallPlayer();
     }
   }
-  public void PressB(XboxController controller) {
+  public override void PressB(XboxController controller) {
     Steal();
   }
 }
