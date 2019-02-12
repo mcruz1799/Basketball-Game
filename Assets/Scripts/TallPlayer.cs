@@ -15,6 +15,8 @@ public class TallPlayer : Player {
   private BallUserComponent ballUserComponent;
 
   public override ScoreComponent.PlayerType Team { get; protected set; }
+  public override bool CanReceivePass => Above == null && !HasBall;
+
   public SmallPlayer Above { get; private set; }
 
   private void Awake() {

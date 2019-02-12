@@ -17,7 +17,9 @@ public class SmallPlayer : Player {
   private BallUserComponent ballUserComponent;
   private IXzController xzController;
 
+  public override bool CanReceivePass => !HasBall;
   public override ScoreComponent.PlayerType Team { get; protected set; }
+
   public TallPlayer Below { get; private set; }
 
   private void Awake() {
