@@ -66,7 +66,37 @@ public class SmallPlayer : Player {
   }
 
   public bool OnThrown(float xDirection, float zDirection) {
+    //Can't be thrown if there's nobody holding you
+    if (Below != null) {
+      return false;
+    }
     Below = null;
+
+    Vector3 throwOrigin = transform.position;
+    throwOrigin.y = 0;
+
+    Vector3 throwDestination;
+
+
+    //
+    //Being thrown into the basket
+    //
+
+    if (HasBall) {
+      GameObject basket = GameManager.BasketFromTeam(Team);
+      //Cast towards basket.  If one of the hits is the basket, and the distance is sufficiently small, auto-target the basket.
+      //Check for opposing Team stack, which may be blocking the shot
+    }
+
+
+    //
+    //Being thrown into another Player
+    //
+
+
+    //
+    //Being thrown onto the ground
+    //
 
     //Assumes ground is at y = 0
     float yGround = 0;
@@ -75,6 +105,14 @@ public class SmallPlayer : Player {
 
     Vector3 throwDirection = new Vector3(xDirection, 0, zDirection).normalized;
     newPosition += throwDirection * jumpDistance;
+
+    //Cast a ray from throwOrigin to newPosition.
+    //Find nearest hit that's a Player.
+    //Call OnHitByPlayer() (needs to be added to Player class as abstract method)
+    //Change newPosition xz-coords to reflect the hit location
+
+    //What about throwing into the basket?
+    //If within range of basket, then score
 
     //TODO: Check if throw is in bounds?
     transform.SetParent(null, true);
