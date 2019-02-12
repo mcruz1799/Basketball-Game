@@ -21,6 +21,10 @@ public class TallPlayer : Player {
     Team = _team;
     xzController = GetComponent<PlayerMover>();
     ballUserComponent = GetComponent<BallUserComponent>();
+
+    if (grabHitbox == null) {
+      Debug.LogError("TallPlayer.grabHitbox is null.  HMMMM  <_<");
+    }
   }
 
   public bool ThrowSmallPlayer() {

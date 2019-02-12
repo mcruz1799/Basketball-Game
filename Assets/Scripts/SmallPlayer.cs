@@ -24,6 +24,10 @@ public class SmallPlayer : Player {
     Team = _team;
     xzController = GetComponent<PlayerMover>();
     ballUserComponent = GetComponent<BallUserComponent>();
+
+    if (grabHitbox == null) {
+      Debug.LogError("SmallPlayer.grabHitbox is null.  HMMMM  <_<");
+    }
   }
 
 
