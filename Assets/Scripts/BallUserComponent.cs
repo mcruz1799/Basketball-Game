@@ -2,46 +2,73 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//To be used by MonoBehaviours implementing IBallUser
-//Doesn't actually implement the IBallUser itself.  This is because it needs additional parameters for Pass/Steal
 [RequireComponent(typeof(PlayerMover))]
 public class BallUserComponent : MonoBehaviour {
-  [SerializeField] private float heightToHoldBallAt;
+#pragma warning disable 0649
+  [SerializeField] private float localHeightToHoldBallAt;
+  [SerializeField] private float maxPassDistance;
+#pragma warning restore 0649
 
-  //Needed only for XLook and ZLook
-  private IXzController xzController;
+  private IXzController xzController; //Needed only for XLook and ZLook
+
+  private IBall heldBall;
 
   private void Awake() {
     xzController = GetComponent<PlayerMover>();
+
+    if (maxPassDistance == 0) {
+      Debug.LogWarning("BallUserComponent.maxPassDistance equals 0.  HMMMM  <_<");
+    }
   }
+
+  public bool HasBall { get { return heldBall != null; } }
 
   public void HoldBall(IBall ball) {
-    Debug.Log("Ball:" + ball);
-    if (ball == null) {
-      ball.SetParent(null);
+    heldBall = ball;
+    if (ball != null) {
+      ball.SetParent(transform);
+      Vector3 ballPosition = Vector3.zero;
+      ballPosition.y = localHeightToHoldBallAt;
+      ballPosition.z = transform.lossyScale.z / 2 + ball.Radius;
+      ball.SetPosition(ballPosition);
     }
-
-    ball.SetParent(transform);
-    Vector3 ballPosition = Vector3.zero;
-    ballPosition.z = transform.lossyScale.z / 2 + ball.Radius;
-    ball.SetPosition(ballPosition);
-  }
-
-  public void Pass(float xDirection, float zDirection) {
-    Debug.LogWarning("Pass is not yet implemented");
   }
 
   public bool Steal(BoxCollider grabHitbox) {
     Vector3 selfToHitbox = grabHitbox.center - transform.position;
     RaycastHit[] hits = Physics.BoxCastAll(transform.position, grabHitbox.bounds.extents, selfToHitbox, Quaternion.identity, selfToHitbox.magnitude);
     foreach (RaycastHit h in hits) {
-      IBall ball = h.collider.GetComponent<Ball>();
-      if (ball != null) {
-        HoldBall(ball);
-        return true;
+      BallUserComponent other = h.collider.GetComponent<BallUserComponent>();
+      if (other.heldBall != null) {
+        HoldBall(other.heldBall);
+        other.heldBall = null;
       }
     }
 
     return false;
+  }
+
+  public void Pass() {
+    float yGround = 0;
+
+    Vector3 passOrigin = transform.position;
+    passOrigin.y = yGround;
+    Vector3 passDirection = new Vector3(xzController.XLook, 0, xzController.ZLook);
+
+    RaycastHit[] hits = Physics.RaycastAll(passOrigin, passDirection, maxPassDistance);
+    float nearestPlayerHitDistance = Mathf.Infinity;
+    Player nearestPlayerHit = null;
+    foreach (RaycastHit hit in hits) {
+      Player player = hit.collider.GetComponent<Player>();
+      if (player != null && hit.distance < nearestPlayerHitDistance) {
+        nearestPlayerHitDistance = hit.distance;
+        nearestPlayerHit = player;
+      }
+    }
+
+    if (nearestPlayerHit.CanReceivePass) {
+      nearestPlayerHit.HoldBall(heldBall);
+      heldBall = null;
+    }
   }
 }
