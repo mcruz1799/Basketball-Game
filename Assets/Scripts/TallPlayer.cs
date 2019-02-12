@@ -11,23 +11,7 @@ public class TallPlayer : Player {
   [SerializeField] private ScoreComponent.PlayerType _team;
 #pragma warning restore 0649
 
-  private IXzController xzController;
-  private BallUserComponent ballUserComponent;
-
-  public override ScoreComponent.PlayerType Team { get; protected set; }
-  public override bool CanReceivePass => Above == null && !HasBall;
-
   public SmallPlayer Above { get; private set; }
-
-  private void Awake() {
-    Team = _team;
-    xzController = GetComponent<PlayerMover>();
-    ballUserComponent = GetComponent<BallUserComponent>();
-
-    if (grabHitbox == null) {
-      Debug.LogError("TallPlayer.grabHitbox is null.  HMMMM  <_<");
-    }
-  }
 
   public bool ThrowSmallPlayer() {
     if (Above == null || !Above.OnThrown(XLook, ZLook)) {
@@ -63,40 +47,11 @@ public class TallPlayer : Player {
     Above = null;
   }
 
-  //
-  //IBallUser
-  //
-
-  public override bool HasBall => ballUserComponent.HasBall;
-
-  public override void Pass() {
-    ballUserComponent.Pass();
-  }
-
-  public override bool Steal() {
-    return ballUserComponent.Steal(grabHitbox);
-  }
-
-  public override void HoldBall(IBall ball) {
-    ballUserComponent.HoldBall(ball);
-  }
-
-
-  //
-  //IXzController
-  //
-
-  public override float X => xzController.X;
-  public override float Z => xzController.Z;
-
-  public override float XLook => xzController.XLook;
-  public override float ZLook => xzController.ZLook;
-
-  public override void Move(float xMove, float zMove) {
-    xzController.Move(xMove, zMove);
-  }
-  public override void SetRotation(float xLook, float zLook) {
-    xzController.SetRotation(xLook, zLook);
+  public override void Stun() {
+    base.Stun();
+    if (Above != null) {
+      Above.Stun();
+    }
   }
 
   /*

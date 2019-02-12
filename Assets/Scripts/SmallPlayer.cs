@@ -17,20 +17,8 @@ public class SmallPlayer : Player {
   private BallUserComponent ballUserComponent;
   private IXzController xzController;
 
-  public override bool CanReceivePass => !HasBall;
-  public override ScoreComponent.PlayerType Team { get; protected set; }
-
+  public override bool CanMove => base.CanMove && Below == null;
   public TallPlayer Below { get; private set; }
-
-  private void Awake() {
-    Team = _team;
-    xzController = GetComponent<PlayerMover>();
-    ballUserComponent = GetComponent<BallUserComponent>();
-
-    if (grabHitbox == null) {
-      Debug.LogError("SmallPlayer.grabHitbox is null.  HMMMM  <_<");
-    }
-  }
 
 
   //
@@ -72,92 +60,71 @@ public class SmallPlayer : Player {
     }
     Below = null;
 
-    Vector3 throwOrigin = transform.position;
-    throwOrigin.y = 0;
+    RaycastHit[] hits;
+    float yGround = 0f + 0.05f; //Cast rays slightly above ground level
+    Vector3 throwOrigin = transform.position; throwOrigin.y = yGround;
 
-    Vector3 throwDestination;
+    //TODO: Allow these to be customized
+    float scoreDistance = 1f;
+    float throwDistance = 1f;
 
+    //Throw in the direction specified by xDirection and zDirection
+    Vector3 throwDirection = new Vector3(xDirection, 0, zDirection).normalized;
+    Vector3 throwDestination = transform.position + throwDirection * throwDistance;
 
-    //
-    //Being thrown into the basket
-    //
-
+    //HOWEVER, auto-target the basket if
+    //  SmallPlayer has the ball AND
+    //  The basket is close enough
     if (HasBall) {
       GameObject basket = GameManager.BasketFromTeam(Team);
-      //Cast towards basket.  If one of the hits is the basket, and the distance is sufficiently small, auto-target the basket.
-      //Check for opposing Team stack, which may be blocking the shot
+      Vector3 from = new Vector3(throwOrigin.x, basket.transform.position.y, throwOrigin.z);
+      Vector3 direction = basket.transform.position - from;
+      hits = Physics.RaycastAll(from, direction, scoreDistance);
+      foreach (RaycastHit hit in hits) {
+        if (hit.collider.gameObject.Equals(basket)) {
+          throwDestination = hit.point;
+          break;
+        }
+      }
     }
+
+    //Now we check whether we hit another player on the way to the destination.
+    //For raycasting purposes, we set the y to ground level.
+    throwDestination.y = yGround;
 
 
     //
     //Being thrown into another Player
     //
 
+    Vector3 originToDestination = throwDestination - throwOrigin;
+    hits = Physics.RaycastAll(throwOrigin, originToDestination, originToDestination.magnitude);
+    RaycastHit nearestPlayerHit = default;
+    Player nearestPlayer = null;
+    foreach (RaycastHit hit in hits) {
+      Player player = hit.collider.GetComponent<Player>();
+      if (player != null && (nearestPlayer == null || hit.distance < nearestPlayerHit.distance)) {
+        nearestPlayerHit = hit;
+        nearestPlayer = player;
+      }
+    }
 
-    //
-    //Being thrown onto the ground
-    //
-
-    //Assumes ground is at y = 0
-    float yGround = 0;
-    Vector3 newPosition = transform.position;
-    newPosition.y = yGround + transform.lossyScale.y / 2;
-
-    Vector3 throwDirection = new Vector3(xDirection, 0, zDirection).normalized;
-    newPosition += throwDirection * jumpDistance;
-
-    //Cast a ray from throwOrigin to newPosition.
-    //Find nearest hit that's a Player.
-    //Call OnHitByPlayer() (needs to be added to Player class as abstract method)
-    //Change newPosition xz-coords to reflect the hit location
-
-    //What about throwing into the basket?
-    //If within range of basket, then score
+    if (nearestPlayer != null) {
+      nearestPlayer.Stun();
+      throwDestination = nearestPlayerHit.point;
+    }
 
     //TODO: Check if throw is in bounds?
+    throwDestination.y = yGround + transform.lossyScale.y / 2;
     transform.SetParent(null, true);
-    transform.position = newPosition;
+    transform.position = throwDestination;
     return true;
-  }
-
-
-  //
-  //IBallUser
-  //
-
-  public override bool HasBall => ballUserComponent.HasBall;
-
-  public override void Pass() {
-    ballUserComponent.Pass();
-  }
-
-  public override bool Steal() {
-    return ballUserComponent.Steal(grabHitbox);
-  }
-
-  public override void HoldBall(IBall ball) {
-    ballUserComponent.HoldBall(ball);
   }
 
 
   //
   //IXzController
   //
-
-  public override float X => xzController.X;
-  public override float Z => xzController.Z;
-
-  public override float XLook => xzController.XLook;
-  public override float ZLook => xzController.ZLook;
-
-  public override void Move(float xMove, float zMove) {
-    if (Below != null) return;
-    xzController.Move(xMove, zMove);
-  }
-
-  public override void SetRotation(float xLook, float zLook) {
-    xzController.SetRotation(xLook, zLook);
-  }
 
   /*
    Possibilities of Pressing A:

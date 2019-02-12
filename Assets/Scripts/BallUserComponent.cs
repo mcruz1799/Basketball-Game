@@ -10,7 +10,6 @@ public class BallUserComponent : MonoBehaviour {
 #pragma warning restore 0649
 
   private IXzController xzController; //Needed only for XLook and ZLook
-
   private IBall heldBall;
 
   private void Awake() {
@@ -70,7 +69,7 @@ public class BallUserComponent : MonoBehaviour {
       }
     }
 
-    if (nearestPlayerHit != null && nearestPlayerHit.CanReceivePass) {
+    if (nearestPlayerHit != null) {
       nearestPlayerHit.HoldBall(heldBall);
       heldBall = null;
     }
