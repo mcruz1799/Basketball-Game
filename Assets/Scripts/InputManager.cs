@@ -38,14 +38,18 @@ public class InputManager : MonoBehaviour
     //Check Movement Inputs
     float xMove = XCI.GetAxis(XboxAxis.LeftStickX, controller);
     float zMove = XCI.GetAxis(XboxAxis.LeftStickY, controller);
-    player.Move(xMove, zMove);
+    player.Move(zMove, -xMove);
+    if (!(xMove == 0 && zMove == 0))
+    {
+        player.SetRotation(zMove, -xMove);
+    }
     
     //Check Rotation Inputs
-    float Xrotation = XCI.GetAxis(XboxAxis.RightStickX, controller);
+   /* float Xrotation = XCI.GetAxis(XboxAxis.RightStickX, controller);
     float Zrotation = XCI.GetAxis(XboxAxis.RightStickY, controller);
     if (!(Xrotation == 0 && Zrotation == 0)) {
       player.SetRotation(Xrotation, Zrotation);
-    }
+    } */
 
     //Check Button Presses
     if (XCI.GetButton(XboxButton.A,controller))
