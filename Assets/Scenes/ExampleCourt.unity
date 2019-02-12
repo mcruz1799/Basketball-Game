@@ -1611,6 +1611,8 @@ MonoBehaviour:
   _tallPlayer1: {fileID: 492249969}
   _smallPlayer2: {fileID: 1860496310}
   _tallPlayer2: {fileID: 478278670}
+  basket1: {fileID: 1287533650}
+  basket2: {fileID: 642416699}
   gameLength: 60
   winningScore: 10
   winningScreen: {fileID: 875067515}
@@ -1932,8 +1934,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabHitbox: {fileID: 671285113}
-  jumpDistance: 0
   _team: 0
+  scoreDistance: 1
+  throwDistance: 1
 --- !u!114 &986456963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3252,7 +3255,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-9668
+  m_Name: pb_Mesh-1094
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -3629,8 +3632,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabHitbox: {fileID: 1233442104}
-  jumpDistance: 0
   _team: 1
+  scoreDistance: 1
+  throwDistance: 1
 --- !u!114 &1860496311
 MonoBehaviour:
   m_ObjectHideFlags: 0
