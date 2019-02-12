@@ -9,11 +9,9 @@ public class SmallPlayer : Player {
   //Not necessary --yet--.  If we ever add animations for this stuff, will probably need it then.
   //private enum State { Throwing, Jumping, Moving, Falling }
 #pragma warning disable 0649
-  [SerializeField] private float jumpDistance;
+  [SerializeField] private float scoreDistance = 1f;
+  [SerializeField] private float throwDistance = 1f;
 #pragma warning restore 0649
-
-  private BallUserComponent ballUserComponent;
-  private IXzController xzController;
 
   public override bool CanMove => base.CanMove && Below == null;
   public TallPlayer Below { get; private set; }
@@ -61,10 +59,6 @@ public class SmallPlayer : Player {
     RaycastHit[] hits;
     float yGround = 0f + 0.05f; //Cast rays slightly above ground level
     Vector3 throwOrigin = transform.position; throwOrigin.y = yGround;
-
-    //TODO: Allow these to be customized
-    float scoreDistance = 1f;
-    float throwDistance = 1f;
 
     //Throw in the direction specified by xDirection and zDirection
     Vector3 throwDirection = new Vector3(xDirection, 0, zDirection).normalized;
