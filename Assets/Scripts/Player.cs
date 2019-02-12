@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
 
-//This is a relic from when there was no abstract Player class.
-//  Needed the abstract class in order to use GetComponent<Player>() in BallUser.Pass()
-//It is preserved so as not to break existing code.
 public interface IPlayer : IBallUser, IXzController {
   bool CanReceivePass { get; }
   ScoreComponent.PlayerType Team { get; }
@@ -13,6 +10,7 @@ public interface IPlayer : IBallUser, IXzController {
   void PressB(XboxController controller);
 }
 
+//Exists only so GetComponent can be used.  When defining variables/fields/properties, please use IPlayer instead.
 public abstract class Player : MonoBehaviour, IPlayer {
 
   //Specific to Player
