@@ -10,6 +10,6 @@ public interface IXzController {
   float XLook { get; }
   float ZLook { get; }
 
-  void Move(float xMove, float zMove);
-    void SetRotation(float xLook, float zLook);
+  Vector3 Move(float xMove, float zMove);
+  void SetRotation(float xLook, float zLook);
 }

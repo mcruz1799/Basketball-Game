@@ -7,8 +7,8 @@ public class InputManager : MonoBehaviour
 {
     private IPlayer[] players = new IPlayer[4];
     private XboxController[] controllers = new XboxController[] { XboxController.First, XboxController.Second, XboxController.Third, XboxController.Fourth };
-
-
+    public float Xboundary = 7.0f;
+    public float Zboundary = 14.0f;
     private void Start()
     {
         players[0] = GameManager.S.SmallPlayer1;
@@ -34,14 +34,18 @@ public class InputManager : MonoBehaviour
 
   //Checks for inputs from a specific controller, and applies movement to the s
   private void checkInputs(XboxController controller, IPlayer player) {
-    
+    //Vector3 initialPos = new Vector3(player.X, 0, player.Z);
     //Check Movement Inputs
     float xMove = XCI.GetAxis(XboxAxis.LeftStickX, controller);
     float zMove = XCI.GetAxis(XboxAxis.LeftStickY, controller);
-    player.Move(zMove, -xMove);
+    Vector3 newPos = player.Move(zMove, -xMove);
     if (!(xMove == 0 && zMove == 0))
     {
         player.SetRotation(zMove, -xMove);
+    }
+    if (Mathf.Abs(newPos.x) > Xboundary || Mathf.Abs(newPos.z) > Zboundary)
+    {
+      player.Move(-zMove, xMove);
     }
     
     //Check Rotation Inputs

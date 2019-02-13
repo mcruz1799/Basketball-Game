@@ -15,33 +15,17 @@ public class PlayerMover : MonoBehaviour, IXzController {
   private bool outOfBounds = false;
     
 
-      public void Move(float xMove, float zMove) {
-        if (!outOfBounds)
-        {
+      public Vector3 Move(float xMove, float zMove) {
           Vector3 movementVector = new Vector3(xMove, 0, zMove);
 
           //Moves on world axis, deltatime to smoothen movement
           transform.Translate(movementVector.normalized * Time.deltaTime * movementSpeed, Space.World);
-        }
+          return transform.position;
   }
 
   public void SetRotation(float xLook, float zLook) {
     Vector3 target = new Vector3(xLook, 0, zLook);
     transform.forward = target;
   }
-  private void OnTriggerEnter(Collider other) {
-    Debug.Log("collision");
-    if (other.gameObject.CompareTag("boundary"))
-    {
-      Debug.Log("HELLZ YEAH");
-      outOfBounds = true;
-    }
-  }
   
-  private void OnTriggerExit(Collider other) {
-   if (other.gameObject.CompareTag("boundary"))
-    {
-      outOfBounds = false;
-    }
-  }     
 }

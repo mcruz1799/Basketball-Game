@@ -60,10 +60,12 @@ public abstract class Player : MonoBehaviour, IPlayer {
   public float XLook => xzController.XLook;
   public float ZLook => xzController.ZLook;
 
-  public void Move(float xMove, float zMove) {
+  public Vector3 Move(float xMove, float zMove) {
     if (CanMove) {
-      xzController.Move(xMove, zMove);
+      Vector3 result = xzController.Move(xMove, zMove);
+      return result;
     }
+    return new Vector3(X, 0, Z);
   }
   public void SetRotation(float xLook, float zLook) {
     if (CanRotate) {
