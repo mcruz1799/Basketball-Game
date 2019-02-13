@@ -3711,7 +3711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19, y: 17.299988}
+  m_AnchoredPosition: {x: 19, y: 28}
   m_SizeDelta: {x: 1028.6, y: 310.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1306201942
@@ -3751,7 +3751,7 @@ MonoBehaviour:
 
     Throw Lil'' Bro - press B while stacked
 
-    Note: Can throw Lil'' Bro into basket or at other stacked team'
+    Note: Can throw Lil'' Bro into basket or at other stacked team to knock them down'
 --- !u!222 &1306201943
 CanvasRenderer:
   m_ObjectHideFlags: 0
