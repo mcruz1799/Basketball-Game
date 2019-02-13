@@ -53,7 +53,7 @@ public class BallUserComponent : MonoBehaviour {
   }
 
   public void Pass() {
-    float yGround = 0 + 0.05f;
+    float yGround = 0 + 0.15f;
 
     Vector3 passOrigin = transform.position;
     passOrigin.y = yGround;
@@ -74,6 +74,9 @@ public class BallUserComponent : MonoBehaviour {
       nearestPlayerHit.HoldBall(heldBall);
       Debug.Log("Pass Recipient:" + nearestPlayerHit.name);
       heldBall = null;
+    } else
+    {
+      Debug.Log("No Pass Recipient.");
     }
   }
 }

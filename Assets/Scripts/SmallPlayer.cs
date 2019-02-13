@@ -57,7 +57,7 @@ public class SmallPlayer : Player {
     Below = null;
 
     RaycastHit[] hits;
-    float skinWidth = 0.05f;
+    float skinWidth = 0.15f;
     float yGround = 0f;
     
     //Cast rays slightly above ground level
