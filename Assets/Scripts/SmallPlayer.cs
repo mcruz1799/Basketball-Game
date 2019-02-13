@@ -75,6 +75,7 @@ public class SmallPlayer : Player {
       foreach (RaycastHit hit in hits) {
         if (hit.collider.gameObject.Equals(basket)) {
           throwDestination = hit.point;
+          GameManager.S.UpdateScore(Team, 1);
           break;
         }
       }
