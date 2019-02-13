@@ -46,6 +46,7 @@ public class BallUserComponent : MonoBehaviour {
       if (other != null && other.heldBall != null) {
         HoldBall(other.heldBall);
         other.heldBall = null;
+        return true;
       }
     }
 
