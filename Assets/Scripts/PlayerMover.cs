@@ -30,8 +30,10 @@ public class PlayerMover : MonoBehaviour, IXzController {
     transform.forward = target;
   }
   private void OnCollisionEnter(Collision other) {
+    Debug.Log("collision");
     if (other.gameObject.CompareTag("boundary"))
     {
+      Debug.Log("HELLZ YEAH");
       outOfBounds = true;
     }
   }
