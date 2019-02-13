@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour {
   private Text gameTimeText;
   private Text team1ScoreText;
   private Text team2ScoreText;
-  private bool tipoff;
+  public bool tipoff;
 
   private bool overtime;
   //this is pointless, only needed to call StopCoroutine
