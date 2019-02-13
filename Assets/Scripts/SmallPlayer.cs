@@ -57,8 +57,11 @@ public class SmallPlayer : Player {
     Below = null;
 
     RaycastHit[] hits;
-    float yGround = 0f + 0.05f; //Cast rays slightly above ground level
-    Vector3 throwOrigin = transform.position; throwOrigin.y = yGround;
+    float skinWidth = 0.05f;
+    float yGround = 0f;
+    
+    //Cast rays slightly above ground level
+    Vector3 throwOrigin = transform.position; throwOrigin.y = yGround + skinWidth;
 
     //Throw in the direction specified by xDirection and zDirection
     Vector3 throwDirection = new Vector3(xDirection, 0, zDirection).normalized;
