@@ -222,28 +222,34 @@ public class GameManager : MonoBehaviour {
   }
 
   //Players can check for tip-off priority.
-  public void CheckTipOff(XboxController controller) {
+  public bool CheckTipOff(XboxController controller) {
     Debug.Log("Checking TipOff...");
     if (S.tipoff) {
       S.tipoff = false;
       switch (controller) {
         case XboxController.First: //small1
           SmallPlayer1.HoldBall(Ball);
-          break;
+          S.tipoffScreen.SetActive(false);
+          return true;
 
         case XboxController.Second: //tall1
           TallPlayer1.HoldBall(Ball);
-          break;
+          S.tipoffScreen.SetActive(false);
+          return true;
 
         case XboxController.Third: //small2
           SmallPlayer2.HoldBall(Ball);
-          break;
+          S.tipoffScreen.SetActive(false);
+          return true;
 
         case XboxController.Fourth: //tall2
           TallPlayer2.HoldBall(Ball);
-          break;
+          S.tipoffScreen.SetActive(false);
+          return true;
+        default:
+          return false;
       }
-      S.tipoffScreen.SetActive(false);
-    }
+      
+    } else return false;
   }
 }
