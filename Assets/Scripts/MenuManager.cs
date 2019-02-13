@@ -8,7 +8,7 @@ public class MenuManager : MonoBehaviour
 {
     public void LoadGame()
     {
-        SceneManager.LoadScene("ExampleCourt");
+        SceneManager.LoadScene("NewCourtTest");
     }
     public void ExitGame()
     {

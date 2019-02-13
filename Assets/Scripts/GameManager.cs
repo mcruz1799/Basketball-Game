@@ -26,14 +26,16 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private Text winningText;
   [SerializeField] private GameObject tipoffScreen;
   [SerializeField] private GameObject overtimeScreen;
+
+  [SerializeField] private GameObject sp1_spawn;
+  [SerializeField] private GameObject sp2_spawn;
+  [SerializeField] private GameObject tp1_spawn;
+  [SerializeField] private GameObject tp2_spawn;
 #pragma warning restore 0649
 
   public IBall Ball { get; private set; }
   public Vector3 ball_pos;
-  private Vector3 sp1_pos;
-  private Vector3 sp2_pos;
-  private Vector3 tp1_pos;
-  private Vector3 tp2_pos;
+
 
   public IPlayer SmallPlayer1 { get; private set; }
   public IPlayer TallPlayer1 { get; private set; }
@@ -79,10 +81,10 @@ public class GameManager : MonoBehaviour {
     TallPlayer1 = _tallPlayer1;
     SmallPlayer2 = _smallPlayer2;
     TallPlayer2 = _tallPlayer2;
-    sp1_pos = _smallPlayer1.transform.position;
-    sp2_pos = _smallPlayer2.transform.position;
-    tp1_pos = _tallPlayer1.transform.position;
-    tp2_pos = _tallPlayer2.transform.position;
+   // sp1_pos = _smallPlayer1.transform.position;
+   // sp2_pos = _smallPlayer2.transform.position;
+   // tp1_pos = _tallPlayer1.transform.position;
+   // tp2_pos = _tallPlayer2.transform.position;
 
     team1ScoreText = GameObject.Find("HUDCanvas/Team1/team1_pts/Pts").GetComponent<Text>();
     team2ScoreText = GameObject.Find("HUDCanvas/Team2/team2_pts/Pts").GetComponent<Text>();
@@ -143,12 +145,17 @@ public class GameManager : MonoBehaviour {
 
   //scoring, to be called from player script
   public void UpdateScore(ScoreComponent.PlayerType p, int i) {
+    Ball.SetParent(null);
+    Ball.SetPosition(ball_pos);
+        
     if (p == ScoreComponent.PlayerType.team1) {
       score_team1 += i;
       team1ScoreText.text = score_team1.ToString();
+      SmallPlayer1.HoldBall(Ball);
     } else {
       score_team2 += i;
       team2ScoreText.text = score_team2.ToString();
+      SmallPlayer2.HoldBall(Ball);
     }
     if (score_team1 >= winning_score || score_team2 >= winning_score
         || overtime) {
@@ -204,41 +211,45 @@ public class GameManager : MonoBehaviour {
   
   public void ResetAfterScore()
   {
-        Ball.SetParent(null);
-        Ball.SetPosition(ball_pos);
         S._tallPlayer1.ThrowSmallPlayer();
         S._tallPlayer2.ThrowSmallPlayer();
-        S._smallPlayer1.transform.position = sp1_pos;
-        S._smallPlayer2.transform.position = sp2_pos;
-        S._tallPlayer1.transform.position = tp1_pos;
-        S._tallPlayer2.transform.position = tp2_pos;
-        S.tipoff = true;
-        S.tipoffScreen.SetActive(true);
+        S._smallPlayer1.transform.position = sp1_spawn.transform.position;
+        S._smallPlayer2.transform.position = sp2_spawn.transform.position;
+        S._tallPlayer1.transform.position = tp1_spawn.transform.position;
+        S._tallPlayer2.transform.position = tp2_spawn.transform.position;
+        //S.tipoff = true;
+        //S.tipoffScreen.SetActive(true);
   }
 
   //Players can check for tip-off priority.
-  public void CheckTipOff(XboxController controller) {
+  public bool CheckTipOff(XboxController controller) {
     Debug.Log("Checking TipOff...");
     if (S.tipoff) {
       S.tipoff = false;
       switch (controller) {
         case XboxController.First: //small1
           SmallPlayer1.HoldBall(Ball);
-          break;
+          S.tipoffScreen.SetActive(false);
+          return true;
 
         case XboxController.Second: //tall1
           TallPlayer1.HoldBall(Ball);
-          break;
+          S.tipoffScreen.SetActive(false);
+          return true;
 
         case XboxController.Third: //small2
           SmallPlayer2.HoldBall(Ball);
-          break;
+          S.tipoffScreen.SetActive(false);
+          return true;
 
         case XboxController.Fourth: //tall2
           TallPlayer2.HoldBall(Ball);
-          break;
+          S.tipoffScreen.SetActive(false);
+          return true;
+        default:
+          return false;
       }
-      S.tipoffScreen.SetActive(false);
-    }
+      
+    } else return false;
   }
 }

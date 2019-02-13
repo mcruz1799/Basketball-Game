@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: c080e73fee166004d9a64d6bf189a993
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ExampleCourt.unity
     guid: 2256a55b1a57bce4b827ee1cd74a8781
+  - enabled: 1
+    path: Assets/Scenes/NewCourtTest.unity
+    guid: bf7fb17e1386742b3a8a55ecf4136ce4
   m_configObjects: {}
