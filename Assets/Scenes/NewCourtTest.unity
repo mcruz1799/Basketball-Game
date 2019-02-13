@@ -259,7 +259,7 @@ MonoBehaviour:
   _tallPlayer2: {fileID: 1982353489}
   basket1: {fileID: 1110856168}
   basket2: {fileID: 615897146}
-  gameLength: 60
+  gameLength: 120
   winningScore: 10
   winningScreen: {fileID: 1877650349}
   winningText: {fileID: 1296502892}
