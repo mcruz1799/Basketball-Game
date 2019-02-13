@@ -1936,7 +1936,7 @@ MonoBehaviour:
   grabHitbox: {fileID: 671285113}
   _team: 0
   scoreDistance: 1
-  throwDistance: 1
+  throwDistance: 2
 --- !u!114 &986456963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3634,7 +3634,7 @@ MonoBehaviour:
   grabHitbox: {fileID: 1233442104}
   _team: 1
   scoreDistance: 1
-  throwDistance: 1
+  throwDistance: 2
 --- !u!114 &1860496311
 MonoBehaviour:
   m_ObjectHideFlags: 0

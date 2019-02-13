@@ -146,6 +146,7 @@ public class GameManager : MonoBehaviour {
         || overtime) {
       EndGame();
     }
+    Ball.SetParent(null);
     Ball.SetPosition(ball_pos);
   }
 

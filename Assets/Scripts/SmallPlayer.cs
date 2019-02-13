@@ -51,7 +51,7 @@ public class SmallPlayer : Player {
 
   public bool OnThrown(float xDirection, float zDirection) {
     //Can't be thrown if there's nobody holding you
-    if (Below != null) {
+    if (Below == null) {
       return false;
     }
     Below = null;
