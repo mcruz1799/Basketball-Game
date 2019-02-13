@@ -951,7 +951,7 @@ MonoBehaviour:
   grabHitbox: {fileID: 1406815172}
   _team: 0
   scoreDistance: 1
-  throwDistance: 2
+  throwDistance: 10
 --- !u!114 &410584851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localHeightToHoldBallAt: 0
-  maxPassDistance: 15
+  maxPassDistance: 25
 --- !u!114 &410584852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1567,7 +1567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localHeightToHoldBallAt: 0
-  maxPassDistance: 15
+  maxPassDistance: 25
 --- !u!54 &845735872
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3583,7 +3583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localHeightToHoldBallAt: 0
-  maxPassDistance: 15
+  maxPassDistance: 25
 --- !u!54 &1982353491
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3754,7 +3754,7 @@ MonoBehaviour:
   grabHitbox: {fileID: 1642193875}
   _team: 1
   scoreDistance: 1
-  throwDistance: 2
+  throwDistance: 10
 --- !u!114 &2029042014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3768,7 +3768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localHeightToHoldBallAt: 0
-  maxPassDistance: 15
+  maxPassDistance: 25
 --- !u!114 &2029042015
 MonoBehaviour:
   m_ObjectHideFlags: 0
