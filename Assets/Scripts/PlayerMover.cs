@@ -11,17 +11,36 @@ public class PlayerMover : MonoBehaviour, IXzController {
 
   public float XLook { get { return transform.forward.x; } }
   public float ZLook { get { return transform.forward.z; } }
+
+  private bool outOfBounds = false;
     
 
-  public void Move(float xMove, float zMove) {
-    Vector3 movementVector = new Vector3(xMove, 0, zMove);
+      public void Move(float xMove, float zMove) {
+        if (!outOfBounds)
+        {
+          Vector3 movementVector = new Vector3(xMove, 0, zMove);
 
-    //Moves on world axis, deltatime to smoothen movement
-    transform.Translate(movementVector.normalized * Time.deltaTime * movementSpeed, Space.World);
+          //Moves on world axis, deltatime to smoothen movement
+          transform.Translate(movementVector.normalized * Time.deltaTime * movementSpeed, Space.World);
+        }
   }
 
   public void SetRotation(float xLook, float zLook) {
     Vector3 target = new Vector3(xLook, 0, zLook);
     transform.forward = target;
   }
+  private void OnCollisionEnter(Collision other) {
+    if (other.gameObject.CompareTag("boundary"))
+    {
+      outOfBounds = true;
+    }
+  }
+  
+  private void OnCollisionExit(Collision other) {
+   if (other.gameObject.CompareTag("boundary"))
+    {
+      outOfBounds = false;
+    }
+  }
+      
 }

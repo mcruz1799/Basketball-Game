@@ -8,6 +8,7 @@ TagManager:
   - Ball
   - Basket1
   - Basket2
+  - boundary
   layers:
   - Default
   - TransparentFX
