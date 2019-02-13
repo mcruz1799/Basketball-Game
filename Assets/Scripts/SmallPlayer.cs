@@ -128,7 +128,6 @@ public class SmallPlayer : Player {
    Pass: If Player has the ball, pass it.
   */
   public override void PressA(XboxController controller) {
-    Debug.Log(HasBall);
     if (HasBall) {
       Pass();
     } else {

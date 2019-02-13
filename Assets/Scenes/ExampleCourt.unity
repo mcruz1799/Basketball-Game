@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightningEffectPrefab: {fileID: 11427938, guid: 15dec7b07032b2f4aa6f855bfbe120f7,
     type: 3}
-  effectTime: 1.5
+  effectTime: 0.25
 --- !u!1 &44310049
 GameObject:
   m_ObjectHideFlags: 0

@@ -52,11 +52,11 @@ public class InputManager : MonoBehaviour
     } */
 
     //Check Button Presses
-    if (XCI.GetButton(XboxButton.A,controller))
+    if (XCI.GetButtonDown(XboxButton.A,controller))
     {
       player.PressA(controller);
     }
-    if (XCI.GetButton(XboxButton.B, controller))
+    if (XCI.GetButtonDown(XboxButton.B, controller))
     {
         player.PressB(controller);
     }
