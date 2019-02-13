@@ -29,18 +29,19 @@ public class PlayerMover : MonoBehaviour, IXzController {
     Vector3 target = new Vector3(xLook, 0, zLook);
     transform.forward = target;
   }
-  private void OnCollisionEnter(Collision other) {
+  private void OnTriggerEnter(Collider other) {
+    Debug.Log("collision");
     if (other.gameObject.CompareTag("boundary"))
     {
+      Debug.Log("HELLZ YEAH");
       outOfBounds = true;
     }
   }
   
-  private void OnCollisionExit(Collision other) {
+  private void OnTriggerExit(Collider other) {
    if (other.gameObject.CompareTag("boundary"))
     {
       outOfBounds = false;
     }
-  }
-      
+  }     
 }
