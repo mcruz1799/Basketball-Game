@@ -18,6 +18,7 @@ public class TallPlayer : Player {
 
     Above = null;
     Debug.Log("Throw True.");
+    currentState = PlayerMovementState.Default;
     return true;
   }
 
@@ -39,12 +40,13 @@ public class TallPlayer : Player {
         break;
       }
     }
-
+    currentState = PlayerMovementState.HoldingSmall;
     return true;
   }
 
   public void OnAboveJumpingOff() {
     Above = null;
+    currentState = PlayerMovementState.Default;
   }
 
   public override void Stun() {

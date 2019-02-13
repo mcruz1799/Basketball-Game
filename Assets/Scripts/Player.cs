@@ -21,6 +21,15 @@ public abstract class Player : MonoBehaviour, IPlayer {
 
   public ScoreComponent.PlayerType Team { get; private set; }
 
+  protected enum PlayerMovementState { Default, HoldingSmall} //Different Player states that effect movement.
+  protected Dictionary<PlayerMovementState, float> StateSpeed = new Dictionary<PlayerMovementState, float>() //Speed multipler related to particular state.
+  {
+      {PlayerMovementState.Default, 1.0f },
+      {PlayerMovementState.HoldingSmall, 0.25f },
+  };
+
+  protected PlayerMovementState currentState = PlayerMovementState.Default;
+
   //Specific to Player
   public virtual bool CanRotate => !IsStunned;
   public virtual bool CanMove => !IsStunned;
@@ -62,7 +71,8 @@ public abstract class Player : MonoBehaviour, IPlayer {
 
   public void Move(float xMove, float zMove) {
     if (CanMove) {
-      xzController.Move(xMove, zMove);
+      float speed = StateSpeed[currentState];
+      xzController.Move(speed * xMove, speed * zMove);
     }
   }
   public void SetRotation(float xLook, float zLook) {
