@@ -42,7 +42,8 @@ public class BallUserComponent : MonoBehaviour {
     RaycastHit[] hits = Physics.BoxCastAll(transform.position, grabHitbox.bounds.extents, selfToHitbox, Quaternion.identity, selfToHitbox.magnitude);
     foreach (RaycastHit h in hits) {
       BallUserComponent other = h.collider.GetComponent<BallUserComponent>();
-      if (other.heldBall != null) {
+
+      if (other != null && other.heldBall != null) {
         HoldBall(other.heldBall);
         other.heldBall = null;
       }
@@ -52,7 +53,7 @@ public class BallUserComponent : MonoBehaviour {
   }
 
   public void Pass() {
-    float yGround = 0;
+    float yGround = 0 + 0.05f;
 
     Vector3 passOrigin = transform.position;
     passOrigin.y = yGround;

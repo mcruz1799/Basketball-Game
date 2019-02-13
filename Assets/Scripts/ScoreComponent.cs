@@ -13,7 +13,7 @@ public class ScoreComponent : MonoBehaviour {
   }
 
   private void OnTriggerEnter(Collider other) {
-    if (scorer.Below != null) {
+    if (scorer.Below != null && scorer.HasBall) {
       if (other.tag == "Basket1") {
         //TODO: update score based on distance
         GameManager.S.UpdateScore(PlayerType.team1, 1);

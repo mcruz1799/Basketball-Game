@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour {
 
   public IBall Ball { get; private set; }
   public Vector3 ball_pos;
+  private Vector3 sp1_pos;
+  private Vector3 sp2_pos;
+  private Vector3 tp1_pos;
+  private Vector3 tp2_pos;
 
   public IPlayer SmallPlayer1 { get; private set; }
   public IPlayer TallPlayer1 { get; private set; }
@@ -75,6 +79,10 @@ public class GameManager : MonoBehaviour {
     TallPlayer1 = _tallPlayer1;
     SmallPlayer2 = _smallPlayer2;
     TallPlayer2 = _tallPlayer2;
+    sp1_pos = _smallPlayer1.transform.position;
+    sp2_pos = _smallPlayer2.transform.position;
+    tp1_pos = _tallPlayer1.transform.position;
+    tp2_pos = _tallPlayer2.transform.position;
 
     team1ScoreText = GameObject.Find("HUDCanvas/Team1/team1_pts/Pts").GetComponent<Text>();
     team2ScoreText = GameObject.Find("HUDCanvas/Team2/team2_pts/Pts").GetComponent<Text>();
@@ -146,7 +154,7 @@ public class GameManager : MonoBehaviour {
         || overtime) {
       EndGame();
     }
-    Ball.SetPosition(ball_pos);
+    ResetAfterScore();
   }
 
   public void QuitGame() {
@@ -192,6 +200,20 @@ public class GameManager : MonoBehaviour {
     if (minutes < 10) min_str = "0" + min_str;
     if (seconds < 10) sec_str = "0" + sec_str;
     gameTimeText.text = min_str + ":" + sec_str;
+  }
+  
+  public void ResetAfterScore()
+  {
+        Ball.SetParent(null);
+        Ball.SetPosition(ball_pos);
+        S._tallPlayer1.ThrowSmallPlayer();
+        S._tallPlayer2.ThrowSmallPlayer();
+        S._smallPlayer1.transform.position = sp1_pos;
+        S._smallPlayer2.transform.position = sp2_pos;
+        S._tallPlayer1.transform.position = tp1_pos;
+        S._tallPlayer2.transform.position = tp2_pos;
+        S.tipoff = true;
+        S.tipoffScreen.SetActive(true);
   }
 
   //Players can check for tip-off priority.

@@ -9,11 +9,15 @@ public class TallPlayer : Player {
   public SmallPlayer Above { get; private set; }
 
   public bool ThrowSmallPlayer() {
+    Debug.Log("Stuff happens.");
+    Debug.Log("Above:" + Above);
     if (Above == null || !Above.OnThrown(XLook, ZLook)) {
+      Debug.Log("Throw false.");
       return false;
     }
 
     Above = null;
+    Debug.Log("Throw True.");
     return true;
   }
 
@@ -31,6 +35,7 @@ public class TallPlayer : Player {
       SmallPlayer other = h.collider.GetComponent<SmallPlayer>();
       if (other != null && other.Team == Team && other.Below == null) {
         other.OnPickedUp(this);
+        Above = other;
         break;
       }
     }
@@ -61,9 +66,11 @@ public class TallPlayer : Player {
     } else {
       GameManager.S.CheckTipOff(controller);
       PickUpSmallPlayer();
+      
     }
   }
   public override void PressB(XboxController controller) {
     Steal();
+    ThrowSmallPlayer();
   }
 }
