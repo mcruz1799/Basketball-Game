@@ -145,12 +145,17 @@ public class GameManager : MonoBehaviour {
 
   //scoring, to be called from player script
   public void UpdateScore(ScoreComponent.PlayerType p, int i) {
+    Ball.SetParent(null);
+    Ball.SetPosition(ball_pos);
+        
     if (p == ScoreComponent.PlayerType.team1) {
       score_team1 += i;
       team1ScoreText.text = score_team1.ToString();
+      SmallPlayer1.HoldBall(Ball);
     } else {
       score_team2 += i;
       team2ScoreText.text = score_team2.ToString();
+      SmallPlayer2.HoldBall(Ball);
     }
     if (score_team1 >= winning_score || score_team2 >= winning_score
         || overtime) {
@@ -206,16 +211,14 @@ public class GameManager : MonoBehaviour {
   
   public void ResetAfterScore()
   {
-        Ball.SetParent(null);
-        Ball.SetPosition(ball_pos);
         S._tallPlayer1.ThrowSmallPlayer();
         S._tallPlayer2.ThrowSmallPlayer();
         S._smallPlayer1.transform.position = sp1_spawn.transform.position;
         S._smallPlayer2.transform.position = sp2_spawn.transform.position;
         S._tallPlayer1.transform.position = tp1_spawn.transform.position;
         S._tallPlayer2.transform.position = tp2_spawn.transform.position;
-        S.tipoff = true;
-        S.tipoffScreen.SetActive(true);
+        //S.tipoff = true;
+        //S.tipoffScreen.SetActive(true);
   }
 
   //Players can check for tip-off priority.
