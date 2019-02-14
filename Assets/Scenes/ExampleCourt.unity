@@ -1622,7 +1622,13 @@ MonoBehaviour:
   winningText: {fileID: 225023743}
   tipoffScreen: {fileID: 1090851727}
   overtimeScreen: {fileID: 1674055789}
+  sp1_spawn: {fileID: 0}
+  sp2_spawn: {fileID: 0}
+  tp1_spawn: {fileID: 0}
+  tp2_spawn: {fileID: 0}
   ball_pos: {x: 0, y: 0, z: 0}
+  tipoff: 0
+  end: 0
 --- !u!4 &755832800
 Transform:
   m_ObjectHideFlags: 0
@@ -1649,6 +1655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c552a7c2e1fe0cd43854f670899a6733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Xboundary: 7
+  Zboundary: 14
 --- !u!82 &755832802
 AudioSource:
   m_ObjectHideFlags: 0
