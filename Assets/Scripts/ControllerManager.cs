@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class ControllerManager : MonoBehaviour
 {   
     public XboxController controller;
@@ -26,6 +27,16 @@ public class ControllerManager : MonoBehaviour
         if (button.CompareTag("TallPlayer2"))
         {
             controllerToPlayer.Add(controller, 3);
+        }
+    }
+    private void Update() {
+        if (controllerToPlayer.Keys.Count == 4)
+        {
+            //display text "press start to play"
+        }
+        if (XCI.GetButtonDown(XboxButton.Start))
+        {
+            SceneManager.LoadScene("MainGame");
         }
     }
 }

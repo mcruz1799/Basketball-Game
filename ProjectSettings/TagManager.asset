@@ -11,6 +11,12 @@ TagManager:
   - boundary
   - team1
   - team2
+  - KillField
+  - Ground
+  - TallPlayer1
+  - TallPlayer2
+  - SmallPlayer1
+  - SmallPlayer2
   layers:
   - Default
   - TransparentFX
