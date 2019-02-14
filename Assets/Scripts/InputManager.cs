@@ -70,9 +70,25 @@ public class InputManager : MonoBehaviour
     {
       player.PressA(controller);
     }
-    if (XCI.GetButtonDown(XboxButton.B, controller))
+    //if (XCI.GetButtonDown(XboxButton.B, controller))
+    //{
+    //    player.PressB(controller);
+    //}
+    //Listen for Dash
+    if (XCI.GetButton(XboxButton.B,controller))
     {
-        player.PressB(controller);
+       Player p = (Player)player;
+       if (p.currentDashState == Player.DashState.Default && p.dashRefillPenalty != false) //Start Dash Coroutine.
+       {
+         p.currentDashState = Player.DashState.Dash;
+         p.StartCoroutine("DashActive");
+       } else if (p.dashRefillPenalty == true) { p.currentDashState = Player.DashState.Default; } //Disable if under penalty
+    } else if (XCI.GetButtonUp(XboxButton.B, controller)) //End Timer
+    {
+       Player p = (Player)player;
+       p.currentDashState = Player.DashState.Default; //Disable upon release.
+       p.StopCoroutine("DashActive");
+       p.StartCoroutine("DashInactive");
     }
-    }
+  }
 }
