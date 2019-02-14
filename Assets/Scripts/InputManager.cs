@@ -18,7 +18,7 @@ public class InputManager : MonoBehaviour
         players[2] = GameManager.S.SmallPlayer2;
         players[3] = GameManager.S.TallPlayer2;
 
-        controllerToPlayer = cm.controllerToPlayer;
+        //controllerToPlayer = cm.controllerToPlayer;
     }
     private void Update() {
     //For four controllers connected to the machine.
