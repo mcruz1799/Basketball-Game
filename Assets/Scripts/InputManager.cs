@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour
   //Checks for inputs from a specific controller, and applies movement to the s
   private void checkInputs(XboxController controller, IPlayer player) {
     //Vector3 initialPos = new Vector3(player.X, 0, player.Z);
-    if (!GameManager.S.tipoff){
+    if (!GameManager.S.tipoff && !GameManager.S.end){
 
     
       //Check Movement Inputs

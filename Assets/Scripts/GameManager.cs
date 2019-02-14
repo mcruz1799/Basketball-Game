@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour {
   private RawImage possessionIndicator;
   public bool tipoff;
 
+  public bool end;
+
   private bool overtime;
   //this is pointless, only needed to call StopCoroutine
 
@@ -135,6 +137,7 @@ public class GameManager : MonoBehaviour {
 
   private void EndGame() {
     //TODO: disable player movements
+    end = true;
     S.StopAllCoroutines();
     overtimeScreen.SetActive(false);
     overtime = false;
@@ -146,6 +149,7 @@ public class GameManager : MonoBehaviour {
       S.winningScreen.SetActive(true);
     } else {
       overtime = true;
+      end = false;
       S.StartCoroutine(OvertimeGame());
     }
   }
