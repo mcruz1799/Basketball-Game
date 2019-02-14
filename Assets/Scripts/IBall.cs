@@ -7,5 +7,4 @@ public interface IBall {
 
   void SetPosition(Vector3 newPosition);
   void SetParent(Transform newParent);
-  GameObject GetParent();
 }

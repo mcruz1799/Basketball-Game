@@ -30,7 +30,8 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private Text gameTimeText;
   [SerializeField] private Text team1ScoreText;
   [SerializeField] private Text team2ScoreText;
-  [SerializeField] private RawImage possessionIndicator;
+  [SerializeField] private RawImage possessionIndicator1;
+  [SerializeField] private RawImage possessionIndicator2;
 
   [SerializeField] private GameObject sp1_spawn;
   [SerializeField] private GameObject sp2_spawn;
@@ -91,25 +92,29 @@ public class GameManager : MonoBehaviour {
     StartGame();
   }
 
-  private void Update() {
-    try{
-      if (Ball.GetParent().CompareTag("team1"))
-      {
-        possessionIndicator.gameObject.SetActive(true);
-        //make possession indicator under team1
-        possessionIndicator.transform.position = new Vector3(-435,-46,0);
-      }
-      else if (Ball.GetParent().CompareTag("team2"))
-      {
-        possessionIndicator.gameObject.SetActive(true);
-        //make possession indicator under team2 
-        possessionIndicator.transform.position = new Vector3(222,-46,0);
+  public void NotifyOfBallOwnership(ScoreComponent.PlayerType? team) {
+    if (team == null) {
+      possessionIndicator1.gameObject.SetActive(false);
+      possessionIndicator2.gameObject.SetActive(false);
+    } else {
+      switch (team.Value) {
+        case ScoreComponent.PlayerType.team1:
+          possessionIndicator1.gameObject.SetActive(true);
+          possessionIndicator2.gameObject.SetActive(false);
+          return;
 
+        case ScoreComponent.PlayerType.team2:
+          possessionIndicator1.gameObject.SetActive(false);
+          possessionIndicator2.gameObject.SetActive(true);
+          return;
+
+        default:
+          Debug.LogWarning("Illegal enum value detected");
+          break;
       }
-    }catch{
-      Debug.Log("No one is in possession of the ball");
     }
   }
+
   private void StartGame() {
     Debug.Log("Starting Game with " + game_time + " Seconds");
 

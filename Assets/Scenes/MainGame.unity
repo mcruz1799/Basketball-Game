@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 27933164}
   - component: {fileID: 27933163}
   m_Layer: 0
-  m_Name: Game Manager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,7 +266,7 @@ MonoBehaviour:
   winningText: {fileID: 1296502892}
   gameTimeText: {fileID: 1281940303}
   team1ScoreText: {fileID: 1551349816}
-  team2ScoreText: {fileID: 0}
+  team2ScoreText: {fileID: 2101620100}
   possessionIndicator: {fileID: 2110865876}
   sp1_spawn: {fileID: 1198686325}
   sp2_spawn: {fileID: 219632906}
@@ -1683,7 +1683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 888102017}
   m_Layer: 5
-  m_Name: TeamBlue
+  m_Name: Team 2 (Blue)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2316,7 +2316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1114852742}
   m_Layer: 5
-  m_Name: TeamRed
+  m_Name: Team1 (Red)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
