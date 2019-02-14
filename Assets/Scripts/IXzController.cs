@@ -4,7 +4,7 @@ using UnityEngine;
 using XboxCtrlrInput;
 
 public interface IXzController {
-  float Speed { get; set; }
+  float Speed { get; }
 
   float X { get; }
   float Z { get; }
