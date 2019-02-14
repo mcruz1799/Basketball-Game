@@ -16,10 +16,10 @@ public class ScoreComponent : MonoBehaviour {
     if (scorer.Below != null && scorer.HasBall) {
       if (other.tag == "Basket1") {
         //TODO: update score based on distance
-        GameManager.S.UpdateScore(PlayerType.team1, 1);
+        GameManager.S.UpdateScore(PlayerType.team1, 2);
       } else if (other.tag == "Basket2") {
         //TODO: update score based on distance
-        GameManager.S.UpdateScore(PlayerType.team2, 1);
+        GameManager.S.UpdateScore(PlayerType.team2, 2);
       }
     }
   }

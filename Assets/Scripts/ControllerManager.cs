@@ -9,6 +9,7 @@ public class ControllerManager : MonoBehaviour
     public XboxController controller;
     //private XboxController[] controllers = new XboxController[] { XboxController.First, XboxController.Second, XboxController.Third, XboxController.Fourth };
     public Dictionary<XboxController,int> controllerToPlayer;
+    public Text startText;
 
     public void setDictionary(Button button)
     {
@@ -33,6 +34,7 @@ public class ControllerManager : MonoBehaviour
         if (controllerToPlayer.Keys.Count == 4)
         {
             //display text "press start to play"
+            startText.gameObject.SetActive(true);
         }
         if (XCI.GetButtonDown(XboxButton.Start))
         {
