@@ -61,20 +61,13 @@ public class InputManager : MonoBehaviour {
 
     //Check Button Presses
     if (XCI.GetButtonDown(XboxButton.A, controller)) {
-      player.PressA(controller);
+      player.AButtonDown(controller);
     }
-    //if (XCI.GetButtonDown(XboxButton.B, controller))
-    //{
-    //    player.PressB(controller);
-    //}
-    //Listen for Dash
-    if (XCI.GetButton(XboxButton.B, controller)) {
-      Player p = (Player)player;
-      p.StartDashing();
-
-    } else if (XCI.GetButtonUp(XboxButton.B, controller)) {
-      Player p = (Player)player;
-      p.StopDashing();
+    if (XCI.GetButtonDown(XboxButton.B, controller)) {
+      player.BButtonDown(controller);
+    }
+    if (XCI.GetButtonUp(XboxButton.B, controller)) {
+      player.BButtonUp(controller);
     }
   }
 }
