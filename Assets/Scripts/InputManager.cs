@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour {
 
     foreach (KeyValuePair<XboxController,int> kvp in controllerToPlayer)
     {
-        checkInputs(kvp.Key, players[kvp.Value]);
+        CheckInputs(kvp.Key, players[kvp.Value]);
     }
     // for (int i = 0; i < 4; i++) {
     //   try {
@@ -39,7 +39,7 @@ public class InputManager : MonoBehaviour {
   }
 
   //Checks for inputs from a specific controller, and applies movement to the s
-  private void checkInputs(XboxController controller, IPlayer player) {
+  private void CheckInputs(XboxController controller, IPlayer player) {
     //Vector3 initialPos = new Vector3(player.X, 0, player.Z);
     if (!GameManager.S.tipoff && !GameManager.S.end) {
 
