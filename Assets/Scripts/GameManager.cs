@@ -30,7 +30,8 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private Text gameTimeText;
   [SerializeField] private Text team1ScoreText;
   [SerializeField] private Text team2ScoreText;
-  [SerializeField] private RawImage possessionIndicator;
+  [SerializeField] private RawImage possessionIndicator1;
+  [SerializeField] private RawImage possessionIndicator2;
 
   [SerializeField] private GameObject sp1_spawn;
   [SerializeField] private GameObject sp2_spawn;
@@ -39,25 +40,24 @@ public class GameManager : MonoBehaviour {
 #pragma warning restore 0649
 
   public IBall Ball { get; private set; }
-  public Vector3 ball_pos;
+  private Vector3 ballInitialPosition;
 
+  public float Xboundary { get; } = 7.0f;
+  public float Zboundary { get; } = 14.0f;
 
   public IPlayer SmallPlayer1 { get; private set; }
   public IPlayer TallPlayer1 { get; private set; }
   public IPlayer SmallPlayer2 { get; private set; }
   public IPlayer TallPlayer2 { get; private set; }
 
-  private int score_team1;
-  private int score_team2;
+  private int scoreTeam1;
+  private int scoreTeam2;
 
-  private float game_time;
-  private float curr_time;
+  private float currentTime;
 
   public bool tipoff;
-
   public bool end;
-
-  private bool overtime;
+  public bool overtime;
   //this is pointless, only needed to call StopCoroutine
 
   /********************************************************
@@ -78,51 +78,57 @@ public class GameManager : MonoBehaviour {
     }
 
     Ball = _ball;
+    ballInitialPosition = _ball.transform.position;
 
     SmallPlayer1 = _smallPlayer1;
     TallPlayer1 = _tallPlayer1;
     SmallPlayer2 = _smallPlayer2;
     TallPlayer2 = _tallPlayer2;
-   // sp1_pos = _smallPlayer1.transform.position;
-   // sp2_pos = _smallPlayer2.transform.position;
-   // tp1_pos = _tallPlayer1.transform.position;
-   // tp2_pos = _tallPlayer2.transform.position;
+    // sp1_pos = _smallPlayer1.transform.position;
+    // sp2_pos = _smallPlayer2.transform.position;
+    // tp1_pos = _tallPlayer1.transform.position;
+    // tp2_pos = _tallPlayer2.transform.position;
 
     StartGame();
   }
 
-  private void Update() {
-    try{
-      if (Ball.GetParent().CompareTag("team1"))
-      {
-        possessionIndicator.gameObject.SetActive(true);
-        //make possession indicator under team1
-        possessionIndicator.transform.position = new Vector3(-435,-46,0);
-      }
-      else if (Ball.GetParent().CompareTag("team2"))
-      {
-        possessionIndicator.gameObject.SetActive(true);
-        //make possession indicator under team2 
-        possessionIndicator.transform.position = new Vector3(222,-46,0);
+  public void NotifyOfBallOwnership(ScoreComponent.PlayerType? team) {
+    if (team == null) {
+      possessionIndicator1.gameObject.SetActive(false);
+      possessionIndicator2.gameObject.SetActive(false);
+    } else {
+      switch (team.Value) {
+        case ScoreComponent.PlayerType.team1:
+          possessionIndicator1.gameObject.SetActive(true);
+          possessionIndicator2.gameObject.SetActive(false);
+          return;
 
+        case ScoreComponent.PlayerType.team2:
+          possessionIndicator1.gameObject.SetActive(false);
+          possessionIndicator2.gameObject.SetActive(true);
+          return;
+
+        default:
+          Debug.LogWarning("Illegal enum value detected");
+          break;
       }
-    }catch{
-      Debug.Log("No one is in possession of the ball");
     }
   }
+
   private void StartGame() {
-    Debug.Log("Starting Game with " + game_time + " Seconds");
+    Debug.Log("Starting Game with " + gameLength + " Seconds");
 
     winningScreen.SetActive(false);
     overtimeScreen.SetActive(false);
 
-    Ball.SetPosition(ball_pos);
-    game_time = gameLength;
-    score_team1 = 0;
-    score_team2 = 0;
+    Ball.SetParent(null);
+    Ball.SetPosition(ballInitialPosition);
+
+    scoreTeam1 = 0;
+    scoreTeam2 = 0;
     overtime = false;
-    curr_time = game_time;
-    SetGameTime(curr_time);
+    currentTime = gameLength;
+    SetGameTime(currentTime);
     tipoff = true;
     tipoffScreen.SetActive(true);
     StartCoroutine(UpdateTime()); //start updating the game
@@ -135,10 +141,10 @@ public class GameManager : MonoBehaviour {
     S.StopAllCoroutines();
     overtimeScreen.SetActive(false);
     overtime = false;
-    if (score_team2 > score_team1) {
+    if (scoreTeam2 > scoreTeam1) {
       S.winningText.text = "Congratulations to \nTeam Blue!";
       S.winningScreen.SetActive(true);
-    } else if (score_team1 > score_team2) {
+    } else if (scoreTeam1 > scoreTeam2) {
       S.winningText.text = "Congratulations to \nTeam Red!";
       S.winningScreen.SetActive(true);
     } else {
@@ -164,15 +170,15 @@ public class GameManager : MonoBehaviour {
   //scoring, to be called from player script
   public void UpdateScore(ScoreComponent.PlayerType p, int i) {
     Ball.SetParent(null);
-    Ball.SetPosition(ball_pos);
-        
+    Ball.SetPosition(ballInitialPosition);
+
     if (p == ScoreComponent.PlayerType.team1) {
-      score_team1 += i;
-      team1ScoreText.text = score_team1.ToString();
+      scoreTeam1 += i;
+      team1ScoreText.text = scoreTeam1.ToString();
       SmallPlayer1.HoldBall(Ball);
     } else {
-      score_team2 += i;
-      team2ScoreText.text = score_team2.ToString();
+      scoreTeam2 += i;
+      team2ScoreText.text = scoreTeam2.ToString();
       SmallPlayer2.HoldBall(Ball);
     }
     if (overtime) {
@@ -187,26 +193,26 @@ public class GameManager : MonoBehaviour {
 
   public void RestartGame() {
     //TODO: change to load scene of main menu
-    score_team1 = 0;
-    score_team2 = 0;
-    curr_time = game_time;
+    scoreTeam1 = 0;
+    scoreTeam2 = 0;
+    currentTime = gameLength;
     overtime = false;
     //somehow reset player positions?
     SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
   }
 
   private IEnumerator GameTime() {
-    yield return new WaitForSeconds(game_time);
+    yield return new WaitForSeconds(gameLength);
     Debug.Log("Game Time Up");
     SetGameTime(0);
     EndGame();
   }
 
   private IEnumerator UpdateTime() {
-    while (curr_time > 0) {
-      curr_time -= 1;
+    while (currentTime > 0) {
+      currentTime -= 1;
       yield return new WaitForSeconds(1);
-      SetGameTime(curr_time);
+      SetGameTime(currentTime);
     }
   }
 
@@ -225,17 +231,16 @@ public class GameManager : MonoBehaviour {
     if (seconds < 10) sec_str = "0" + sec_str;
     gameTimeText.text = min_str + ":" + sec_str;
   }
-  
-  public void ResetAfterScore()
-  {
-        S._tallPlayer1.ThrowSmallPlayer();
-        S._tallPlayer2.ThrowSmallPlayer();
-        S._smallPlayer1.transform.position = sp1_spawn.transform.position;
-        S._smallPlayer2.transform.position = sp2_spawn.transform.position;
-        S._tallPlayer1.transform.position = tp1_spawn.transform.position;
-        S._tallPlayer2.transform.position = tp2_spawn.transform.position;
-        //S.tipoff = true;
-        //S.tipoffScreen.SetActive(true);
+
+  public void ResetAfterScore() {
+    _tallPlayer1.ThrowSmallPlayer();
+    _tallPlayer2.ThrowSmallPlayer();
+    _smallPlayer1.transform.position = sp1_spawn.transform.position;
+    _smallPlayer2.transform.position = sp2_spawn.transform.position;
+    _tallPlayer1.transform.position = tp1_spawn.transform.position;
+    _tallPlayer2.transform.position = tp2_spawn.transform.position;
+    //S.tipoff = true;
+    //S.tipoffScreen.SetActive(true);
   }
 
   //Players can check for tip-off priority.
@@ -266,7 +271,7 @@ public class GameManager : MonoBehaviour {
         default:
           return false;
       }
-      
+
     } else return false;
   }
 }

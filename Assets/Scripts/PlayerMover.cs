@@ -4,7 +4,7 @@ using UnityEngine;
 using XboxCtrlrInput;
 
 public class PlayerMover : MonoBehaviour, IXzController {
-  public float movementSpeed = 10.0f;
+  public float Speed { get; set; }
 
   public float X { get { return transform.position.x; } }
   public float Z { get { return transform.position.z; } }
@@ -12,20 +12,20 @@ public class PlayerMover : MonoBehaviour, IXzController {
   public float XLook { get { return transform.forward.x; } }
   public float ZLook { get { return transform.forward.z; } }
 
-  private bool outOfBounds = false;
-    
+  public void Move(float xMove, float zMove) {
+    Vector3 movementVector = new Vector3(xMove, 0, zMove);
+    Vector3 oldPosition = transform.position;
 
-      public Vector3 Move(float xMove, float zMove) {
-          Vector3 movementVector = new Vector3(xMove, 0, zMove);
-
-          //Moves on world axis, deltatime to smoothen movement
-          transform.Translate(movementVector.normalized * Time.deltaTime * movementSpeed, Space.World);
-          return transform.position;
+    //Moves on world axis, deltatime to smoothen movement
+    transform.Translate(movementVector.normalized * Time.deltaTime * Speed, Space.World);
+    if (Mathf.Abs(transform.position.x) > GameManager.S.Xboundary || Mathf.Abs(transform.position.z) > GameManager.S.Zboundary) {
+      transform.position = oldPosition;
+    }
   }
 
   public void SetRotation(float xLook, float zLook) {
     Vector3 target = new Vector3(xLook, 0, zLook);
     transform.forward = target;
   }
-  
+
 }
