@@ -126,7 +126,7 @@ public class SmallPlayer : Player {
    Tip-Off: Gain control of the ball.
    Pass: If Player has the ball, pass it.
   */
-  public override void PressA(XboxController controller) {
+  public override void AButtonDown(XboxController controller) {
     if (HasBall) {
       Pass();
     } else {
@@ -134,7 +134,11 @@ public class SmallPlayer : Player {
       JumpOffPlayer();
     }
   }
-  public override void PressB(XboxController controller) {
-    Steal();
+  public override void BButtonDown(XboxController controller) {
+    StartDashing();
+    //Steal();
+  }
+  public override void BButtonUp(XboxController controller) {
+    StopDashing();
   }
 }
