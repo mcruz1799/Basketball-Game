@@ -31,6 +31,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
     Team = _team;
     xzController = GetComponent<PlayerMover>();
     ballUserComponent = GetComponent<BallUserComponent>();
+    StartCoroutine(DashRoutine());
 
     if (grabHitbox == null) {
       Debug.LogError("SmallPlayer.grabHitbox is null.  HMMMM  <_<");
@@ -101,19 +102,34 @@ public abstract class Player : MonoBehaviour, IPlayer {
   public bool dashRefillPenalty { get; private set; } = true;
   public bool IsDashing { get; private set; }
 
-  private IEnumerator DashActive() {
-    while (dashTimer > 0) {
-      dashTimer -= .25f;
-      yield return new WaitForSeconds(.25f);
-      //TODO: Add Set Stamina Bar here.
-    } //Completely depleted timer, penalty accrued.
-    dashRefillPenalty = true;
-  }
-  private IEnumerator DashInactive() {
-    while (dashTimer < 3) {
-      dashTimer += .25f;
-      yield return new WaitForSeconds(.25f);
+  public void StartDashing() {
+    if (!dashRefillPenalty) {
+      IsDashing = true;
     }
-    dashRefillPenalty = false;
+  }
+
+  public void StopDashing() {
+    IsDashing = false;
+  }
+
+  private IEnumerator DashRoutine() {
+    while (true) {
+      yield return new WaitForSeconds(0.25f);
+
+      if (IsDashing) {
+        dashTimer -= 0.25f;
+        if (dashTimer <= 0f) {
+          dashTimer = 0f;
+          dashRefillPenalty = true;
+          StopDashing();
+        }
+      } else {
+        dashTimer += 0.25f;
+        if (dashTimer >= 3f) {
+          dashTimer = 3f;
+          dashRefillPenalty = false;
+        }
+      }
+    }
   }
 }

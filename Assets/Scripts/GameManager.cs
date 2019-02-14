@@ -55,9 +55,9 @@ public class GameManager : MonoBehaviour {
 
   private float currentTime;
 
-  private bool tipoff;
-  private bool end;
-  private bool overtime;
+  public bool tipoff;
+  public bool end;
+  public bool overtime;
   //this is pointless, only needed to call StopCoroutine
 
   /********************************************************
