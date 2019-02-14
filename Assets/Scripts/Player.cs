@@ -12,23 +12,35 @@ public interface IPlayer : IBallUser, IXzController {
 //Exists only so GetComponent can be used.  When defining variables/fields/properties, please use IPlayer instead.
 public abstract class Player : MonoBehaviour, IPlayer {
 #pragma warning disable 0649
-  [SerializeField] protected BoxCollider grabHitbox;
-  [SerializeField] private ScoreComponent.PlayerType _team;
+    [SerializeField] protected BoxCollider grabHitbox;
+    [SerializeField] private ScoreComponent.PlayerType _team;
 #pragma warning restore 0649
 
-  private IXzController xzController;
-  private BallUserComponent ballUserComponent;
+    private IXzController xzController;
+    private BallUserComponent ballUserComponent;
 
-  public ScoreComponent.PlayerType Team { get; private set; }
+    public ScoreComponent.PlayerType Team { get; private set; }
 
-  protected enum PlayerMovementState { Default, HoldingSmall} //Different Player states that effect movement.
-  protected Dictionary<PlayerMovementState, float> StateSpeed = new Dictionary<PlayerMovementState, float>() //Speed multipler related to particular state.
+    private float dashTimer = 3;
+    public bool dashRefillPenalty { get; private set; } = true;
+
+    protected enum TPState { Default, HoldingSmall } //Different Player states that effect movement.
+    public enum DashState { Default, Dash } //State for Dash
+    protected Dictionary<TPState, float> StateSpeed = new Dictionary<TPState, float>() //Speed multipler related to particular state.
   {
-      {PlayerMovementState.Default, 1.0f },
-      {PlayerMovementState.HoldingSmall, 0.25f },
+      {TPState.Default, 1.0f },
+      {TPState.HoldingSmall, 0.25f },
+  };
+    protected Dictionary<DashState, float> DashSpeed = new Dictionary<DashState, float>() //Speed multipler related to particular state.
+  {
+      {DashState.Default, 1.0f },
+      {DashState.Dash, 2.0f },
   };
 
-  protected PlayerMovementState currentState = PlayerMovementState.Default;
+
+
+    protected TPState currentTPState = TPState.Default;
+    public DashState currentDashState = DashState.Default;
 
   //Specific to Player
   public virtual bool CanRotate => !IsStunned;
@@ -71,8 +83,9 @@ public abstract class Player : MonoBehaviour, IPlayer {
 
   public Vector3 Move(float xMove, float zMove) {
     if (CanMove) {
-      float speed = StateSpeed[currentState];
-      Vector3 result = xzController.Move(speed * xMove, speed * zMove);
+      float tpspeed = StateSpeed[currentTPState];
+      float dashspeed = DashSpeed[currentDashState];
+      Vector3 result = xzController.Move(tpspeed * dashspeed * xMove, tpspeed * dashspeed * zMove);
     }
     return new Vector3(X, 0, Z);
   }
@@ -99,5 +112,28 @@ public abstract class Player : MonoBehaviour, IPlayer {
 
   public void HoldBall(IBall ball) {
     ballUserComponent.HoldBall(ball);
+  }
+
+    //
+    // Dash Functionality
+    //
+  private IEnumerator DashActive()
+  {
+        while (dashTimer > 0)
+        {
+            dashTimer -= .25f;
+            yield return new WaitForSeconds(.25f);
+            //TODO: Add Set Stamina Bar here.
+        } //Completely depleted timer, penalty accrued.
+        dashRefillPenalty = true;
+  }
+  private IEnumerator DashInactive()
+  {
+        while (dashTimer < 3)
+        {
+            dashTimer += .25f;
+            yield return new WaitForSeconds(.25f);
+        }
+        dashRefillPenalty = false;
   }
 }
