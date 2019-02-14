@@ -20,12 +20,17 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private GameObject basket2;
 
   [SerializeField] private int gameLength;
-  [SerializeField] private int winningScore;
 
   [SerializeField] private GameObject winningScreen;
-  [SerializeField] private Text winningText;
   [SerializeField] private GameObject tipoffScreen;
   [SerializeField] private GameObject overtimeScreen;
+
+  //GUI objects
+  [SerializeField] private Text winningText;
+  [SerializeField] private Text gameTimeText;
+  [SerializeField] private Text team1ScoreText;
+  [SerializeField] private Text team2ScoreText;
+  [SerializeField] private RawImage possessionIndicator;
 
   [SerializeField] private GameObject sp1_spawn;
   [SerializeField] private GameObject sp2_spawn;
@@ -44,15 +49,10 @@ public class GameManager : MonoBehaviour {
 
   private int score_team1;
   private int score_team2;
-  private int winning_score;
 
   private float game_time;
   private float curr_time;
 
-  private Text gameTimeText;
-  private Text team1ScoreText;
-  private Text team2ScoreText;
-  private RawImage possessionIndicator;
   public bool tipoff;
 
   public bool end;
@@ -89,10 +89,6 @@ public class GameManager : MonoBehaviour {
    // tp1_pos = _tallPlayer1.transform.position;
    // tp2_pos = _tallPlayer2.transform.position;
 
-    team1ScoreText = GameObject.Find("HUDCanvas/Team1/team1_pts/Pts").GetComponent<Text>();
-    team2ScoreText = GameObject.Find("HUDCanvas/Team2/team2_pts/Pts").GetComponent<Text>();
-    gameTimeText = GameObject.Find("HUDCanvas/game_time/time").GetComponent<Text>();
-    possessionIndicator = GameObject.Find("HUDCanvas/PossessionIndicator").GetComponent<RawImage>();
     StartGame();
   }
 
@@ -123,7 +119,6 @@ public class GameManager : MonoBehaviour {
 
     Ball.SetPosition(ball_pos);
     game_time = gameLength;
-    winning_score = winningScore;
     score_team1 = 0;
     score_team2 = 0;
     overtime = false;
@@ -181,8 +176,7 @@ public class GameManager : MonoBehaviour {
       team2ScoreText.text = score_team2.ToString();
       SmallPlayer2.HoldBall(Ball);
     }
-    if (score_team1 >= winning_score || score_team2 >= winning_score
-        || overtime) {
+    if (overtime) {
       EndGame();
     }
     ResetAfterScore();
