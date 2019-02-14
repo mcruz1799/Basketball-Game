@@ -6,8 +6,10 @@ using XboxCtrlrInput;
 public interface IPlayer : IBallUser, IXzController {
   ScoreComponent.PlayerType Team { get; }
   void AButtonDown(XboxController controller);
-  void BButtonDown(XboxController controller);
-  void BButtonUp(XboxController controller);
+  //void BButtonDown(XboxController controller);
+  //void BButtonUp(XboxController controller);
+  void RTButtonDown(XboxController controller);
+  void RTButtonUp(XboxController controller);
 }
 
 //Exists only so GetComponent can be used.  When defining variables/fields/properties, please use IPlayer instead.
@@ -27,8 +29,10 @@ public abstract class Player : MonoBehaviour, IPlayer {
   public virtual bool CanRotate => !IsStunned;
   public virtual bool CanMove => !IsStunned;
   public abstract void AButtonDown(XboxController controller);
-  public abstract void BButtonDown(XboxController controller);
-  public abstract void BButtonUp(XboxController controller);
+  //public abstract void BButtonDown(XboxController controller);
+  //public abstract void BButtonUp(XboxController controller);
+  public abstract void RTButtonDown(XboxController controller);
+  public abstract void RTButtonUp(XboxController controller);
 
   protected virtual void Awake() {
     Team = _team;
