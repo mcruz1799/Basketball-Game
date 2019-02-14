@@ -952,7 +952,7 @@ MonoBehaviour:
   grabHitbox: {fileID: 1406815172}
   _team: 0
   scoreDistance: 1
-  throwDistance: 10
+  throwDistance: 3
 --- !u!114 &410584851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1238,8 +1238,7 @@ Transform:
   m_LocalRotation: {x: 0.18301274, y: 0.6830127, z: -0.18301274, w: 0.6830127}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 269337724}
+  m_Children: [{fileID: 269337724}]
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 30, y: 90, z: 0}
@@ -3756,7 +3755,7 @@ MonoBehaviour:
   grabHitbox: {fileID: 1642193875}
   _team: 1
   scoreDistance: 1
-  throwDistance: 10
+  throwDistance: 3
 --- !u!114 &2029042014
 MonoBehaviour:
   m_ObjectHideFlags: 0
