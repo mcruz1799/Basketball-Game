@@ -15,6 +15,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
 #pragma warning disable 0649
   [SerializeField] protected BoxCollider grabHitbox;
   [SerializeField] private ScoreComponent.PlayerType _team;
+  [SerializeField] private SimpleHealthBar staminaBar;
 #pragma warning restore 0649
 
   private PlayerMover xzController;
@@ -49,6 +50,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
   public virtual void Stun() {
     if (!IsStunned) {
       IsStunned = true;
+      StartCoroutine(StunRoutine());
     }
   }
 
@@ -57,7 +59,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
   //IXzController
   //
 
-  public virtual float Speed => xzController.Speed * (IsDashing ? 1f : 2f);
+  public virtual float Speed => xzController.Speed * (IsDashing ? 2f : 1f);
 
   public float X => xzController.X;
   public float Z => xzController.Z;
@@ -134,6 +136,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
           dashRefillPenalty = false;
         }
       }
+      staminaBar.UpdateBar(dashTimer, 3f);
     }
   }
 }
