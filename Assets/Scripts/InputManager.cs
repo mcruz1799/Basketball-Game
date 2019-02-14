@@ -5,7 +5,6 @@ using XboxCtrlrInput;
 
 public class InputManager : MonoBehaviour {
   private IPlayer[] players = new IPlayer[4];
-  private ControllerManager cm;
   private Dictionary<XboxController, int> controllerToPlayer;
   private XboxController[] controllers = new XboxController[] { XboxController.First, XboxController.Second, XboxController.Third, XboxController.Fourth };
   private void Start() {
