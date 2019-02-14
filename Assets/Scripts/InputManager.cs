@@ -25,16 +25,16 @@ public class InputManager : MonoBehaviour {
     // {
     //     checkInputs(kvp.Key, players[kvp.Value]);
     // }
-    // for (int i = 0; i < 4; i++) {
-    //   try {
-    //     checkInputs(controllers[i], players[i]);
+    for (int i = 0; i < 4; i++) {
+      try {
+        CheckInputs(controllers[i], players[i]);
 
-    //   } catch (System.Exception e) {
-    //     //TODO: Add UI message to prompt connecting controller.
-    //     //Debug.Log("Error receiving input.");
-    //     continue;
-    //   }
-    // }
+      } catch (System.Exception e) {
+        //TODO: Add UI message to prompt connecting controller.
+        //Debug.Log("Error receiving input.");
+        continue;
+      }
+    }
   }
 
   //Checks for inputs from a specific controller, and applies movement to the s
