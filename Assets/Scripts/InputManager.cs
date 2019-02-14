@@ -38,7 +38,7 @@ public class InputManager : MonoBehaviour {
   }
 
   //Checks for inputs from a specific controller, and applies movement to the s
-  private void checkInputs(XboxController controller, IPlayer player) {
+  private void CheckInputs(XboxController controller, IPlayer player) {
     //Vector3 initialPos = new Vector3(player.X, 0, player.Z);
     if (!GameManager.S.tipoff && !GameManager.S.end) {
 
@@ -60,20 +60,13 @@ public class InputManager : MonoBehaviour {
 
     //Check Button Presses
     if (XCI.GetButtonDown(XboxButton.A, controller)) {
-      player.PressA(controller);
+      player.AButtonDown(controller);
     }
-    //if (XCI.GetButtonDown(XboxButton.B, controller))
-    //{
-    //    player.PressB(controller);
-    //}
-    //Listen for Dash
-    if (XCI.GetButton(XboxButton.B, controller)) {
-      Player p = (Player)player;
-      p.StartDashing();
-
-    } else if (XCI.GetButtonUp(XboxButton.B, controller)) {
-      Player p = (Player)player;
-      p.StopDashing();
+    if (XCI.GetButtonDown(XboxButton.B, controller)) {
+      player.BButtonDown(controller);
+    }
+    if (XCI.GetButtonUp(XboxButton.B, controller)) {
+      player.BButtonUp(controller);
     }
   }
 }

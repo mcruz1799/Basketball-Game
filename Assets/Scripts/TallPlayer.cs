@@ -66,17 +66,20 @@ public class TallPlayer : Player {
    Pass: If Player has the ball, pass it.
    Pick-Up Small Player: If Player is in range, can pickup the small player.
   */
-  public override void PressA(XboxController controller) {
+  public override void AButtonDown(XboxController controller) {
     if (HasBall) {
       Pass();
     } else {
       GameManager.S.CheckTipOff(controller);
       PickUpSmallPlayer();
-      
     }
   }
-  public override void PressB(XboxController controller) {
-    Steal();
-    ThrowSmallPlayer();
+  public override void BButtonDown(XboxController controller) {
+    StartDashing();
+    //Steal();
+    //ThrowSmallPlayer();
+  }
+  public override void BButtonUp(XboxController controller) {
+    StopDashing();
   }
 }
