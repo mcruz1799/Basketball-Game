@@ -22,6 +22,10 @@ public class Ball : MonoBehaviour, IBall {
     transform.SetParent(newParent, true);
   }
 
+  public GameObject GetParent(){
+    return transform.parent.gameObject;
+  }
+
   private IEnumerator GfxRoutine(GameObject effect) {
     yield return new WaitForSeconds(effectTime);
     Destroy(effect);

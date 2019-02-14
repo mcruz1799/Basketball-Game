@@ -94,6 +94,25 @@ public class GameManager : MonoBehaviour {
     StartGame();
   }
 
+  private void Update() {
+    try{
+      if (Ball.GetParent().CompareTag("team1"))
+      {
+        possessionIndicator.gameObject.SetActive(true);
+        //make possession indicator under team1
+        possessionIndicator.transform.position = new Vector3(-435,-46,0);
+      }
+      else if (Ball.GetParent().CompareTag("team2"))
+      {
+        possessionIndicator.gameObject.SetActive(true);
+        //make possession indicator under team2 
+        possessionIndicator.transform.position = new Vector3(222,-46,0);
+
+      }
+    }catch{
+      Debug.Log("No one is in possession of the ball");
+    }
+  }
   private void StartGame() {
     Debug.Log("Starting Game with " + game_time + " Seconds");
 
