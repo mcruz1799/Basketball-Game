@@ -267,14 +267,15 @@ MonoBehaviour:
   gameTimeText: {fileID: 1281940303}
   team1ScoreText: {fileID: 1551349816}
   team2ScoreText: {fileID: 2101620100}
-  possessionIndicator: {fileID: 2110865876}
+  possessionIndicator1: {fileID: 0}
+  possessionIndicator2: {fileID: 0}
   sp1_spawn: {fileID: 1198686325}
   sp2_spawn: {fileID: 219632906}
   tp1_spawn: {fileID: 911505251}
   tp2_spawn: {fileID: 15959276}
-  ball_pos: {x: 0, y: 0.6, z: 0}
   tipoff: 0
   end: 0
+  overtime: 0
 --- !u!82 &27933163
 AudioSource:
   m_ObjectHideFlags: 0
@@ -383,8 +384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c552a7c2e1fe0cd43854f670899a6733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Xboundary: 7
-  Zboundary: 14
 --- !u!4 &27933165
 Transform:
   m_ObjectHideFlags: 0
@@ -454,14 +453,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: 0807780eddac34142abe8861fe64b4cb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 6c407a8bab1a54575a8277a47a19e851, type: 2}
     - target: {fileID: 400002, guid: 0807780eddac34142abe8861fe64b4cb, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 0807780eddac34142abe8861fe64b4cb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c407a8bab1a54575a8277a47a19e851, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0807780eddac34142abe8861fe64b4cb, type: 3}
 --- !u!1 &204384426
@@ -982,7 +981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f12f0a70d8e8496dbfd6c4452907e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  _initialSpeed: 10
 --- !u!23 &410584853
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1474,7 +1473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f12f0a70d8e8496dbfd6c4452907e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  _initialSpeed: 5
 --- !u!23 &845735874
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3722,7 +3721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f12f0a70d8e8496dbfd6c4452907e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  _initialSpeed: 5
 --- !u!23 &1982353493
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3891,7 +3890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f12f0a70d8e8496dbfd6c4452907e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  _initialSpeed: 10
 --- !u!23 &2029042016
 MeshRenderer:
   m_ObjectHideFlags: 0
