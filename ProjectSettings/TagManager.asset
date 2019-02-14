@@ -17,6 +17,7 @@ TagManager:
   - TallPlayer2
   - SmallPlayer1
   - SmallPlayer2
+  - button
   layers:
   - Default
   - TransparentFX

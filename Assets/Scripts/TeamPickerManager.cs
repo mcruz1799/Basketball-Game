@@ -8,15 +8,17 @@ using XboxCtrlrInput;
 public class TeamPickerManager : MonoBehaviour
 {
     private XboxController[] controllers = new XboxController[] { XboxController.First, XboxController.Second, XboxController.Third, XboxController.Fourth };
-    public Text startText;
-    private bool starting;
+    //private bool starting;
     public Dictionary<XboxController, int> controllerToPlayer;
     private XboxButton button;
     private static TeamPickerManager Instance = null;
+    //UI
+    public Text startText;
+    public GameObject[] playerSetups;    
 
     void Awake()
     {
-        // If there is not already an instance of SoundManager, set it to this.
+        // If there is not already an instance of TeamPickerManager, set it to this.
         if (Instance == null)
         {
             Instance = this;
