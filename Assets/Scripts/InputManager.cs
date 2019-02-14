@@ -78,7 +78,7 @@ public class InputManager : MonoBehaviour
     if (XCI.GetButton(XboxButton.B,controller))
     {
        Player p = (Player)player;
-       if (p.currentDashState == Player.DashState.Default && p.dashRefillPenalty != false) //Start Dash Coroutine.
+       if (p.currentDashState == Player.DashState.Default && p.dashRefillPenalty != true) //Start Dash Coroutine.
        {
          p.currentDashState = Player.DashState.Dash;
          p.StartCoroutine("DashActive");
