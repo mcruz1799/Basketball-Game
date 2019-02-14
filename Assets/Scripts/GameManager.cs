@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private GameObject basket2;
 
   [SerializeField] private int gameLength;
-  [SerializeField] private int winningScore;
 
   [SerializeField] private GameObject winningScreen;
   [SerializeField] private GameObject tipoffScreen;
@@ -50,7 +49,6 @@ public class GameManager : MonoBehaviour {
 
   private int score_team1;
   private int score_team2;
-  private int winning_score;
 
   private float game_time;
   private float curr_time;
@@ -121,7 +119,6 @@ public class GameManager : MonoBehaviour {
 
     Ball.SetPosition(ball_pos);
     game_time = gameLength;
-    winning_score = winningScore;
     score_team1 = 0;
     score_team2 = 0;
     overtime = false;
@@ -179,8 +176,7 @@ public class GameManager : MonoBehaviour {
       team2ScoreText.text = score_team2.ToString();
       SmallPlayer2.HoldBall(Ball);
     }
-    if (score_team1 >= winning_score || score_team2 >= winning_score
-        || overtime) {
+    if (overtime) {
       EndGame();
     }
     ResetAfterScore();
