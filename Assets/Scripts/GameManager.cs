@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour {
   public IBall Ball { get; private set; }
   public Vector3 ball_pos;
 
+  public float Xboundary { get; } = 7.0f;
+  public float Zboundary { get; } = 14.0f;
 
   public IPlayer SmallPlayer1 { get; private set; }
   public IPlayer TallPlayer1 { get; private set; }

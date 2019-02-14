@@ -9,8 +9,6 @@ public class InputManager : MonoBehaviour
     private ControllerManager cm;
     private Dictionary<XboxController,int> controllerToPlayer;
     private XboxController[] controllers = new XboxController[] { XboxController.First, XboxController.Second, XboxController.Third, XboxController.Fourth };
-    public float Xboundary = 7.0f;
-    public float Zboundary = 14.0f;
     private void Start()
     {
         players[0] = GameManager.S.SmallPlayer1;
