@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour {
   private Text gameTimeText;
   private Text team1ScoreText;
   private Text team2ScoreText;
+  private RawImage possessionIndicator;
   public bool tipoff;
 
   private bool overtime;
@@ -89,7 +90,7 @@ public class GameManager : MonoBehaviour {
     team1ScoreText = GameObject.Find("HUDCanvas/Team1/team1_pts/Pts").GetComponent<Text>();
     team2ScoreText = GameObject.Find("HUDCanvas/Team2/team2_pts/Pts").GetComponent<Text>();
     gameTimeText = GameObject.Find("HUDCanvas/game_time/time").GetComponent<Text>();
-
+    possessionIndicator = GameObject.Find("HUDCanvas/PossessionIndicator").GetComponent<RawImage>();
     StartGame();
   }
 

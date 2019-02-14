@@ -9,6 +9,8 @@ TagManager:
   - Basket1
   - Basket2
   - boundary
+  - team1
+  - team2
   layers:
   - Default
   - TransparentFX
