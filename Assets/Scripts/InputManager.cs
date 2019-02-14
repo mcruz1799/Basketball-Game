@@ -14,18 +14,17 @@ public class InputManager : MonoBehaviour {
     players[2] = GameManager.S.SmallPlayer2;
     players[3] = GameManager.S.TallPlayer2;
 
-    controllerToPlayer = tpm.controllerToPlayer;
+    //controllerToPlayer = tpm.controllerToPlayer;
 
 
-    //controllerToPlayer = cm.controllerToPlayer;
   }
   private void Update() {
     //For four controllers connected to the machine.
 
-    foreach (KeyValuePair<XboxController,int> kvp in controllerToPlayer)
-    {
-        checkInputs(kvp.Key, players[kvp.Value]);
-    }
+    // foreach (KeyValuePair<XboxController,int> kvp in controllerToPlayer)
+    // {
+    //     checkInputs(kvp.Key, players[kvp.Value]);
+    // }
     // for (int i = 0; i < 4; i++) {
     //   try {
     //     checkInputs(controllers[i], players[i]);
