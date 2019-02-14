@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 57289dc7f71f14918816952a8513a7e4
+guid: d62be69444ee64451a7f906f9f07d986
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pSphere1
+    100002: default
     400000: //RootNode
-    400002: pSphere1
-    2100000: pSphere1Mat
-    2300000: pSphere1
-    3300000: pSphere1
-    4300000: pSphere1
+    400002: default
+    2100000: defaultMat
+    2300000: default
+    3300000: default
+    4300000: default
   externalObjects: {}
   materials:
     importMaterials: 1
