@@ -78,7 +78,6 @@ public class GameManager : MonoBehaviour {
     }
 
     Ball = _ball;
-    ball_pos = new Vector3(7, 0.8f, 10.5f);
 
     SmallPlayer1 = _smallPlayer1;
     TallPlayer1 = _tallPlayer1;
