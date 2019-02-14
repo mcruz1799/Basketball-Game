@@ -16,7 +16,6 @@ public class SmallPlayer : Player {
   public override bool CanMove => base.CanMove && Below == null;
   public TallPlayer Below { get; private set; }
 
-
   //
   //Actions to be associated with an input in InputManager
   //

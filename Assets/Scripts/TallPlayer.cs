@@ -8,6 +8,13 @@ using XboxCtrlrInput;
 public class TallPlayer : Player {
   public SmallPlayer Above { get; private set; }
 
+  public override float Speed {
+    get {
+      float carryPenalty = Above == null ? 1f : 0.25f;
+      return base.Speed * carryPenalty;
+    }
+  }
+
   public bool ThrowSmallPlayer() {
     Debug.Log("Stuff happens.");
     Debug.Log("Above:" + Above);
@@ -18,7 +25,6 @@ public class TallPlayer : Player {
 
     Above = null;
     Debug.Log("Throw True.");
-    currentTPState = TPState.Default;
     return true;
   }
 
@@ -40,13 +46,11 @@ public class TallPlayer : Player {
         break;
       }
     }
-    currentTPState = TPState.HoldingSmall;
     return true;
   }
 
   public void OnAboveJumpingOff() {
     Above = null;
-    currentTPState = TPState.Default;
   }
 
   public override void Stun() {
