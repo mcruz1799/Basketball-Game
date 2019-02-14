@@ -57,7 +57,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
   //IXzController
   //
 
-  public virtual float Speed => xzController.Speed * (IsDashing ? 1f : 2f);
+  public virtual float Speed => xzController.Speed * (IsDashing ? 2f : 1f);
 
   public float X => xzController.X;
   public float Z => xzController.Z;
