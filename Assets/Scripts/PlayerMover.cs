@@ -4,6 +4,7 @@ using UnityEngine;
 using XboxCtrlrInput;
 
 public class PlayerMover : MonoBehaviour, IXzController {
+  [SerializeField] private float _initialSpeed;
   public float Speed { get; set; }
 
   public float X { get { return transform.position.x; } }
@@ -11,6 +12,10 @@ public class PlayerMover : MonoBehaviour, IXzController {
 
   public float XLook { get { return transform.forward.x; } }
   public float ZLook { get { return transform.forward.z; } }
+
+  private void Awake() {
+    Speed = _initialSpeed;
+  }
 
   public void Move(float xMove, float zMove) {
     Vector3 movementVector = new Vector3(xMove, 0, zMove);

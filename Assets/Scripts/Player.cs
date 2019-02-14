@@ -67,8 +67,10 @@ public abstract class Player : MonoBehaviour, IPlayer {
 
   public void Move(float xMove, float zMove) {
     if (CanMove) {
+      float oldSpeed = xzController.Speed;
       xzController.Speed = Speed;
       xzController.Move(xMove, zMove);
+      xzController.Speed = oldSpeed;
     }
   }
   public void SetRotation(float xLook, float zLook) {
