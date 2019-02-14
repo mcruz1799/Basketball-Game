@@ -23,9 +23,15 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private int winningScore;
 
   [SerializeField] private GameObject winningScreen;
-  [SerializeField] private Text winningText;
   [SerializeField] private GameObject tipoffScreen;
   [SerializeField] private GameObject overtimeScreen;
+
+  //GUI objects
+  [SerializeField] private Text winningText;
+  [SerializeField] private Text gameTimeText;
+  [SerializeField] private Text team1ScoreText;
+  [SerializeField] private Text team2ScoreText;
+  [SerializeField] private RawImage possessionIndicator;
 
   [SerializeField] private GameObject sp1_spawn;
   [SerializeField] private GameObject sp2_spawn;
@@ -49,10 +55,6 @@ public class GameManager : MonoBehaviour {
   private float game_time;
   private float curr_time;
 
-  private Text gameTimeText;
-  private Text team1ScoreText;
-  private Text team2ScoreText;
-  private RawImage possessionIndicator;
   public bool tipoff;
 
   public bool end;
@@ -89,10 +91,6 @@ public class GameManager : MonoBehaviour {
    // tp1_pos = _tallPlayer1.transform.position;
    // tp2_pos = _tallPlayer2.transform.position;
 
-    team1ScoreText = GameObject.Find("HUDCanvas/Team1/team1_pts/Pts").GetComponent<Text>();
-    team2ScoreText = GameObject.Find("HUDCanvas/Team2/team2_pts/Pts").GetComponent<Text>();
-    gameTimeText = GameObject.Find("HUDCanvas/game_time/time").GetComponent<Text>();
-    possessionIndicator = GameObject.Find("HUDCanvas/PossessionIndicator").GetComponent<RawImage>();
     StartGame();
   }
 
