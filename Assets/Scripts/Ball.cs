@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ball : MonoBehaviour, IBall {
+#pragma warning disable 0649
   [SerializeField] private DigitalRuby.LightningBolt.LightningBoltScript lightningEffectPrefab;
   [SerializeField] private float effectTime;
+#pragma warning restore 0649
 
   public float Radius { get { return transform.lossyScale.x; } }
 
