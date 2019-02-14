@@ -139,10 +139,10 @@ public class GameManager : MonoBehaviour {
     overtimeScreen.SetActive(false);
     overtime = false;
     if (score_team2 > score_team1) {
-      S.winningText.text = "Congratulations to \nTeam 2!";
+      S.winningText.text = "Congratulations to \nTeam Blue!";
       S.winningScreen.SetActive(true);
     } else if (score_team1 > score_team2) {
-      S.winningText.text = "Congratulations to \nTeam 1!";
+      S.winningText.text = "Congratulations to \nTeam Red!";
       S.winningScreen.SetActive(true);
     } else {
       overtime = true;

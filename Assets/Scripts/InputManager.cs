@@ -6,6 +6,8 @@ using XboxCtrlrInput;
 public class InputManager : MonoBehaviour
 {
     private IPlayer[] players = new IPlayer[4];
+    private ControllerManager cm;
+    private Dictionary<XboxController,int> controllerToPlayer;
     private XboxController[] controllers = new XboxController[] { XboxController.First, XboxController.Second, XboxController.Third, XboxController.Fourth };
     public float Xboundary = 7.0f;
     public float Zboundary = 14.0f;
@@ -15,13 +17,21 @@ public class InputManager : MonoBehaviour
         players[1] = GameManager.S.TallPlayer1;
         players[2] = GameManager.S.SmallPlayer2;
         players[3] = GameManager.S.TallPlayer2;
+
+        controllerToPlayer = cm.controllerToPlayer;
     }
     private void Update() {
     //For four controllers connected to the machine.
+
+    // foreach (KeyValuePair<XboxController,int> kvp in controllerToPlayer)
+    // {
+    //     checkInputs(kvp.Key, players[kvp.Value]);
+    // }
     for (int i = 0; i < 4; i++) {
       try
       {
-                checkInputs(controllers[i], players[i]);
+        checkInputs(controllers[i], players[i]);
+
       } catch (System.Exception e)
       {
         //TODO: Add UI message to prompt connecting controller.
