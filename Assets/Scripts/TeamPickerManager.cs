@@ -10,8 +10,7 @@ public class TeamPickerManager : MonoBehaviour
     private XboxController[] controllers = new XboxController[] { XboxController.First, XboxController.Second, XboxController.Third, XboxController.Fourth };
     public Text startText;
     private bool starting;
-    private ControllerManager cm;
-    private Dictionary<XboxController, int> controllerToPlayer;
+    public Dictionary<XboxController, int> controllerToPlayer;
     private XboxButton button;
     private static TeamPickerManager Instance = null;
 
