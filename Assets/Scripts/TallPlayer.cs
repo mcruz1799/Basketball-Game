@@ -13,7 +13,7 @@ public class TallPlayer : Player {
 
   public override float Speed {
     get {
-      float carryPenalty = Above == null ? 1f : 0.25f;
+      float carryPenalty = Above == null ? 1f : 0.5f;
       return base.Speed * carryPenalty;
     }
   }
