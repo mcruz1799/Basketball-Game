@@ -2190,7 +2190,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 1}
+  m_Size: {x: 2, y: 4, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &708588697
 Transform:
@@ -4382,7 +4382,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 1}
+  m_Size: {x: 2, y: 4, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1357197292
 Transform:
