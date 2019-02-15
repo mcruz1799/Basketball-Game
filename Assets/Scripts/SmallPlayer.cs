@@ -11,6 +11,8 @@ public class SmallPlayer : Player {
 #pragma warning disable 0649
   [SerializeField] private float scoreDistance = 1f;
   [SerializeField] private float throwDistance = 1f;
+  [SerializeField] SpriteAnimator spIdle;
+  [SerializeField] SpriteAnimator spRun;
 #pragma warning restore 0649
 
   public override bool CanMove => base.CanMove && Below == null;
@@ -44,7 +46,7 @@ public class SmallPlayer : Player {
 
     Vector3 newPosition = Vector3.zero;
 
-    newPosition.y += (this.transform.lossyScale.y + Below.transform.lossyScale.y) / 2;
+    newPosition.y += (this.transform.lossyScale.y + Below.transform.lossyScale.y) / 2 + 1.0f;
     transform.localPosition = newPosition;
   }
 
@@ -106,7 +108,7 @@ public class SmallPlayer : Player {
     }
     Below = null;
 
-    throwDestination.y = yGround + transform.lossyScale.y / 2;
+    throwDestination.y = yGround + transform.lossyScale.y / 2 + .2f;
     transform.SetParent(null, true);
     transform.position = throwDestination;
     return true;
@@ -144,5 +146,21 @@ public class SmallPlayer : Player {
     public override void XButtonDown(XboxController controller)
   {
     Stun();
+  }
+  public override void Move(float xMove, float zMove)
+  {
+    
+    if (xMove != 0 || zMove != 0)
+    {
+       Debug.Log("Idle");
+        spIdle.gameObject.SetActive(false);
+       spRun.gameObject.SetActive(true);
+    } else
+    {
+       Debug.Log("Moving");
+       spIdle.gameObject.SetActive(true);
+       spRun.gameObject.SetActive(false);
+    }
+    base.Move(xMove, zMove);
   }
 }

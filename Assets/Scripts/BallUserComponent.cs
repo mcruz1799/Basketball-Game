@@ -31,7 +31,7 @@ public class BallUserComponent : MonoBehaviour {
       GameManager.S.arrow.transform.parent = this.transform;
       Vector3 arrowPos = new Vector3(0, 0, 0);
       arrowPos.y += (this.transform.lossyScale.y)/2 + 
-        (GameManager.S.arrow.transform.lossyScale.y)*2 + 0.5f;
+        (GameManager.S.arrow.transform.lossyScale.y)*2 + 1f;
       GameManager.S.arrow.transform.localPosition = arrowPos;
       Vector3 ballPosition = Vector3.zero;
       ballPosition.y = localHeightToHoldBallAt;

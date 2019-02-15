@@ -14,10 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainGame.unity
     guid: bf7fb17e1386742b3a8a55ecf4136ce4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainGame.unity
     guid: bf7fb17e1386742b3a8a55ecf4136ce4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TeamPicker.unity
     guid: ecd9abf2c163346349130975ab7f70c9
   m_configObjects: {}

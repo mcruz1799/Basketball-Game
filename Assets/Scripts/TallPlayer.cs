@@ -6,11 +6,14 @@ using XboxCtrlrInput;
 [RequireComponent(typeof(BallUserComponent))]
 [RequireComponent(typeof(PlayerMover))]
 public class TallPlayer : Player {
+
+  [SerializeField] public SpriteAnimator tpidle;
+  [SerializeField] public SpriteAnimator tprun;
   public SmallPlayer Above { get; private set; }
 
   public override float Speed {
     get {
-      float carryPenalty = Above == null ? 1f : 0.25f;
+      float carryPenalty = Above == null ? 1f : 0.5f;
       return base.Speed * carryPenalty;
     }
   }
@@ -91,5 +94,23 @@ public class TallPlayer : Player {
   public override void XButtonDown(XboxController controller)
   {
     Stun();
+  }
+  public override void Move(float xMove, float zMove)
+  {
+    
+    if (xMove != 0 || zMove != 0)
+    {
+       Debug.Log("Idle");
+       tpidle.gameObject.SetActive(false);
+       tprun.gameObject.SetActive(true);
+       tprun.StartAnimation();
+    } else
+    {
+       Debug.Log("Moving");
+       tpidle.gameObject.SetActive(true);
+       tprun.gameObject.SetActive(false);
+       tpidle.StartAnimation();
+    }
+    base.Move(xMove, zMove);
   }
 }
