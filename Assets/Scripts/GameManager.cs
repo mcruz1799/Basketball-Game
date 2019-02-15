@@ -92,6 +92,10 @@ public class GameManager : MonoBehaviour {
     StartGame();
   }
 
+  public bool PositionIsOutOfBounds(Vector3 position) {
+    return Mathf.Abs(position.x) > S.Xboundary || Mathf.Abs(position.z) > S.Zboundary;
+  }
+
   public void NotifyOfBallOwnership(ScoreComponent.PlayerType? team) {
     if (team == null) {
       possessionIndicator1.gameObject.SetActive(false);
@@ -160,6 +164,19 @@ public class GameManager : MonoBehaviour {
         return basket1;
       case ScoreComponent.PlayerType.team2:
         return basket2;
+      default:
+        string errorMessage = "Undefined enum value";
+        Debug.LogError(errorMessage);
+        throw new System.Exception(errorMessage);
+    }
+  }
+
+  public GameObject OpponentBasketFromTeam(ScoreComponent.PlayerType team) {
+    switch (team) {
+      case ScoreComponent.PlayerType.team1:
+        return basket2;
+      case ScoreComponent.PlayerType.team2:
+        return basket1;
       default:
         string errorMessage = "Undefined enum value";
         Debug.LogError(errorMessage);
