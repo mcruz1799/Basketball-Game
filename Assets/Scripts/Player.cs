@@ -108,7 +108,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
   // Dash Functionality
   //
 
-  private float dashTimer = 3;
+  private float dashTimer = .9f;
   public bool dashRefillPenalty { get; private set; } = true;
   public bool IsDashing { get; private set; }
 
@@ -124,23 +124,23 @@ public abstract class Player : MonoBehaviour, IPlayer {
 
   private IEnumerator DashRoutine() {
     while (true) {
-      yield return new WaitForSeconds(0.25f);
+      yield return new WaitForSeconds(0.1f);
 
       if (IsDashing) {
-        dashTimer -= 0.25f;
+        dashTimer -= 0.1f;
         if (dashTimer <= 0f) {
           dashTimer = 0f;
           dashRefillPenalty = true;
           StopDashing();
         }
       } else {
-        dashTimer += 0.25f;
-        if (dashTimer >= 3f) {
-          dashTimer = 3f;
+        dashTimer += 0.1f;
+        if (dashTimer >= .9f) {
+          dashTimer = .9f;
           dashRefillPenalty = false;
         }
       }
-      staminaBar.UpdateBar(dashTimer, 3f);
+      staminaBar.UpdateBar(dashTimer, .9f);
     }
   }
 }
