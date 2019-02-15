@@ -31,6 +31,7 @@ public class TeamPickerManager : MonoBehaviour
     public GameObject tp2ButtonText;
     public GameObject tp2BackText;
     public GameObject tp2ControllerPic;
+    private bool isDone = false;
 
     void Awake()
     {
@@ -70,7 +71,7 @@ public class TeamPickerManager : MonoBehaviour
                 if (spotOpen(3)) controllerToPlayer.Add(controller, 3);
             }
         }
-        //DebugDictionary();
+        DebugDictionary();
 
     }
     private bool spotOpen(int playerNumber){
@@ -85,11 +86,14 @@ public class TeamPickerManager : MonoBehaviour
     }
     private void Update() 
     {
+        if (!isDone){
+
         if (controllerToPlayer.Keys.Count == 4)
         {
             // //display text "press start to play"
             startText.gameObject.SetActive(true);
             if (XCI.GetButtonDown(XboxButton.Start)){
+                isDone = true;
                 SceneManager.LoadScene("MainGame");
             }
         }
@@ -131,6 +135,7 @@ public class TeamPickerManager : MonoBehaviour
                 }catch{Debug.Log("Already assigned");}
             }
             
+        }
         }   
     }
 

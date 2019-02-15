@@ -14,7 +14,8 @@ public class InputManager : MonoBehaviour {
     players[2] = GameManager.S.SmallPlayer2;
     players[3] = GameManager.S.TallPlayer2;
 
-    //controllerToPlayer = tpm.controllerToPlayer;
+    tpm = GameObject.Find("TeamPickerManager").GetComponent<TeamPickerManager>();
+    controllerToPlayer = tpm.controllerToPlayer;
 
 
   }
