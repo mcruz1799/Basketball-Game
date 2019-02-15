@@ -286,7 +286,8 @@ namespace DigitalRuby.LightningBolt
 
         private void Start()
         {
-            orthographic = (Camera.main != null && Camera.main.orthographic);
+            //orthographic = (Camera.main != null && Camera.main.orthographic);
+            orthographic = false;
             lineRenderer = GetComponent<LineRenderer>();
             lineRenderer.positionCount = 0;
             UpdateFromMaterialChange();
@@ -294,7 +295,7 @@ namespace DigitalRuby.LightningBolt
 
         private void Update()
         {
-            orthographic = (Camera.main != null && Camera.main.orthographic);
+            //orthographic = (Camera.main != null && Camera.main.orthographic);
             if (timer <= 0.0f)
             {
                 if (ManualMode)
