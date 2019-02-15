@@ -53,24 +53,38 @@ public class TeamPickerManager : MonoBehaviour
     }
     public void setDictionary(XboxButton button, XboxController controller)
     {
+        Debug.Log("Q1 " + !controllerToPlayer.ContainsKey(controller));
         if (!controllerToPlayer.ContainsKey(controller)){
-            if (button == XboxButton.X)
+            Debug.Log("1");
+            if (button == XboxButton.X && spotOpen(0))
             {
-                if (spotOpen(0)) controllerToPlayer.Add(controller, 0);
+                controllerToPlayer.Add(controller, 0);
             }
+
+            Debug.Log("2");
             if (button == XboxButton.A)
             {
+                Debug.Log("A");
                 if (spotOpen(1)) controllerToPlayer.Add(controller, 1);
             }
+
+            Debug.Log("3");
             if (button == XboxButton.B)
             {
+                Debug.Log("B");
                 if (spotOpen(2)) controllerToPlayer.Add(controller, 2);
             }
+
+            Debug.Log("4");
             if (button == XboxButton.Y)
             {
+                Debug.Log("Y");
                 if (spotOpen(3)) controllerToPlayer.Add(controller, 3);
             }
+
+            Debug.Log("Q2");
         }
+        Debug.Log("Q3");
         DebugDictionary();
 
     }
@@ -79,7 +93,11 @@ public class TeamPickerManager : MonoBehaviour
         foreach (int value in controllerToPlayer.Values)
         {
             Debug.Log("value = " + value);
-            if (value == playerNumber) return false;
+            Debug.LogFormat("Val: {0} PlayerNum: {1} Comparison: {2}", value, playerNumber, value == playerNumber);
+            if (value == playerNumber) {
+                Debug.Log("false");
+                return false;
+            }
         }
         Debug.Log("true");
         return true;
@@ -103,7 +121,7 @@ public class TeamPickerManager : MonoBehaviour
             int playerNum = 0;
             foreach (XboxController controller in controllers)
             { 
-                try{
+                if (!controllerToPlayer.ContainsKey(controller)){
                     if (XCI.GetButtonDown(XboxButton.X,controller)){
                         //Debug.Log("playerNum = " + playerNum);
 
@@ -131,8 +149,8 @@ public class TeamPickerManager : MonoBehaviour
                         playerSelection.Remove(controller);
                         controllerToPlayer.Remove(controller);
                     }
-                    playerNum += 1;
-                }catch{Debug.Log("Already assigned");}
+                }
+                playerNum += 1;
             }
             
         }
