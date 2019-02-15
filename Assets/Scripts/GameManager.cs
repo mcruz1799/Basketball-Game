@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour {
   //Sound Effects
   [SerializeField] private AudioClip scoreSound;
   [SerializeField] private AudioClip endBuzzer;
+
+  [SerializeField] public GameObject arrow;
 #pragma warning restore 0649
 
   public IBall Ball { get; private set; }
