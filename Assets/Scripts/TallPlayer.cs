@@ -82,8 +82,11 @@ public class TallPlayer : Player {
   }
   public override void BButtonDown(XboxController controller)
   {
-    Steal();
-    ThrowSmallPlayer();
+    if (Above == null) {
+      Steal();
+    } else {
+      ThrowSmallPlayer();
+    }
   }
   public override void XButtonDown(XboxController controller)
   {
