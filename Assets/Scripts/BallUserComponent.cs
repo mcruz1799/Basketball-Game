@@ -7,6 +7,8 @@ public class BallUserComponent : MonoBehaviour {
 #pragma warning disable 0649
   [SerializeField] private float localHeightToHoldBallAt;
   [SerializeField] private float maxPassDistance;
+  [SerializeField] private AudioClip successfulSteal;
+  [SerializeField] private AudioClip successfulPass;
 #pragma warning restore 0649
 
   private IXzController xzController; //Needed only for XLook and ZLook
@@ -46,6 +48,7 @@ public class BallUserComponent : MonoBehaviour {
       if (other != null && other.heldBall != null) {
         HoldBall(other.heldBall);
         other.heldBall = null;
+        SoundManager.Instance.Play(successfulSteal);
         return true;
       }
     }
@@ -75,6 +78,7 @@ public class BallUserComponent : MonoBehaviour {
       nearestPlayerHit.HoldBall(heldBall);
       Debug.Log("Pass Recipient:" + nearestPlayerHit.name);
       heldBall = null;
+      SoundManager.Instance.Play(successfulPass);
     } else
     {
       Debug.Log("No Pass Recipient.");
