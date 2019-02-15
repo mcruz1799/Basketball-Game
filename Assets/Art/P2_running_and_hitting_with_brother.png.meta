@@ -1,0 +1,1044 @@
+fileFormatVersion: 2
+guid: 5988fcae9c153774e9ec59861fe8ab93
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: P2_running_and_hitting_with_brother_0
+    21300002: P2_running_and_hitting_with_brother_1
+    21300004: P2_running_and_hitting_with_brother_2
+    21300006: P2_running_and_hitting_with_brother_3
+    21300008: P2_running_and_hitting_with_brother_4
+    21300010: P2_running_and_hitting_with_brother_5
+    21300012: P2_running_and_hitting_with_brother_6
+    21300014: P2_running_and_hitting_with_brother_7
+    21300016: P2_running_and_hitting_with_brother_8
+    21300018: P2_running_and_hitting_with_brother_9
+    21300020: P2_running_and_hitting_with_brother_10
+    21300022: P2_running_and_hitting_with_brother_11
+    21300024: P2_running_and_hitting_with_brother_12
+    21300026: P2_running_and_hitting_with_brother_13
+    21300028: P2_running_and_hitting_with_brother_14
+    21300030: P2_running_and_hitting_with_brother_15
+    21300032: P2_running_and_hitting_with_brother_16
+    21300034: P2_running_and_hitting_with_brother_17
+    21300036: P2_running_and_hitting_with_brother_18
+    21300038: P2_running_and_hitting_with_brother_19
+    21300040: P2_running_and_hitting_with_brother_20
+    21300042: P2_running_and_hitting_with_brother_21
+    21300044: P2_running_and_hitting_with_brother_22
+    21300046: P2_running_and_hitting_with_brother_23
+    21300048: P2_running_and_hitting_with_brother_24
+    21300050: P2_running_and_hitting_with_brother_25
+    21300052: P2_running_and_hitting_with_brother_26
+    21300054: P2_running_and_hitting_with_brother_27
+    21300056: P2_running_and_hitting_with_brother_28
+    21300058: P2_running_and_hitting_with_brother_29
+    21300060: P2_running_and_hitting_with_brother_30
+    21300062: P2_running_and_hitting_with_brother_31
+    21300064: P2_running_and_hitting_with_brother_32
+    21300066: P2_running_and_hitting_with_brother_33
+    21300068: P2_running_and_hitting_with_brother_34
+    21300070: P2_running_and_hitting_with_brother_35
+    21300072: P2_running_and_hitting_with_brother_36
+    21300074: P2_running_and_hitting_with_brother_37
+    21300076: P2_running_and_hitting_with_brother_38
+    21300078: P2_running_and_hitting_with_brother_39
+    21300080: P2_running_and_hitting_with_brother_40
+    21300082: P2_running_and_hitting_with_brother_41
+    21300084: P2_running_and_hitting_with_brother_42
+    21300086: P2_running_and_hitting_with_brother_43
+    21300088: P2_running_and_hitting_with_brother_44
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5808
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f80c10df52922454a955299bbcf690bc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_1
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 5808
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d31bb03daaf3f254b9b2dd393ae66985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_2
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 5808
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07343a86140dc9e4586188e0932c8ab1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_3
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 5808
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 950ed9813f5589945b5ad2bdddde6c84
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_4
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 5808
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d42d89c37db18b64a9818c840f6ae935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_5
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 5808
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb33485dbce5f04a8fd35cc4e788060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_6
+      rect:
+        serializedVersion: 2
+        x: 5784
+        y: 5808
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5011dbe95a6f8f8498982de955dafde2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4840
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5122f9747d830ba4784a6b769eaa4a2d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_8
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 4840
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c05102973066b5d479a3b192a83c6a8d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_9
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 4840
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04749fbfb44193542a46937f5cfe1359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_10
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 4840
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14dfdd9c15aa3284c89ea02d441f8946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_11
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 4840
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c27487216adfce4085356d198c06333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_12
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 4840
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef357d5eb6fb17a47ab18ce8d30c65a5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_13
+      rect:
+        serializedVersion: 2
+        x: 5784
+        y: 4840
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1396f805baecf6342be6d439639667af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3872
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f702d6fa59582e4b9c9e96d41d82ca9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_15
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 3872
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a709392d6bbd2419ae0497e9c31bf5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_16
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 3872
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54586ad84ca5a8143991e1ba848061e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_17
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 3872
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6586b5167983a1e4eb54f3689402fcdb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_18
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 3872
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2db1f99a49cab94bafb1586e5ce83b0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_19
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 3872
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd68c71bf21fb443a10cc61bac31774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_20
+      rect:
+        serializedVersion: 2
+        x: 5784
+        y: 3872
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7836f04fccd619745883a3aade48b5cf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2904
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e21c113ad3e724aa7053740da32471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_22
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 2904
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fc5592be5478b04485c7dda7093a949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_23
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 2904
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c594f7e6953b78e49ab99dda61aa662a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_24
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 2904
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967566803cb6c8e40a0664cf45b81572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_25
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 2904
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b05eb2f5f2c00248b0eed4cfe7e6714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_26
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 2904
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f2e866b5432054fb2e482d87ad1f63
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_27
+      rect:
+        serializedVersion: 2
+        x: 5784
+        y: 2904
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2081242a9fbd9de41a22245f4c084b73
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1936
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b9a56bcab54714192cb2767f7ff2f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_29
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1936
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c861213b6da15c43aa5dd80a2246a04
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_30
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 1936
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5640dcd917cb314d811ffc7c4b0afcf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_31
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 1936
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433da950520b61c4dbea4578db000b57
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_32
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 1936
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93313c76b8cb7a9418dc6474eaa698b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_33
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 1936
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347521da58dab5b4fad7cd22b1feca2a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_34
+      rect:
+        serializedVersion: 2
+        x: 5784
+        y: 1936
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0322cb6f492aa4c4086c5339347b5a22
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 968
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8bd33aa7a9de4f479490a68f9d7c24a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_36
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 968
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f111503851ba8d84b8f8aa5751189ce1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_37
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 968
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e4378a78a3d444d878028950e337e9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_38
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 968
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1866ea58bda743343b619bb09a1f8ee8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_39
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 968
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32570222e445ad948aa067a406a0620b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_40
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 968
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396ddea717bf87345a34ad5ae4c9857c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_41
+      rect:
+        serializedVersion: 2
+        x: 5784
+        y: 968
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd6d6fc0c4e3a74f9e6db967edd2555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040bbb62384e77141baef0257b4063f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_43
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 0
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0dea25fd513b940a9c84f49ba19614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_hitting_with_brother_44
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 0
+        width: 964
+        height: 968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2a71c4f41c5054eb496854e9a1568b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0e3cd9248f3627a478766c65a15c1748
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

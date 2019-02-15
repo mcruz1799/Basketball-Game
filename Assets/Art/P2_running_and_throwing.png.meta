@@ -1,0 +1,1044 @@
+fileFormatVersion: 2
+guid: 1b137b841b9af1a4ead4e44a123095ce
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: P2_running_and_throwing_0
+    21300002: P2_running_and_throwing_1
+    21300004: P2_running_and_throwing_2
+    21300006: P2_running_and_throwing_3
+    21300008: P2_running_and_throwing_4
+    21300010: P2_running_and_throwing_5
+    21300012: P2_running_and_throwing_6
+    21300014: P2_running_and_throwing_7
+    21300016: P2_running_and_throwing_8
+    21300018: P2_running_and_throwing_9
+    21300020: P2_running_and_throwing_10
+    21300022: P2_running_and_throwing_11
+    21300024: P2_running_and_throwing_12
+    21300026: P2_running_and_throwing_13
+    21300028: P2_running_and_throwing_14
+    21300030: P2_running_and_throwing_15
+    21300032: P2_running_and_throwing_16
+    21300034: P2_running_and_throwing_17
+    21300036: P2_running_and_throwing_18
+    21300038: P2_running_and_throwing_19
+    21300040: P2_running_and_throwing_20
+    21300042: P2_running_and_throwing_21
+    21300044: P2_running_and_throwing_22
+    21300046: P2_running_and_throwing_23
+    21300048: P2_running_and_throwing_24
+    21300050: P2_running_and_throwing_25
+    21300052: P2_running_and_throwing_26
+    21300054: P2_running_and_throwing_27
+    21300056: P2_running_and_throwing_28
+    21300058: P2_running_and_throwing_29
+    21300060: P2_running_and_throwing_30
+    21300062: P2_running_and_throwing_31
+    21300064: P2_running_and_throwing_32
+    21300066: P2_running_and_throwing_33
+    21300068: P2_running_and_throwing_34
+    21300070: P2_running_and_throwing_35
+    21300072: P2_running_and_throwing_36
+    21300074: P2_running_and_throwing_37
+    21300076: P2_running_and_throwing_38
+    21300078: P2_running_and_throwing_39
+    21300080: P2_running_and_throwing_40
+    21300082: P2_running_and_throwing_41
+    21300084: P2_running_and_throwing_42
+    21300086: P2_running_and_throwing_43
+    21300088: P2_running_and_throwing_44
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P2_running_and_throwing_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2dea3970c1f62438f75d64dce14437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_1
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95dddf8fd3292414baba2fe2f22b6320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_2
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c232ecadf7c322549b45837f2fbbe77a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_3
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 281b9f1a5ac06394297d4890422f7252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_4
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411417130555702448fed3affbacadc2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_5
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448c1f59820947b419e2010834e4e576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_6
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a9c78f8940a2648b2ed42cc4bfd78f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97134483a7a24a943b703a178456065d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_8
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dab79a4431729446a90928ae9a1cbeb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_9
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e93dc60da1a6fe4ca69bd605a5c6fa2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_10
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195c15925becd8743a56f0e58e488168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_11
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e902faf8d1ac94443990f6c1dff096ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_12
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2092d5873c5f07943b9f0dbe3f1ce2cb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_13
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cbb77055135009418687fede8a864b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32279f61e12b20f4d8c2f0c2b51d2b2a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_15
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a2910c187d43cc4482eabab9bad3194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_16
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d936982a769ef94aa16f288876357be
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_17
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f34d017e8c52b4f887bf2a06fdd97c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_18
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d61e2cb002b3e8428537447548dc3bf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_19
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3547bf6e52dd0b4999fed3e59753f66
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_20
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f2d82f82a76a447b75da24a4f83b62
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49697016fd321d0489244d2570c4125c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_22
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 931930d722778f2489ea590c3404dba2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_23
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f3fa8c6cb59894784cfabe0453c96f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_24
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89efb8202936d16478c23c4324704df2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_25
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2c127807b76ba4c88db29472bc27ea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_26
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40ca99b6eb14b64590205b5616cae03
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_27
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56fa317af9e597f4daf27084494f83fa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cc9d98480d0fe43888f38c0b760f24
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_29
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd82797d6be6984d88222e894e2bfdb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_30
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51826eb8101c7de4a9f4fc30ab5de479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_31
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3149dc138254e854b93aa79aaf9a883c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_32
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18380bbeb50d4b142bd18ad8faba7fcc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_33
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bbae62002a93c4db02335607603aa9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_34
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a69e3299a7500614489598377d30b3c3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79f780d2e2b7014bbeb39c67bc00859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_36
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad5f6d57885e6e43b15b08a294f1465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_37
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976d21fd0fe098d408406cdda6da9b61
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_38
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09cf37c37d59f344bec7efc63148614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_39
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077c128473b1d1640ad0d012655daf86
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_40
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e54fc366b460b142b63065df27c57c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_41
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f63ea511873c4a54e88866d5b7832ed0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.5714111
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc2abf68dc04334ab6e4d085fe61419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_43
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 2.5714111
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17e01124b03210408a50a2a81baa6cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_and_throwing_44
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 2.5714111
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7b48992bd75614ebc8ced9728c6984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 838c03dda17cd5e4fa5add4f183fbe78
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

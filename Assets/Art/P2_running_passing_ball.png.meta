@@ -1,0 +1,1128 @@
+fileFormatVersion: 2
+guid: 74a1259035d2d4e41ab9c52b8bbef716
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: P2_running_passing_ball_0
+    21300002: P2_running_passing_ball_1
+    21300004: P2_running_passing_ball_2
+    21300006: P2_running_passing_ball_3
+    21300008: P2_running_passing_ball_4
+    21300010: P2_running_passing_ball_5
+    21300012: P2_running_passing_ball_6
+    21300014: P2_running_passing_ball_7
+    21300016: P2_running_passing_ball_8
+    21300018: P2_running_passing_ball_9
+    21300020: P2_running_passing_ball_10
+    21300022: P2_running_passing_ball_11
+    21300024: P2_running_passing_ball_12
+    21300026: P2_running_passing_ball_13
+    21300028: P2_running_passing_ball_14
+    21300030: P2_running_passing_ball_15
+    21300032: P2_running_passing_ball_16
+    21300034: P2_running_passing_ball_17
+    21300036: P2_running_passing_ball_18
+    21300038: P2_running_passing_ball_19
+    21300040: P2_running_passing_ball_20
+    21300042: P2_running_passing_ball_21
+    21300044: P2_running_passing_ball_22
+    21300046: P2_running_passing_ball_23
+    21300048: P2_running_passing_ball_24
+    21300050: P2_running_passing_ball_25
+    21300052: P2_running_passing_ball_26
+    21300054: P2_running_passing_ball_27
+    21300056: P2_running_passing_ball_28
+    21300058: P2_running_passing_ball_29
+    21300060: P2_running_passing_ball_30
+    21300062: P2_running_passing_ball_31
+    21300064: P2_running_passing_ball_32
+    21300066: P2_running_passing_ball_33
+    21300068: P2_running_passing_ball_34
+    21300070: P2_running_passing_ball_35
+    21300072: P2_running_passing_ball_36
+    21300074: P2_running_passing_ball_37
+    21300076: P2_running_passing_ball_38
+    21300078: P2_running_passing_ball_39
+    21300080: P2_running_passing_ball_40
+    21300082: P2_running_passing_ball_41
+    21300084: P2_running_passing_ball_42
+    21300086: P2_running_passing_ball_43
+    21300088: P2_running_passing_ball_44
+    21300090: P2_running_passing_ball_45
+    21300092: P2_running_passing_ball_46
+    21300094: P2_running_passing_ball_47
+    21300096: P2_running_passing_ball_48
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P2_running_passing_ball_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5880
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12c943ca4b1bad4d9acdce3813b5f39
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_1
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 5880
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbdf25829fbff7b4691894b0fe2561e3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_2
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 5880
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1142c1318057f4cb64ef29b3cb80e5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_3
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 5880
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e8f06f5b14ff24d87eafac48e23364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_4
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 5880
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a4d1bc3086cac4190218d7bb466434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_5
+      rect:
+        serializedVersion: 2
+        x: 3915
+        y: 5880
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b3c82b1117be634ab12f6fc82378096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_6
+      rect:
+        serializedVersion: 2
+        x: 4698
+        y: 5880
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ae1756bc4fa964f84a02916be31bb5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4900
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3d3d9924b74c643825031cd778efb2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_8
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 4900
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 931cdce0b2a99024b82ba11437d661aa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_9
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 4900
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd5250b1e935854ea264017476567de
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_10
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 4900
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6bda817b4af9f4dbbf4f23363ae8ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_11
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 4900
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c54073aefa581848ad4738478fed2ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_12
+      rect:
+        serializedVersion: 2
+        x: 3915
+        y: 4900
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835bebef81fa2774cba8671d23021289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_13
+      rect:
+        serializedVersion: 2
+        x: 4698
+        y: 4900
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa575f265017cc4e807d142b62b07f5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3920
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec133fd51b43b246a08937437634312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_15
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 3920
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cde2dd5c7a8ac849800cd9b9761909f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_16
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 3920
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ffa545f02115e9408b3ebeaf62989f4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_17
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 3920
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff035c938408e5f4298ad4684027586e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_18
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 3920
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dbaabf3f999bfc45b606e25654d885d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_19
+      rect:
+        serializedVersion: 2
+        x: 3915
+        y: 3920
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1a3d36f4dbbb1428086f073a901ebd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_20
+      rect:
+        serializedVersion: 2
+        x: 4698
+        y: 3920
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021d5c7910f39544caf6d9cb220b7ce7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2940
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd96b81128d39cd438aea0d16f4b47cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_22
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 2940
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948dd65c079306e4fbed8f7c3080e2e6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_23
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 2940
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0efa599fae68e454fb6ac02e65082b2f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_24
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 2940
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26a30c5a13b115748a6171b358279953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_25
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 2940
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df514d54dd006b448192e4e1ec52853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_26
+      rect:
+        serializedVersion: 2
+        x: 3915
+        y: 2940
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dbfe0d04c2ccc2459c07248f6159596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_27
+      rect:
+        serializedVersion: 2
+        x: 4698
+        y: 2940
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66782555dd4d057458df28faf1a84c7a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1960
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2052111a79a45244fb30d463a3d20425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_29
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1960
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a764b3a05df68c40be7fd393a0830cb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_30
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1960
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e702cfc827369944eb89c9221d241b4c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_31
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 1960
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c416f253cc7fbf74ab3679b3f8973c79
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_32
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 1960
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44fd90674d33424dbfc6bff76dd5178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_33
+      rect:
+        serializedVersion: 2
+        x: 3915
+        y: 1960
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c6fe7731a01a83438112212bb614c90
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_34
+      rect:
+        serializedVersion: 2
+        x: 4698
+        y: 1960
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192bab7844bac1948acb59f2eacfb464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 980
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a5bb02ab6b346a47a71acc5ca9f310e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_36
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 980
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe703bfd300f3547aad2f5e184545ab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_37
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 980
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb3d4ad8d5780e45b895d8f1f5f1a02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_38
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 980
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2866551483b8c64e94accac55cf11e5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_39
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 980
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a1091444bf7164a958f586a95dd925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_40
+      rect:
+        serializedVersion: 2
+        x: 3915
+        y: 980
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e9b6eaf23688fa4cb970abe3d35f049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_41
+      rect:
+        serializedVersion: 2
+        x: 4698
+        y: 980
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b7a7a7577354a4e98c7826ba44e0a4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd5e9664c6784143949c8b1eb51c29d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_43
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 0
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641d9dc8570b2b647b057d2c13383256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_44
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 0
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227fc117598bf704f83e732b3d475d92
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_45
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 0
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32a8fee459bb974292f5097f5fb80a4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_46
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 0
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b8da8338c66a144ac67458f6c10821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_47
+      rect:
+        serializedVersion: 2
+        x: 3915
+        y: 0
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e4fe885d8fcce4eaff7d03e786953d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_running_passing_ball_48
+      rect:
+        serializedVersion: 2
+        x: 4698
+        y: 0
+        width: 783.4286
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2297c3f2dd8f3884f88281efb8d9206f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4f7174597d2c1184587653811b4b8b6e
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
