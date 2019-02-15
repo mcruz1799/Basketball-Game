@@ -273,6 +273,7 @@ MonoBehaviour:
   tp1_spawn: {fileID: 911505251}
   tp2_spawn: {fileID: 15959276}
   scoreSound: {fileID: 8300000, guid: 81be469b536ae3d42934c673edcf0408, type: 3}
+  endBuzzer: {fileID: 8300000, guid: 7ac21c0fbb63b604988ca1ea1413c33c, type: 3}
   tipoff: 0
   end: 0
   overtime: 0

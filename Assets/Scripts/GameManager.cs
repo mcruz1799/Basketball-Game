@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour {
 
   //Sound Effects
   [SerializeField] private AudioClip scoreSound;
+  [SerializeField] private AudioClip endBuzzer;
 #pragma warning restore 0649
 
   public IBall Ball { get; private set; }
@@ -159,6 +160,7 @@ public class GameManager : MonoBehaviour {
       end = false;
       S.StartCoroutine(OvertimeGame());
     }
+    SoundManager.Instance.Play(endBuzzer);
   }
 
   public GameObject BasketFromTeam(ScoreComponent.PlayerType team) {
