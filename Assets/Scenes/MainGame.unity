@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabHitbox: {fileID: 1406815172}
-  _team: 0
+  _team: 1
   staminaBar: {fileID: 1066916965}
   scoreDistance: 1
   throwDistance: 3
@@ -1887,7 +1887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabHitbox: {fileID: 1357197291}
-  _team: 0
+  _team: 1
   staminaBar: {fileID: 774503562}
 --- !u!114 &845735871
 MonoBehaviour:
@@ -5046,7 +5046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabHitbox: {fileID: 708588696}
-  _team: 1
+  _team: 0
   staminaBar: {fileID: 1972849055}
 --- !u!114 &1982353490
 MonoBehaviour:
@@ -5232,7 +5232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabHitbox: {fileID: 1642193875}
-  _team: 1
+  _team: 0
   staminaBar: {fileID: 624898937}
   scoreDistance: 1
   throwDistance: 3

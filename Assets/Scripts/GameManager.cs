@@ -253,6 +253,11 @@ public class GameManager : MonoBehaviour {
   }
 
   public void ResetAfterScore() {
+
+    _smallPlayer1.transform.position = new Vector3(0,0,0);
+    _smallPlayer2.transform.position = new Vector3(0, 0, 0);
+    _tallPlayer1.transform.position = new Vector3(0, 0, 0);
+    _tallPlayer2.transform.position = new Vector3(0, 0, 0);
     _tallPlayer1.ThrowSmallPlayer();
     _tallPlayer2.ThrowSmallPlayer();
     _smallPlayer1.transform.position = sp1_spawn.transform.position;
@@ -260,8 +265,8 @@ public class GameManager : MonoBehaviour {
     _tallPlayer1.transform.position = tp1_spawn.transform.position;
     _tallPlayer2.transform.position = tp2_spawn.transform.position;
     //S.tipoff = true;
-    //S.tipoffScreen.SetActive(true);
-  }
+    ///S.tipoffScreen.SetActive(true);
+   }
 
   //Players can check for tip-off priority.
   public bool CheckTipOff(XboxController controller) {
