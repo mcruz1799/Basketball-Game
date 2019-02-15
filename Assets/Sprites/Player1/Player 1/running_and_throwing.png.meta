@@ -1,12 +1,57 @@
 fileFormatVersion: 2
 guid: c11fc65adae8e704fa7e3958ddbb92ab
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: running_and_throwing_0
+    21300002: running_and_throwing_1
+    21300004: running_and_throwing_2
+    21300006: running_and_throwing_3
+    21300008: running_and_throwing_4
+    21300010: running_and_throwing_5
+    21300012: running_and_throwing_6
+    21300014: running_and_throwing_7
+    21300016: running_and_throwing_8
+    21300018: running_and_throwing_9
+    21300020: running_and_throwing_10
+    21300022: running_and_throwing_11
+    21300024: running_and_throwing_12
+    21300026: running_and_throwing_13
+    21300028: running_and_throwing_14
+    21300030: running_and_throwing_15
+    21300032: running_and_throwing_16
+    21300034: running_and_throwing_17
+    21300036: running_and_throwing_18
+    21300038: running_and_throwing_19
+    21300040: running_and_throwing_20
+    21300042: running_and_throwing_21
+    21300044: running_and_throwing_22
+    21300046: running_and_throwing_23
+    21300048: running_and_throwing_24
+    21300050: running_and_throwing_25
+    21300052: running_and_throwing_26
+    21300054: running_and_throwing_27
+    21300056: running_and_throwing_28
+    21300058: running_and_throwing_29
+    21300060: running_and_throwing_30
+    21300062: running_and_throwing_31
+    21300064: running_and_throwing_32
+    21300066: running_and_throwing_33
+    21300068: running_and_throwing_34
+    21300070: running_and_throwing_35
+    21300072: running_and_throwing_36
+    21300074: running_and_throwing_37
+    21300076: running_and_throwing_38
+    21300078: running_and_throwing_39
+    21300080: running_and_throwing_40
+    21300082: running_and_throwing_41
+    21300084: running_and_throwing_42
+    21300086: running_and_throwing_43
+    21300088: running_and_throwing_44
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,13 +79,13 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,9 +94,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -69,13 +114,924 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: running_and_throwing_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e2ef1f43202034ea2924fda99b78dc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_1
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f681c31a6e92b418d6c9e2901735f3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_2
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61bfd4895dda5624690249c9e072ed61
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_3
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af03f67baa1e0ff40a25898c9e6b2ca0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_4
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eac4b35525276ef4684cd7e20a3fa662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_5
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faf9ba1e74ddfae41b9192ed784e3178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_6
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 6380.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7825abfce888bcc4ea634e610c9e0367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c92675b6f30764c891ffe7fc4f654f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_8
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ef1cd26e9c55b4ea07022c7bd33c2b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_9
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9319ea1a2cc07d64b8343e2f163ac168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_10
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a017c7846e10546ae3724d064cfd78
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_11
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef98286f63a6e8e41a02c02764c8055d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_12
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bdaa7bfe1f8a8749b00e9f248c818f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_13
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 5317.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf4214e393c39b48a26e5344716b118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f857ea3cff1934dab3cf713ef6807b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_15
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c334f060573824c9cbb704cf0b9f5b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_16
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1119fb070fcc1d442b5fcad7f6c168fc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_17
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9390bd37c38dfde4fbf46838c1ac7826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_18
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93419c91a50d0b245b27873160d1dbf2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_19
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d87ae6cbb93634a9c55856fe8066df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_20
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 4254.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a01b9b8936590a4abbbd97db2fc1039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b09bfd70ef6d2e48b7c32157523cbac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_22
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa9afff7e0f244448811fafaceb45d6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_23
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a81a2441eb4b1a44a154e6d18e909b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_24
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a3d99359c4fa044b5dab6d48b9a29c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_25
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95cfc122b5099a943949febad0352a13
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_26
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0a8d2035c3a4249acc8f795fff1cb0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_27
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 3191.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deca30b148993634d803093b65b19b24
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cda0d030daba4439c284a8fa381023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_29
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505548c5e7bd4a2459921193338d7546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_30
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5090b3117d702894199cabe29424381c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_31
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2621a86e4906c6a4a83da549e272aefe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_32
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c89f541f7d53a9459cb839bdab1ae32
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_33
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577ad713d2125fe458fb425046795cd1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_34
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 2128.5713
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95f59e8e5e6136e42b9ad8b05052b9d6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933ea1c39bf7be848b1e29dde5e40ad2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_36
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e8023eabbc295a4e82872cd24242590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_37
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae0f96952d15f054ba2933f4a32648a5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_38
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426628f584c9fff46a662b4a5aee1dee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_39
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1a7e8f8e8e99148b79558b7dbb2cba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_40
+      rect:
+        serializedVersion: 2
+        x: 4750
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d294bd6b6c798444595e96a58273f223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_41
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 1065.5714
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 926bbd3ab81b960458a6bceae1fdbd84
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.5714111
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be73f55a2cc97849ad8c0b5e686c199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_43
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 2.5714111
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdbb8dc77c6451e4a807b6c3d317b0c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_and_throwing_44
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 2.5714111
+        width: 950.2857
+        height: 1063.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6faa923bf783f34abc47b6a70a5b70b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 90f6d5d589cbfe6469faf899919d5a50
     vertices: []
     indices: 
     edges: []

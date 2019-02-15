@@ -1,12 +1,61 @@
 fileFormatVersion: 2
 guid: cee9e9d2b2df8b54c911300edf01c978
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: idle_and_throwing_0
+    21300002: idle_and_throwing_1
+    21300004: idle_and_throwing_2
+    21300006: idle_and_throwing_3
+    21300008: idle_and_throwing_4
+    21300010: idle_and_throwing_5
+    21300012: idle_and_throwing_6
+    21300014: idle_and_throwing_7
+    21300016: idle_and_throwing_8
+    21300018: idle_and_throwing_9
+    21300020: idle_and_throwing_10
+    21300022: idle_and_throwing_11
+    21300024: idle_and_throwing_12
+    21300026: idle_and_throwing_13
+    21300028: idle_and_throwing_14
+    21300030: idle_and_throwing_15
+    21300032: idle_and_throwing_16
+    21300034: idle_and_throwing_17
+    21300036: idle_and_throwing_18
+    21300038: idle_and_throwing_19
+    21300040: idle_and_throwing_20
+    21300042: idle_and_throwing_21
+    21300044: idle_and_throwing_22
+    21300046: idle_and_throwing_23
+    21300048: idle_and_throwing_24
+    21300050: idle_and_throwing_25
+    21300052: idle_and_throwing_26
+    21300054: idle_and_throwing_27
+    21300056: idle_and_throwing_28
+    21300058: idle_and_throwing_29
+    21300060: idle_and_throwing_30
+    21300062: idle_and_throwing_31
+    21300064: idle_and_throwing_32
+    21300066: idle_and_throwing_33
+    21300068: idle_and_throwing_34
+    21300070: idle_and_throwing_35
+    21300072: idle_and_throwing_36
+    21300074: idle_and_throwing_37
+    21300076: idle_and_throwing_38
+    21300078: idle_and_throwing_39
+    21300080: idle_and_throwing_40
+    21300082: idle_and_throwing_41
+    21300084: idle_and_throwing_42
+    21300086: idle_and_throwing_43
+    21300088: idle_and_throwing_44
+    21300090: idle_and_throwing_45
+    21300092: idle_and_throwing_46
+    21300094: idle_and_throwing_47
+    21300096: idle_and_throwing_48
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,13 +83,13 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,9 +98,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -69,13 +118,1004 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: idle_and_throwing_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6445.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a0ba607fedd4c4cb2e9e66169fdc70
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_1
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 6445.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce4897c6ca292542bdb3df9188c9287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_2
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 6445.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9fd9609ce3b7d74f9a9c7810c0351fd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_3
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 6445.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148ad452cb40e1d4abf16d969f8e3488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_4
+      rect:
+        serializedVersion: 2
+        x: 3128
+        y: 6445.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26182150a99682e47926c47921d15841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_5
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 6445.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e03e16ea90367459a07b84daeb79a4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_6
+      rect:
+        serializedVersion: 2
+        x: 4692
+        y: 6445.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c09c2900efa97ab4f8e04893acd90f70
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5371.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d4d3c527397e640bb3a2120e4ac772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_8
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 5371.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d077650a21cc648a606aa83ba1f24f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_9
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 5371.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f161f517f8116ec429bacfab4cb79cb0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_10
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 5371.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58cc42e74695594d8bdc58b1891944f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_11
+      rect:
+        serializedVersion: 2
+        x: 3128
+        y: 5371.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2cab881a912ebe4895fe7f46c3b05a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_12
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 5371.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69f4229d87a08847b0ec91a2a6ad297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_13
+      rect:
+        serializedVersion: 2
+        x: 4692
+        y: 5371.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e70c0ee1b5f871844acd29e33f12e747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4297.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb364e91989c90499162bda7f4730b7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_15
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 4297.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10df2658588d204e8ac1799895af8b2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_16
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 4297.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42dcafc5f951f9d4cb188654e11aa844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_17
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 4297.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 833e44f0893ac6d48851bdb61e55dfde
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_18
+      rect:
+        serializedVersion: 2
+        x: 3128
+        y: 4297.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f257d0a9f33410a41bebcade2e9b479b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_19
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 4297.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480700790eea864449f56ce1a61d5f5a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_20
+      rect:
+        serializedVersion: 2
+        x: 4692
+        y: 4297.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe5ba1c04e062bd4187531b630930f0e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3223.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ecd2f82778bc14c92ece7ca5e6ba5c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_22
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 3223.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f61d148b7e65d41b381946411115e8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_23
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 3223.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 761b3bf9c92382840afd0669c0946cbc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_24
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 3223.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3b1bfaf04b864478a3cfb60e180018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_25
+      rect:
+        serializedVersion: 2
+        x: 3128
+        y: 3223.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5595a0ebebbbb194ca6ff2415884acdb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_26
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 3223.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f879c39221a30747ac7fbfbe533deda
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_27
+      rect:
+        serializedVersion: 2
+        x: 4692
+        y: 3223.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a6ab58b2841e724698268e5c09b6253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2149.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4bfd69640719ed46a1dc700c1654036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_29
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 2149.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0897bcdfa069848b58afc40db97ee1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_30
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 2149.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a46009b83c80b4b98667c83076a89e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_31
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 2149.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9861cc9805f9eff41bbb5b59cd1627f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_32
+      rect:
+        serializedVersion: 2
+        x: 3128
+        y: 2149.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a7a0e4f169d314389e4ae07a91018c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_33
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 2149.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45b124d3c15b774084e5428e49bd297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_34
+      rect:
+        serializedVersion: 2
+        x: 4692
+        y: 2149.7144
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 462876fc947ed4740a05b8a19a0379cb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1075.7142
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a5874a997da0d742a5ec3e405902ad4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_36
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1075.7142
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19507a04bf2e1684397772d425f2337b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_37
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 1075.7142
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d68f8c9981beb489d71b71257148c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_38
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 1075.7142
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ecd9316c9916be4c94d179aceb20a88
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_39
+      rect:
+        serializedVersion: 2
+        x: 3128
+        y: 1075.7142
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f7d6713e705cdc40a7ba7aef3c02740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_40
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 1075.7142
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae2c561d53bc0e49be8bce3b386cb8e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_41
+      rect:
+        serializedVersion: 2
+        x: 4692
+        y: 1075.7142
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f5be82db54bd94a9019799b1de2a72
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.7142334
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82baab52c580c104db4886da5b5b5219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_43
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1.7142334
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2ecf93ee577944cbdcea0f4e2e8f1b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_44
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 1.7142334
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1bd1161d7f90344da14d3cff0f6e1f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_45
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 1.7142334
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e6c27d2bf75924c9f4ebf8e491f58f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_46
+      rect:
+        serializedVersion: 2
+        x: 3128
+        y: 1.7142334
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d6730ce94704e46874678391f4337a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_47
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 1.7142334
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f948ee68a5f9884cb5c014fe54e8ecc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_and_throwing_48
+      rect:
+        serializedVersion: 2
+        x: 4692
+        y: 1.7142334
+        width: 782.2857
+        height: 1074.2858
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd298905ff397444eb4d17dd745a2709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: eb3a842b008ef594ca79029f2313ae84
     vertices: []
     indices: 
     edges: []

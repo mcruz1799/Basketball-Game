@@ -1,12 +1,61 @@
 fileFormatVersion: 2
 guid: e38f7bb0d134e2e489faa633dfbebff7
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: idle_passing_ball_0
+    21300002: idle_passing_ball_1
+    21300004: idle_passing_ball_2
+    21300006: idle_passing_ball_3
+    21300008: idle_passing_ball_4
+    21300010: idle_passing_ball_5
+    21300012: idle_passing_ball_6
+    21300014: idle_passing_ball_7
+    21300016: idle_passing_ball_8
+    21300018: idle_passing_ball_9
+    21300020: idle_passing_ball_10
+    21300022: idle_passing_ball_11
+    21300024: idle_passing_ball_12
+    21300026: idle_passing_ball_13
+    21300028: idle_passing_ball_14
+    21300030: idle_passing_ball_15
+    21300032: idle_passing_ball_16
+    21300034: idle_passing_ball_17
+    21300036: idle_passing_ball_18
+    21300038: idle_passing_ball_19
+    21300040: idle_passing_ball_20
+    21300042: idle_passing_ball_21
+    21300044: idle_passing_ball_22
+    21300046: idle_passing_ball_23
+    21300048: idle_passing_ball_24
+    21300050: idle_passing_ball_25
+    21300052: idle_passing_ball_26
+    21300054: idle_passing_ball_27
+    21300056: idle_passing_ball_28
+    21300058: idle_passing_ball_29
+    21300060: idle_passing_ball_30
+    21300062: idle_passing_ball_31
+    21300064: idle_passing_ball_32
+    21300066: idle_passing_ball_33
+    21300068: idle_passing_ball_34
+    21300070: idle_passing_ball_35
+    21300072: idle_passing_ball_36
+    21300074: idle_passing_ball_37
+    21300076: idle_passing_ball_38
+    21300078: idle_passing_ball_39
+    21300080: idle_passing_ball_40
+    21300082: idle_passing_ball_41
+    21300084: idle_passing_ball_42
+    21300086: idle_passing_ball_43
+    21300088: idle_passing_ball_44
+    21300090: idle_passing_ball_45
+    21300092: idle_passing_ball_46
+    21300094: idle_passing_ball_47
+    21300096: idle_passing_ball_48
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,13 +83,13 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,9 +98,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -69,13 +118,1004 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: idle_passing_ball_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5760
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b231f35f57ea884c905f6ac84dbbb54
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_1
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 5760
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7030652a81e0b4bab39b51410bb5a7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_2
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 5760
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995fd99e698f52f4ea84699d5c3348bb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_3
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 5760
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f1b218a8e084e247af53001ac6436ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_4
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 5760
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87d772142a66f04d88f4d53d450b75a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_5
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 5760
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1d76c0a35fb1f42a030f93e4db534d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_6
+      rect:
+        serializedVersion: 2
+        x: 3996
+        y: 5760
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd9965d376bc5241b62c2c518599d3e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4800
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d305ed9e671a2ac4d869e0be38c6b41e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_8
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 4800
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa9c757b7fb2e40448e387c79b3bea9f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_9
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 4800
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 485c754db8e3ab6488f5c4897305a63c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_10
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 4800
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082e264612c4a5f44b64f54f6681054d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_11
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 4800
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff25b0e651e8a043a57f28a6ac3fa78
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_12
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 4800
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79beb7c0149a7f4399ee06dea64708d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_13
+      rect:
+        serializedVersion: 2
+        x: 3996
+        y: 4800
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7438a276cd5af4cbc9fa3c91dc4bba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3840
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb4e321b10d8c6b4086979e94e6ecd86
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_15
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 3840
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de981de5c3bb3804fa34be4b6fc17438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_16
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 3840
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fa7ce1b4fffc43469decfaddbee5f5a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_17
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 3840
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba69c70d3abcbc4bb822fcab5e77d32
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_18
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 3840
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8f63d1e8eae7f4380af2cbfe896637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_19
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 3840
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02868745b0742d4b82f8fcc894c83f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_20
+      rect:
+        serializedVersion: 2
+        x: 3996
+        y: 3840
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6798299e0932304a9913016f665c60c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2880
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ec7c5c6c6572c48874c9fde5537aa3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_22
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 2880
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854788ccf949a4a4b9dfa30545a5a8d0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_23
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 2880
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4242d975f4abcfc4f8548552bfbea215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_24
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 2880
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5964fda9f8d6fa46b0c437646ab02c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_25
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 2880
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9a02d4418d57b4fa25f9050a18d155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_26
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 2880
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f51486ad8a0c30448b61afa3a27a2180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_27
+      rect:
+        serializedVersion: 2
+        x: 3996
+        y: 2880
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 909759b20fbab174dbcfc6583192dcbe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d562dc1c1b7d547bce3a75f1d95e82
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_29
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1920
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bd7f79426d9e140983cc09011ea978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_30
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1920
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0cd19cd5991194ab073fb37e521a9d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_31
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 1920
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f14b3540b801e94cbbdfabdb6a7eca6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_32
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 1920
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5897342681c73c42b520c7dad581970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_33
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 1920
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f391cf8a568d87b478fe5f94c5f57bab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_34
+      rect:
+        serializedVersion: 2
+        x: 3996
+        y: 1920
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1027139a6e58c3c49b901424cca46659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ac10c4024da8a419baf099d4b487c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_36
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 960
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d8c194d017a8049ad80784efd140b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_37
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 960
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f7ad71a5fee004c838e27377fe81c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_38
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 960
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ea5db77219c764eadff2294b608684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_39
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 960
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a6537edf69e1ed40a84cf415cee3c70
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_40
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 960
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32337b26129040a4c9159d1350726976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_41
+      rect:
+        serializedVersion: 2
+        x: 3996
+        y: 960
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d903ac0acb4f42141896392fb791ae17
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 507641db4de973140906a3bb0f467d8a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_43
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 0
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ca45d98c1b3fb459c12e4674fbed2f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_44
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 0
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884184899ccfa2749858ecd10d026a28
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_45
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 0
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3bd94f823ba7b4fa57eedf12864a76
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_46
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 0
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900e012c7f7eb204a9c06d49d7ac1e99
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_47
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 0
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11290722582a755448b6f877f85c6c32
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_passing_ball_48
+      rect:
+        serializedVersion: 2
+        x: 3996
+        y: 0
+        width: 666.2857
+        height: 960
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b16bc8a6d36b80419ea6102d670e218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: daab3d56febeb8e4bb582138cda4c6c3
     vertices: []
     indices: 
     edges: []

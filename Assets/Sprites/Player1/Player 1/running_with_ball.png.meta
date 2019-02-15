@@ -1,12 +1,57 @@
 fileFormatVersion: 2
 guid: ac4601946bee1e1498e669776d9ed7d1
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: running_with_ball_0
+    21300002: running_with_ball_1
+    21300004: running_with_ball_2
+    21300006: running_with_ball_3
+    21300008: running_with_ball_4
+    21300010: running_with_ball_5
+    21300012: running_with_ball_6
+    21300014: running_with_ball_7
+    21300016: running_with_ball_8
+    21300018: running_with_ball_9
+    21300020: running_with_ball_10
+    21300022: running_with_ball_11
+    21300024: running_with_ball_12
+    21300026: running_with_ball_13
+    21300028: running_with_ball_14
+    21300030: running_with_ball_15
+    21300032: running_with_ball_16
+    21300034: running_with_ball_17
+    21300036: running_with_ball_18
+    21300038: running_with_ball_19
+    21300040: running_with_ball_20
+    21300042: running_with_ball_21
+    21300044: running_with_ball_22
+    21300046: running_with_ball_23
+    21300048: running_with_ball_24
+    21300050: running_with_ball_25
+    21300052: running_with_ball_26
+    21300054: running_with_ball_27
+    21300056: running_with_ball_28
+    21300058: running_with_ball_29
+    21300060: running_with_ball_30
+    21300062: running_with_ball_31
+    21300064: running_with_ball_32
+    21300066: running_with_ball_33
+    21300068: running_with_ball_34
+    21300070: running_with_ball_35
+    21300072: running_with_ball_36
+    21300074: running_with_ball_37
+    21300076: running_with_ball_38
+    21300078: running_with_ball_39
+    21300080: running_with_ball_40
+    21300082: running_with_ball_41
+    21300084: running_with_ball_42
+    21300086: running_with_ball_43
+    21300088: running_with_ball_44
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,13 +79,13 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,9 +94,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -69,13 +114,924 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: running_with_ball_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5876.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf952b90306cda4095a6f5cf21d5b5a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_1
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 5876.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd654ec56bcbb5e478a77e89066687ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_2
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 5876.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec0cd21b2e0d0c43927a2476b9e27b7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_3
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 5876.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec8fbb21833486248b75ed8b72817741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_4
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 5876.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dca66af52dc6654e8edcb5f41ea47b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_5
+      rect:
+        serializedVersion: 2
+        x: 3285
+        y: 5876.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5f7cd283ec19554aa3c830011db5df8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_6
+      rect:
+        serializedVersion: 2
+        x: 3942
+        y: 5876.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d11438fdce582f46b55a602a24d8735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4897.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4efa82a58bbc2c744ba4955677229f40
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_8
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 4897.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948c85ddbe92dc44aaf4343188732d0b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_9
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 4897.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b3b7934ca168645a0d45d108ac04ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_10
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 4897.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 721db9486555467409bed2cb977c7523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_11
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 4897.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04e11d41f68ada4292a016c3e70460b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_12
+      rect:
+        serializedVersion: 2
+        x: 3285
+        y: 4897.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 535b8991b2e08914793ccde0498e4064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_13
+      rect:
+        serializedVersion: 2
+        x: 3942
+        y: 4897.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d5588a1c2359844dab1c9ad8cd5806c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3918.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633ebf20317fd824f816889c88aed346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_15
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 3918.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d040bdf8e60f84a869b1ba6a5686f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_16
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 3918.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50455489470537a4fa97e6771cd4c35f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_17
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 3918.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b1a5d91a6e1e94487f7d2a2a995ef3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_18
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 3918.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ce48eb079c1354eadb7f8f5c9c9f7e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_19
+      rect:
+        serializedVersion: 2
+        x: 3285
+        y: 3918.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22cb0090ef34c147a13029b497bc2c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_20
+      rect:
+        serializedVersion: 2
+        x: 3942
+        y: 3918.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd733beebc52b9d4facc0a02d2daef7f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2939.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d148334eb9687be4d892e4a6440cfeff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_22
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 2939.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96935c6b1f74a344cb69d9513e605769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_23
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 2939.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e094115bbc379124280eabd9bf44250a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_24
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 2939.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ae72e0d40871842a5e1e3ad0a1af3f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_25
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 2939.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db014b9dd82d2a845a590f5c08b9ddb7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_26
+      rect:
+        serializedVersion: 2
+        x: 3285
+        y: 2939.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9443880bf6ee8064e8ea47f2cac62606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_27
+      rect:
+        serializedVersion: 2
+        x: 3942
+        y: 2939.5713
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8a5ee2fe06a9a4c92d27bc2e639883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1960.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e712f241607ee4badd2bf1d3262d90
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_29
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 1960.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b048855d1bfb94ca9a058c5a95e336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_30
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 1960.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d210604f6e4229545be46de2075c493f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_31
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 1960.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6b8f92e4ec5e946abb65ffc3cb6732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_32
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 1960.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11a5e5c8257adbc4089f01085258b53f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_33
+      rect:
+        serializedVersion: 2
+        x: 3285
+        y: 1960.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ede3b468b1924ec4bbcb08706a1b2062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_34
+      rect:
+        serializedVersion: 2
+        x: 3942
+        y: 1960.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f03b06e9ae1758b44a3880287402e3c3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 981.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfcaedef10c9a5647900ddb26f420639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_36
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 981.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54de47fe96231db4d9b6b37fede8a5be
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_37
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 981.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fa9417ffa737e2488fa0bb844c93ede
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_38
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 981.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d27a753f2024d4aaffd8cd4a676c8b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_39
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 981.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf61ccc4703f6d4ca8f8ef1a96e2a8e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_40
+      rect:
+        serializedVersion: 2
+        x: 3285
+        y: 981.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86aa6f330d5f3b249ae341e712fc9a70
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_41
+      rect:
+        serializedVersion: 2
+        x: 3942
+        y: 981.5714
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 778a5c79b7c5bc1438f2945e7803304e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.5714111
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e3d904cb9fa4d41a2676849ef3e308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_43
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 2.5714111
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c05d3cf193fe2142a332eecbda2264e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_with_ball_44
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 2.5714111
+        width: 657.1429
+        height: 979.4286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ce84f4e256e0d4baaf645ba4803d43
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: caafafb5b22041e4b87f270c2c0367bd
     vertices: []
     indices: 
     edges: []
