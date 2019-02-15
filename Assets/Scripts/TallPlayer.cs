@@ -74,12 +74,19 @@ public class TallPlayer : Player {
       PickUpSmallPlayer();
     }
   }
-  public override void BButtonDown(XboxController controller) {
+  public override void RTButtonDown(XboxController controller) {
     StartDashing();
-    //Steal();
-    //ThrowSmallPlayer();
   }
-  public override void BButtonUp(XboxController controller) {
+  public override void RTButtonUp(XboxController controller) {
     StopDashing();
+  }
+  public override void BButtonDown(XboxController controller)
+  {
+    Steal();
+    ThrowSmallPlayer();
+  }
+  public override void XButtonDown(XboxController controller)
+  {
+    Stun();
   }
 }

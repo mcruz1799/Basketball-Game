@@ -134,11 +134,19 @@ public class SmallPlayer : Player {
       JumpOffPlayer();
     }
   }
-  public override void BButtonDown(XboxController controller) {
+  public override void RTButtonDown(XboxController controller) {
     StartDashing();
-    //Steal();
   }
-  public override void BButtonUp(XboxController controller) {
+  public override void RTButtonUp(XboxController controller) {
     StopDashing();
+  }
+  public override void BButtonDown(XboxController controller)
+  {
+    Steal();
+  }
+
+    public override void XButtonDown(XboxController controller)
+  {
+    Stun();
   }
 }

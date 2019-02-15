@@ -65,8 +65,14 @@ public class InputManager : MonoBehaviour {
     if (XCI.GetButtonDown(XboxButton.B, controller)) {
       player.BButtonDown(controller);
     }
-    if (XCI.GetButtonUp(XboxButton.B, controller)) {
-      player.BButtonUp(controller);
+    if (XCI.GetButtonDown(XboxButton.X, controller)) {
+      player.XButtonDown(controller);
+    }
+    if (XCI.GetAxis(XboxAxis.RightTrigger, controller) >= .3f) {
+      player.RTButtonDown(controller);
+    }
+    if (XCI.GetAxis(XboxAxis.RightTrigger, controller) < .3f) {
+      player.RTButtonUp(controller);
     }
   }
 }
