@@ -1,49 +1,50 @@
 fileFormatVersion: 2
-guid: 6139fff2a233f484995ee375bdf8fdb6
+guid: 36ad8625789ff6b4898373d999723144
 TextureImporter:
   fileIDToRecycleName:
-    21300000: baby_running_0
-    21300002: baby_running_1
-    21300004: baby_running_2
-    21300006: baby_running_3
-    21300008: baby_running_4
-    21300010: baby_running_5
-    21300012: baby_running_6
-    21300014: baby_running_7
-    21300016: baby_running_8
-    21300018: baby_running_9
-    21300020: baby_running_10
-    21300022: baby_running_11
-    21300024: baby_running_12
-    21300026: baby_running_13
-    21300028: baby_running_14
-    21300030: baby_running_15
-    21300032: baby_running_16
-    21300034: baby_running_17
-    21300036: baby_running_18
-    21300038: baby_running_19
-    21300040: baby_running_20
-    21300042: baby_running_21
-    21300044: baby_running_22
-    21300046: baby_running_23
-    21300048: baby_running_24
-    21300050: baby_running_25
-    21300052: baby_running_26
-    21300054: baby_running_27
-    21300056: baby_running_28
-    21300058: baby_running_29
-    21300060: baby_running_30
-    21300062: baby_running_31
-    21300064: baby_running_32
-    21300066: baby_running_33
-    21300068: baby_running_34
-    21300070: baby_running_35
-    21300072: baby_running_36
-    21300074: baby_running_37
-    21300076: baby_running_38
-    21300078: baby_running_39
-    21300080: baby_running_40
-    21300082: baby_running_41
+    21300000: P2_baby_running_0
+    21300002: P2_baby_running_1
+    21300004: P2_baby_running_2
+    21300006: P2_baby_running_3
+    21300008: P2_baby_running_4
+    21300010: P2_baby_running_5
+    21300012: P2_baby_running_6
+    21300014: P2_baby_running_7
+    21300016: P2_baby_running_8
+    21300018: P2_baby_running_9
+    21300020: P2_baby_running_10
+    21300022: P2_baby_running_11
+    21300024: P2_baby_running_12
+    21300026: P2_baby_running_13
+    21300028: P2_baby_running_14
+    21300030: P2_baby_running_15
+    21300032: P2_baby_running_16
+    21300034: P2_baby_running_17
+    21300036: P2_baby_running_18
+    21300038: P2_baby_running_19
+    21300040: P2_baby_running_20
+    21300042: P2_baby_running_21
+    21300044: P2_baby_running_22
+    21300046: P2_baby_running_23
+    21300048: P2_baby_running_24
+    21300050: P2_baby_running_25
+    21300052: P2_baby_running_26
+    21300054: P2_baby_running_27
+    21300056: P2_baby_running_28
+    21300058: P2_baby_running_29
+    21300060: P2_baby_running_30
+    21300062: P2_baby_running_31
+    21300064: P2_baby_running_32
+    21300066: P2_baby_running_33
+    21300068: P2_baby_running_34
+    21300070: P2_baby_running_35
+    21300072: P2_baby_running_36
+    21300074: P2_baby_running_37
+    21300076: P2_baby_running_38
+    21300078: P2_baby_running_39
+    21300080: P2_baby_running_40
+    21300082: P2_baby_running_41
+    21300084: P2_baby_running_42
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -126,733 +127,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: baby_running_0
+      name: P2_baby_running_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2360
+        y: 2427.4285
         width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.47873858, y: 0.3780771}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65c649e317784dc4587646c7e78a9ad0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_1
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 2360
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.47873873, y: 0.3738729}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0aa210ecbfd301468a453995e293ed9
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_2
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 2360
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.49291295, y: 0.3780771}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01da034d0e321d549add92745f250012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_3
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 2360
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.4858259, y: 0.3780771}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2fc48948c8ee02546af2b7577327b82c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_4
-      rect:
-        serializedVersion: 2
-        x: 1120
-        y: 2360
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.50708705, y: 0.3738729}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7695be018df13464785d87faa74ad029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_5
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 2360
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3738729}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f6e43307c7feff4aa0bf0d29430ab07
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_6
-      rect:
-        serializedVersion: 2
-        x: 1680
-        y: 2360
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.4929134, y: 0.38228127}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ac045d59326a2a348901caf8a85b2274
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1888
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.5, y: 0.38228127}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43aec374a9694ca4d882f132193bdbe8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_8
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 1888
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.50000024, y: 0.38228127}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dec89c8d1de385c46afe5ab5b89428c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_9
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 1888
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.50000024, y: 0.37807763}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69553501eaac033479b5cc221d25fbc9
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_10
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 1888
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.50000024, y: 0.38228127}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81d715c84caee1d45b3807969d6e5025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_11
-      rect:
-        serializedVersion: 2
-        x: 1120
-        y: 1888
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.5, y: 0.38228127}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab0a81a742bf04e498e1ff685e2075e7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_12
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 1888
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3738729}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 197c9ac5bc4ca6640bc10bce717ccfed
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_13
-      rect:
-        serializedVersion: 2
-        x: 1680
-        y: 1888
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.4929134, y: 0.3780771}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e7818e7833bfb7b47a9051d928491fca
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_14
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1416
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.48582572, y: 0.38228154}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f89fe6974d6eff247b5475fb141b15f2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_15
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 1416
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.4858259, y: 0.36966872}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d25a8a757f1a2c4584b58d26e406e8d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_16
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 1416
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.50000024, y: 0.36546454}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eda194855179e9f45b0a80bc0a01e603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_17
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 1416
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.50000024, y: 0.3738729}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf85dc5579b683146a5b4fe4ab1e9d73
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_18
-      rect:
-        serializedVersion: 2
-        x: 1120
-        y: 1416
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.49291295, y: 0.3780771}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27288b538ae86174ba20f8dab97750c0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_19
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 1416
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.47664315, y: 0.3738729}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be93e6d8bc6a84d46a90c31e5bcacb54
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_20
-      rect:
-        serializedVersion: 2
-        x: 1680
-        y: 1416
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.47664273, y: 0.37991616}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f21e88775051f74daef7a76f6fceb9c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_21
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 944
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.50000006, y: 0.37067893}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5170bae36d49254fb86efd0c853b258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_22
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 944
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.5000001, y: 0.37529767}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9775a5a545ed0c84bb3e8b98c03c722b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_23
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 944
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.49221432, y: 0.37991616}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4601ed8d93e4b1a45b470544336cc804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_24
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 944
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.5, y: 0.37067893}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7cc8a35202fb36448ec68fdb77388f1
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_25
-      rect:
-        serializedVersion: 2
-        x: 1120
-        y: 944
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.49221453, y: 0.37991616}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e64ef0e1848f7f4a9942d713ebfd163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_26
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 944
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.48442906, y: 0.37529767}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7dbbd66a7c714e7438bc282319a5c4e7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_27
-      rect:
-        serializedVersion: 2
-        x: 1680
-        y: 944
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.49999955, y: 0.37991616}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c124f402de898a3499e24df5070dae28
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_28
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 472
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.50000006, y: 0.37529743}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8bf0fda0321a264e8eccf3a1054a07d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_29
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 472
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.5000001, y: 0.37529743}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32a91609fa6f4814fb66cbdc4b5fb51b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_30
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 472
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.4844286, y: 0.3660603}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aefd998fd326274478fb4ad1ea500ae2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_31
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 472
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3660603}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6124ff6c98d7184ca2f07eabff821ec
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_32
-      rect:
-        serializedVersion: 2
-        x: 1120
-        y: 472
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.4844286, y: 0.37067878}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2dbe5c1994967e7488547c08ac964ee7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_33
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 472
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.5, y: 0.37067878}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16efbb359cb0c9649a67d278bfa0217c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_34
-      rect:
-        serializedVersion: 2
-        x: 1680
-        y: 472
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.49221408, y: 0.37529743}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a1621eab2b79214e9ef9db5b3d15af3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_35
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 280
-        height: 472
-      alignment: 9
-      pivot: {x: 0.4766431, y: 0.37067902}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64b46e047927feb438d81ec0d94bf478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: baby_running_36
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 0
-        width: 280
-        height: 472
+        height: 404.57144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -860,19 +141,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4917ad54bd3aa0146855e552c20b020b
+      spriteID: 2fc4ac52e63442440b4a832f59aa5ae1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baby_running_37
+      name: P2_baby_running_1
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 2427.4285
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae41deeb92433e40bb6b5512e0ac35d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_2
       rect:
         serializedVersion: 2
         x: 560
-        y: 0
+        y: 2427.4285
         width: 280
-        height: 472
+        height: 404.57144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -880,19 +181,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 435a55f7bd6f32e408b1d265499593e8
+      spriteID: 624e95e7cd86d0a4dad14847b21429bb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baby_running_38
+      name: P2_baby_running_3
       rect:
         serializedVersion: 2
         x: 840
-        y: 0
+        y: 2427.4285
         width: 280
-        height: 472
+        height: 404.57144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -900,19 +201,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e098014c475e5c94698dac6c932d960d
+      spriteID: bf6f0ddb806d80d4cb8c441541e26707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baby_running_39
+      name: P2_baby_running_4
       rect:
         serializedVersion: 2
         x: 1120
-        y: 0
+        y: 2427.4285
         width: 280
-        height: 472
+        height: 404.57144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -920,19 +221,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb5713072096db24980b0f7af1428e1f
+      spriteID: 50e5f7faa41d22e4badc25318609a1e8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baby_running_40
+      name: P2_baby_running_5
       rect:
         serializedVersion: 2
         x: 1400
-        y: 0
+        y: 2427.4285
         width: 280
-        height: 472
+        height: 404.57144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -940,19 +241,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62ebb0aa2c4c3f947a9a5e311d0bc134
+      spriteID: 239bc99d0d8ad024a90e6fc887213315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baby_running_41
+      name: P2_baby_running_6
       rect:
         serializedVersion: 2
         x: 1680
-        y: 0
+        y: 2427.4285
         width: 280
-        height: 472
+        height: 404.57144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -960,7 +261,727 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bc4f2c0c4208014a80c4f52b4bdb88a
+      spriteID: c7489cdf22a459c45821b87b79b5799b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2023.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c82b3abe2f44ee4fa1a928a2876d424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_8
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 2023.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92be8478d899fca409f536f4583e43de
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_9
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 2023.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ccc14f66e18c9439126d9a079d26e9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_10
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 2023.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480ee85001e2ef74c8df61a83f5e0203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_11
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 2023.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 866195346af6bd94fa3948289b6154bf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_12
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 2023.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f22dcdd6348aa5448d6e8f70783dd5d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_13
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 2023.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc37529141ca96948ac33f33b285e0d8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1619.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e8c5b240a28e5b4d82776ce9d12ead9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_15
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 1619.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3f68e375f6ae6408b61bd460799b35
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_16
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1619.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ef8131d5cf22e4eb313635ea8b3fc9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_17
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1619.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cca0cb4745484241bf5de98cd0c3494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_18
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1619.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8e46de6910c6541986987a728512eb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_19
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1619.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b881692a774ce4290a014300bf35d6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_20
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 1619.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fc3f8658e39a5243b32933bb5fb41d8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1215.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10779c8a878715646aaa4443970fd6b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_22
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 1215.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee952d7b1d30f843bdd7d9854b0e431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_23
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1215.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7615fbf1f8fc2514c86011d12375e067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_24
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1215.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7ed3af199f70847a32c5d803d4f140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_25
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1215.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4707aa803980b4787ea8f309fc171c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_26
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1215.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e32d2307f26e614cba36ac873ad0e11
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_27
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 1215.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef63fee97d9e7844da5e87f6fb64a1f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 811.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a0a6fc494ace643b86b293ba811d8e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_29
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 811.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23581d744a23a2847bb6d6b57edb0925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_30
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 811.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5cbc7c21441d2c47a061bd8ccbeca5f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_31
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 811.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba02c7f3ea2e8f478c09f15093c964c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_32
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 811.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e689811f1c2ddf045ba9511f401c2eea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_33
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 811.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17902ada2fb079a4c869e5a16f05c83f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_34
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 811.4286
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a5c59d71cba8c438bac452b62f7764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 407.42856
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96516dee063803544aae3655834366bd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_36
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 407.42856
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0209b4dfe4a5e6f49ae2fa2737698791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_37
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 407.42856
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a79dfa64a18db4eb64233f80882bc2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_38
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 407.42856
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 114b630ea1959f341a9fd489c868f095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_39
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 407.42856
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e01887cecd284499bb15dcffdb310a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_40
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 407.42856
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e9580cf5d9d9040a6112909f864cbc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_41
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 407.42856
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07bde72ec10af8c42b225e4de085b5a4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P2_baby_running_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3.4285583
+        width: 280
+        height: 404.57144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081ca4f5a0042a147b39fa5793c65295
       vertices: []
       indices: 
       edges: []
@@ -968,7 +989,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5281ea37c4f906341b4f92054f1bb23e
+    spriteID: 1e85ea53db4fbd549a8de3f1c67a984b
     vertices: []
     indices: 
     edges: []
