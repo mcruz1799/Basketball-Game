@@ -95,4 +95,18 @@ public class TallPlayer : Player {
   {
     Stun();
   }
+  public override void Move(float xMove, float zMove)
+  {
+    
+    if (xMove != 0 || zMove != 0)
+    {
+       tpidle.enabled = false;
+       tprun.enabled = true;
+    } else
+    {
+       tpidle.enabled = true;
+       tprun.enabled = false;
+    }
+    base.Move(xMove, zMove);
+  }
 }

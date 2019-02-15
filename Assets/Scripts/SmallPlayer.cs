@@ -147,4 +147,18 @@ public class SmallPlayer : Player {
   {
     Stun();
   }
+  public override void Move(float xMove, float zMove)
+  {
+    
+    if (xMove != 0 || zMove != 0)
+    {
+       spIdle.enabled = false;
+       spRun.enabled = true;
+    } else
+    {
+       spIdle.enabled = true;
+       spRun.enabled = false;
+    }
+    base.Move(xMove, zMove);
+  }
 }
