@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ExampleCourt.unity
     guid: 2256a55b1a57bce4b827ee1cd74a8781
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainGame.unity
     guid: bf7fb17e1386742b3a8a55ecf4136ce4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TeamPicker.unity
     guid: ecd9abf2c163346349130975ab7f70c9
   m_configObjects: {}
