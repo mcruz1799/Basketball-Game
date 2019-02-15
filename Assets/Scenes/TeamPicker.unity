@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -182,7 +182,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "A" to Select
+  m_Text: Press "B" to Select
 --- !u!222 &35541366
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -962,9 +962,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Team2
-
-'
+  m_Text: Southside Sibs
 --- !u!222 &260870822
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1122,9 +1120,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Team1
-
-'
+  m_Text: Backstreet Bros
 --- !u!222 &411340427
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1145,7 +1141,7 @@ GameObject:
   - component: {fileID: 425103188}
   - component: {fileID: 425103187}
   m_Layer: 5
-  m_Name: tallPlayer1
+  m_Name: tallPlayer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1174,7 +1170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -580, y: -162}
+  m_AnchoredPosition: {x: 434, y: -158}
   m_SizeDelta: {x: 516, y: 76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &425103187
@@ -1210,7 +1206,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Jim (Big Bro)
+  m_Text: Tim (Big Bro)
 --- !u!222 &425103188
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1289,7 +1285,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "A" to Select
+  m_Text: Press "Y" to Select
 --- !u!222 &497699388
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2102,7 +2098,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "X" to Select
+  m_Text: Press "A" to Select
 --- !u!222 &1360732464
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2123,7 +2119,7 @@ GameObject:
   - component: {fileID: 1379878100}
   - component: {fileID: 1379878099}
   m_Layer: 5
-  m_Name: smallPlayer2
+  m_Name: tallPlayer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2152,7 +2148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 468, y: 260}
+  m_AnchoredPosition: {x: -554, y: -159}
   m_SizeDelta: {x: 693, y: 88.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1379878099
@@ -2188,7 +2184,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Timbo (Lil' Bro)
+  m_Text: Jim (Big Bro)
 --- !u!222 &1379878100
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2374,7 +2370,7 @@ GameObject:
   - component: {fileID: 1543891422}
   - component: {fileID: 1543891421}
   m_Layer: 5
-  m_Name: tallPlayer2
+  m_Name: smallPlayer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2403,7 +2399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 439, y: -162}
+  m_AnchoredPosition: {x: 439, y: 266}
   m_SizeDelta: {x: 516, y: 76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1543891421
@@ -2439,7 +2435,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tim (Big Bro)
+  m_Text: Timbo (Lil' Bro)
 --- !u!222 &1543891422
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2874,11 +2870,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startText: {fileID: 945936413}
-  playerSetups:
-  - {fileID: 1466506109}
-  - {fileID: 425103185}
-  - {fileID: 0}
-  - {fileID: 0}
+  sp1PlayerNums:
+  - {fileID: 1898770389}
+  - {fileID: 764489942}
+  - {fileID: 164466969}
+  - {fileID: 239333138}
+  sp1ButtonText: {fileID: 1398310097}
+  sp1BackText: {fileID: 571290339}
+  sp1ControllerPic: {fileID: 685662109}
+  sp2PlayerNums:
+  - {fileID: 2042567778}
+  - {fileID: 217808607}
+  - {fileID: 1018259592}
+  - {fileID: 1726392779}
+  sp2ButtonText: {fileID: 1360732461}
+  sp2BackText: {fileID: 2109597821}
+  sp2ControllerPic: {fileID: 1893431405}
+  tp1PlayerNums:
+  - {fileID: 2140339167}
+  - {fileID: 332196704}
+  - {fileID: 78628481}
+  - {fileID: 60001814}
+  tp1ButtonText: {fileID: 497699385}
+  tp1BackText: {fileID: 162482190}
+  tp1ControllerPic: {fileID: 1357348599}
+  tp2PlayerNums:
+  - {fileID: 1623284801}
+  - {fileID: 1670687277}
+  - {fileID: 57219982}
+  - {fileID: 197370763}
+  tp2ButtonText: {fileID: 35541363}
+  tp2BackText: {fileID: 1883652997}
+  tp2ControllerPic: {fileID: 1057038928}
 --- !u!1 &1893431405
 GameObject:
   m_ObjectHideFlags: 0
