@@ -101,6 +101,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
   }
 
   public void HoldBall(IBall ball) {
+    GameManager.S.NotifyOfBallOwnership(Team);
     ballUserComponent.HoldBall(ball);
   }
 
