@@ -53,7 +53,6 @@ public class SmallPlayer : Player {
     if (Below == null) {
       return false;
     }
-    Below = null;
 
     RaycastHit[] hits;
     float skinWidth = 0.15f;
@@ -66,35 +65,18 @@ public class SmallPlayer : Player {
     Vector3 throwDirection = new Vector3(xDirection, 0, zDirection).normalized;
     Vector3 throwDestination = transform.position + throwDirection * throwDistance;
 
-    //HOWEVER, auto-target the basket if
-    //  SmallPlayer has the ball AND
-    //  The basket is close enough
-    if (HasBall) {
-      GameObject basket = GameManager.S.OpponentBasketFromTeam(Team);
-      Vector3 from = new Vector3(raycastOrigin.x, basket.transform.position.y, raycastOrigin.z);
-      Vector3 direction = basket.transform.position - from; direction.y = 0;
-      hits = Physics.RaycastAll(from, direction, scoreDistance);
-      foreach (RaycastHit hit in hits) {
-        if (hit.collider.gameObject.Equals(basket)) {
-          Debug.Log("Threw SmallPlayer into the basket  :D");
-          throwDestination = hit.point;
-          GameManager.S.UpdateScore(Team, 1);
-          break;
-        }
-      }
-    }
-
-    //Now we check whether we hit another player on the way to the destination.
-    //For raycasting purposes, we set the y to ground level.
-    throwDestination.y = yGround;
-
 
     //
     //Being thrown into another Player
     //
 
+    //Now we check whether we hit another player on the way to the destination.
+    //For raycasting purposes, we set the y to ground level.
+    throwDestination.y = yGround;
+
     Vector3 originToDestination = throwDestination - raycastOrigin; originToDestination.y = 0;
     hits = Physics.RaycastAll(raycastOrigin, originToDestination, originToDestination.magnitude);
+    Debug.DrawRay(raycastOrigin, originToDestination, Color.cyan);
     RaycastHit nearestPlayerHit = default;
     Player nearestPlayer = null;
     foreach (RaycastHit hit in hits) {
@@ -106,16 +88,21 @@ public class SmallPlayer : Player {
     }
 
     if (nearestPlayer != null) {
-      Debug.Log("Threw SmallPlayer into another player, stunning them  :D");
-      nearestPlayer.Stun();
       throwDestination = nearestPlayerHit.point;
     }
 
-    //TODO: Check if throw is in bounds?
     if (GameManager.S.PositionIsOutOfBounds(throwDestination)) {
       Debug.Log("Throw would put SmallPlayer out of bounds");
       return false;
     }
+
+    //Update game state if throw is legal
+
+    if (nearestPlayer != null) {
+      Debug.Log("Threw SmallPlayer into another player, stunning them  :D");
+      nearestPlayer.Stun();
+    }
+    Below = null;
 
     throwDestination.y = yGround + transform.lossyScale.y / 2;
     transform.SetParent(null, true);
