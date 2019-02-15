@@ -46,7 +46,7 @@ public class SmallPlayer : Player {
 
     Vector3 newPosition = Vector3.zero;
 
-    newPosition.y += (this.transform.lossyScale.y + Below.transform.lossyScale.y) / 2;
+    newPosition.y += (this.transform.lossyScale.y + Below.transform.lossyScale.y) / 2 + 1.0f;
     transform.localPosition = newPosition;
   }
 
@@ -108,7 +108,7 @@ public class SmallPlayer : Player {
     }
     Below = null;
 
-    throwDestination.y = yGround + transform.lossyScale.y / 2;
+    throwDestination.y = yGround + transform.lossyScale.y / 2 + .2f;
     transform.SetParent(null, true);
     transform.position = throwDestination;
     return true;
