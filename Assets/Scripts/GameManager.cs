@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private GameObject sp2_spawn;
   [SerializeField] private GameObject tp1_spawn;
   [SerializeField] private GameObject tp2_spawn;
+
+  //Sound Effects
+  [SerializeField] private AudioClip scoreSound;
 #pragma warning restore 0649
 
   public IBall Ball { get; private set; }
@@ -188,7 +191,7 @@ public class GameManager : MonoBehaviour {
   public void UpdateScore(ScoreComponent.PlayerType p, int i) {
     Ball.SetParent(null);
     Ball.SetPosition(ballInitialPosition);
-
+     SoundManager.Instance.Play(scoreSound);
     if (p == ScoreComponent.PlayerType.team1) {
       scoreTeam1 += i;
       team1ScoreText.text = scoreTeam1.ToString();
