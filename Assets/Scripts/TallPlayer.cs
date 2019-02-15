@@ -6,6 +6,9 @@ using XboxCtrlrInput;
 [RequireComponent(typeof(BallUserComponent))]
 [RequireComponent(typeof(PlayerMover))]
 public class TallPlayer : Player {
+
+  [SerializeField] public SpriteAnimator tpidle;
+  [SerializeField] public SpriteAnimator tprun;
   public SmallPlayer Above { get; private set; }
 
   public override float Speed {
