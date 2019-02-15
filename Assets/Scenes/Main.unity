@@ -2759,6 +2759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca7eae6011f236408ce5db886617f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: TeamPicker
 --- !u!1 &1315266346
 GameObject:
   m_ObjectHideFlags: 0
