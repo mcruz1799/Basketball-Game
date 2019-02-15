@@ -98,6 +98,20 @@ public class TeamPickerManager : MonoBehaviour
         }   
     }
 
+    //methods that activate and deactivate appropriate UI based on selection
+    void selected(GameObject playerSetup, int playerNum)
+    {
+        GameObject.Find("/" + playerSetup.name + "/controller").SetActive(true);
+        GameObject.Find("/" + playerSetup.name + "/p" + playerNum.ToString()).SetActive(true);
+        GameObject.Find("/" + playerSetup.name + "/backText").SetActive(true);
+        GameObject.Find("/" + playerSetup.name + "/buttonText").SetActive(false);
+    }
+
+    void unselected(GameObject playerSetup)
+    {
+
+    }
+
 
 
 

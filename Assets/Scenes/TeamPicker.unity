@@ -1864,7 +1864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &945936412
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3103,7 +3103,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startText: {fileID: 945936413}
-  playerSetups: []
+  playerSetups:
+  - {fileID: 1466506109}
+  - {fileID: 425103185}
+  - {fileID: 751205643}
+  - {fileID: 1306544667}
 --- !u!1 &1898770389
 GameObject:
   m_ObjectHideFlags: 0
