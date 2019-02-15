@@ -1261,6 +1261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localHeightToHoldBallAt: 0
   maxPassDistance: 25
+  successfulSteal: {fileID: 8300000, guid: 1828ad9ceda718f40be784df9c4425e2, type: 3}
+  successfulPass: {fileID: 8300000, guid: b8bfcf71897ad0b458f48548ed7526f7, type: 3}
 --- !u!114 &410584852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1997,6 +1999,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localHeightToHoldBallAt: 0
   maxPassDistance: 25
+  successfulSteal: {fileID: 8300000, guid: 1828ad9ceda718f40be784df9c4425e2, type: 3}
+  successfulPass: {fileID: 8300000, guid: b8bfcf71897ad0b458f48548ed7526f7, type: 3}
 --- !u!54 &845735872
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5154,6 +5158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localHeightToHoldBallAt: 0
   maxPassDistance: 25
+  successfulSteal: {fileID: 8300000, guid: 1828ad9ceda718f40be784df9c4425e2, type: 3}
+  successfulPass: {fileID: 8300000, guid: b8bfcf71897ad0b458f48548ed7526f7, type: 3}
 --- !u!54 &1982353491
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5340,6 +5346,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localHeightToHoldBallAt: 0
   maxPassDistance: 25
+  successfulSteal: {fileID: 8300000, guid: 1828ad9ceda718f40be784df9c4425e2, type: 3}
+  successfulPass: {fileID: 8300000, guid: b8bfcf71897ad0b458f48548ed7526f7, type: 3}
 --- !u!114 &2029042015
 MonoBehaviour:
   m_ObjectHideFlags: 0
