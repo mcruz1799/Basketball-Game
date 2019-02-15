@@ -100,12 +100,16 @@ public class TallPlayer : Player {
     
     if (xMove != 0 || zMove != 0)
     {
-       tpidle.enabled = false;
-       tprun.enabled = true;
+       Debug.Log("Idle");
+       tpidle.gameObject.SetActive(false);
+       tprun.gameObject.SetActive(true);
+       tprun.StartAnimation();
     } else
     {
-       tpidle.enabled = true;
-       tprun.enabled = false;
+       Debug.Log("Moving");
+       tpidle.gameObject.SetActive(true);
+       tprun.gameObject.SetActive(false);
+       tpidle.StartAnimation();
     }
     base.Move(xMove, zMove);
   }

@@ -14,28 +14,29 @@ public class InputManager : MonoBehaviour {
     players[2] = GameManager.S.SmallPlayer2;
     players[3] = GameManager.S.TallPlayer2;
 
-    //controllerToPlayer = tpm.controllerToPlayer;
+    tpm = GameObject.Find("TeamPickerManager").GetComponent<TeamPickerManager>();
+    controllerToPlayer = tpm.controllerToPlayer;
 
 
   }
   private void Update() {
     //For four controllers connected to the machine.
 
-    // foreach (KeyValuePair<XboxController,int> kvp in controllerToPlayer)
-    // {
-    //     checkInputs(kvp.Key, players[kvp.Value]);
-    // }
-    for (int i = 0; i < 4; i++) {
-      try {
-        CheckInputs(controllers[i], players[i]);
-
-      } catch (System.Exception e) {
-        //TODO: Add UI message to prompt connecting controller.
-        //Debug.Log("Error receiving input.");
-        continue;
-      }
+    foreach (KeyValuePair<XboxController,int> kvp in controllerToPlayer)
+    {
+        CheckInputs(kvp.Key, players[kvp.Value]);
     }
   }
+    // for (int i = 0; i < 4; i++) {
+    //   try {
+    //     CheckInputs(controllers[i], players[i]);
+
+    //   } catch (System.Exception e) {
+    //     //TODO: Add UI message to prompt connecting controller.
+    //     //Debug.Log("Error receiving input.");
+    //     continue;
+    //   }
+    // }
 
   //Checks for inputs from a specific controller, and applies movement to the s
   private void CheckInputs(XboxController controller, IPlayer player) {

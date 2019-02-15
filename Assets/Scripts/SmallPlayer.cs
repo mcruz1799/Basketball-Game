@@ -152,12 +152,14 @@ public class SmallPlayer : Player {
     
     if (xMove != 0 || zMove != 0)
     {
-       spIdle.enabled = false;
-       spRun.enabled = true;
+       Debug.Log("Idle");
+        spIdle.gameObject.SetActive(false);
+       spRun.gameObject.SetActive(true);
     } else
     {
-       spIdle.enabled = true;
-       spRun.enabled = false;
+       Debug.Log("Moving");
+       spIdle.gameObject.SetActive(true);
+       spRun.gameObject.SetActive(false);
     }
     base.Move(xMove, zMove);
   }

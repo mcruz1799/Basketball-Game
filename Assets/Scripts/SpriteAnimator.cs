@@ -22,4 +22,8 @@ public class SpriteAnimator : MonoBehaviour {
       }
     }
   }
+  public void StartAnimation()
+  {
+    StartCoroutine(AnimationRoutine());
+  }
 }

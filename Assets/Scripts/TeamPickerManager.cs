@@ -15,7 +15,23 @@ public class TeamPickerManager : MonoBehaviour
     private static TeamPickerManager Instance = null;
     //UI
     public Text startText;
-    public GameObject[] playerSetups;    
+    public GameObject[] sp1PlayerNums;
+    public GameObject sp1ButtonText;
+    public GameObject sp1BackText;
+    public GameObject sp1ControllerPic;
+    public GameObject[] sp2PlayerNums;
+    public GameObject sp2ButtonText;
+    public GameObject sp2BackText;
+    public GameObject sp2ControllerPic;
+    public GameObject[] tp1PlayerNums;
+    public GameObject tp1ButtonText;
+    public GameObject tp1BackText;
+    public GameObject tp1ControllerPic;
+    public GameObject[] tp2PlayerNums;
+    public GameObject tp2ButtonText;
+    public GameObject tp2BackText;
+    public GameObject tp2ControllerPic;
+    private bool isDone = false;
 
     void Awake()
     {
@@ -59,21 +75,27 @@ public class TeamPickerManager : MonoBehaviour
 
     }
     private bool spotOpen(int playerNumber){
+        Debug.Log("Player number = " + playerNumber);
         foreach (int value in controllerToPlayer.Values)
         {
+            Debug.Log("value = " + value);
             if (value == playerNumber) return false;
         }
+        Debug.Log("true");
         return true;
     }
     private void Update() 
     {
+        if (!isDone){
+
         if (controllerToPlayer.Keys.Count == 4)
         {
             // //display text "press start to play"
-            // startText.gameObject.SetActive(true);
-            // if (XCI.GetButtonDown(XboxButton.Start)){
-            //     SceneManager.LoadScene("MainGame");
-            // }
+            startText.gameObject.SetActive(true);
+            if (XCI.GetButtonDown(XboxButton.Start)){
+                isDone = true;
+                SceneManager.LoadScene("MainGame");
+            }
         }
         else
         {   
@@ -81,53 +103,124 @@ public class TeamPickerManager : MonoBehaviour
             int playerNum = 0;
             foreach (XboxController controller in controllers)
             { 
-                if (XCI.GetButtonDown(XboxButton.X,controller)){
-                    selected(GameObject.Find("smallPlayer1"), playerNum);
-                    playerSelection.Add(controller, "smallPlayer1");
-                    setDictionary(XboxButton.X,controller);
-                }
-                if (XCI.GetButtonDown(XboxButton.Y,controller)){
-                    selected(GameObject.Find("tallPlayer1"), playerNum);
-                    playerSelection.Add(controller, "tallPlayer1");
-                    setDictionary(XboxButton.Y,controller);
-                }
-                if (XCI.GetButtonDown(XboxButton.A,controller)){
-                    selected(GameObject.Find("smallPlayer2"), playerNum);
-                    playerSelection.Add(controller, "smallPlayer2");
-                    setDictionary(XboxButton.A,controller);
-                }
-                if (XCI.GetButtonDown(XboxButton.B,controller)){
-                    selected(GameObject.Find("tallPlayer2"), playerNum);
-                    playerSelection.Add(controller, "tallPlayer2");
-                    setDictionary(XboxButton.B,controller);
-                }
-                if (XCI.GetButtonDown(XboxButton.Back,controller)){
-                    unselected(GameObject.Find(playerSelection[controller]), playerNum);
-                    controllerToPlayer.Remove(controller);
-                }
-                playerNum += 1;
+                try{
+                    if (XCI.GetButtonDown(XboxButton.X,controller)){
+                        //Debug.Log("playerNum = " + playerNum);
+
+                        playerSelection.Add(controller, "sp1");
+                        selected("sp1",playerNum);
+                        setDictionary(XboxButton.X,controller);
+                    }
+                    if (XCI.GetButtonDown(XboxButton.Y,controller)){
+                        playerSelection.Add(controller, "tp1");
+                        selected("tp1",playerNum);
+                        setDictionary(XboxButton.Y,controller);
+                    }
+                    if (XCI.GetButtonDown(XboxButton.A,controller)){
+                        playerSelection.Add(controller, "sp2");
+                        selected("sp2",playerNum);
+                        setDictionary(XboxButton.A,controller);
+                    }
+                    if (XCI.GetButtonDown(XboxButton.B,controller)){
+                        playerSelection.Add(controller, "tp2");
+                        selected("tp2",playerNum);
+                        setDictionary(XboxButton.B,controller);
+                    }
+                    if (XCI.GetButtonDown(XboxButton.Back,controller)){
+                        unselected(playerSelection[controller]);
+                        playerSelection.Remove(controller);
+                        controllerToPlayer.Remove(controller);
+                    }
+                    playerNum += 1;
+                }catch{Debug.Log("Already assigned");}
             }
             
+        }
         }   
     }
 
     //methods that activate and deactivate appropriate UI based on selection
-    void selected(GameObject playerSetup, int playerNum)
+    void selected(string player, int playerNum)
     {
         playerNum += 1;
-        GameObject.Find("/" + playerSetup.name + "/controller").SetActive(true);
-        GameObject.Find("/" + playerSetup.name + "/p" + playerNum.ToString()).SetActive(true);
-        GameObject.Find("/" + playerSetup.name + "/backText").SetActive(true);
-        GameObject.Find("/" + playerSetup.name + "/buttonText").SetActive(false);
+        if (player == "sp1"){
+            foreach (GameObject obj in sp1PlayerNums)
+            {
+                if (obj.name.Contains(playerNum.ToString())) obj.SetActive(true);
+            }
+            sp1BackText.SetActive(true);
+            sp1ControllerPic.SetActive(true);
+            sp1ButtonText.SetActive(false);
+        }
+        else if (player == "sp2"){
+            foreach (GameObject obj in sp2PlayerNums)
+            {
+                if (obj.name.Contains(playerNum.ToString())) obj.SetActive(true);
+            }
+            sp2BackText.SetActive(true);
+            sp2ControllerPic.SetActive(true);
+            sp2ButtonText.SetActive(false);
+        }
+        else if (player == "tp1"){
+            foreach (GameObject obj in tp1PlayerNums)
+            {
+                if (obj.name.Contains(playerNum.ToString())) obj.SetActive(true);
+            }
+            tp1BackText.SetActive(true);
+            tp1ControllerPic.SetActive(true);
+            tp1ButtonText.SetActive(false);
+        }
+        else if (player == "tp2"){
+            foreach (GameObject obj in tp2PlayerNums)
+            {
+                if (obj.name.Contains(playerNum.ToString())) obj.SetActive(true);
+            }
+            tp2BackText.SetActive(true);
+            tp2ControllerPic.SetActive(true);
+            tp2ButtonText.SetActive(false);
+        }
+    }
+    void unselected(string player)
+    {
+        if (player == "sp1"){
+            foreach (GameObject obj in sp1PlayerNums)
+            {
+                obj.SetActive(false);
+            }
+            sp1BackText.SetActive(false);
+            sp1ControllerPic.SetActive(false);
+            sp1ButtonText.SetActive(true);
+        }
+        else if (player == "sp2"){
+            foreach (GameObject obj in sp2PlayerNums)
+            {
+                obj.SetActive(false);
+            }
+            sp2BackText.SetActive(false);
+            sp2ControllerPic.SetActive(false);
+            sp2ButtonText.SetActive(true);
+        }
+        else if (player == "tp1"){
+            foreach (GameObject obj in tp1PlayerNums)
+            {
+                obj.SetActive(false);
+            }
+            tp1BackText.SetActive(false);
+            tp1ControllerPic.SetActive(false);
+            tp1ButtonText.SetActive(true);
+        }
+        else if (player == "tp2"){
+            foreach (GameObject obj in tp2PlayerNums)
+            {
+                obj.SetActive(false);
+            }
+            tp2BackText.SetActive(false);
+            tp2ControllerPic.SetActive(false);
+            tp2ButtonText.SetActive(true);
+        }
     }
 
-    void unselected(GameObject playerSetup, int playerNum)
-    {
-        GameObject.Find("/" + playerSetup.name + "/controller").SetActive(false);
-        GameObject.Find("/" + playerSetup.name + "/p" + playerNum.ToString()).SetActive(false);
-        GameObject.Find("/" + playerSetup.name + "/backText").SetActive(false);
-        GameObject.Find("/" + playerSetup.name + "/buttonText").SetActive(true);
-    }
+
 
 
 
