@@ -76,6 +76,8 @@ public class SmallPlayer : Player {
 
     Vector3 originToDestination = throwDestination - raycastOrigin; originToDestination.y = 0;
     hits = Physics.RaycastAll(raycastOrigin, originToDestination, originToDestination.magnitude);
+   // Debug.Log("Raycast Origin:" + raycastOrigin);
+   // Debug.Log("Raycast Desination:" + raycastOrigin + originToDestination);
     Debug.DrawRay(raycastOrigin, originToDestination, Color.cyan);
     RaycastHit nearestPlayerHit = default;
     Player nearestPlayer = null;
