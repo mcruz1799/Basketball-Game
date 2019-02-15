@@ -11,6 +11,8 @@ public class SmallPlayer : Player {
 #pragma warning disable 0649
   [SerializeField] private float scoreDistance = 1f;
   [SerializeField] private float throwDistance = 1f;
+  [SerializeField] SpriteAnimator spIdle;
+  [SerializeField] SpriteAnimator spRun;
 #pragma warning restore 0649
 
   public override bool CanMove => base.CanMove && Below == null;
