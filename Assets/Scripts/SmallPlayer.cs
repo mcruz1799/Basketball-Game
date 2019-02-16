@@ -9,14 +9,30 @@ public class SmallPlayer : Player {
   //Not necessary --yet--.  If we ever add animations for this stuff, will probably need it then.
   //private enum State { Throwing, Jumping, Moving, Falling }
 #pragma warning disable 0649
-  [SerializeField] private float scoreDistance = 1f;
   [SerializeField] private float throwDistance = 1f;
-  [SerializeField] SpriteAnimator spIdle;
-  [SerializeField] SpriteAnimator spRun;
+
+  //DO NOT REFERENCE THESE DIRECTLY.
+  //USE THE ISpriteAnimator FIELDS INSTEAD
+  [SerializeField] private SpriteAnimator _spIdle;
+  [SerializeField] private SpriteAnimator _spRun;
 #pragma warning restore 0649
 
   public override bool CanMove => base.CanMove && Below == null;
   public TallPlayer Below { get; private set; }
+
+  private ISpriteAnimator idleAnimation;
+  private ISpriteAnimator runAnimation;
+
+  protected override void Awake() {
+    base.Awake();
+
+    //Initialize ISpriteAnimators
+    idleAnimation = _spIdle;
+    runAnimation = _spRun;
+
+    idleAnimation.IsLooping = true;
+    runAnimation.IsLooping = true;
+  }
 
   //
   //Actions to be associated with an input in InputManager
@@ -59,7 +75,7 @@ public class SmallPlayer : Player {
     RaycastHit[] hits;
     float skinWidth = 0.15f;
     float yGround = 0f;
-    
+
     //Cast rays slightly above ground level
     Vector3 raycastOrigin = transform.position; raycastOrigin.y = yGround + skinWidth;
 
@@ -78,8 +94,8 @@ public class SmallPlayer : Player {
 
     Vector3 originToDestination = throwDestination - raycastOrigin; originToDestination.y = 0;
     hits = Physics.RaycastAll(raycastOrigin, originToDestination, originToDestination.magnitude);
-   // Debug.Log("Raycast Origin:" + raycastOrigin);
-   // Debug.Log("Raycast Desination:" + raycastOrigin + originToDestination);
+    // Debug.Log("Raycast Origin:" + raycastOrigin);
+    // Debug.Log("Raycast Desination:" + raycastOrigin + originToDestination);
     Debug.DrawRay(raycastOrigin, originToDestination, Color.cyan);
     RaycastHit nearestPlayerHit = default;
     Player nearestPlayer = null;
@@ -138,28 +154,23 @@ public class SmallPlayer : Player {
   public override void RTButtonUp(XboxController controller) {
     StopDashing();
   }
-  public override void BButtonDown(XboxController controller)
-  {
+  public override void BButtonDown(XboxController controller) {
     Steal();
   }
 
-    public override void XButtonDown(XboxController controller)
-  {
+  public override void XButtonDown(XboxController controller) {
     Stun();
   }
-  public override void Move(float xMove, float zMove)
-  {
-    
-    if (xMove != 0 || zMove != 0)
-    {
-       Debug.Log("Idle");
-        spIdle.gameObject.SetActive(false);
-       spRun.gameObject.SetActive(true);
-    } else
-    {
-       Debug.Log("Moving");
-       spIdle.gameObject.SetActive(true);
-       spRun.gameObject.SetActive(false);
+  public override void Move(float xMove, float zMove) {
+
+    if (xMove != 0 || zMove != 0) {
+      idleAnimation.IsVisible = false;
+      runAnimation.IsVisible = true;
+      runAnimation.StartFromFirstFrame();
+    } else {
+      idleAnimation.IsVisible = true;
+      runAnimation.IsVisible = false;
+      idleAnimation.StartFromFirstFrame();
     }
     base.Move(xMove, zMove);
   }

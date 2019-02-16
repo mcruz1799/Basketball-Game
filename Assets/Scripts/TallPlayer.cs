@@ -7,8 +7,16 @@ using XboxCtrlrInput;
 [RequireComponent(typeof(PlayerMover))]
 public class TallPlayer : Player {
 
-  [SerializeField] public SpriteAnimator tpidle;
-  [SerializeField] public SpriteAnimator tprun;
+#pragma warning disable 0649
+  //DO NOT REFERENCE THESE DIRECTLY.
+  //USE THE ISpriteAnimator FIELDS INSTEAD
+  [SerializeField] private SpriteAnimator _tpIdle;
+  [SerializeField] private SpriteAnimator _tpRun;
+#pragma warning restore 0649
+
+  private ISpriteAnimator idleAnimation;
+  private ISpriteAnimator runAnimation;
+
   public SmallPlayer Above { get; private set; }
 
   public override float Speed {
@@ -18,8 +26,13 @@ public class TallPlayer : Player {
     }
   }
 
+  protected override void Awake() {
+    base.Awake();
+    idleAnimation = _tpIdle;
+    runAnimation = _tpRun;
+  }
+
   public bool ThrowSmallPlayer() {
-    Debug.Log("Stuff happens.");
     Debug.Log("Above:" + Above);
     if (Above == null || !Above.OnThrown(XLook, ZLook)) {
       Debug.Log("Throw false.");
@@ -35,6 +48,7 @@ public class TallPlayer : Player {
     //Can't pick up SmallPlayer unless your hands are free and you're not being carried
     bool handsFree = !HasBall && Above == null;
     if (!handsFree) {
+      Debug.LogFormat("Failed to pick SmallPlayer up.  HasBall: {0}   Above != null: {1}", HasBall, Above != null);
       return false;
     }
 
@@ -83,33 +97,26 @@ public class TallPlayer : Player {
   public override void RTButtonUp(XboxController controller) {
     StopDashing();
   }
-  public override void BButtonDown(XboxController controller)
-  {
+  public override void BButtonDown(XboxController controller) {
     if (Above == null) {
       Steal();
     } else {
       ThrowSmallPlayer();
     }
   }
-  public override void XButtonDown(XboxController controller)
-  {
+  public override void XButtonDown(XboxController controller) {
     Stun();
   }
-  public override void Move(float xMove, float zMove)
-  {
-    
-    if (xMove != 0 || zMove != 0)
-    {
-       Debug.Log("Idle");
-       tpidle.gameObject.SetActive(false);
-       tprun.gameObject.SetActive(true);
-       tprun.StartAnimation();
-    } else
-    {
-       Debug.Log("Moving");
-       tpidle.gameObject.SetActive(true);
-       tprun.gameObject.SetActive(false);
-       tpidle.StartAnimation();
+  public override void Move(float xMove, float zMove) {
+
+    if (xMove != 0 || zMove != 0) {
+      idleAnimation.IsVisible = false;
+      runAnimation.IsVisible = true;
+      runAnimation.StartFromFirstFrame();
+    } else {
+      idleAnimation.IsVisible = true;
+      runAnimation.IsVisible = false;
+      idleAnimation.StartFromFirstFrame();
     }
     base.Move(xMove, zMove);
   }
