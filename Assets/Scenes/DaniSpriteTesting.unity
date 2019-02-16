@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 671651805}
   - component: {fileID: 671651807}
   m_Layer: 0
-  m_Name: idle_0
+  m_Name: TallPlayerRun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,13 +254,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671651804}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.8447034, y: 0.25, z: 6.91}
-  m_LocalScale: {x: 0.50000024, y: 0.5, z: 0.50000024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &671651807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +319,8 @@ MonoBehaviour:
   - {fileID: 21300084, guid: c11fc65adae8e704fa7e3958ddbb92ab, type: 3}
   - {fileID: 21300086, guid: c11fc65adae8e704fa7e3958ddbb92ab, type: 3}
   - {fileID: 21300088, guid: c11fc65adae8e704fa7e3958ddbb92ab, type: 3}
+  initialIsVisible: 1
+  initialIsLooping: 1
 --- !u!1 &1601651036
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,10 +396,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601651036}
-  m_LocalRotation: {x: 0.29883623, y: 0.64085644, z: -0.29883623, w: 0.64085644}
-  m_LocalPosition: {x: 0, y: 5, z: 5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
