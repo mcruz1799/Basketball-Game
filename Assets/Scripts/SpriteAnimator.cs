@@ -19,6 +19,8 @@ public interface ISpriteAnimator {
 public class SpriteAnimator : MonoBehaviour, ISpriteAnimator {
 #pragma warning disable 0649
   [SerializeField] private List<Sprite> sprites;
+  [SerializeField] private bool initialIsVisible = true;
+  [SerializeField] private bool initialIsLooping = false;
 #pragma warning restore 0649
 
   private SpriteRenderer spriteRenderer;
@@ -33,8 +35,8 @@ public class SpriteAnimator : MonoBehaviour, ISpriteAnimator {
       spriteRenderer.enabled = IsVisible;
     }
   }
-  public bool IsLooping { get; set; } = false;
-  public bool IsPaused { get; set; } = false;
+  public bool IsLooping { get; set; }
+  public bool IsPaused { get; set; }
   public bool IsDone { get; private set; }
 
   public int FramesPerSprite { get; set; }
@@ -43,6 +45,13 @@ public class SpriteAnimator : MonoBehaviour, ISpriteAnimator {
 
   private void Awake() {
     spriteRenderer = GetComponent<SpriteRenderer>();
+
+    IsVisible = initialIsVisible;
+    IsLooping = initialIsLooping;
+
+    IsPaused = false;
+    IsDone = true;
+
     StartCoroutine(AnimationRoutine());
   }
 
