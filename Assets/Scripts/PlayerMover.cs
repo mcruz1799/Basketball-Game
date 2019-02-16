@@ -4,7 +4,9 @@ using UnityEngine;
 using XboxCtrlrInput;
 
 public class PlayerMover : MonoBehaviour, IXzController {
+#pragma warning disable 0649
   [SerializeField] private float _initialSpeed;
+#pragma warning restore 0649
   public float Speed { get; set; }
 
   public float X { get { return transform.position.x; } }
