@@ -77,8 +77,8 @@ public class SpriteAnimator : MonoBehaviour, ISpriteAnimator {
       //If we're not looping and nobody has called StartFromFirstFrame, then wait.
       if (!(IsLooping || animateFromStartFlag)) {
         yield return new WaitUntil(() => IsLooping || animateFromStartFlag);
-        animateFromStartFlag = false;
       }
+      animateFromStartFlag = false;
 
       IsDone = false;
       foreach (Sprite sprite in sprites) {
@@ -102,29 +102,3 @@ public class SpriteAnimator : MonoBehaviour, ISpriteAnimator {
     }
   }
 }
-
-//public class SpriteAnimator : MonoBehaviour {
-//#pragma warning disable 0649
-//  [SerializeField] private List<Sprite> sprites;
-//#pragma warning restore 0649
-
-//  private SpriteRenderer spriteRenderer;
-
-//  private void Awake() {
-//    spriteRenderer = GetComponent<SpriteRenderer>();
-//    StartCoroutine(AnimationRoutine());
-//  }
-
-//  private IEnumerator AnimationRoutine() {
-//    while (true) {
-//      foreach (Sprite sprite in sprites) {
-//        spriteRenderer.sprite = sprite;
-//        yield return null;
-//      }
-//    }
-//  }
-//  public void StartAnimation()
-//  {
-//    StartCoroutine(AnimationRoutine());
-//  }
-//}
