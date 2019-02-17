@@ -39,7 +39,8 @@ public class SpriteAnimator : MonoBehaviour, ISpriteAnimator {
   public bool IsPaused { get; set; }
   public bool IsDone { get; private set; }
 
-  public int FramesPerSprite { get; set; }
+  [SerializeField] private int _framesPerSprite;
+  public int FramesPerSprite { get { return _framesPerSprite; } set { _framesPerSprite = value; } }
 
   private bool animateFromStartFlag;
 
