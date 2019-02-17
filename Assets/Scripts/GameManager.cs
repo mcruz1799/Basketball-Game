@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using XboxCtrlrInput;
+using static GameManager.State;
 
 public class GameManager : MonoBehaviour {
   public static GameManager S;
+
+  public enum State { Initializing, Tipoff, InPlay, Overtime, GameOver }
+  public State state = Initializing;
 
 #pragma warning disable 0649
   [SerializeField] private Ball _ball;
@@ -21,17 +25,17 @@ public class GameManager : MonoBehaviour {
 
   [SerializeField] private int gameLength;
 
-  [SerializeField] private GameObject winningScreen;
-  [SerializeField] private GameObject tipoffScreen;
-  [SerializeField] private GameObject overtimeScreen;
+  ////GUI objects
+  //[SerializeField] private GameObject winningScreen;
+  //[SerializeField] private GameObject tipoffScreen;
+  //[SerializeField] private GameObject overtimeScreen;
 
-  //GUI objects
-  [SerializeField] private Text winningText;
-  [SerializeField] private Text gameTimeText;
-  [SerializeField] private Text team1ScoreText;
-  [SerializeField] private Text team2ScoreText;
-  [SerializeField] private RawImage possessionIndicator1;
-  [SerializeField] private RawImage possessionIndicator2;
+  //[SerializeField] private Text winningText;
+  //[SerializeField] private Text gameTimeText;
+  //[SerializeField] private Text team1ScoreText;
+  //[SerializeField] private Text team2ScoreText;
+  //[SerializeField] private RawImage possessionIndicator1;
+  //[SerializeField] private RawImage possessionIndicator2;
 
   [SerializeField] private GameObject sp1_spawn;
   [SerializeField] private GameObject sp2_spawn;
@@ -56,14 +60,11 @@ public class GameManager : MonoBehaviour {
   public IPlayer SmallPlayer2 { get; private set; }
   public IPlayer TallPlayer2 { get; private set; }
 
-  private int scoreTeam1;
-  private int scoreTeam2;
+  //Exposed for MainGameGUI to look at
+  public int ScoreTeam1 { get; private set; }
+  public int ScoreTeam2 { get; private set; }
 
-  private float currentTime;
-
-  public bool tipoff;
-  public bool end;
-  public bool overtime;
+  public float CurrentTime { get; private set; }
   //this is pointless, only needed to call StopCoroutine
 
   /********************************************************
@@ -90,10 +91,6 @@ public class GameManager : MonoBehaviour {
     TallPlayer1 = _tallPlayer1;
     SmallPlayer2 = _smallPlayer2;
     TallPlayer2 = _tallPlayer2;
-    // sp1_pos = _smallPlayer1.transform.position;
-    // sp2_pos = _smallPlayer2.transform.position;
-    // tp1_pos = _tallPlayer1.transform.position;
-    // tp2_pos = _tallPlayer2.transform.position;
 
     StartGame();
   }
@@ -102,65 +99,38 @@ public class GameManager : MonoBehaviour {
     return Mathf.Abs(position.x) > S.Xboundary || Mathf.Abs(position.z) > S.Zboundary;
   }
 
+  //TODO: Get rid of this, just have callers use "MainGameGUI.S.UpdatePossessionIndicator(team)"
   public void NotifyOfBallOwnership(ScoreComponent.PlayerType? team) {
-    if (team == null) {
-      possessionIndicator1.gameObject.SetActive(false);
-      possessionIndicator2.gameObject.SetActive(false);
-    } else {
-      switch (team.Value) {
-        case ScoreComponent.PlayerType.team1:
-          possessionIndicator1.gameObject.SetActive(true);
-          possessionIndicator2.gameObject.SetActive(false);
-          return;
-
-        case ScoreComponent.PlayerType.team2:
-          possessionIndicator1.gameObject.SetActive(false);
-          possessionIndicator2.gameObject.SetActive(true);
-          return;
-
-        default:
-          Debug.LogWarning("Illegal enum value detected");
-          break;
-      }
-    }
+    MainGameGUI.S.UpdatePossessionIndicator(team);
   }
 
   private void StartGame() {
     Debug.Log("Starting Game with " + gameLength + " Seconds");
 
-    winningScreen.SetActive(false);
-    overtimeScreen.SetActive(false);
 
     Ball.SetParent(null);
     Ball.SetPosition(ballInitialPosition);
 
-    scoreTeam1 = 0;
-    scoreTeam2 = 0;
-    overtime = false;
-    currentTime = gameLength;
-    SetGameTime(currentTime);
-    tipoff = true;
-    tipoffScreen.SetActive(true);
+    ScoreTeam1 = 0;
+    ScoreTeam2 = 0;
+    CurrentTime = gameLength;
+
+    state = Tipoff;
+
     StartCoroutine(UpdateTime()); //start updating the game
     StartCoroutine(GameTime()); //start counting the game
+
+    MainGameGUI.S.UpdateAll();
   }
 
   private void EndGame() {
-    //TODO: disable player movements
-    end = true;
     S.StopAllCoroutines();
-    overtimeScreen.SetActive(false);
-    overtime = false;
-    if (scoreTeam2 > scoreTeam1) {
-      S.winningText.text = "Congratulations to \nTeam Blue!";
-      S.winningScreen.SetActive(true);
-    } else if (scoreTeam1 > scoreTeam2) {
-      S.winningText.text = "Congratulations to \nTeam Red!";
-      S.winningScreen.SetActive(true);
+
+    if (ScoreTeam2 != ScoreTeam1) {
+      state = GameOver;
     } else {
-      overtime = true;
-      end = false;
-      S.StartCoroutine(OvertimeGame());
+      state = Overtime;
+      MainGameGUI.S.ShowOvertimeScreen(3f);
     }
     SoundManager.Instance.Play(endBuzzer);
   }
@@ -197,15 +167,15 @@ public class GameManager : MonoBehaviour {
     Ball.SetPosition(ballInitialPosition);
      SoundManager.Instance.Play(scoreSound);
     if (p == ScoreComponent.PlayerType.team1) {
-      scoreTeam1 += i;
-      team1ScoreText.text = scoreTeam1.ToString();
+      ScoreTeam1 += i;
       SmallPlayer1.HoldBall(Ball);
     } else {
-      scoreTeam2 += i;
-      team2ScoreText.text = scoreTeam2.ToString();
+      ScoreTeam2 += i;
       SmallPlayer2.HoldBall(Ball);
     }
-    if (overtime) {
+    MainGameGUI.S.UpdateScores();
+
+    if (state == Overtime) {
       EndGame();
     }
     ResetAfterScore();
@@ -217,10 +187,10 @@ public class GameManager : MonoBehaviour {
 
   public void RestartGame() {
     //TODO: change to load scene of main menu
-    scoreTeam1 = 0;
-    scoreTeam2 = 0;
-    currentTime = gameLength;
-    overtime = false;
+    ScoreTeam1 = 0;
+    ScoreTeam2 = 0;
+    CurrentTime = gameLength;
+    state = Tipoff;
     //somehow reset player positions?
     SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
   }
@@ -228,32 +198,17 @@ public class GameManager : MonoBehaviour {
   private IEnumerator GameTime() {
     yield return new WaitForSeconds(gameLength);
     Debug.Log("Game Time Up");
-    SetGameTime(0);
+    CurrentTime = 0f;
+    MainGameGUI.S.UpdateTime();
     EndGame();
   }
 
   private IEnumerator UpdateTime() {
-    while (currentTime > 0) {
-      currentTime -= 1;
+    while (CurrentTime > 0) {
+      CurrentTime -= 1;
       yield return new WaitForSeconds(1);
-      SetGameTime(currentTime);
+      MainGameGUI.S.UpdateTime();
     }
-  }
-
-  private IEnumerator OvertimeGame() {
-    overtimeScreen.SetActive(true);
-    yield return new WaitForSeconds(3);
-    overtimeScreen.SetActive(false);
-  }
-
-  private void SetGameTime(float time) {
-    float minutes = Mathf.Floor(time / 60);
-    float seconds = time % 60;
-    string min_str = minutes.ToString();
-    string sec_str = seconds.ToString();
-    if (minutes < 10) min_str = "0" + min_str;
-    if (seconds < 10) sec_str = "0" + sec_str;
-    gameTimeText.text = min_str + ":" + sec_str;
   }
 
   public void ResetAfterScore() {
@@ -275,29 +230,27 @@ public class GameManager : MonoBehaviour {
   //Players can check for tip-off priority.
   public bool CheckTipOff(XboxController controller) {
     Debug.Log("Checking TipOff...");
-    if (S.tipoff) {
-      S.tipoff = false;
+    if (state == Tipoff) {
+      state = InPlay;
       switch (controller) {
         case XboxController.First: //small1
           SmallPlayer1.HoldBall(Ball);
-          S.tipoffScreen.SetActive(false);
           return true;
 
         case XboxController.Second: //tall1
           TallPlayer1.HoldBall(Ball);
-          S.tipoffScreen.SetActive(false);
           return true;
 
         case XboxController.Third: //small2
           SmallPlayer2.HoldBall(Ball);
-          S.tipoffScreen.SetActive(false);
           return true;
 
         case XboxController.Fourth: //tall2
           TallPlayer2.HoldBall(Ball);
-          S.tipoffScreen.SetActive(false);
           return true;
+
         default:
+          Debug.LogError("Illegal XboxController enum-value detected in GameManager.CheckTipoff");
           return false;
       }
 
