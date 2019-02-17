@@ -13,6 +13,11 @@ public class PlayerSelectionGUI : MonoBehaviour {
   [SerializeField] private Image controller2;
   [SerializeField] private Image controller3;
   [SerializeField] private Image controller4;
+
+  [SerializeField] private Text controller1Confirmed;
+  [SerializeField] private Text controller2Confirmed;
+  [SerializeField] private Text controller3Confirmed;
+  [SerializeField] private Text controller4Confirmed;
 #pragma warning restore 0649
 
   private void Awake() {
@@ -21,7 +26,6 @@ public class PlayerSelectionGUI : MonoBehaviour {
 
   private void Update() {
     UpdateGUI();
-    
   }
 
   private void UpdateGUI() {
@@ -33,15 +37,19 @@ public class PlayerSelectionGUI : MonoBehaviour {
       switch (info.Key) {
         case XboxController.First:
           controller1.sprite = sprite;
+          controller1Confirmed.enabled = info.Value.isConfirmed;
           break;
         case XboxController.Second:
-          controller1.sprite = sprite;
+          controller2.sprite = sprite;
+          controller2Confirmed.enabled = info.Value.isConfirmed;
           break;
         case XboxController.Third:
-          controller1.sprite = sprite;
+          controller3.sprite = sprite;
+          controller3Confirmed.enabled = info.Value.isConfirmed;
           break;
         case XboxController.Fourth:
-          controller1.sprite = sprite;
+          controller4.sprite = sprite;
+          controller4Confirmed.enabled = info.Value.isConfirmed;
           break;
         default:
           Debug.LogError("Illegal XboxController key detected in InputManager.ControllerMap");

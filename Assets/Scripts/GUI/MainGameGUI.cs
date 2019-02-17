@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static GameManager.State;
+using static GameState;
 
 public class MainGameGUI : MonoBehaviour {
-  public static MainGameGUI S;
+  public static MainGameGUI S { get; private set; }
 
 #pragma warning disable 0649
   [SerializeField] private GameObject winningScreen;
   [SerializeField] private GameObject tipoffScreen;
   [SerializeField] private GameObject overtimeScreen;
 
-  //GUI objects
   [SerializeField] private Text winningText;
   [SerializeField] private Text gameTimeText;
   [SerializeField] private Text team1ScoreText;
@@ -22,13 +21,11 @@ public class MainGameGUI : MonoBehaviour {
 #pragma warning disable 0649
 
   private void Awake() {
-    if (S == null) {
-      S = this;
-      DontDestroyOnLoad(this);
-    } else {
-      Debug.LogWarning("Duplicate MainGameGUI detected and destroyed.");
-      Destroy(gameObject);
-    }
+    S = this;
+  }
+
+  private void Start() {
+    UpdateAll();
   }
 
   public void UpdateAll() {
@@ -38,7 +35,7 @@ public class MainGameGUI : MonoBehaviour {
   }
 
   public void ShowOvertimeScreen(float displayTime) {
-    if (GameManager.S.state != Overtime) {
+    if (GameManager.S.State != Overtime) {
       Debug.LogError("Showing overtime screen even though it isn't overtime!");
     }
     StartCoroutine(ShowOvertimeScreenRoutine(displayTime));
@@ -50,34 +47,16 @@ public class MainGameGUI : MonoBehaviour {
   }
 
   public void UpdateScreens() {
-    winningScreen.SetActive(GameManager.S.state == GameOver);
-    tipoffScreen.SetActive(GameManager.S.state == Tipoff);
-    
+    winningScreen.SetActive(GameManager.S.State == GameOver);
+    tipoffScreen.SetActive(GameManager.S.State == Tipoff);
 
-    switch (GameManager.S.state) {
-      case Initializing:
-        break;
-
-      case Tipoff:
-        break;
-
-      case Overtime:
-        break;
-
-      case GameOver:
-        if (GameManager.S.ScoreTeam2 > GameManager.S.ScoreTeam1) {
-          S.winningText.text = "Congratulations to \nTeam Blue!";
-        } else if (GameManager.S.ScoreTeam1 > GameManager.S.ScoreTeam2) {
-          S.winningText.text = "Congratulations to \nTeam Red!";
-        }
-        break;
-
-      default:
-        Debug.LogError("Illegal GameManager.State enum value detected");
-        break;
+    if (GameManager.S.State == GameOver) {
+      if (GameManager.S.ScoreTeam2 > GameManager.S.ScoreTeam1) {
+        S.winningText.text = "Congratulations to \nTeam Blue!";
+      } else if (GameManager.S.ScoreTeam1 > GameManager.S.ScoreTeam2) {
+        S.winningText.text = "Congratulations to \nTeam Red!";
+      }
     }
-
-    
   }
 
   public void UpdateScores() {

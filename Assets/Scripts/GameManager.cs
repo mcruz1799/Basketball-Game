@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using XboxCtrlrInput;
-using static GameManager.State;
+using static GameState;
+
+public enum GameState { MainMenu, PlayerSelection, Tipoff, InPlay, Overtime, GameOver }
 
 public class GameManager : MonoBehaviour {
-  public static GameManager S;
+  public static GameManager S { get; private set; }
 
-  public enum State { Initializing, Tipoff, InPlay, Overtime, GameOver }
-  public State state = Initializing;
+  public GameState State { get; private set; }
 
 #pragma warning disable 0649
   [SerializeField] private Ball _ball;
@@ -24,18 +25,6 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private GameObject basket2;
 
   [SerializeField] private int gameLength;
-
-  ////GUI objects
-  //[SerializeField] private GameObject winningScreen;
-  //[SerializeField] private GameObject tipoffScreen;
-  //[SerializeField] private GameObject overtimeScreen;
-
-  //[SerializeField] private Text winningText;
-  //[SerializeField] private Text gameTimeText;
-  //[SerializeField] private Text team1ScoreText;
-  //[SerializeField] private Text team2ScoreText;
-  //[SerializeField] private RawImage possessionIndicator1;
-  //[SerializeField] private RawImage possessionIndicator2;
 
   [SerializeField] private GameObject sp1_spawn;
   [SerializeField] private GameObject sp2_spawn;
@@ -78,7 +67,13 @@ public class GameManager : MonoBehaviour {
    ********************************************************/
 
   private void Awake() {
-    S = this;
+    if (S == null) {
+      S = this;
+      DontDestroyOnLoad(this);
+    } else {
+      Debug.LogWarning("Duplicate GameManager detected and destroyed.");
+      Destroy(gameObject);
+    }
 
     if (basket1 == null || basket2 == null) {
       Debug.LogError("Baskets need to be initialized via inspector in GameManager!");
@@ -92,6 +87,21 @@ public class GameManager : MonoBehaviour {
     SmallPlayer2 = _smallPlayer2;
     TallPlayer2 = _tallPlayer2;
 
+    //Start from main menu
+    State = MainMenu;
+  }
+
+
+  public void StartPlayerSelection() {
+    State = PlayerSelection;
+  }
+
+  public void EndPlayerSelection() {
+    if (State != PlayerSelection) {
+      Debug.LogError("GameManager.EndPlayerSelection() called outside of the PlayerSelection phase");
+      return;
+    }
+
     StartGame();
   }
 
@@ -99,15 +109,7 @@ public class GameManager : MonoBehaviour {
     return Mathf.Abs(position.x) > S.Xboundary || Mathf.Abs(position.z) > S.Zboundary;
   }
 
-  //TODO: Get rid of this, just have callers use "MainGameGUI.S.UpdatePossessionIndicator(team)"
-  public void NotifyOfBallOwnership(ScoreComponent.PlayerType? team) {
-    MainGameGUI.S.UpdatePossessionIndicator(team);
-  }
-
   private void StartGame() {
-    Debug.Log("Starting Game with " + gameLength + " Seconds");
-
-
     Ball.SetParent(null);
     Ball.SetPosition(ballInitialPosition);
 
@@ -115,21 +117,19 @@ public class GameManager : MonoBehaviour {
     ScoreTeam2 = 0;
     CurrentTime = gameLength;
 
-    state = Tipoff;
+    State = Tipoff;
 
-    StartCoroutine(UpdateTime()); //start updating the game
-    StartCoroutine(GameTime()); //start counting the game
-
-    MainGameGUI.S.UpdateAll();
+    //Start the game's timer
+    StartCoroutine(GameTimeRoutine());
   }
 
   private void EndGame() {
     S.StopAllCoroutines();
 
     if (ScoreTeam2 != ScoreTeam1) {
-      state = GameOver;
+      State = GameOver;
     } else {
-      state = Overtime;
+      State = Overtime;
       MainGameGUI.S.ShowOvertimeScreen(3f);
     }
     SoundManager.Instance.Play(endBuzzer);
@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour {
     }
   }
 
-  //scoring, to be called from player script
+  //Scoring, to be called from player script
   public void UpdateScore(ScoreComponent.PlayerType p, int i) {
     Ball.SetParent(null);
     Ball.SetPosition(ballInitialPosition);
@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour {
     }
     MainGameGUI.S.UpdateScores();
 
-    if (state == Overtime) {
+    if (State == Overtime) {
       EndGame();
     }
     ResetAfterScore();
@@ -189,26 +189,23 @@ public class GameManager : MonoBehaviour {
     //TODO: change to load scene of main menu
     ScoreTeam1 = 0;
     ScoreTeam2 = 0;
-    CurrentTime = gameLength;
-    state = Tipoff;
+    State = Tipoff;
     //somehow reset player positions?
     SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
   }
 
-  private IEnumerator GameTime() {
-    yield return new WaitForSeconds(gameLength);
-    Debug.Log("Game Time Up");
-    CurrentTime = 0f;
-    MainGameGUI.S.UpdateTime();
-    EndGame();
-  }
-
-  private IEnumerator UpdateTime() {
+  private IEnumerator GameTimeRoutine() {
+    CurrentTime = gameLength;
     while (CurrentTime > 0) {
       CurrentTime -= 1;
       yield return new WaitForSeconds(1);
       MainGameGUI.S.UpdateTime();
     }
+
+    Debug.Log("Game Time Up");
+    CurrentTime = 0f;
+    MainGameGUI.S.UpdateTime();
+    EndGame();
   }
 
   public void ResetAfterScore() {
@@ -230,8 +227,8 @@ public class GameManager : MonoBehaviour {
   //Players can check for tip-off priority.
   public bool CheckTipOff(XboxController controller) {
     Debug.Log("Checking TipOff...");
-    if (state == Tipoff) {
-      state = InPlay;
+    if (State == Tipoff) {
+      State = InPlay;
       switch (controller) {
         case XboxController.First: //small1
           SmallPlayer1.HoldBall(Ball);
@@ -255,5 +252,10 @@ public class GameManager : MonoBehaviour {
       }
 
     } else return false;
+  }
+
+  //TODO: Get rid of this, just have callers use "MainGameGUI.S.UpdatePossessionIndicator(team)"
+  public void NotifyOfBallOwnership(ScoreComponent.PlayerType? team) {
+    MainGameGUI.S.UpdatePossessionIndicator(team);
   }
 }
