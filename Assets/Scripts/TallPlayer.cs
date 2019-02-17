@@ -60,6 +60,7 @@ public class TallPlayer : Player {
       if (other != null && other.Team == Team && other.Below == null) {
         other.OnPickedUp(this);
         Above = other;
+        Debug.LogFormat("{0} picked up {1}", gameObject.name, other.gameObject.name);
         break;
       }
     }
