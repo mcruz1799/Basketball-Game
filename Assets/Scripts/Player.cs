@@ -23,12 +23,12 @@ public abstract class Player : MonoBehaviour, IPlayer {
   [SerializeField] protected BoxCollider grabHitbox;
   [SerializeField] private ScoreComponent.PlayerType _team;
   [SerializeField] private SimpleHealthBar staminaBar;
+  [SerializeField] private Sprite _icon;
 #pragma warning restore 0649
 
   private PlayerMover xzController;
   private BallUserComponent ballUserComponent;
 
-  [SerializeField] private Sprite _icon;
   public Sprite Icon => _icon;
 
   public ScoreComponent.PlayerType Team { get; private set; }
