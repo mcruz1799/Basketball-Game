@@ -162,15 +162,18 @@ public class SmallPlayer : Player {
     Stun();
   }
   public override void Move(float xMove, float zMove) {
-
     if (xMove != 0 || zMove != 0) {
       idleAnimation.IsVisible = false;
-      runAnimation.IsVisible = true;
-      runAnimation.StartFromFirstFrame();
+      if (!runAnimation.IsVisible) {
+        runAnimation.IsVisible = true;
+        runAnimation.StartFromFirstFrame();
+      }
     } else {
-      idleAnimation.IsVisible = true;
       runAnimation.IsVisible = false;
-      idleAnimation.StartFromFirstFrame();
+      if (!idleAnimation.IsVisible) {
+        idleAnimation.IsVisible = true;
+        idleAnimation.StartFromFirstFrame();
+      }
     }
     base.Move(xMove, zMove);
   }
