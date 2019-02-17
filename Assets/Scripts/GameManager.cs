@@ -8,6 +8,12 @@ using static GameState;
 
 public enum GameState { MainMenu, PlayerSelection, Tipoff, InPlay, Overtime, GameOver }
 
+public static class GameStateExtensions {
+  public static bool PlayerMovementAllowed(this GameState state) {
+    return state == Tipoff || state == InPlay || state == Overtime;
+  }
+}
+
 public class GameManager : MonoBehaviour {
   public static GameManager S { get; private set; }
 
@@ -52,9 +58,7 @@ public class GameManager : MonoBehaviour {
   //Exposed for MainGameGUI to look at
   public int ScoreTeam1 { get; private set; }
   public int ScoreTeam2 { get; private set; }
-
   public float CurrentTime { get; private set; }
-  //this is pointless, only needed to call StopCoroutine
 
   /********************************************************
                      UI ELEMENTS TO ADD:
@@ -91,11 +95,12 @@ public class GameManager : MonoBehaviour {
     State = MainMenu;
   }
 
-
+  //For use by the start button in the main menu
   public void StartPlayerSelection() {
     State = PlayerSelection;
   }
 
+  //For use by InputManager
   public void EndPlayerSelection() {
     if (State != PlayerSelection) {
       Debug.LogError("GameManager.EndPlayerSelection() called outside of the PlayerSelection phase");
@@ -209,49 +214,25 @@ public class GameManager : MonoBehaviour {
   }
 
   public void ResetAfterScore() {
-
-    _smallPlayer1.transform.position = new Vector3(0,0,0);
+    _smallPlayer1.transform.position = new Vector3(0, 0, 0);
     _smallPlayer2.transform.position = new Vector3(0, 0, 0);
     _tallPlayer1.transform.position = new Vector3(0, 0, 0);
     _tallPlayer2.transform.position = new Vector3(0, 0, 0);
     _tallPlayer1.ThrowSmallPlayer();
     _tallPlayer2.ThrowSmallPlayer();
+
     _smallPlayer1.transform.position = sp1_spawn.transform.position;
     _smallPlayer2.transform.position = sp2_spawn.transform.position;
     _tallPlayer1.transform.position = tp1_spawn.transform.position;
     _tallPlayer2.transform.position = tp2_spawn.transform.position;
-    //S.tipoff = true;
-    ///S.tipoffScreen.SetActive(true);
    }
 
   //Players can check for tip-off priority.
-  public bool CheckTipOff(XboxController controller) {
-    Debug.Log("Checking TipOff...");
+  public void CheckTipOff(XboxController controller) {
     if (State == Tipoff) {
       State = InPlay;
-      switch (controller) {
-        case XboxController.First: //small1
-          SmallPlayer1.HoldBall(Ball);
-          return true;
-
-        case XboxController.Second: //tall1
-          TallPlayer1.HoldBall(Ball);
-          return true;
-
-        case XboxController.Third: //small2
-          SmallPlayer2.HoldBall(Ball);
-          return true;
-
-        case XboxController.Fourth: //tall2
-          TallPlayer2.HoldBall(Ball);
-          return true;
-
-        default:
-          Debug.LogError("Illegal XboxController enum-value detected in GameManager.CheckTipoff");
-          return false;
-      }
-
-    } else return false;
+      InputManager.S.ControllerMap[controller].player.HoldBall(Ball);
+    }
   }
 
   //TODO: Get rid of this, just have callers use "MainGameGUI.S.UpdatePossessionIndicator(team)"
