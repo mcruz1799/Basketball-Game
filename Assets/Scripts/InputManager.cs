@@ -8,6 +8,8 @@ public class InputManager : MonoBehaviour {
   public static InputManager S { get; private set; }
 
 #pragma warning disable 0649
+  [Range(1f, 10f)]
+  [SerializeField] private float countdownLength;
 #pragma warning restore 0649
 
   public int Countdown { get; private set; }
@@ -25,6 +27,7 @@ public class InputManager : MonoBehaviour {
   public IReadOnlyDictionary<XboxController, PlayerSelectionInfo> ControllerMap => controllerMap;
 
   private void Awake() {
+    Countdown = Mathf.CeilToInt(countdownLength);
     if (S == null) {
       S = this;
       DontDestroyOnLoad(this);
@@ -33,21 +36,35 @@ public class InputManager : MonoBehaviour {
       Destroy(gameObject);
     }
     controllerMap = new Dictionary<XboxController, PlayerSelectionInfo>();
+
+    //Default player selection
+    Select(XboxController.First, SelectionAction.Small1);
+    Select(XboxController.Second, SelectionAction.Tall1);
+    Select(XboxController.Third, SelectionAction.Small2);
+    Select(XboxController.Fourth, SelectionAction.Tall2);
+
+    //For debugging
+    //Select(XboxController.First, SelectionAction.Confirm);
+    //Select(XboxController.Second, SelectionAction.Confirm);
+    //Select(XboxController.Third, SelectionAction.Confirm);
+    //Select(XboxController.Fourth, SelectionAction.Confirm);
+
+    StartCoroutine(InputReadingRoutine());
+    StartCoroutine(PlayerSelectionRoutine());
   }
 
   private IEnumerator InputReadingRoutine() {
     while (true) {
-      if (!ControllerMapComplete()) {
-        PlayerSelectionInputChecks(XboxController.First);
-        PlayerSelectionInputChecks(XboxController.Second);
-        PlayerSelectionInputChecks(XboxController.Third);
-        PlayerSelectionInputChecks(XboxController.Fourth);
-      } else {
-        MainGameInputChecks(XboxController.First);
-        MainGameInputChecks(XboxController.Second);
-        MainGameInputChecks(XboxController.Third);
-        MainGameInputChecks(XboxController.Fourth);
-      }
+      //GameManager.S.State is checked inside of these functions, so no need to do it jere
+      PlayerSelectionInputChecks(XboxController.First);
+      PlayerSelectionInputChecks(XboxController.Second);
+      PlayerSelectionInputChecks(XboxController.Third);
+      PlayerSelectionInputChecks(XboxController.Fourth);
+      MainGameInputChecks(XboxController.First);
+      MainGameInputChecks(XboxController.Second);
+      MainGameInputChecks(XboxController.Third);
+      MainGameInputChecks(XboxController.Fourth);
+
       yield return null;
     }
   }
@@ -73,15 +90,15 @@ public class InputManager : MonoBehaviour {
   //Waits until all 4 players have selected who to play
   private IEnumerator PlayerSelectionRoutine() {
     while (true) {
-      yield return new WaitUntil(ControllerMapComplete);
+      yield return new WaitUntil(() => GameManager.S.State == GameState.PlayerSelection && ControllerMapComplete());
 
       //Wait 5 seconds after the game is ready
-      for (float timer = 5f; timer > 0f; timer -= 0.1f) {
+      for (float timer = countdownLength; timer > 0f; timer -= 0.1f) {
         yield return new WaitForSeconds(0.1f);
 
         //If someone cancels, then break.  The code will return to the start of the while-loop.
         if (!ControllerMapComplete()) {
-          Countdown = 5;
+          Countdown = Mathf.CeilToInt(countdownLength);
           break;
         }
 
@@ -91,30 +108,54 @@ public class InputManager : MonoBehaviour {
       //If controllerMap is still completed (i.e. nobody has canceled), start the game
       if (ControllerMapComplete()) {
         Countdown = 0;
-        yield break;
+        GameManager.S.EndPlayerSelection();
       }
     }
   }
 
-  private void PlayerSelectionInputChecks(XboxController controller) {
+  private enum SelectionAction { Small1, Tall1, Small2, Tall2, Confirm }
 
+  private void PlayerSelectionInputChecks(XboxController controller) {
+    if (GameManager.S.State == GameState.PlayerSelection) {
+
+      //Select a player with A/B/X/Y (does not confirm the selection)
+      if (XCI.GetButtonDown(XboxButton.A)) {
+        Select(controller, SelectionAction.Small1);
+      }
+      if (XCI.GetButtonDown(XboxButton.B)) {
+        Select(controller, SelectionAction.Tall1);
+      }
+      if (XCI.GetButtonDown(XboxButton.X)) {
+        Select(controller, SelectionAction.Small2);
+      }
+      if (XCI.GetButtonDown(XboxButton.Y)) {
+        Select(controller, SelectionAction.Tall2);
+      }
+
+      //If you've selected a player, press Start to confirm it
+      if (XCI.GetButtonDown(XboxButton.Start)) {
+        Select(controller, SelectionAction.Confirm);
+      }
+    }
+  }
+
+  private void Select(XboxController controller, SelectionAction action) {
     //Select a player with A/B/X/Y (does not confirm the selection)
-    if (XCI.GetButtonDown(XboxButton.A)) {
+    if (action == SelectionAction.Small1) {
       controllerMap[controller] = new PlayerSelectionInfo(GameManager.S.SmallPlayer1, false);
     }
-    if (XCI.GetButtonDown(XboxButton.B)) {
+    if (action == SelectionAction.Tall1) {
       controllerMap[controller] = new PlayerSelectionInfo(GameManager.S.TallPlayer1, false);
     }
-    if (XCI.GetButtonDown(XboxButton.X)) {
+    if (action == SelectionAction.Small2) {
       controllerMap[controller] = new PlayerSelectionInfo(GameManager.S.SmallPlayer2, false);
     }
-    if (XCI.GetButtonDown(XboxButton.Y)) {
+    if (action == SelectionAction.Tall2) {
       controllerMap[controller] = new PlayerSelectionInfo(GameManager.S.TallPlayer2, false);
     }
 
     //If you've selected a player, press Start to confirm it
-    if (XCI.GetButtonDown(XboxButton.Start) && controllerMap.ContainsKey(controller)) {
-
+    if (action == SelectionAction.Confirm && controllerMap.ContainsKey(controller)) {
       IPlayer selectedPlayer = controllerMap[controller].player;
 
       //Check if someone else is already using the player
@@ -133,100 +174,30 @@ public class InputManager : MonoBehaviour {
   }
 
   private void MainGameInputChecks(XboxController controller) {
-    IPlayer player = controllerMap[controller].player;
+    if (GameManager.S.State.PlayerMovementAllowed()) {
+      IPlayer player = controllerMap[controller].player;
 
-    //Check left joystick
-    float xMove = XCI.GetAxis(XboxAxis.LeftStickX, controller);
-    float zMove = XCI.GetAxis(XboxAxis.LeftStickY, controller);
-    player.Move(zMove, -xMove);
-    if (!(xMove == 0 && zMove == 0)) {
-      player.SetRotation(zMove, -xMove);
-    }
+      //Check left joystick
+      float xMove = XCI.GetAxis(XboxAxis.LeftStickX, controller);
+      float zMove = XCI.GetAxis(XboxAxis.LeftStickY, controller);
+      player.Move(zMove, -xMove);
+      if (!(xMove == 0 && zMove == 0)) {
+        player.SetRotation(zMove, -xMove);
+      }
 
-    //Check button presses
-    if (XCI.GetButtonDown(XboxButton.A, controller)) {
-      player.AButtonDown(controller);
-    }
-    if (XCI.GetButtonDown(XboxButton.B, controller)) {
-      player.BButtonDown(controller);
-    }
-    if (XCI.GetAxis(XboxAxis.RightTrigger, controller) >= .3f) {
-      player.RTButtonDown(controller);
-    }
-    if (XCI.GetAxis(XboxAxis.RightTrigger, controller) < .3f) {
-      player.RTButtonUp(controller);
+      //Check button presses
+      if (XCI.GetButtonDown(XboxButton.A, controller)) {
+        player.AButtonDown(controller);
+      }
+      if (XCI.GetButtonDown(XboxButton.B, controller)) {
+        player.BButtonDown(controller);
+      }
+      if (XCI.GetAxis(XboxAxis.RightTrigger, controller) >= .3f) {
+        player.RTButtonDown(controller);
+      }
+      if (XCI.GetAxis(XboxAxis.RightTrigger, controller) < .3f) {
+        player.RTButtonUp(controller);
+      }
     }
   }
 }
-
-//public class InputManager : MonoBehaviour {
-//  private IPlayer[] players = new IPlayer[4];
-//  private Dictionary<XboxController, int> controllerToPlayer;
-//  private TeamPickerManager tpm;
-//  private XboxController[] controllers = new XboxController[] { XboxController.First, XboxController.Second, XboxController.Third, XboxController.Fourth };
-//  private void Start() {
-//    players[0] = GameManager.S.SmallPlayer1;
-//    players[1] = GameManager.S.TallPlayer1;
-//    players[2] = GameManager.S.SmallPlayer2;
-//    players[3] = GameManager.S.TallPlayer2;
-
-//    tpm = GameObject.Find("TeamPickerManager").GetComponent<TeamPickerManager>();
-//    controllerToPlayer = tpm.controllerToPlayer;
-
-
-//  }
-//  private void Update() {
-//    //For four controllers connected to the machine.
-
-//    foreach (KeyValuePair<XboxController,int> kvp in controllerToPlayer)
-//    {
-//        CheckInputs(kvp.Key, players[kvp.Value]);
-//    }
-//  }
-//    // for (int i = 0; i < 4; i++) {
-//    //   try {
-//    //     CheckInputs(controllers[i], players[i]);
-
-//    //   } catch (System.Exception e) {
-//    //     //TODO: Add UI message to prompt connecting controller.
-//    //     //Debug.Log("Error receiving input.");
-//    //     continue;
-//    //   }
-//    // }
-
-//  //Checks for inputs from a specific controller, and applies movement to the s
-//  private void CheckInputs(XboxController controller, IPlayer player) {
-//    //Vector3 initialPos = new Vector3(player.X, 0, player.Z);
-//    if (!GameManager.S.tipoff && !GameManager.S.end) {
-
-
-//      //Check Movement Inputs
-//      float xMove = XCI.GetAxis(XboxAxis.LeftStickX, controller);
-//      float zMove = XCI.GetAxis(XboxAxis.LeftStickY, controller);
-//      player.Move(zMove, -xMove);
-//      if (!(xMove == 0 && zMove == 0)) {
-//        player.SetRotation(zMove, -xMove);
-//      }
-//    }
-//    //Check Rotation Inputs
-//    /* float Xrotation = XCI.GetAxis(XboxAxis.RightStickX, controller);
-//     float Zrotation = XCI.GetAxis(XboxAxis.RightStickY, controller);
-//     if (!(Xrotation == 0 && Zrotation == 0)) {
-//       player.SetRotation(Xrotation, Zrotation);
-//     } */
-
-//    //Check Button Presses
-//    if (XCI.GetButtonDown(XboxButton.A, controller)) {
-//      player.AButtonDown(controller);
-//    }
-//    if (XCI.GetButtonDown(XboxButton.B, controller)) {
-//      player.BButtonDown(controller);
-//    }
-//    if (XCI.GetAxis(XboxAxis.RightTrigger, controller) >= .3f) {
-//      player.RTButtonDown(controller);
-//    }
-//    if (XCI.GetAxis(XboxAxis.RightTrigger, controller) < .3f) {
-//      player.RTButtonUp(controller);
-//    }
-//  }
-//}
