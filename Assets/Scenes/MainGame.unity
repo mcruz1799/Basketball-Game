@@ -2473,6 +2473,7 @@ MonoBehaviour:
   grabHitbox: {fileID: 1406815172}
   _team: 1
   staminaBar: {fileID: 1066916965}
+  _icon: {fileID: 21300000, guid: 39e99761b2d29e04291d05a87c8735cd, type: 3}
   throwDistance: 3
   _spIdle: {fileID: 1718543738}
   _spRun: {fileID: 1260986080}
@@ -2579,7 +2580,7 @@ Transform:
   - {fileID: 1406815173}
   - {fileID: 233480050}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!224 &423064420 stripped
 RectTransform:
@@ -4643,6 +4644,7 @@ MonoBehaviour:
   grabHitbox: {fileID: 1357197291}
   _team: 1
   staminaBar: {fileID: 774503562}
+  _icon: {fileID: 21300000, guid: 44903ad0a712e3a49ac6f1ddbfb550d2, type: 3}
   _tpIdle: {fileID: 1004947071}
   _tpRun: {fileID: 2009897663}
 --- !u!114 &845735871
@@ -4765,7 +4767,7 @@ Transform:
   - {fileID: 1357197292}
   - {fileID: 945786671}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &881487252
 GameObject:
@@ -11698,6 +11700,7 @@ MonoBehaviour:
   grabHitbox: {fileID: 708588696}
   _team: 0
   staminaBar: {fileID: 1972849055}
+  _icon: {fileID: 21300000, guid: 0f7382f2c92c3394db7f7918dd127e36, type: 3}
   _tpIdle: {fileID: 1864007666}
   _tpRun: {fileID: 170492886}
 --- !u!114 &1982353490
@@ -11820,7 +11823,7 @@ Transform:
   - {fileID: 708588697}
   - {fileID: 447248554}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2009897662
 GameObject:
@@ -12030,6 +12033,7 @@ MonoBehaviour:
   grabHitbox: {fileID: 1642193875}
   _team: 0
   staminaBar: {fileID: 624898937}
+  _icon: {fileID: 21300000, guid: 26c34eb4146ac4b459c47969ea7a4240, type: 3}
   throwDistance: 3
   _spIdle: {fileID: 610052506}
   _spRun: {fileID: 126809306}
@@ -12136,7 +12140,7 @@ Transform:
   - {fileID: 1642193876}
   - {fileID: 1094292420}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2029042020
 Animator:

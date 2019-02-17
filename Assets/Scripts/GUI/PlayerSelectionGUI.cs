@@ -32,24 +32,24 @@ public class PlayerSelectionGUI : MonoBehaviour {
     countdown.text = InputManager.S.Countdown.ToString();
 
     foreach (KeyValuePair<XboxController, InputManager.PlayerSelectionInfo> info in InputManager.S.ControllerMap) {
-      Sprite sprite = null;
-      //Sprite sprite = info.Value.player.sprite
+      Sprite sprite = info.Value.player.Icon;
+      bool isConfirmed = info.Value.isConfirmed;
       switch (info.Key) {
         case XboxController.First:
           controller1.sprite = sprite;
-          controller1Confirmed.enabled = info.Value.isConfirmed;
+          controller1Confirmed.enabled = isConfirmed;
           break;
         case XboxController.Second:
           controller2.sprite = sprite;
-          controller2Confirmed.enabled = info.Value.isConfirmed;
+          controller2Confirmed.enabled = isConfirmed;
           break;
         case XboxController.Third:
           controller3.sprite = sprite;
-          controller3Confirmed.enabled = info.Value.isConfirmed;
+          controller3Confirmed.enabled = isConfirmed;
           break;
         case XboxController.Fourth:
           controller4.sprite = sprite;
-          controller4Confirmed.enabled = info.Value.isConfirmed;
+          controller4Confirmed.enabled = isConfirmed;
           break;
         default:
           Debug.LogError("Illegal XboxController key detected in InputManager.ControllerMap");

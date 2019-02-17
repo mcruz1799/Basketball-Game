@@ -4,7 +4,12 @@ using UnityEngine;
 using XboxCtrlrInput;
 
 public interface IPlayer : IBallUser, IXzController {
+
+  //An icon representing the player
+  Sprite Icon { get; }
+
   ScoreComponent.PlayerType Team { get; }
+
   void AButtonDown(XboxController controller);
   void BButtonDown(XboxController controller);
   void XButtonDown(XboxController controller);
@@ -22,6 +27,9 @@ public abstract class Player : MonoBehaviour, IPlayer {
 
   private PlayerMover xzController;
   private BallUserComponent ballUserComponent;
+
+  [SerializeField] private Sprite _icon;
+  public Sprite Icon => _icon;
 
   public ScoreComponent.PlayerType Team { get; private set; }
 
