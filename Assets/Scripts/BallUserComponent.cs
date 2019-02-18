@@ -50,10 +50,9 @@ public class BallUserComponent : MonoBehaviour {
       return false;
     }
 
-    Vector3 selfToHitbox = grabHitbox.center - transform.position;
-    RaycastHit[] hits = Physics.BoxCastAll(transform.position, grabHitbox.bounds.extents, selfToHitbox, Quaternion.identity, selfToHitbox.magnitude);
-    foreach (RaycastHit h in hits) {
-      BallUserComponent other = h.collider.GetComponent<BallUserComponent>();
+    Collider[] hits = Physics.OverlapBox(grabHitbox.transform.position, grabHitbox.bounds.extents);
+    foreach (Collider h in hits) {
+      BallUserComponent other = h.GetComponent<BallUserComponent>();
 
       if (other != null && other.heldBall != null) {
         HoldBall(other.heldBall);
