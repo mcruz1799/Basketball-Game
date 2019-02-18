@@ -28,6 +28,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
 
   private PlayerMover xzController;
   private BallUserComponent ballUserComponent;
+  public virtual bool CanReceivePass => true;
 
   public Sprite Icon => _icon;
 

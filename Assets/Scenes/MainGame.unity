@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3979108, g: 0.56530106, b: 0.66596335, a: 1}
+  m_IndirectSpecularColor: {r: 0.39782694, g: 0.5652844, b: 0.6659523, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2552,7 +2552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f12f0a70d8e8496dbfd6c4452907e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialSpeed: 10
+  _initialSpeed: 8
 --- !u!23 &410584853
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4818,7 +4818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f12f0a70d8e8496dbfd6c4452907e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialSpeed: 7
+  _initialSpeed: 6
 --- !u!23 &845735874
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5398,14 +5398,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdown: {fileID: 2086641084}
-  controller1PlayerImage: {fileID: 0}
-  controller2PlayerImage: {fileID: 0}
-  controller3PlayerImage: {fileID: 0}
-  controller4PlayerImage: {fileID: 0}
-  controller1Prompt: {fileID: 0}
-  controller2Prompt: {fileID: 0}
-  controller3Prompt: {fileID: 0}
-  controller4Prompt: {fileID: 0}
+  controller1PlayerImage: {fileID: 344293016}
+  controller2PlayerImage: {fileID: 524771427}
+  controller3PlayerImage: {fileID: 2066429283}
+  controller4PlayerImage: {fileID: 1302620554}
+  controller1Prompt: {fileID: 293579047}
+  controller2Prompt: {fileID: 478334162}
+  controller3Prompt: {fileID: 234966717}
+  controller4Prompt: {fileID: 935658742}
 --- !u!114 &920366563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6928,7 +6928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1157129683
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10894,10 +10894,10 @@ RectTransform:
   m_Father: {fileID: 1305938866}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 249.5, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1801874357
 MonoBehaviour:
@@ -11879,7 +11879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f12f0a70d8e8496dbfd6c4452907e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialSpeed: 7
+  _initialSpeed: 6
 --- !u!23 &1982353493
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12197,7 +12197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f12f0a70d8e8496dbfd6c4452907e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialSpeed: 10
+  _initialSpeed: 8
 --- !u!23 &2029042016
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12401,10 +12401,10 @@ RectTransform:
   m_Father: {fileID: 1305938866}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 699, y: -25}
-  m_SizeDelta: {x: 249.5, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &2067294904
 MonoBehaviour:

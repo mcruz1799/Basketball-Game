@@ -79,7 +79,7 @@ public class BallUserComponent : MonoBehaviour {
       }
     }
 
-    if (nearestPlayerHit != null) {
+    if (nearestPlayerHit != null && nearestPlayerHit.CanReceivePass) {
       nearestPlayerHit.HoldBall(heldBall);
       Debug.Log("Pass Recipient:" + nearestPlayerHit.name);
       heldBall = null;

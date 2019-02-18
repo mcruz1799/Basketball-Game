@@ -17,7 +17,16 @@ public static class GameStateExtensions {
 public class GameManager : MonoBehaviour {
   public static GameManager S { get; private set; }
 
-  public GameState State { get; private set; }
+  private GameState _state;
+  public GameState State
+  {
+        get { return _state; } 
+        private set
+        {
+            _state = value;
+            MainGameGUI.S.UpdateScreens();
+        }
+  }
 
 #pragma warning disable 0649
   [SerializeField] private Ball _ball;
@@ -92,10 +101,14 @@ public class GameManager : MonoBehaviour {
     TallPlayer2 = _tallPlayer2;
 
     //Start from main menu
+  }
+
+  private void Start()
+  {
     State = MainMenu;
   }
 
-  //For use by the start button in the main menu
+    //For use by the start button in the main menu
   public void StartPlayerSelection() {
     State = PlayerSelection;
   }
@@ -170,7 +183,11 @@ public class GameManager : MonoBehaviour {
   public void UpdateScore(ScoreComponent.PlayerType p, int i) {
     Ball.SetParent(null);
     Ball.SetPosition(ballInitialPosition);
-     SoundManager.Instance.Play(scoreSound);
+    SoundManager.Instance.Play(scoreSound);
+    SmallPlayer1.HoldBall(null);
+    SmallPlayer2.HoldBall(null);
+    TallPlayer1.HoldBall(null);
+    TallPlayer2.HoldBall(null);
     if (p == ScoreComponent.PlayerType.team1) {
       ScoreTeam1 += i;
       SmallPlayer1.HoldBall(Ball);
