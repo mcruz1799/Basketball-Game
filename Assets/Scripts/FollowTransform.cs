@@ -7,6 +7,10 @@ public class FollowTransform : MonoBehaviour {
   [SerializeField] private Transform toFollow;
   [SerializeField] private Vector3 localOffset;
   [SerializeField] private bool useInspectorOffset;
+
+  [SerializeField] private bool lockX;
+  [SerializeField] private bool lockY;
+  [SerializeField] private bool lockZ;
 #pragma warning restore 0649
 
   private void Awake() {
@@ -16,6 +20,18 @@ public class FollowTransform : MonoBehaviour {
   }
 
   private void Update() {
-    transform.position = toFollow.position + localOffset;
+    Vector3 oldPosition = transform.position;
+    Vector3 newPosition = toFollow.position + localOffset;
+    if (lockX) {
+      newPosition.x = oldPosition.x;
+    }
+    if (lockY) {
+      newPosition.y = oldPosition.y;
+    }
+    if (lockZ) {
+      newPosition.z = oldPosition.z;
+    }
+
+    transform.position = newPosition;
   }
 }

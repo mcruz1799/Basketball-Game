@@ -3107,6 +3107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 526351610}
+  - component: {fileID: 526351611}
   m_Layer: 0
   m_Name: CameraTarget
   m_TagString: Untagged
@@ -3129,6 +3130,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 90, z: 0}
+--- !u!114 &526351611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526351609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801f6dd90e5d1204597ff86385f08b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toFollow: {fileID: 996041636}
+  localOffset: {x: 0, y: 0, z: 0}
+  useInspectorOffset: 0
+  lockX: 0
+  lockY: 1
+  lockZ: 0
 --- !u!1 &552958011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3393,6 +3412,9 @@ MonoBehaviour:
   toFollow: {fileID: 204880727}
   localOffset: {x: 0, y: 0, z: 0}
   useInspectorOffset: 0
+  lockX: 0
+  lockY: 0
+  lockZ: 0
 --- !u!1 &610052504
 GameObject:
   m_ObjectHideFlags: 0
@@ -5251,6 +5273,9 @@ MonoBehaviour:
   toFollow: {fileID: 1982353496}
   localOffset: {x: 0, y: 0, z: 0}
   useInspectorOffset: 0
+  lockX: 0
+  lockY: 0
+  lockZ: 0
 --- !u!1 &911505251
 GameObject:
   m_ObjectHideFlags: 0
@@ -8927,6 +8952,9 @@ MonoBehaviour:
   toFollow: {fileID: 2029042019}
   localOffset: {x: 0, y: 0, z: 0}
   useInspectorOffset: 0
+  lockX: 0
+  lockY: 0
+  lockZ: 0
 --- !u!1 &1355765772
 GameObject:
   m_ObjectHideFlags: 0
@@ -10618,6 +10646,9 @@ MonoBehaviour:
   toFollow: {fileID: 845735877}
   localOffset: {x: 0, y: 0, z: 0}
   useInspectorOffset: 0
+  lockX: 0
+  lockY: 0
+  lockZ: 0
 --- !u!1 &1685200087
 GameObject:
   m_ObjectHideFlags: 0
