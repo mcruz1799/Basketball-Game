@@ -10,7 +10,7 @@ public class FollowTransform : MonoBehaviour {
 #pragma warning restore 0649
 
   private void Awake() {
-    if (useInspectorOffset) {
+    if (!useInspectorOffset) {
       localOffset = transform.position - toFollow.position;
     }
   }
