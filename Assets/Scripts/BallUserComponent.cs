@@ -50,7 +50,7 @@ public class BallUserComponent : MonoBehaviour {
       return false;
     }
 
-    Collider[] hits = Physics.OverlapBox(grabHitbox.transform.position, grabHitbox.bounds.extents);
+    Collider[] hits = Physics.OverlapBox(grabHitbox.center, grabHitbox.bounds.extents);
     foreach (Collider h in hits) {
       BallUserComponent other = h.GetComponent<BallUserComponent>();
 
