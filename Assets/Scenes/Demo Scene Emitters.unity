@@ -340,6 +340,7 @@ Transform:
   m_LocalScale: {x: 0.50306356, y: 0.50306356, z: 0.50306356}
   m_Children:
   - {fileID: 1712716724}
+  - {fileID: 324460596}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -350,6 +351,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 22320152}
     m_Modifications:
+    - target: {fileID: 190458, guid: 2fb0302990a9b4bd9ae16b7d05144a48, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 434418, guid: 2fb0302990a9b4bd9ae16b7d05144a48, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -583,6 +588,129 @@ MonoBehaviour:
   preEmitterString: 
   postEmitterString: 
   updateEffectorsOnChange: 0
+--- !u!1001 &324460595
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 22320152}
+    m_Modifications:
+    - target: {fileID: 1933224167640148, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
+      propertyPath: m_Name
+      value: RespawnParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928756452232928, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928756452232928, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928756452232928, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928756452232928, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928756452232928, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928756452232928, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928756452232928, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928756452232928, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928756452232928, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928756452232928, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928756452232928, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.60108036
+      objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.17332679
+      objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: ColorModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.86629826
+      objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0.4575472
+      objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: NoiseModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: LightsModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: TrailModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.75
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
+--- !u!4 &324460596 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4928756452232928, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+    type: 3}
+  m_PrefabInstance: {fileID: 324460595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &507898185 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 134112, guid: 205f9b4604580492eaa84a8d351b9b24,
