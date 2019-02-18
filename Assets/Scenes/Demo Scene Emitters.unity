@@ -1580,6 +1580,16 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0.28235295
       objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 198431929882470540, guid: 9697f949b7a8d4a41aeb079ec2d46530,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9697f949b7a8d4a41aeb079ec2d46530, type: 3}
 --- !u!4 &2127276296 stripped
