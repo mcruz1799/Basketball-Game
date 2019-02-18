@@ -54,20 +54,17 @@ public class TallPlayer : Player {
     }
 
     //Check grab hitbox
-    Vector3 selfToHitbox = grabHitbox.transform.position - transform.position;
-    RaycastHit[] hits = Physics.BoxCastAll(transform.position, grabHitbox.bounds.extents, selfToHitbox, Quaternion.identity, selfToHitbox.magnitude);
-    foreach (RaycastHit h in hits) {
-      SmallPlayer other = h.collider.GetComponent<SmallPlayer>();
-      Debug.Log("Other: " + other);
+    Collider[] hits = Physics.OverlapBox(grabHitbox.transform.position, grabHitbox.bounds.extents);
+    foreach (Collider h in hits) {
+      SmallPlayer other = h.GetComponent<SmallPlayer>();
       if (other != null && other.Team == Team && other.Below == null) {
         other.OnPickedUp(this);
         Above = other;
         Debug.LogFormat("{0} picked up {1}", gameObject.name, other.gameObject.name);
-        break;
+        return true;
       }
     }
-    Debug.Log("We made it.");
-    return true;
+    return false;
   }
 
   public void OnAboveJumpingOff() {
