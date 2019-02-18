@@ -25,19 +25,10 @@ public class FollowTransform : MonoBehaviour {
   private void Update() {
     Vector3 oldPosition = transform.position;
     Vector3 newPosition = toFollow.position + localOffset;
-    if (lockX) {
-      newPosition.x = oldPosition.x;
-    }
-    if (lockY) {
-      newPosition.y = oldPosition.y;
-    }
-    if (lockZ) {
-      newPosition.z = oldPosition.z;
-    }
 
     if (smoothMotion) {
       Vector3 selfToTarget = newPosition - transform.position;
-      if (selfToTarget.sqrMagnitude <= 0.04f) {
+      if (selfToTarget.sqrMagnitude <= 1f) {
         transform.position = newPosition;
       } else {
         transform.Translate(selfToTarget.normalized * Time.deltaTime * smoothMotionSpeed);
@@ -45,5 +36,17 @@ public class FollowTransform : MonoBehaviour {
     } else {
       transform.position = newPosition;
     }
+    Vector3 finalPosition = transform.position;
+    if (lockX) {
+       finalPosition.x = oldPosition.x;
+    }
+    if (lockY) {
+      finalPosition.y = oldPosition.y;
+    }
+    if (lockZ) {
+      finalPosition.z = oldPosition.z;
+    }
+    transform.position = finalPosition;
+
   }
 }
