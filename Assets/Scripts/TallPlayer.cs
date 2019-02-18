@@ -58,6 +58,7 @@ public class TallPlayer : Player {
     RaycastHit[] hits = Physics.BoxCastAll(transform.position, grabHitbox.bounds.extents, selfToHitbox, Quaternion.identity, selfToHitbox.magnitude);
     foreach (RaycastHit h in hits) {
       SmallPlayer other = h.collider.GetComponent<SmallPlayer>();
+      Debug.Log("Other: " + other);
       if (other != null && other.Team == Team && other.Below == null) {
         other.OnPickedUp(this);
         Above = other;
@@ -65,6 +66,7 @@ public class TallPlayer : Player {
         break;
       }
     }
+    Debug.Log("We made it.");
     return true;
   }
 
