@@ -8,6 +8,9 @@ public interface ISpriteAnimator {
   bool IsPaused { get; set; }
   bool IsDone { get; }
 
+  bool FlipX { get; }
+  bool FlipY { get; }
+
   //How many frames to wait in between each sprite of the animation
   int FramesPerSprite { get; set; }
 
@@ -38,6 +41,9 @@ public class SpriteAnimator : MonoBehaviour, ISpriteAnimator {
   public bool IsLooping { get; set; }
   public bool IsPaused { get; set; }
   public bool IsDone { get; private set; }
+
+  public bool FlipX { get => spriteRenderer.flipX; set => spriteRenderer.flipX = value; }
+  public bool FlipY { get => spriteRenderer.flipY; set => spriteRenderer.flipY = value; }
 
   [SerializeField] private int _framesPerSprite;
   public int FramesPerSprite { get { return _framesPerSprite; } set { _framesPerSprite = value; } }
