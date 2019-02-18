@@ -6,7 +6,6 @@ using XboxCtrlrInput;
 
 public class PlayerSelectionGUI : MonoBehaviour {
 #pragma warning disable 0649
-  [SerializeField] private GameObject screenParent;
   [SerializeField] private Text countdown;
 
   [SerializeField] private Image controller1;
