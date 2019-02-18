@@ -15,6 +15,7 @@ public class BallUserComponent : MonoBehaviour {
   private IXzController xzController; //Needed only for XLook and ZLook
   private IBall heldBall;
 
+  private float stealCooldownRemaining;
   public bool CanSteal => stealCooldownRemaining <= 0f;
 
   private void Awake() {
@@ -55,6 +56,7 @@ public class BallUserComponent : MonoBehaviour {
       BallUserComponent other = h.GetComponent<BallUserComponent>();
 
       if (other != null && other.heldBall != null) {
+        stealCooldownRemaining = stealCooldown;
         HoldBall(other.heldBall);
         other.heldBall = null;
         SoundManager.Instance.Play(successfulSteal);
@@ -94,7 +96,6 @@ public class BallUserComponent : MonoBehaviour {
     }
   }
 
-  private float stealCooldownRemaining;
   private IEnumerator StealCooldownRoutine() {
     while (true) {
       if (stealCooldownRemaining <= 0f) {
