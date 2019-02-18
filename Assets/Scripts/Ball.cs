@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour, IBall {
 #pragma warning disable 0649
-  [Range(0.1f, 10f)] [SerializeField] private float moveAnimationSpeed;
+  [Range(1f, 100f)] [SerializeField] private float moveAnimationSpeed = 1f;
 #pragma warning restore 0649
 
   private Vector3? targetLocalPosition;
