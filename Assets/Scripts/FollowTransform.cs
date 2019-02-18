@@ -36,7 +36,7 @@ public class FollowTransform : MonoBehaviour {
     }
 
     if (smoothMotion) {
-      Vector3 selfToTarget = transform.position - newPosition;
+      Vector3 selfToTarget = newPosition - transform.position;
       if (selfToTarget.sqrMagnitude <= 0.04f) {
         transform.position = newPosition;
       } else {
