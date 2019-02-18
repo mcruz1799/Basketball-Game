@@ -119,21 +119,21 @@ public class InputManager : MonoBehaviour {
     if (GameManager.S.State == GameState.PlayerSelection) {
 
       //Select a player with A/B/X/Y (does not confirm the selection)
-      if (XCI.GetButtonDown(XboxButton.A)) {
+      if (XCI.GetButtonDown(XboxButton.A, controller)) {
         Select(controller, SelectionAction.Small1);
       }
-      if (XCI.GetButtonDown(XboxButton.B)) {
+      if (XCI.GetButtonDown(XboxButton.B, controller)) {
         Select(controller, SelectionAction.Tall1);
       }
-      if (XCI.GetButtonDown(XboxButton.X)) {
+      if (XCI.GetButtonDown(XboxButton.X, controller)) {
         Select(controller, SelectionAction.Small2);
       }
-      if (XCI.GetButtonDown(XboxButton.Y)) {
+      if (XCI.GetButtonDown(XboxButton.Y, controller)) {
         Select(controller, SelectionAction.Tall2);
       }
 
       //If you've selected a player, press Start to confirm it
-      if (XCI.GetButtonDown(XboxButton.Start)) {
+      if (XCI.GetButtonDown(XboxButton.Start, controller)) {
         Select(controller, SelectionAction.Confirm);
       }
     }
