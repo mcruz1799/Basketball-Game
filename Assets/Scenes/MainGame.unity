@@ -4724,8 +4724,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Big Bros: Once your Lil'' Bro has the ball, pick him up and carry him to
-    the basket to score!'
+  m_Text: 'Big Bros: Carry your Lil'' Bro to the basket'
 --- !u!222 &836542513
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5398,16 +5397,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde7982d9cf13ee4bb98aa7461c50f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenParent: {fileID: 0}
   countdown: {fileID: 2086641084}
-  controller1: {fileID: 344293016}
-  controller2: {fileID: 524771427}
-  controller3: {fileID: 2066429283}
-  controller4: {fileID: 1302620554}
-  controller1Confirmed: {fileID: 293579047}
-  controller2Confirmed: {fileID: 478334162}
-  controller3Confirmed: {fileID: 234966717}
-  controller4Confirmed: {fileID: 935658742}
+  controller1PlayerImage: {fileID: 0}
+  controller2PlayerImage: {fileID: 0}
+  controller3PlayerImage: {fileID: 0}
+  controller4PlayerImage: {fileID: 0}
+  controller1Prompt: {fileID: 0}
+  controller2Prompt: {fileID: 0}
+  controller3Prompt: {fileID: 0}
+  controller4Prompt: {fileID: 0}
 --- !u!114 &920366563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9327,8 +9325,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lil'' Bros: Keep hold of the ball and stay on your Big Bro in order to
-    get to the basket!'
+  m_Text: 'Lil'' Bros: Keep hold of the ball'
 --- !u!222 &1474233786
 CanvasRenderer:
   m_ObjectHideFlags: 0
