@@ -1533,8 +1533,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 70
-  orthographic: 1
+  field of view: 10
+  orthographic: 0
   orthographic size: 8
   m_Depth: -1
   m_CullingMask:
@@ -1558,13 +1558,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269337721}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: -10}
+  m_LocalRotation: {x: -0.06975647, y: 0, z: 0, w: 0.9975641}
+  m_LocalPosition: {x: -0.5, y: -4, z: -36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 526351610}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -8, y: 0, z: 0}
 --- !u!1 &277613741
 GameObject:
   m_ObjectHideFlags: 0
@@ -3107,6 +3107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 526351610}
+  - component: {fileID: 526351611}
   m_Layer: 0
   m_Name: CameraTarget
   m_TagString: Untagged
@@ -3129,6 +3130,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 90, z: 0}
+--- !u!114 &526351611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526351609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801f6dd90e5d1204597ff86385f08b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toFollow: {fileID: 996041636}
+  localOffset: {x: 0, y: 0, z: 0}
+  useInspectorOffset: 0
+  lockX: 0
+  lockY: 1
+  lockZ: 0
 --- !u!1 &552958011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3393,6 +3412,9 @@ MonoBehaviour:
   toFollow: {fileID: 204880727}
   localOffset: {x: 0, y: 0, z: 0}
   useInspectorOffset: 0
+  lockX: 0
+  lockY: 0
+  lockZ: 0
 --- !u!1 &610052504
 GameObject:
   m_ObjectHideFlags: 0
@@ -5251,6 +5273,9 @@ MonoBehaviour:
   toFollow: {fileID: 1982353496}
   localOffset: {x: 0, y: 0, z: 0}
   useInspectorOffset: 0
+  lockX: 0
+  lockY: 0
+  lockZ: 0
 --- !u!1 &911505251
 GameObject:
   m_ObjectHideFlags: 0
@@ -8927,6 +8952,9 @@ MonoBehaviour:
   toFollow: {fileID: 2029042019}
   localOffset: {x: 0, y: 0, z: 0}
   useInspectorOffset: 0
+  lockX: 0
+  lockY: 0
+  lockZ: 0
 --- !u!1 &1355765772
 GameObject:
   m_ObjectHideFlags: 0
@@ -10618,6 +10646,9 @@ MonoBehaviour:
   toFollow: {fileID: 845735877}
   localOffset: {x: 0, y: 0, z: 0}
   useInspectorOffset: 0
+  lockX: 0
+  lockY: 0
+  lockZ: 0
 --- !u!1 &1685200087
 GameObject:
   m_ObjectHideFlags: 0
@@ -12046,7 +12077,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1793309424}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1974095366
