@@ -5398,14 +5398,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdown: {fileID: 2086641084}
-  controller1PlayerImage: {fileID: 0}
-  controller2PlayerImage: {fileID: 0}
-  controller3PlayerImage: {fileID: 0}
-  controller4PlayerImage: {fileID: 0}
-  controller1Prompt: {fileID: 0}
-  controller2Prompt: {fileID: 0}
-  controller3Prompt: {fileID: 0}
-  controller4Prompt: {fileID: 0}
+  controller1PlayerImage: {fileID: 344293016}
+  controller2PlayerImage: {fileID: 524771427}
+  controller3PlayerImage: {fileID: 2066429283}
+  controller4PlayerImage: {fileID: 1302620554}
+  controller1Prompt: {fileID: 293579047}
+  controller2Prompt: {fileID: 478334162}
+  controller3Prompt: {fileID: 234966717}
+  controller4Prompt: {fileID: 935658742}
 --- !u!114 &920366563
 MonoBehaviour:
   m_ObjectHideFlags: 0
