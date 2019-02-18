@@ -37,6 +37,7 @@ public class FollowTransform : MonoBehaviour {
 
     if (smoothMotion) {
       Vector3 selfToTarget = transform.position - newPosition;
+      if (selfToTarget.sqrMagnitude > 0.0025)
       transform.Translate(selfToTarget.normalized * Time.deltaTime * smoothMotionSpeed);
     } else {
       transform.position = newPosition;
