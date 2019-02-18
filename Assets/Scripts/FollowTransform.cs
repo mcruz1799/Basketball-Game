@@ -8,6 +8,9 @@ public class FollowTransform : MonoBehaviour {
   [SerializeField] private Vector3 localOffset;
   [SerializeField] private bool useInspectorOffset;
 
+  [SerializeField] private bool smoothMotion;
+  [Range(1f, 100f)] [SerializeField] private float smoothMotionSpeed;
+
   [SerializeField] private bool lockX;
   [SerializeField] private bool lockY;
   [SerializeField] private bool lockZ;
@@ -32,6 +35,11 @@ public class FollowTransform : MonoBehaviour {
       newPosition.z = oldPosition.z;
     }
 
-    transform.position = newPosition;
+    if (smoothMotion) {
+      Vector3 selfToTarget = transform.position - newPosition;
+      transform.Translate(selfToTarget.normalized * Time.deltaTime * smoothMotionSpeed);
+    } else {
+      transform.position = newPosition;
+    }
   }
 }
