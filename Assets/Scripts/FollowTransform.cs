@@ -27,11 +27,13 @@ public class FollowTransform : MonoBehaviour {
     Vector3 newPosition = toFollow.position + localOffset;
 
     if (smoothMotion) {
-      Vector3 selfToTarget = newPosition - transform.position;
-      if (selfToTarget.sqrMagnitude <= 1f) {
+      Vector3 selfToTarget = newPosition - oldPosition;
+      if (selfToTarget.sqrMagnitude <= 1f) { //distance bw camera and obj
         transform.position = newPosition;
       } else {
-        transform.Translate(selfToTarget.normalized * Time.deltaTime * smoothMotionSpeed);
+        Debug.Log("translating");
+        //transform.Translate(selfToTarget.normalized * Time.deltaTime * smoothMotionSpeed);
+        transform.position = Vector3.MoveTowards(oldPosition, newPosition, smoothMotionSpeed*Time.deltaTime);
       }
     } else {
       transform.position = newPosition;

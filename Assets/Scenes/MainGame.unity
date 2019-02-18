@@ -3468,7 +3468,7 @@ MonoBehaviour:
   localOffset: {x: 0, y: 0, z: 0}
   useInspectorOffset: 0
   smoothMotion: 1
-  smoothMotionSpeed: 10
+  smoothMotionSpeed: 20
   lockX: 0
   lockY: 1
   lockZ: 0
