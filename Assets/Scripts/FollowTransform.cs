@@ -31,7 +31,6 @@ public class FollowTransform : MonoBehaviour {
       if (selfToTarget.sqrMagnitude <= 1f) { //distance bw camera and obj
         transform.position = newPosition;
       } else {
-        Debug.Log("translating");
         //transform.Translate(selfToTarget.normalized * Time.deltaTime * smoothMotionSpeed);
         transform.position = Vector3.MoveTowards(oldPosition, newPosition, smoothMotionSpeed*Time.deltaTime);
       }
