@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3979108, g: 0.56530106, b: 0.66596335, a: 1}
+  m_IndirectSpecularColor: {r: 0.39782694, g: 0.5652844, b: 0.6659523, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5883,9 +5883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 209eb0568e1aee245bd3a3ebe81b5320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightningEffectPrefab: {fileID: 11427938, guid: 15dec7b07032b2f4aa6f855bfbe120f7,
-    type: 3}
-  effectTime: 0.25
+  moveAnimationSpeed: 10
 --- !u!54 &995653929
 Rigidbody:
   m_ObjectHideFlags: 0
