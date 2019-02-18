@@ -264,6 +264,8 @@ MonoBehaviour:
   tp2_spawn: {fileID: 15959276}
   scoreSound: {fileID: 8300000, guid: 81be469b536ae3d42934c673edcf0408, type: 3}
   endBuzzer: {fileID: 8300000, guid: 7ac21c0fbb63b604988ca1ea1413c33c, type: 3}
+  menuSong: {fileID: 8300000, guid: f16c8beea489a4678813ef3b04c3ba9c, type: 3}
+  courtSong: {fileID: 8300000, guid: f9689db42445a4549883b91d1123a1f8, type: 3}
   arrow: {fileID: 360841774}
 --- !u!4 &27933165
 Transform:
@@ -10594,6 +10596,11 @@ PrefabInstance:
     - target: {fileID: 2340406679185956893, guid: 6e60a2f18ae11804c951bf87805e861f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340406679185956888, guid: 6e60a2f18ae11804c951bf87805e861f,
+        type: 3}
+      propertyPath: BypassListenerEffects
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

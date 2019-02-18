@@ -49,6 +49,8 @@ public class GameManager : MonoBehaviour {
   //Sound Effects
   [SerializeField] private AudioClip scoreSound;
   [SerializeField] private AudioClip endBuzzer;
+  [SerializeField] private AudioClip menuSong;
+  [SerializeField] private AudioClip courtSong;
 
   [SerializeField] public GameObject arrow;
 #pragma warning restore 0649
@@ -105,7 +107,8 @@ public class GameManager : MonoBehaviour {
 
   private void Start()
   {
-    State = MainMenu;
+        SoundManager.Instance.PlayMusic(menuSong);
+        State = MainMenu;
   }
 
     //For use by the start button in the main menu
@@ -128,6 +131,7 @@ public class GameManager : MonoBehaviour {
   }
 
   private void StartGame() {
+    SoundManager.Instance.PlayMusic(courtSong);
     Ball.SetParent(null);
     Ball.SetPosition(ballInitialPosition);
 
