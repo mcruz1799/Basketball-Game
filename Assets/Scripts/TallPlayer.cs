@@ -18,6 +18,7 @@ public class TallPlayer : Player {
   private ISpriteAnimator runAnimation;
 
   public SmallPlayer Above { get; private set; }
+  public override bool CanReceivePass => base.CanReceivePass && Above == null;
 
   public override float Speed {
     get {
