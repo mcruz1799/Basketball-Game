@@ -324,9 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 209eb0568e1aee245bd3a3ebe81b5320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightningEffectPrefab: {fileID: 11427938, guid: 15dec7b07032b2f4aa6f855bfbe120f7,
-    type: 3}
-  effectTime: 0.25
+  moveAnimationSpeed: 0
 --- !u!64 &22320148
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1472,7 +1470,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a90600b59fa6a02418a56cc1302da044, type: 3}
+    m_Font: {fileID: 12800000, guid: 280129e625403c64ebc676bf5fe8cb6d, type: 3}
     m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 1
@@ -2539,7 +2537,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a90600b59fa6a02418a56cc1302da044, type: 3}
+    m_Font: {fileID: 12800000, guid: 280129e625403c64ebc676bf5fe8cb6d, type: 3}
     m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 1
@@ -4535,7 +4533,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a90600b59fa6a02418a56cc1302da044, type: 3}
+    m_Font: {fileID: 12800000, guid: 280129e625403c64ebc676bf5fe8cb6d, type: 3}
     m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 1
