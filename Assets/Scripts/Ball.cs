@@ -18,7 +18,6 @@ public class Ball : MonoBehaviour, IBall {
   //For use only in BallUserComponent.HoldBall
   public void SetPosition(Vector3 newLocalPosition) {
     targetLocalPosition = newLocalPosition;
-    StartCoroutine(GfxRoutine());
   }
 
   //For use only in BallUserComponent.HoldBall
@@ -35,6 +34,7 @@ public class Ball : MonoBehaviour, IBall {
       Vector3 selfToTarget = (targetLocalPosition.Value - transform.localPosition);
       if (selfToTarget.sqrMagnitude < 0.04f) {
         transform.localPosition = targetLocalPosition.Value;
+        targetLocalPosition = null;
       } else {
         transform.localPosition += moveAnimationSpeed * Time.deltaTime * selfToTarget.normalized;
       }
