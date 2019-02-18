@@ -70,7 +70,7 @@ public class InputManager : MonoBehaviour {
   }
 
   //controllerMap is complete when 4 players are registered
-  private bool ControllerMapComplete() {
+  public bool ControllerMapComplete() {
 
     //There must be 4 players
     if (controllerMap.Count != 4) {

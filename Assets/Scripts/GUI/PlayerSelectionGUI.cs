@@ -28,7 +28,11 @@ public class PlayerSelectionGUI : MonoBehaviour {
   }
 
   private void UpdateGUI() {
-    countdown.text = InputManager.S.Countdown.ToString();
+    if (InputManager.S.ControllerMapComplete()) {
+      countdown.text = InputManager.S.Countdown.ToString();
+    } else {
+      countdown.text = "";
+    }
 
     foreach (KeyValuePair<XboxController, InputManager.PlayerSelectionInfo> info in InputManager.S.ControllerMap) {
       Sprite sprite = info.Value.player.Icon;
