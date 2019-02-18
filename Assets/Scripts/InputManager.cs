@@ -44,10 +44,10 @@ public class InputManager : MonoBehaviour {
     Select(XboxController.Fourth, SelectionAction.Tall2);
 
     //For debugging
-    //Select(XboxController.First, SelectionAction.Confirm);
-    //Select(XboxController.Second, SelectionAction.Confirm);
-    //Select(XboxController.Third, SelectionAction.Confirm);
-    //Select(XboxController.Fourth, SelectionAction.Confirm);
+    Select(XboxController.First, SelectionAction.Confirm);
+    Select(XboxController.Second, SelectionAction.Confirm);
+    Select(XboxController.Third, SelectionAction.Confirm);
+    Select(XboxController.Fourth, SelectionAction.Confirm);
 
     StartCoroutine(InputReadingRoutine());
     StartCoroutine(PlayerSelectionRoutine());
