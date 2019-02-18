@@ -183,7 +183,11 @@ public class GameManager : MonoBehaviour {
   public void UpdateScore(ScoreComponent.PlayerType p, int i) {
     Ball.SetParent(null);
     Ball.SetPosition(ballInitialPosition);
-     SoundManager.Instance.Play(scoreSound);
+    SoundManager.Instance.Play(scoreSound);
+    SmallPlayer1.HoldBall(null);
+    SmallPlayer2.HoldBall(null);
+    TallPlayer1.HoldBall(null);
+    TallPlayer2.HoldBall(null);
     if (p == ScoreComponent.PlayerType.team1) {
       ScoreTeam1 += i;
       SmallPlayer1.HoldBall(Ball);
