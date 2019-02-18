@@ -53,6 +53,34 @@ public class InputManager : MonoBehaviour {
     StartCoroutine(PlayerSelectionRoutine());
   }
 
+  private void DebugInputChecks() {
+    if (GameManager.S.State.PlayerMovementAllowed()) {
+      IPlayer player = controllerMap[XboxController.Second].player;
+
+      //Check left joystick
+      float xMove = Input.GetKey(KeyCode.RightArrow) ? 1f : Input.GetKey(KeyCode.LeftArrow) ? -1f : 0f;
+      float zMove = Input.GetKey(KeyCode.UpArrow) ? 1f : Input.GetKey(KeyCode.DownArrow) ? -1f : 0f;
+      player.Move(zMove, -xMove);
+      if (!(xMove == 0 && zMove == 0)) {
+        player.SetRotation(zMove, -xMove);
+      }
+
+      //Check button presses
+      if (Input.GetKeyDown(KeyCode.A)) {
+        player.AButtonDown(XboxController.Second);
+      }
+      if (Input.GetKeyDown(KeyCode.B)) {
+        player.BButtonDown(XboxController.Second);
+      }
+      //if (XCI.GetAxis(XboxAxis.RightTrigger, controller) >= .3f) {
+      //  player.RTButtonDown(controller);
+      //}
+      //if (XCI.GetAxis(XboxAxis.RightTrigger, controller) < .3f) {
+      //  player.RTButtonUp(controller);
+      //}
+    }
+  }
+
   private IEnumerator InputReadingRoutine() {
     while (true) {
       //GameManager.S.State is checked inside of these functions, so no need to do it jere
@@ -64,6 +92,7 @@ public class InputManager : MonoBehaviour {
       MainGameInputChecks(XboxController.Second);
       MainGameInputChecks(XboxController.Third);
       MainGameInputChecks(XboxController.Fourth);
+      DebugInputChecks();
 
       yield return null;
     }
