@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMover))]
 public class BallUserComponent : MonoBehaviour {
 #pragma warning disable 0649
+  [Range(0f, 10f)] [SerializeField] private float stealCooldown;
   [SerializeField] private float localHeightToHoldBallAt;
   [SerializeField] private float maxPassDistance;
   [SerializeField] private AudioClip successfulSteal;
@@ -14,12 +15,16 @@ public class BallUserComponent : MonoBehaviour {
   private IXzController xzController; //Needed only for XLook and ZLook
   private IBall heldBall;
 
+  public bool CanSteal => stealCooldownRemaining <= 0f;
+
   private void Awake() {
     xzController = GetComponent<PlayerMover>();
 
     if (maxPassDistance == 0) {
       Debug.LogWarning("BallUserComponent.maxPassDistance equals 0.  HMMMM  <_<");
     }
+
+    StartCoroutine(StealCooldownRoutine());
   }
 
   public bool HasBall { get { return heldBall != null; } }
@@ -41,7 +46,7 @@ public class BallUserComponent : MonoBehaviour {
   }
 
   public bool Steal(BoxCollider grabHitbox) {
-    if (HasBall) {
+    if (HasBall || !CanSteal) {
       return false;
     }
 
@@ -87,6 +92,18 @@ public class BallUserComponent : MonoBehaviour {
     } else
     {
       Debug.Log("No Pass Recipient.");
+    }
+  }
+
+  private float stealCooldownRemaining;
+  private IEnumerator StealCooldownRoutine() {
+    while (true) {
+      if (stealCooldownRemaining <= 0f) {
+        yield return new WaitUntil(() => stealCooldownRemaining > 0f);
+      }
+
+      stealCooldown -= 0.1f;
+      yield return new WaitForSeconds(0.1f);
     }
   }
 }
