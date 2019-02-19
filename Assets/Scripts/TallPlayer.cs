@@ -64,6 +64,8 @@ public class TallPlayer : Player {
         return true;
       }
     }
+
+    Debug.Log("Nobody to pick up in grabHitbox");
     return false;
   }
 
