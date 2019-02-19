@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour
   [SerializeField] private bool lockZ;
 
   public Transform target;
-  public float smoothTime = 0.3F;
+  public float smoothTime = .5F;
   private Vector3 velocity = Vector3.zero;
 
   private Vector3 center = new Vector3(0, 0, 0);
