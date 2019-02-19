@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3979108, g: 0.56530106, b: 0.66596335, a: 1}
+  m_IndirectSpecularColor: {r: 0.39782694, g: 0.5652844, b: 0.6659523, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1a49108dabb4549a4bee7a9f6af5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stealCooldown: 0
+  stealCooldown: 3
   localHeightToHoldBallAt: 0
   maxPassDistance: 25
   successfulSteal: {fileID: 8300000, guid: 1828ad9ceda718f40be784df9c4425e2, type: 3}
@@ -5190,7 +5190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1a49108dabb4549a4bee7a9f6af5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stealCooldown: 0
+  stealCooldown: 3
   localHeightToHoldBallAt: 0
   maxPassDistance: 25
   successfulSteal: {fileID: 8300000, guid: 1828ad9ceda718f40be784df9c4425e2, type: 3}
@@ -12109,7 +12109,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 513499467}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1974095366
@@ -12179,7 +12179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1a49108dabb4549a4bee7a9f6af5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stealCooldown: 0
+  stealCooldown: 3
   localHeightToHoldBallAt: 0
   maxPassDistance: 25
   successfulSteal: {fileID: 8300000, guid: 1828ad9ceda718f40be784df9c4425e2, type: 3}
@@ -12511,7 +12511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1a49108dabb4549a4bee7a9f6af5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stealCooldown: 0
+  stealCooldown: 3
   localHeightToHoldBallAt: 0
   maxPassDistance: 25
   successfulSteal: {fileID: 8300000, guid: 1828ad9ceda718f40be784df9c4425e2, type: 3}
