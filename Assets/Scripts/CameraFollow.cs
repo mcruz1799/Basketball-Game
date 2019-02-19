@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour
   [SerializeField] private bool lockZ;
 
   public Transform target;
-  public float smoothTime = .5F;
+  public float smoothTime = 8F;
   private Vector3 velocity = Vector3.zero;
 
   private Vector3 center = new Vector3(0, 0, 0);
@@ -22,13 +22,14 @@ public class CameraFollow : MonoBehaviour
   void Update()
   {
     // Define a target position above and behind the target transform
-    center = new Vector3(0, 0, 0);
+    //center = new Vector3(0, 0, 0);
     Vector3 oldPosition = transform.position;
-
-    for (int i = 0; i < 4; i++) {
-      center += players[i].transform.position;
-    }
-    Vector3 targetPosition = center / 4;
+    /*
+      for (int i = 0; i < 4; i++) {
+        center += players[i].transform.position;
+      }
+      Vector3 targetPosition = center / 4; */
+    Vector3 targetPosition = toFollow.position + localOffset;
 
     // Smoothly move the camera towards that target position
     transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
