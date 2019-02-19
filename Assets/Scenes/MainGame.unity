@@ -5178,7 +5178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabHitbox: {fileID: 1357197291}
-  _team: 1
+  _team: 0
   staminaBar: {fileID: 774503562}
   _icon: {fileID: 21300000, guid: 44903ad0a712e3a49ac6f1ddbfb550d2, type: 3}
   _tpIdle: {fileID: 1004947071}
@@ -12167,7 +12167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabHitbox: {fileID: 708588696}
-  _team: 0
+  _team: 1
   staminaBar: {fileID: 1972849055}
   _icon: {fileID: 21300000, guid: 0f7382f2c92c3394db7f7918dd127e36, type: 3}
   _tpIdle: {fileID: 1864007666}
@@ -12498,7 +12498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabHitbox: {fileID: 1642193875}
-  _team: 0
+  _team: 1
   staminaBar: {fileID: 624898937}
   _icon: {fileID: 21300000, guid: 26c34eb4146ac4b459c47969ea7a4240, type: 3}
   throwDistance: 3
