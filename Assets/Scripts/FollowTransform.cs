@@ -32,6 +32,8 @@ public class FollowTransform : MonoBehaviour {
         transform.position = newPosition;
       } else {
         //transform.Translate(selfToTarget.normalized * Time.deltaTime * smoothMotionSpeed);
+        //Vector3 velocity = new Vector3(smoothMotionSpeed, 0, smoothMotionSpeed);
+        //transform.position = Vector3.SmoothDamp(oldPosition, newPosition, ref velocity, 1f);
         transform.position = Vector3.MoveTowards(oldPosition, newPosition, smoothMotionSpeed*Time.deltaTime);
       }
     } else {

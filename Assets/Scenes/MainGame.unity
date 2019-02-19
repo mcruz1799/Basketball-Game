@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1a49108dabb4549a4bee7a9f6af5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stealCooldown: 0
+  stealCooldown: 3
   localHeightToHoldBallAt: 0
   maxPassDistance: 25
   successfulSteal: {fileID: 8300000, guid: 1828ad9ceda718f40be784df9c4425e2, type: 3}
@@ -3468,7 +3468,7 @@ MonoBehaviour:
   localOffset: {x: 0, y: 0, z: 0}
   useInspectorOffset: 0
   smoothMotion: 1
-  smoothMotionSpeed: 20
+  smoothMotionSpeed: 5
   lockX: 0
   lockY: 1
   lockZ: 0
@@ -5190,7 +5190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1a49108dabb4549a4bee7a9f6af5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stealCooldown: 0
+  stealCooldown: 3
   localHeightToHoldBallAt: 0
   maxPassDistance: 25
   successfulSteal: {fileID: 8300000, guid: 1828ad9ceda718f40be784df9c4425e2, type: 3}
@@ -12109,7 +12109,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 513499467}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1974095366
@@ -12179,7 +12179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1a49108dabb4549a4bee7a9f6af5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stealCooldown: 0
+  stealCooldown: 3
   localHeightToHoldBallAt: 0
   maxPassDistance: 25
   successfulSteal: {fileID: 8300000, guid: 1828ad9ceda718f40be784df9c4425e2, type: 3}
@@ -12511,7 +12511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1a49108dabb4549a4bee7a9f6af5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stealCooldown: 0
+  stealCooldown: 3
   localHeightToHoldBallAt: 0
   maxPassDistance: 25
   successfulSteal: {fileID: 8300000, guid: 1828ad9ceda718f40be784df9c4425e2, type: 3}
