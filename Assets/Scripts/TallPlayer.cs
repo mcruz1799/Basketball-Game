@@ -113,6 +113,8 @@ public class TallPlayer : Player {
   public override void Move(float xMove, float zMove) {
     if (xMove != 0 || zMove != 0) {
       idleAnimation.IsVisible = false;
+      runAnimation.FlipX = zMove > 0;
+      idleAnimation.FlipX = runAnimation.FlipX;
       if (!runAnimation.IsVisible) {
         runAnimation.IsVisible = true;
         runAnimation.StartFromFirstFrame();

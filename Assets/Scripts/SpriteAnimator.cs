@@ -8,8 +8,8 @@ public interface ISpriteAnimator {
   bool IsPaused { get; set; }
   bool IsDone { get; }
 
-  bool FlipX { get; }
-  bool FlipY { get; }
+  bool FlipX { get; set; }
+  bool FlipY { get; set; }
 
   //How many frames to wait in between each sprite of the animation
   int FramesPerSprite { get; set; }
