@@ -26,6 +26,8 @@ public abstract class Player : MonoBehaviour, IPlayer {
   [SerializeField] private Sprite _icon;
 #pragma warning restore 0649
 
+  public Transform OriginalParent { get; private set; }
+
   private PlayerMover xzController;
   private BallUserComponent ballUserComponent;
   public virtual bool CanReceivePass => true;
@@ -44,6 +46,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
   public abstract void RTButtonUp(XboxController controller);
 
   protected virtual void Awake() {
+    OriginalParent = transform.parent;
     Team = _team;
     xzController = GetComponent<PlayerMover>();
     ballUserComponent = GetComponent<BallUserComponent>();

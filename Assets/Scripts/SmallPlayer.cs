@@ -126,7 +126,7 @@ public class SmallPlayer : Player {
     Below = null;
 
     throwDestination.y = yGround + transform.lossyScale.y / 2 + .2f;
-    transform.SetParent(null, true);
+    transform.SetParent(OriginalParent, true);
     transform.position = throwDestination;
     return true;
   }

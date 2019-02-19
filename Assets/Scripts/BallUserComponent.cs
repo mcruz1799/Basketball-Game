@@ -105,7 +105,7 @@ public class BallUserComponent : MonoBehaviour {
         yield return new WaitUntil(() => stealCooldownRemaining > 0f);
       }
 
-      stealCooldown -= 0.1f;
+      stealCooldownRemaining -= 0.1f;
       yield return new WaitForSeconds(0.1f);
     }
   }
