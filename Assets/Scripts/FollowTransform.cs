@@ -28,7 +28,7 @@ public class FollowTransform : MonoBehaviour {
 
     if (smoothMotion) {
       Vector3 selfToTarget = newPosition - oldPosition;
-      if (selfToTarget.sqrMagnitude <= 1f) { //distance bw camera and obj
+      if (selfToTarget.sqrMagnitude <= 0.04f) { //distance bw camera and obj
         transform.position = newPosition;
       } else {
         //transform.Translate(selfToTarget.normalized * Time.deltaTime * smoothMotionSpeed);
