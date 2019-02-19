@@ -60,7 +60,7 @@ public class TallPlayer : Player {
       if (other != null && other.Team == Team && other.Below == null) {
         other.OnPickedUp(this);
         Above = other;
-        Debug.LogFormat("{0} picked up {1}", gameObject.name, other.gameObject.name);
+        Debug.LogFormat("{0} picked up {1}", transform.parent.name, other.transform.parent.name);
         return true;
       }
     }
@@ -113,6 +113,8 @@ public class TallPlayer : Player {
   public override void Move(float xMove, float zMove) {
     if (xMove != 0 || zMove != 0) {
       idleAnimation.IsVisible = false;
+      runAnimation.FlipX = zMove > 0;
+      idleAnimation.FlipX = runAnimation.FlipX;
       if (!runAnimation.IsVisible) {
         runAnimation.IsVisible = true;
         runAnimation.StartFromFirstFrame();
