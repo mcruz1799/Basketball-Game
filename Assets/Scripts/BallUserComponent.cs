@@ -34,27 +34,30 @@ public class BallUserComponent : MonoBehaviour {
     heldBall = ball;
     if (ball != null) {
       ball.SetParent(transform);
+
       GameManager.S.arrow.transform.parent = this.transform;
       Vector3 arrowPos = new Vector3(0, 0, 0);
-      arrowPos.y += (this.transform.lossyScale.y)/2 + 
-        (GameManager.S.arrow.transform.lossyScale.y)*2 + 1f;
+      arrowPos.y += (this.transform.lossyScale.y)/2 + (GameManager.S.arrow.transform.lossyScale.y)*2 + 1f;
       GameManager.S.arrow.transform.localPosition = arrowPos;
+
       Vector3 ballPosition = Vector3.zero;
       ballPosition.y = localHeightToHoldBallAt;
       ballPosition.z = transform.lossyScale.z / 2 + ball.Radius;
+
       ball.SetPosition(ballPosition);
     }
   }
 
   public bool Steal(BoxCollider grabHitbox) {
     if (HasBall || !CanSteal) {
+      Debug.LogFormat("Cannot steal.  HasBall: {0}   stealCooldownRemaining: {1}", HasBall, stealCooldownRemaining);
       return false;
     }
 
-    Collider[] hits = Physics.OverlapBox(grabHitbox.center, grabHitbox.bounds.extents);
+    Collider[] hits = Physics.OverlapBox(grabHitbox.transform.TransformPoint(grabHitbox.center), grabHitbox.bounds.extents);
     foreach (Collider h in hits) {
       BallUserComponent other = h.GetComponent<BallUserComponent>();
-
+      if (other != null) Debug.Log(other.transform.parent.name);
       if (other != null && other.heldBall != null) {
         stealCooldownRemaining = stealCooldown;
         HoldBall(other.heldBall);
@@ -64,6 +67,7 @@ public class BallUserComponent : MonoBehaviour {
       }
     }
 
+    Debug.Log("Nobody to Steal from detected");
     return false;
   }
 
@@ -87,11 +91,10 @@ public class BallUserComponent : MonoBehaviour {
 
     if (nearestPlayerHit != null && nearestPlayerHit.CanReceivePass) {
       nearestPlayerHit.HoldBall(heldBall);
-      Debug.Log("Pass Recipient:" + nearestPlayerHit.name);
+      Debug.Log("Pass Recipient:" + nearestPlayerHit.transform.parent.name);
       heldBall = null;
       SoundManager.Instance.Play(successfulPass);
-    } else
-    {
+    } else {
       Debug.Log("No Pass Recipient.");
     }
   }
