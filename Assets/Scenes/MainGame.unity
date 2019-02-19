@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3979108, g: 0.56530106, b: 0.66596335, a: 1}
+  m_IndirectSpecularColor: {r: 0.39782694, g: 0.5652844, b: 0.6659523, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3461,17 +3461,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 526351609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 801f6dd90e5d1204597ff86385f08b3b, type: 3}
+  m_Script: {fileID: 11500000, guid: d132511d8760fb94db1f690a9e4a2b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toFollow: {fileID: 996041636}
+  toFollow: {fileID: 360841778}
+  players:
+  - {fileID: 204880726}
+  - {fileID: 2029042013}
+  - {fileID: 845735870}
+  - {fileID: 1982353489}
   localOffset: {x: 0, y: 0, z: 0}
-  useInspectorOffset: 0
-  smoothMotion: 1
-  smoothMotionSpeed: 5
-  lockX: 0
-  lockY: 1
-  lockZ: 0
+  useInspectorOffset: 1
+  target: {fileID: 0}
+  smoothTime: 0.3
 --- !u!1 &593204643
 GameObject:
   m_ObjectHideFlags: 0
