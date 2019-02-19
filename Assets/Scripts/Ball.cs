@@ -9,7 +9,7 @@ public class Ball : MonoBehaviour, IBall {
 
   private Vector3? targetLocalPosition;
 
-  public float Radius { get { return transform.lossyScale.x; } }
+  public float Radius { get { return transform.lossyScale.x / 2; } }
 
   private void Awake() {
     StartCoroutine(GfxRoutine());
@@ -17,7 +17,14 @@ public class Ball : MonoBehaviour, IBall {
 
   //For use only in BallUserComponent.HoldBall
   public void SetPosition(Vector3 newLocalPosition) {
-    targetLocalPosition = newLocalPosition;
+    if (transform.parent != null) {
+      newLocalPosition.x /= transform.parent.lossyScale.x;
+      newLocalPosition.y /= transform.parent.lossyScale.y;
+      newLocalPosition.z /= transform.parent.lossyScale.z;
+      targetLocalPosition = newLocalPosition;
+    } else {
+      targetLocalPosition = newLocalPosition;
+    }
   }
 
   //For use only in BallUserComponent.HoldBall

@@ -54,7 +54,7 @@ public class TallPlayer : Player {
     }
 
     //Check grab hitbox
-    Collider[] hits = Physics.OverlapBox(grabHitbox.center, grabHitbox.bounds.extents);
+    Collider[] hits = Physics.OverlapBox(grabHitbox.transform.TransformPoint(grabHitbox.center), grabHitbox.bounds.extents);
     foreach (Collider h in hits) {
       SmallPlayer other = h.GetComponent<SmallPlayer>();
       if (other != null && other.Team == Team && other.Below == null) {
