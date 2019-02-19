@@ -62,7 +62,8 @@ public class SmallPlayer : Player {
 
     Vector3 newPosition = Vector3.zero;
 
-    newPosition.y += (this.transform.lossyScale.y + Below.transform.lossyScale.y) / 2 + 1.0f;
+    newPosition.y += (this.transform.lossyScale.y + Below.transform.lossyScale.y) / 2;
+    newPosition.y /= transform.parent.lossyScale.y;
     transform.localPosition = newPosition;
   }
 
