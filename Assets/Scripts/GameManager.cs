@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private GameObject tp1_spawn;
   [SerializeField] private GameObject tp2_spawn;
 
+  [SerializeField] private GameObject sp1_tipoff;
+  [SerializeField] private GameObject sp2_tipoff;
+  [SerializeField] private GameObject tp1_tipoff;
+  [SerializeField] private GameObject tp2_tipoff;
+
   //Sound Effects
   [SerializeField] private AudioClip scoreSound;
   [SerializeField] private AudioClip endBuzzer;
@@ -80,6 +85,7 @@ public class GameManager : MonoBehaviour {
    ********************************************************/
 
   private void Awake() {
+
     if (S == null) {
       S = this;
       DontDestroyOnLoad(this);
@@ -90,7 +96,7 @@ public class GameManager : MonoBehaviour {
 
     if (basket1 == null || basket2 == null) {
       Debug.LogError("Baskets need to be initialized via inspector in GameManager!");
-    }
+    } 
 
     Ball = _ball;
     ballInitialPosition = _ball.transform.position;
@@ -213,7 +219,15 @@ public class GameManager : MonoBehaviour {
     ScoreTeam2 = 0;
     State = Tipoff;
     //somehow reset player positions?
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+    ResetAfterScore();
+
+
+    _smallPlayer1.transform.position = sp1_tipoff.transform.position;
+    _smallPlayer2.transform.position = sp2_tipoff.transform.position;
+    _tallPlayer1.transform.position = tp1_tipoff.transform.position;
+    _tallPlayer2.transform.position = tp2_tipoff.transform.position;
+
+    StartGame();
   }
 
   private IEnumerator GameTimeRoutine() {
