@@ -206,9 +206,14 @@ public class InputManager : MonoBehaviour {
     if (GameManager.S.State.PlayerMovementAllowed()) {
       IPlayer player = controllerMap[controller].player;
 
+      float threshold = 0.5f;
       //Check left joystick
       float xMove = XCI.GetAxis(XboxAxis.LeftStickX, controller);
+      xMove = xMove < -threshold ? -1f : xMove > threshold ? 1f : 0f;
+
       float zMove = XCI.GetAxis(XboxAxis.LeftStickY, controller);
+      zMove = zMove < -threshold ? -1f : zMove > threshold ? 1f : 0f;
+
       player.Move(zMove, -xMove);
       if (!(xMove == 0 && zMove == 0)) {
         player.SetRotation(zMove, -xMove);
