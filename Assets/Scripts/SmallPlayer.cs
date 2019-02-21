@@ -169,12 +169,8 @@ public class SmallPlayer : Player {
    Pass: If Player has the ball, pass it.
   */
   public override void AButtonDown(XboxController controller) {
-    if (HasBall) {
-      //Pass();
-    } else {
-      GameManager.S.CheckTipOff(controller);
-      JumpOffPlayer();
-    }
+    GameManager.S.CheckTipOff(controller);
+      //JumpOffPlayer();
   }
   public override void RTButtonDown(XboxController controller) {
     StartDashing();
