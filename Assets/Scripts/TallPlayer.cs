@@ -107,6 +107,7 @@ public class TallPlayer : Player {
     {
         Player other = h.GetComponent<Player>();
         if (other != null){
+          //Debug.LogFormat("other= {0}", other.gameObject.name);
           other.Stun();
           SoundManager.Instance.Play(successfulStun);
         }
