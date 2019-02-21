@@ -11,8 +11,6 @@ public interface IPlayer : IBallUser, IXzController {
   ScoreComponent.PlayerType Team { get; }
 
   void AButtonDown(XboxController controller);
-  void BButtonDown(XboxController controller);
-  void XButtonDown(XboxController controller);
   void RTButtonDown(XboxController controller);
   void RTButtonUp(XboxController controller);
 }
@@ -44,8 +42,6 @@ public abstract class Player : MonoBehaviour, IPlayer {
   public virtual bool CanRotate => !IsStunned;
   public virtual bool CanMove => !IsStunned;
   public abstract void AButtonDown(XboxController controller);
-  public abstract void BButtonDown(XboxController controller);
-  public abstract void XButtonDown(XboxController controller);
   public abstract void RTButtonDown(XboxController controller);
   public abstract void RTButtonUp(XboxController controller);
 
