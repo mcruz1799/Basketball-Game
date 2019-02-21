@@ -111,7 +111,7 @@ public class TallPlayer : Player {
     if (HasBall) {
       //Pass();
     } else {
-      GameManager.S.CheckTipOff(controller);
+      //GameManager.S.CheckTipOff(controller);
       PickUpSmallPlayer();
     }
   }
@@ -123,7 +123,7 @@ public class TallPlayer : Player {
   }
   public override void BButtonDown(XboxController controller) {
     if (Above == null) {
-      Steal();
+      //Steal();
     } else {
       ThrowSmallPlayer();
     }
