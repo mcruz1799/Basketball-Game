@@ -14,14 +14,13 @@ public class GUIScreenManager : MonoBehaviour {
 #pragma warning restore 0649
 
   private void Awake() {
-    //if (S == null) {
-    //  S = this;
-    //  DontDestroyOnLoad(this);
-    //} else {
-    //  Debug.LogWarning("Duplicate GUIScreenManager detected and destroyed.");
-    //  Destroy(gameObject);
-    //}
-    S = this;
+    if (S == null) {
+      S = this;
+      DontDestroyOnLoad(this);
+    } else {
+      Debug.LogWarning("Duplicate GUIScreenManager detected and destroyed.");
+      Destroy(gameObject);
+    }
   }
 
   private void Update() {

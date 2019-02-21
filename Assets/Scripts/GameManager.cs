@@ -89,14 +89,13 @@ public class GameManager : MonoBehaviour {
 
   private void Awake() {
 
-    //if (S == null) {
-    //  S = this;
-    //  DontDestroyOnLoad(this);
-    //} else {
-    //  Debug.LogWarning("Duplicate GameManager detected and destroyed.");
-    //  Destroy(gameObject);
-    //}
-    S = this;
+    if (S == null) {
+      S = this;
+      DontDestroyOnLoad(this);
+    } else {
+      Debug.LogWarning("Duplicate GameManager detected and destroyed.");
+      Destroy(gameObject);
+    }
 
     if (basket1 == null || basket2 == null) {
       Debug.LogError("Baskets need to be initialized via inspector in GameManager!");
@@ -113,8 +112,7 @@ public class GameManager : MonoBehaviour {
     //Start from main menu
   }
 
-  private void Start()
-  {
+  private void Start() {
     State = MainMenu;
   }
 
@@ -256,11 +254,11 @@ public class GameManager : MonoBehaviour {
     _tallPlayer1.ThrowSmallPlayer();
     _tallPlayer2.ThrowSmallPlayer();
 
-    _smallPlayer1.transform.position = Vector3.SmoothDamp(_smallPlayer1.transform.position, sp1_spawn.transform.position, ref velocity, 2);
-    _smallPlayer2.transform.position = Vector3.SmoothDamp(_smallPlayer2.transform.position, sp2_spawn.transform.position, ref velocity, 2);
-    _tallPlayer1.transform.position = Vector3.SmoothDamp(_tallPlayer1.transform.position, tp1_spawn.transform.position, ref velocity, 2);
-    _tallPlayer2.transform.position = Vector3.SmoothDamp(_tallPlayer2.transform.position, tp2_spawn.transform.position, ref velocity, 2);
-   }
+    _smallPlayer1.transform.position = sp1_spawn.transform.position;
+    _smallPlayer2.transform.position = sp2_spawn.transform.position;
+    _tallPlayer1.transform.position = tp1_spawn.transform.position;
+    _tallPlayer2.transform.position = tp2_spawn.transform.position;
+  }
 
   //Players can check for tip-off priority.
   public void CheckTipOff(XboxController controller) {
