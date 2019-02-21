@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private AudioClip scoreSound;
   [SerializeField] private AudioClip endBuzzer;
 
+  private Vector3 velocity = Vector3.zero;
+
   [SerializeField] public GameObject arrow;
 #pragma warning restore 0649
 
@@ -73,6 +75,7 @@ public class GameManager : MonoBehaviour {
   public int ScoreTeam1 { get; private set; }
   public int ScoreTeam2 { get; private set; }
   public float CurrentTime { get; private set; }
+  
 
   /********************************************************
                      UI ELEMENTS TO ADD:
@@ -252,10 +255,10 @@ public class GameManager : MonoBehaviour {
     _tallPlayer1.ThrowSmallPlayer();
     _tallPlayer2.ThrowSmallPlayer();
 
-    _smallPlayer1.transform.position = sp1_spawn.transform.position;
-    _smallPlayer2.transform.position = sp2_spawn.transform.position;
-    _tallPlayer1.transform.position = tp1_spawn.transform.position;
-    _tallPlayer2.transform.position = tp2_spawn.transform.position;
+    _smallPlayer1.transform.position = Vector3.SmoothDamp(_smallPlayer1.transform.position, sp1_spawn.transform.position, ref velocity, 2);
+    _smallPlayer2.transform.position = Vector3.SmoothDamp(_smallPlayer2.transform.position, sp2_spawn.transform.position, ref velocity, 2);
+    _tallPlayer1.transform.position = Vector3.SmoothDamp(_tallPlayer1.transform.position, tp1_spawn.transform.position, ref velocity, 2);
+    _tallPlayer2.transform.position = Vector3.SmoothDamp(_tallPlayer2.transform.position, tp2_spawn.transform.position, ref velocity, 2);
    }
 
   //Players can check for tip-off priority.
