@@ -36,14 +36,11 @@ public class TallPlayer : Player {
   }
 
   public bool ThrowSmallPlayer() {
-    Debug.Log("Above:" + Above);
     if (Above == null || !Above.OnThrown(XLook, ZLook)) {
-      Debug.Log("Throw false.");
       return false;
     }
 
     Above = null;
-    Debug.Log("Throw True.");
     return true;
   }
 

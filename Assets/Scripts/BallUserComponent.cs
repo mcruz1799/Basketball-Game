@@ -52,7 +52,6 @@ public class BallUserComponent : MonoBehaviour {
     Collider[] hits = Physics.OverlapBox(grabHitbox.transform.TransformPoint(grabHitbox.center), grabHitbox.bounds.extents);
     foreach (Collider h in hits) {
       BallUserComponent other = h.GetComponent<BallUserComponent>();
-      if (other != null) Debug.Log(other.transform.parent.name);
       if (other != null && other.heldBall != null) {
         stealCooldownRemaining = stealCooldown;
         HoldBall(other.heldBall);

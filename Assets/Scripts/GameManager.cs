@@ -191,12 +191,13 @@ public class GameManager : MonoBehaviour {
   //Scoring, to be called from player script
   public void UpdateScore(ScoreComponent.PlayerType p, int i) {
     Ball.SetParent(null);
-    Ball.SetPosition(ballInitialPosition);
+    Ball.SetPosition(ballInitialPosition, false);
     SoundManager.Instance.Play(scoreSound);
     SmallPlayer1.HoldBall(null);
     SmallPlayer2.HoldBall(null);
     TallPlayer1.HoldBall(null);
     TallPlayer2.HoldBall(null);
+    ResetAfterScore();
     if (p == ScoreComponent.PlayerType.team1) {
       ScoreTeam1 += i;
       SmallPlayer1.HoldBall(Ball);
@@ -209,7 +210,6 @@ public class GameManager : MonoBehaviour {
     if (State == Overtime) {
       EndGame();
     }
-    ResetAfterScore();
   }
 
   public void QuitGame() {
@@ -221,9 +221,8 @@ public class GameManager : MonoBehaviour {
     ScoreTeam1 = 0;
     ScoreTeam2 = 0;
     State = Tipoff;
-    //somehow reset player positions?
-    ResetAfterScore();
 
+    ResetAfterScore();
 
     _smallPlayer1.transform.position = sp1_tipoff.transform.position;
     _smallPlayer2.transform.position = sp2_tipoff.transform.position;
@@ -247,7 +246,7 @@ public class GameManager : MonoBehaviour {
     EndGame();
   }
 
-  public void ResetAfterScore() {
+  private void ResetAfterScore() {
     _smallPlayer1.transform.position = new Vector3(0, 0, 0);
     _smallPlayer2.transform.position = new Vector3(0, 0, 0);
     _tallPlayer1.transform.position = new Vector3(0, 0, 0);
