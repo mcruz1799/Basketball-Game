@@ -61,15 +61,11 @@ public class CameraFollow : MonoBehaviour
       GameObject rightarrow = rightarrows[i];
       if (!onScreen) {
         Debug.Log("Player " + i + " is offscreen.");
-        if (!leftarrow.activeSelf) {
-          leftarrow.SetActive(true);
-          rightarrow.SetActive(true);
-        }
+          if (screenPoint.x < 0) leftarrow.SetActive(true);
+          else rightarrow.SetActive(true);
       } else { //They are on screen, make sure the arrows are inactive.
-        if (leftarrow.activeSelf) {
           leftarrow.SetActive(false);
           rightarrow.SetActive(false);
-        }
       }
     }
   }
