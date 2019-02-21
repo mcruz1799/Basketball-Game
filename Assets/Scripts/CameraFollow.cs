@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+#pragma warning disable 0649
   [SerializeField] private Transform toFollow;
   [SerializeField] private Player[] players = new Player[4];
   [SerializeField] private Vector3 localOffset;
@@ -12,6 +13,7 @@ public class CameraFollow : MonoBehaviour
   [SerializeField] private bool lockX;
   [SerializeField] private bool lockY;
   [SerializeField] private bool lockZ;
+#pragma warning restore 0649
 
   public Transform target;
   public float smoothTime = 8F;
