@@ -1336,6 +1336,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasketballParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 2832231491966947215, guid: 1bb3a89e9f8ebd1429a007f3f90abd24,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2127276296, guid: 1bb3a89e9f8ebd1429a007f3f90abd24, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9503,7 +9508,6 @@ MonoBehaviour:
   - {fileID: 21300078, guid: 36ad8625789ff6b4898373d999723144, type: 3}
   - {fileID: 21300080, guid: 36ad8625789ff6b4898373d999723144, type: 3}
   - {fileID: 21300082, guid: 36ad8625789ff6b4898373d999723144, type: 3}
-  - {fileID: 21300084, guid: 36ad8625789ff6b4898373d999723144, type: 3}
   initialIsVisible: 1
   initialIsLooping: 1
   spriteRenderer: {fileID: 0}
