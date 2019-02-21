@@ -131,7 +131,20 @@ public class SmallPlayer : Player {
     return true;
   }
 
+  private IEnumerator FlashSprite(){
+    while (true){
+      _spIdle.spriteRenderer.gameObject.SetActive(false);
+      yield return new WaitForSeconds(.5f);
+      _spIdle.spriteRenderer.gameObject.SetActive(true);
+    }
+  }
 
+  protected override IEnumerator StunRoutine(){
+    StartCoroutine(FlashSprite());
+    base.StunRoutine();
+    StopCoroutine(FlashSprite());
+    yield return null;
+  }
   //
   //IXzController
   //
