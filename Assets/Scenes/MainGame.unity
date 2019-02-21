@@ -408,7 +408,7 @@ MonoBehaviour:
   _tallPlayer2: {fileID: 1982353489}
   basket1: {fileID: 1110856168}
   basket2: {fileID: 615897146}
-  gameLength: 60
+  gameLength: 180
   sp1_spawn: {fileID: 1198686325}
   sp2_spawn: {fileID: 219632906}
   tp1_spawn: {fileID: 911505251}
