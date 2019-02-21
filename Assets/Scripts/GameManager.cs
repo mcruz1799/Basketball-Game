@@ -108,12 +108,15 @@ public class GameManager : MonoBehaviour {
     TallPlayer1 = _tallPlayer1;
     SmallPlayer2 = _smallPlayer2;
     TallPlayer2 = _tallPlayer2;
-
-    //Start from main menu
   }
 
   private void Start() {
+    //Start from main menu
     State = MainMenu;
+    _smallPlayer1.transform.position = sp1_tipoff.transform.position;
+    _smallPlayer2.transform.position = sp2_tipoff.transform.position;
+    _tallPlayer1.transform.position = tp1_tipoff.transform.position;
+    _tallPlayer2.transform.position = tp2_tipoff.transform.position;
   }
 
     //For use by the start button in the main menu
