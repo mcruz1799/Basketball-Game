@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1620,7 +1620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabHitbox: {fileID: 1243974683}
   _team: 0
-  staminaBar: {fileID: 624898937}
+  staminaBar: {fileID: 968792679}
   _icon: {fileID: 21300000, guid: 39e99761b2d29e04291d05a87c8735cd, type: 3}
   dashTrail: {fileID: 204880735}
   successfulStun: {fileID: 0}
@@ -6643,6 +6643,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 945786670}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &968792679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11487436, guid: 60da1df1f7edb3747bea8f735b2768d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1636452088}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1310e65397a274d44a776b51d6937f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &972103439
 GameObject:
   m_ObjectHideFlags: 0
