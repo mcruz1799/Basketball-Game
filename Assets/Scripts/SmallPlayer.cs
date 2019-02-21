@@ -15,6 +15,7 @@ public class SmallPlayer : Player {
   //USE THE ISpriteAnimator FIELDS INSTEAD
   [SerializeField] private SpriteAnimator _spIdle;
   [SerializeField] private SpriteAnimator _spRun;
+  private Vector3 startingScale;
 #pragma warning restore 0649
 
   public override bool CanMove => base.CanMove && Below == null;
@@ -34,6 +35,8 @@ public class SmallPlayer : Player {
 
     idleAnimation.IsLooping = true;
     runAnimation.IsLooping = true;
+
+    startingScale = transform.localScale;
   }
 
   //
@@ -50,6 +53,7 @@ public class SmallPlayer : Player {
     //Below is no longer carrying me
     Below.OnAboveJumpingOff();
     Below = null;
+    transform.localScale = startingScale;
     return true;
   }
 
@@ -130,6 +134,7 @@ public class SmallPlayer : Player {
     throwDestination.y = yGround + transform.lossyScale.y / 2 + .2f;
     transform.SetParent(OriginalParent, true);
     transform.position = throwDestination;
+    transform.localScale = startingScale;
     return true;
   }
 
