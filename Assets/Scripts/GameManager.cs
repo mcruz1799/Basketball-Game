@@ -191,22 +191,32 @@ public class GameManager : MonoBehaviour {
   //Scoring, to be called from player script
   public void UpdateScore(ScoreComponent.PlayerType p, int i) {
     Ball.SetParent(null);
-    Ball.SetPosition(ballInitialPosition, false);
     SoundManager.Instance.Play(scoreSound);
+
+    //Everyone releases the ball
     SmallPlayer1.HoldBall(null);
     SmallPlayer2.HoldBall(null);
     TallPlayer1.HoldBall(null);
     TallPlayer2.HoldBall(null);
+
+    //Reset everyone's position
     ResetAfterScore();
+
+    //Team who didn't score gets the ball
     if (p == ScoreComponent.PlayerType.team1) {
       ScoreTeam1 += i;
       SmallPlayer1.HoldBall(Ball);
+      _ball.transform.localPosition = Vector3.zero;
     } else {
       ScoreTeam2 += i;
       SmallPlayer2.HoldBall(Ball);
+      _ball.transform.localPosition = Vector3.zero;
     }
+
+    //Tell GUI to update the scores
     MainGameGUI.S.UpdateScores(p);
 
+    //End the game if we were in overtime
     if (State == Overtime) {
       EndGame();
     }
