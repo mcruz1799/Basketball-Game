@@ -63,7 +63,7 @@ public class MainGameGUI : MonoBehaviour {
   public void UpdateScores(ScoreComponent.PlayerType? p) {
     team1ScoreText.text = GameManager.S.ScoreTeam1.ToString();
     team2ScoreText.text = GameManager.S.ScoreTeam2.ToString();
-    StartCoroutine(ScoringScreen(p));
+    if (GameManager.S.State != Overtime) StartCoroutine(ScoringScreen(p));
   }
 
   public void UpdateTime() {
@@ -84,8 +84,8 @@ public class MainGameGUI : MonoBehaviour {
     if (p == ScoreComponent.PlayerType.team1) winningTeam = "Team BB";
     else winningTeam = "Team SS";
     scoringScreen.transform.GetChild(0).GetComponent<Text>().text = 
-      winningTeam + " SCORED \n Score: Team BB" + team1ScoreText.text + 
-        " to \n Team SS " + team2ScoreText.text;
+      winningTeam + " SCORED \n BB: " + team1ScoreText.text + 
+        " - SS: " + team2ScoreText.text;
     yield return new WaitForSeconds(2);
     scoringScreen.SetActive(false);
   }
