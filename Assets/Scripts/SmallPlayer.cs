@@ -25,7 +25,6 @@ public class SmallPlayer : Player {
   private ISpriteAnimator runAnimation;
 
   private bool idleIsFlashing = false;
-
   protected override void Awake() {
     base.Awake();
 
