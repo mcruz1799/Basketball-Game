@@ -3412,7 +3412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d132511d8760fb94db1f690a9e4a2b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toFollow: {fileID: 0}
+  toFollow: {fileID: 996041636}
   players:
   - {fileID: 204880726}
   - {fileID: 2029042013}
@@ -6969,7 +6969,7 @@ MonoBehaviour:
   winningScreen: {fileID: 1877650349}
   tipoffScreen: {fileID: 1205878615}
   overtimeScreen: {fileID: 1049097287}
-  scoringScreen: {fileID: 0}
+  scoringScreen: {fileID: 1628141684}
   winningText: {fileID: 1296502892}
   gameTimeText: {fileID: 1281940303}
   team1ScoreText: {fileID: 1551349816}
