@@ -79,6 +79,9 @@ public class TallPlayer : Player {
     }
   }
 
+
+
+
   private IEnumerator FlashSprite() {
     while (true) {
       idleAnimation.IsVisible = false;
@@ -88,6 +91,8 @@ public class TallPlayer : Player {
     }
   }
 
+  
+
   protected override IEnumerator StunRoutine() {
     idleIsFlashing = true;
     Coroutine flashRoutine = StartCoroutine(FlashSprite()); //Want this running concurrently with StunRoutine
@@ -96,6 +101,9 @@ public class TallPlayer : Player {
     idleIsFlashing = false;
   }
 
+  protected override bool PerformDashAction(){ //STUN
+    return false;
+  }
 
   //
   //IXzController

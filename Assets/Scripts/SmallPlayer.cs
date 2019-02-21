@@ -150,6 +150,11 @@ public class SmallPlayer : Player {
     idleIsFlashing = false;
   }
 
+  protected override bool PerformDashAction(){ //STEAL
+    return false;
+    //Steal();
+  }
+
 
   //
   //IXzController

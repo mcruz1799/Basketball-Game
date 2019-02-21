@@ -146,6 +146,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
       yield return new WaitForSeconds(0.1f);
 
       if (IsDashing) {
+        PerformDashAction();
         dashTimer -= 0.1f;
         if (dashTimer <= 0f) {
           dashTimer = 0f;
@@ -162,4 +163,6 @@ public abstract class Player : MonoBehaviour, IPlayer {
       staminaBar.UpdateBar(dashTimer, .9f);
     }
   }
+
+  protected abstract bool PerformDashAction(); //will be defined as Steal in SmallPlayer and Stun in TallPlayer
 }
