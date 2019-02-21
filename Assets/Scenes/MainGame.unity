@@ -3793,14 +3793,24 @@ MonoBehaviour:
   toFollow: {fileID: 996041636}
   players:
   - {fileID: 204880726}
-  - {fileID: 2029042013}
   - {fileID: 845735870}
+  - {fileID: 2029042013}
   - {fileID: 1982353489}
   localOffset: {x: 0, y: 0, z: 0}
   useInspectorOffset: 1
   lockX: 1
   lockY: 1
   lockZ: 0
+  leftarrows:
+  - {fileID: 1182087641}
+  - {fileID: 65939135}
+  - {fileID: 1840247416}
+  - {fileID: 1761339140}
+  rightarrows:
+  - {fileID: 1491576212}
+  - {fileID: 1581474170}
+  - {fileID: 1940630810}
+  - {fileID: 422847629}
   target: {fileID: 0}
   smoothTime: 0.3
 --- !u!1 &593204643
