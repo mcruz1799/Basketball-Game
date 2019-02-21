@@ -11,6 +11,7 @@ public class MainGameGUI : MonoBehaviour {
   [SerializeField] private GameObject winningScreen;
   [SerializeField] private GameObject tipoffScreen;
   [SerializeField] private GameObject overtimeScreen;
+  [SerializeField] private GameObject scoringScreen;
 
   [SerializeField] private Text winningText;
   [SerializeField] private Text gameTimeText;
@@ -30,7 +31,7 @@ public class MainGameGUI : MonoBehaviour {
 
   public void UpdateAll() {
     UpdateScreens();
-    UpdateScores();
+    UpdateScores(null);
     UpdateTime();
   }
 
@@ -59,9 +60,10 @@ public class MainGameGUI : MonoBehaviour {
     }
   }
 
-  public void UpdateScores() {
+  public void UpdateScores(ScoreComponent.PlayerType? p) {
     team1ScoreText.text = GameManager.S.ScoreTeam1.ToString();
     team2ScoreText.text = GameManager.S.ScoreTeam2.ToString();
+    if (GameManager.S.State != Overtime) StartCoroutine(ScoringScreen(p));
   }
 
   public void UpdateTime() {
@@ -73,6 +75,19 @@ public class MainGameGUI : MonoBehaviour {
     if (minutes < 10) min_str = "0" + min_str;
     if (seconds < 10) sec_str = "0" + sec_str;
     gameTimeText.text = min_str + ":" + sec_str;
+  }
+
+  IEnumerator ScoringScreen(ScoreComponent.PlayerType? p){
+    if (p == null) yield break;
+    scoringScreen.SetActive(true);
+    string winningTeam;
+    if (p == ScoreComponent.PlayerType.team1) winningTeam = "Team BB";
+    else winningTeam = "Team SS";
+    scoringScreen.transform.GetChild(0).GetComponent<Text>().text = 
+      winningTeam + " SCORED \n BB: " + team1ScoreText.text + 
+        " - SS: " + team2ScoreText.text;
+    yield return new WaitForSeconds(2);
+    scoringScreen.SetActive(false);
   }
 
   public void UpdatePossessionIndicator(ScoreComponent.PlayerType? team) {
