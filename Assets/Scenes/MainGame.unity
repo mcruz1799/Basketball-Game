@@ -408,7 +408,7 @@ MonoBehaviour:
   _tallPlayer2: {fileID: 1982353489}
   basket1: {fileID: 1110856168}
   basket2: {fileID: 615897146}
-  gameLength: 10
+  gameLength: 60
   sp1_spawn: {fileID: 1198686325}
   sp2_spawn: {fileID: 219632906}
   tp1_spawn: {fileID: 911505251}
@@ -9147,7 +9147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75}
+  m_AnchoredPosition: {x: -85, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1325731595
@@ -15274,7 +15274,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75}
+  m_AnchoredPosition: {x: 85, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2110865876
