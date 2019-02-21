@@ -56,8 +56,6 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private AudioClip endBuzzer;
 
   private Vector3 velocity = Vector3.zero;
-
-  [SerializeField] public GameObject arrow;
 #pragma warning restore 0649
 
   public IBall Ball { get; private set; }
