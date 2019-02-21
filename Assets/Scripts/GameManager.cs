@@ -89,13 +89,14 @@ public class GameManager : MonoBehaviour {
 
   private void Awake() {
 
-    if (S == null) {
-      S = this;
-      DontDestroyOnLoad(this);
-    } else {
-      Debug.LogWarning("Duplicate GameManager detected and destroyed.");
-      Destroy(gameObject);
-    }
+    //if (S == null) {
+    //  S = this;
+    //  DontDestroyOnLoad(this);
+    //} else {
+    //  Debug.LogWarning("Duplicate GameManager detected and destroyed.");
+    //  Destroy(gameObject);
+    //}
+    S = this;
 
     if (basket1 == null || basket2 == null) {
       Debug.LogError("Baskets need to be initialized via inspector in GameManager!");

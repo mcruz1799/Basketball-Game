@@ -28,13 +28,14 @@ public class InputManager : MonoBehaviour {
 
   private void Awake() {
     Countdown = Mathf.CeilToInt(countdownLength);
-    if (S == null) {
-      S = this;
-      DontDestroyOnLoad(this);
-    } else {
-      Debug.LogWarning("Duplicate InputManager detected and destroyed.");
-      Destroy(gameObject);
-    }
+    //if (S == null) {
+    //  S = this;
+    //  DontDestroyOnLoad(this);
+    //} else {
+    //  Debug.LogWarning("Duplicate InputManager detected and destroyed.");
+    //  Destroy(gameObject);
+    //}
+    S = this;
     controllerMap = new Dictionary<XboxController, PlayerSelectionInfo>();
 
     //Default player selection
