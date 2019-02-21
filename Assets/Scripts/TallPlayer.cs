@@ -128,4 +128,19 @@ public class TallPlayer : Player {
     }
     base.Move(xMove, zMove);
   }
+
+  private IEnumerator FlashSprite(){
+    while (true){
+      _tpIdle.spriteRenderer.gameObject.SetActive(false);
+      yield return new WaitForSeconds(.5f);
+      _tpIdle.spriteRenderer.gameObject.SetActive(true);
+    }
+  }
+
+  protected override IEnumerator StunRoutine(){
+    StartCoroutine(FlashSprite());
+    base.StunRoutine();
+    StopCoroutine(FlashSprite());
+    yield return null;
+  }
 }

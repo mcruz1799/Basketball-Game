@@ -59,7 +59,8 @@ public abstract class Player : MonoBehaviour, IPlayer {
 
   //Stun functionality
   private bool IsStunned { get; set; }
-  private IEnumerator StunRoutine() {
+
+  protected virtual IEnumerator StunRoutine() {
     yield return new WaitForSeconds(2f);
     IsStunned = false;
   }
