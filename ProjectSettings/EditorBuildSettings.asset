@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main.unity
     guid: c080e73fee166004d9a64d6bf189a993
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TeamPicker.unity
     guid: ecd9abf2c163346349130975ab7f70c9
   - enabled: 1
