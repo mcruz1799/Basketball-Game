@@ -201,7 +201,7 @@ public class GameManager : MonoBehaviour {
       ScoreTeam2 += i;
       SmallPlayer2.HoldBall(Ball);
     }
-    MainGameGUI.S.UpdateScores();
+    MainGameGUI.S.UpdateScores(p);
 
     if (State == Overtime) {
       EndGame();
