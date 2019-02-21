@@ -109,7 +109,7 @@ public class TallPlayer : Player {
   */
   public override void AButtonDown(XboxController controller) {
     if (HasBall) {
-      Pass();
+      //Pass();
     } else {
       GameManager.S.CheckTipOff(controller);
       PickUpSmallPlayer();
