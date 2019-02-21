@@ -101,10 +101,39 @@ public class TallPlayer : Player {
     idleIsFlashing = false;
   }
 
-  protected override bool PerformDashAction(){ //STUN
-    return false;
+  protected override void PerformDashAction(){ //STUN
+    Collider[] hits = Physics.OverlapBox(grabHitbox.transform.TransformPoint(grabHitbox.center), grabHitbox.bounds.extents);
+    foreach (Collider h in hits)
+    {
+        Player other = h.GetComponent<Player>();
+        if (other != null){
+          other.Stun();
+          SoundManager.Instance.Play(successfulStun);
+        }
+    }
   }
 
+  // public bool Steal(BoxCollider grabHitbox) {
+  //   if (HasBall || !CanSteal) {
+  //     Debug.LogFormat("Cannot steal.  HasBall: {0}   stealCooldownRemaining: {1}", HasBall, stealCooldownRemaining);
+  //     return false;
+  //   }
+
+  //   Collider[] hits = Physics.OverlapBox(grabHitbox.transform.TransformPoint(grabHitbox.center), grabHitbox.bounds.extents);
+  //   foreach (Collider h in hits) {
+  //     BallUserComponent other = h.GetComponent<BallUserComponent>();
+  //     if (other != null && other.heldBall != null) {
+  //       stealCooldownRemaining = stealCooldown;
+  //       HoldBall(other.heldBall);
+  //       other.heldBall = null;
+  //       SoundManager.Instance.Play(successfulSteal);
+  //       return true;
+  //     }
+  //   }
+
+  //   Debug.Log("Nobody to Steal from detected");
+  //   return false;
+  // }
   //
   //IXzController
   //

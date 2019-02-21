@@ -26,6 +26,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
   [SerializeField] private Sprite _icon;
 #pragma warning restore 0649
 
+  [SerializeField] protected AudioClip successfulStun;
   public Transform OriginalParent { get; private set; }
 
   private PlayerMover xzController;
@@ -164,5 +165,5 @@ public abstract class Player : MonoBehaviour, IPlayer {
     }
   }
 
-  protected abstract bool PerformDashAction(); //will be defined as Steal in SmallPlayer and Stun in TallPlayer
+  protected abstract void PerformDashAction(); //will be defined as Steal in SmallPlayer and Stun in TallPlayer
 }

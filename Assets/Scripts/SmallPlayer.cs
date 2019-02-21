@@ -155,9 +155,8 @@ public class SmallPlayer : Player {
     idleIsFlashing = false;
   }
 
-  protected override bool PerformDashAction(){ //STEAL
-    return false;
-    //Steal();
+  protected override void PerformDashAction(){ //STEAL
+    Steal();
   }
 
 
