@@ -106,8 +106,8 @@ public class TallPlayer : Player {
     foreach (Collider h in hits)
     {
         Player other = h.GetComponent<Player>();
-        if (other != null){
-          //Debug.LogFormat("other= {0}", other.gameObject.name);
+        if (other != null && other != this && other.Team != this.Team){
+          Debug.LogFormat("other= {0}", other.Team);
           other.Stun();
           SoundManager.Instance.Play(successfulStun);
         }
