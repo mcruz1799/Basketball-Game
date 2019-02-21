@@ -134,11 +134,12 @@ public class TallPlayer : Player {
    Pick-Up Small Player: If Player is in range, can pickup the small player.
   */
   public override void AButtonDown(XboxController controller) {
-    if (HasBall) {
+    if (Above == null) {
+      PickUpSmallPlayer();
       //Pass();
     } else {
+      ThrowSmallPlayer();
       //GameManager.S.CheckTipOff(controller);
-      PickUpSmallPlayer();
     }
   }
   public override void RTButtonDown(XboxController controller) {
@@ -146,16 +147,6 @@ public class TallPlayer : Player {
   }
   public override void RTButtonUp(XboxController controller) {
     StopDashing();
-  }
-  public override void BButtonDown(XboxController controller) {
-    if (Above == null) {
-      //Steal();
-    } else {
-      //ThrowSmallPlayer();
-    }
-  }
-  public override void XButtonDown(XboxController controller) {
-    //Stun();
   }
   public override void Move(float xMove, float zMove) {
     if (CanMove && (xMove != 0 || zMove != 0)) {

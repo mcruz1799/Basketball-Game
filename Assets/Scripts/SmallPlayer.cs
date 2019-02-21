@@ -182,13 +182,7 @@ public class SmallPlayer : Player {
   public override void RTButtonUp(XboxController controller) {
     StopDashing();
   }
-  public override void BButtonDown(XboxController controller) {
-    Steal();
-  }
-
-  public override void XButtonDown(XboxController controller) {
-    //Stun();
-  }
+  
   public override void Move(float xMove, float zMove) {
     if (CanMove && (xMove != 0 || zMove != 0)) {
       idleAnimation.IsVisible = false;
