@@ -215,7 +215,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15959276}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.1806393, y: 1.2, z: -13.476753}
+  m_LocalPosition: {x: 4.2, y: 1.2, z: -13.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 49646699}
@@ -336,7 +336,7 @@ MonoBehaviour:
   _tallPlayer2: {fileID: 1982353489}
   basket1: {fileID: 1110856168}
   basket2: {fileID: 615897146}
-  gameLength: 30
+  gameLength: 10
   sp1_spawn: {fileID: 1198686325}
   sp2_spawn: {fileID: 219632906}
   tp1_spawn: {fileID: 911505251}
@@ -528,14 +528,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 49646697}
+  - {fileID: 1198686326}
   - {fileID: 219632907}
   - {fileID: 911505252}
-  - {fileID: 1198686326}
   - {fileID: 15959277}
-  - {fileID: 1535449030}
-  - {fileID: 203325553}
   - {fileID: 1052378049}
+  - {fileID: 1535449030}
   - {fileID: 942351407}
+  - {fileID: 203325553}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -622,6 +622,7 @@ MonoBehaviour:
   - {fileID: 21300070, guid: 6139fff2a233f484995ee375bdf8fdb6, type: 3}
   initialIsVisible: 1
   initialIsLooping: 1
+  spriteRenderer: {fileID: 0}
   _framesPerSprite: 1
 --- !u!212 &126809307
 SpriteRenderer:
@@ -1084,6 +1085,7 @@ MonoBehaviour:
   - {fileID: 21300086, guid: f3e5d0bec5c69f845b8e2fa00babadf6, type: 3}
   initialIsVisible: 1
   initialIsLooping: 1
+  spriteRenderer: {fileID: 0}
   _framesPerSprite: 1
 --- !u!212 &170492887
 SpriteRenderer:
@@ -1300,11 +1302,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203325552}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: -1.3}
+  m_LocalPosition: {x: 0, y: 1.2, z: -1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 49646699}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &204384426
 GameObject:
@@ -1724,11 +1726,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219632906}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.1493607, y: 0.65, z: -13.506753}
+  m_LocalPosition: {x: -4.2, y: 0.65, z: -13.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 49646699}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &262965628
 GameObject:
@@ -3879,6 +3881,7 @@ MonoBehaviour:
   - {fileID: 21300088, guid: 26c34eb4146ac4b459c47969ea7a4240, type: 3}
   initialIsVisible: 1
   initialIsLooping: 1
+  spriteRenderer: {fileID: 0}
   _framesPerSprite: 1
 --- !u!212 &610052507
 SpriteRenderer:
@@ -5643,11 +5646,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911505251}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.7306395, y: 1.2, z: 13.293247}
+  m_LocalPosition: {x: 4.2, y: 1.2, z: 13.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 49646699}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &926649948
 GameObject:
@@ -5828,11 +5831,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942351406}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 1.39}
+  m_LocalPosition: {x: 0, y: 1.2, z: 1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 49646699}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &945786670
 PrefabInstance:
@@ -6285,6 +6288,7 @@ MonoBehaviour:
   - {fileID: 21300088, guid: 44903ad0a712e3a49ac6f1ddbfb550d2, type: 3}
   initialIsVisible: 1
   initialIsLooping: 1
+  spriteRenderer: {fileID: 0}
   _framesPerSprite: 1
 --- !u!1 &1031398362
 GameObject:
@@ -6496,7 +6500,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 49646699}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1054731837 stripped
 RectTransform:
@@ -7057,7 +7061,7 @@ MonoBehaviour:
   winningScreen: {fileID: 1877650349}
   tipoffScreen: {fileID: 1205878615}
   overtimeScreen: {fileID: 1049097287}
-  scoringScreen: {fileID: 1628141684}
+  scoringScreen: {fileID: 0}
   winningText: {fileID: 1296502892}
   gameTimeText: {fileID: 1281940303}
   team1ScoreText: {fileID: 1551349816}
@@ -7209,11 +7213,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198686325}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.1493604, y: 0.65, z: 12.263247}
+  m_LocalPosition: {x: -4.2, y: 0.65, z: 13.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 49646699}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1205878615
 GameObject:
@@ -8670,6 +8674,7 @@ MonoBehaviour:
   - {fileID: 21300084, guid: 36ad8625789ff6b4898373d999723144, type: 3}
   initialIsVisible: 1
   initialIsLooping: 1
+  spriteRenderer: {fileID: 0}
   _framesPerSprite: 1
 --- !u!212 &1358772171
 SpriteRenderer:
@@ -9172,7 +9177,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 49646699}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1540696643
 GameObject:
@@ -11545,6 +11550,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 39e99761b2d29e04291d05a87c8735cd, type: 3}
   initialIsVisible: 1
   initialIsLooping: 1
+  spriteRenderer: {fileID: 0}
   _framesPerSprite: 1
 --- !u!1 &1864007664
 GameObject:
@@ -11638,6 +11644,7 @@ MonoBehaviour:
   - {fileID: 21300088, guid: 0f7382f2c92c3394db7f7918dd127e36, type: 3}
   initialIsVisible: 1
   initialIsLooping: 1
+  spriteRenderer: {fileID: 0}
   _framesPerSprite: 1
 --- !u!212 &1864007667
 SpriteRenderer:
@@ -12654,6 +12661,7 @@ MonoBehaviour:
   - {fileID: 21300086, guid: 507204acfb7783749be40bbf1ff78df4, type: 3}
   initialIsVisible: 1
   initialIsLooping: 1
+  spriteRenderer: {fileID: 0}
   _framesPerSprite: 1
 --- !u!212 &2009897664
 SpriteRenderer:
