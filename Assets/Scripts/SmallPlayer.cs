@@ -23,6 +23,8 @@ public class SmallPlayer : Player {
   private ISpriteAnimator idleAnimation;
   private ISpriteAnimator runAnimation;
 
+  private bool idleIsFlashing = false;
+
   protected override void Awake() {
     base.Awake();
 
@@ -131,20 +133,24 @@ public class SmallPlayer : Player {
     return true;
   }
 
-  private IEnumerator FlashSprite(){
-    while (true){
-      _spIdle.spriteRenderer.gameObject.SetActive(false);
+  private IEnumerator FlashSprite() {
+    while (true) {
+      idleAnimation.IsVisible = false;
       yield return new WaitForSeconds(.5f);
-      _spIdle.spriteRenderer.gameObject.SetActive(true);
+      idleAnimation.IsVisible = true;
+      yield return new WaitForSeconds(.5f);
     }
   }
 
-  protected override IEnumerator StunRoutine(){
-    StartCoroutine(FlashSprite());
-    base.StunRoutine();
-    StopCoroutine(FlashSprite());
-    yield return null;
+  protected override IEnumerator StunRoutine() {
+    idleIsFlashing = true;
+    Coroutine flashRoutine = StartCoroutine(FlashSprite()); //Want this running concurrently with StunRoutine
+    yield return base.StunRoutine();
+    StopCoroutine(flashRoutine);
+    idleIsFlashing = false;
   }
+
+
   //
   //IXzController
   //
@@ -186,7 +192,7 @@ public class SmallPlayer : Player {
       }
     } else {
       runAnimation.IsVisible = false;
-      if (!idleAnimation.IsVisible) {
+      if (!idleAnimation.IsVisible && !idleIsFlashing) {
         idleAnimation.IsVisible = true;
         idleAnimation.StartFromFirstFrame();
       }

@@ -20,6 +20,8 @@ public class TallPlayer : Player {
   public SmallPlayer Above { get; private set; }
   public override bool CanReceivePass => base.CanReceivePass && Above == null;
 
+  private bool idleIsFlashing;
+
   public override float Speed {
     get {
       float carryPenalty = Above == null ? 1f : 0.5f;
@@ -80,6 +82,28 @@ public class TallPlayer : Player {
     }
   }
 
+  private IEnumerator FlashSprite() {
+    while (true) {
+      idleAnimation.IsVisible = false;
+      yield return new WaitForSeconds(.5f);
+      idleAnimation.IsVisible = true;
+      yield return new WaitForSeconds(.5f);
+    }
+  }
+
+  protected override IEnumerator StunRoutine() {
+    idleIsFlashing = true;
+    Coroutine flashRoutine = StartCoroutine(FlashSprite()); //Want this running concurrently with StunRoutine
+    yield return base.StunRoutine();
+    StopCoroutine(flashRoutine);
+    idleIsFlashing = false;
+  }
+
+
+  //
+  //IXzController
+  //
+
   /*
    Possibilities of Pressing A:
    Tip-Off: Gain control of the ball.
@@ -121,26 +145,11 @@ public class TallPlayer : Player {
       }
     } else {
       runAnimation.IsVisible = false;
-      if (!idleAnimation.IsVisible) {
+      if (!idleAnimation.IsVisible && !idleIsFlashing) {
         idleAnimation.IsVisible = true;
         idleAnimation.StartFromFirstFrame();
       }
     }
     base.Move(xMove, zMove);
-  }
-
-  private IEnumerator FlashSprite(){
-    while (true){
-      _tpIdle.spriteRenderer.gameObject.SetActive(false);
-      yield return new WaitForSeconds(.5f);
-      _tpIdle.spriteRenderer.gameObject.SetActive(true);
-    }
-  }
-
-  protected override IEnumerator StunRoutine(){
-    StartCoroutine(FlashSprite());
-    base.StunRoutine();
-    StopCoroutine(FlashSprite());
-    yield return null;
   }
 }
