@@ -4697,6 +4697,7 @@ MonoBehaviour:
   winningScreen: {fileID: 1618856808}
   tipoffScreen: {fileID: 85732520}
   overtimeScreen: {fileID: 570715994}
+  scoringScreen: {fileID: 0}
   winningText: {fileID: 1555935766}
   gameTimeText: {fileID: 1726407093}
   team1ScoreText: {fileID: 345578495}
@@ -7390,8 +7391,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 12.5}
-  m_SizeDelta: {x: -10, y: -35}
+  m_AnchoredPosition: {x: 2.5, y: 12.5}
+  m_SizeDelta: {x: -5, y: -35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1752556315
 MonoBehaviour:
@@ -9487,8 +9488,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4, y: -221}
-  m_SizeDelta: {x: -1194.1, y: 656.3}
+  m_AnchoredPosition: {x: 0.0000038146973, y: -221}
+  m_SizeDelta: {x: -200, y: 656.3}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2059578539
 MonoBehaviour:
