@@ -105,9 +105,9 @@ public abstract class Player : MonoBehaviour, IPlayer {
 
   public bool HasBall => ballUserComponent.HasBall;
 
-  public void Pass() {
-    ballUserComponent.Pass();
-  }
+  // public void Pass() {
+  //   ballUserComponent.Pass();
+  // }
 
   public bool Steal() {
     if (ballUserComponent.Steal(grabHitbox)) {
