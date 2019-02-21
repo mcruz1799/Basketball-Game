@@ -1617,6 +1617,7 @@ MonoBehaviour:
   _team: 0
   staminaBar: {fileID: 624898937}
   _icon: {fileID: 21300000, guid: 39e99761b2d29e04291d05a87c8735cd, type: 3}
+  dashTrail: {fileID: 204880735}
   successfulStun: {fileID: 0}
   throwDistance: 3
   _spIdle: {fileID: 1850059650}
@@ -1847,7 +1848,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
-  m_Emitting: 1
+  m_Emitting: 0
 --- !u!1 &217308428
 GameObject:
   m_ObjectHideFlags: 0
@@ -5846,6 +5847,7 @@ MonoBehaviour:
   _team: 0
   staminaBar: {fileID: 774503562}
   _icon: {fileID: 21300000, guid: 44903ad0a712e3a49ac6f1ddbfb550d2, type: 3}
+  dashTrail: {fileID: 845735878}
   successfulStun: {fileID: 0}
   _tpIdle: {fileID: 1004947071}
   _tpRun: {fileID: 2009897663}
@@ -6064,7 +6066,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
-  m_Emitting: 1
+  m_Emitting: 0
 --- !u!1 &866134816
 GameObject:
   m_ObjectHideFlags: 0
@@ -13896,6 +13898,7 @@ MonoBehaviour:
   _team: 1
   staminaBar: {fileID: 1972849055}
   _icon: {fileID: 21300000, guid: 0f7382f2c92c3394db7f7918dd127e36, type: 3}
+  dashTrail: {fileID: 1982353497}
   successfulStun: {fileID: 0}
   _tpIdle: {fileID: 1864007666}
   _tpRun: {fileID: 170492886}
@@ -14114,7 +14117,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
-  m_Emitting: 1
+  m_Emitting: 0
 --- !u!1 &2009897662
 GameObject:
   m_ObjectHideFlags: 0
@@ -14325,6 +14328,7 @@ MonoBehaviour:
   _team: 1
   staminaBar: {fileID: 624898937}
   _icon: {fileID: 21300000, guid: 26c34eb4146ac4b459c47969ea7a4240, type: 3}
+  dashTrail: {fileID: 2029042020}
   successfulStun: {fileID: 0}
   throwDistance: 3
   _spIdle: {fileID: 610052506}
@@ -14527,7 +14531,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
-  m_Emitting: 1
+  m_Emitting: 0
 --- !u!1 &2043874276
 GameObject:
   m_ObjectHideFlags: 0

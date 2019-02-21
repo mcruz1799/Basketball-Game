@@ -24,6 +24,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
   [SerializeField] private ScoreComponent.PlayerType _team;
   [SerializeField] private SimpleHealthBar staminaBar;
   [SerializeField] private Sprite _icon;
+  [SerializeField] private TrailRenderer dashTrail;
 #pragma warning restore 0649
 
   [SerializeField] protected AudioClip successfulStun;
@@ -135,11 +136,13 @@ public abstract class Player : MonoBehaviour, IPlayer {
   public void StartDashing() {
     if (!dashRefillPenalty) {
       IsDashing = true;
+      dashTrail.emitting = true;
     }
   }
 
   public void StopDashing() {
     IsDashing = false;
+    dashTrail.emitting = false;
   }
 
   private IEnumerator DashRoutine() {
