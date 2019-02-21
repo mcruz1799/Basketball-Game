@@ -126,7 +126,7 @@ public class SmallPlayer : Player {
 
     if (nearestPlayer != null) {
       Debug.Log("Threw SmallPlayer into another player, stunning them  :D");
-      nearestPlayer.Stun();
+      //nearestPlayer.Stun();
     }
     Below = null;
 
@@ -146,10 +146,10 @@ public class SmallPlayer : Player {
     }
   }
 
-  protected override IEnumerator StunRoutine() {
+  protected override IEnumerator StunRoutine(float stunTime) {
     idleIsFlashing = true;
     Coroutine flashRoutine = StartCoroutine(FlashSprite()); //Want this running concurrently with StunRoutine
-    yield return base.StunRoutine();
+    yield return base.StunRoutine(stunTime);
     StopCoroutine(flashRoutine);
     idleIsFlashing = false;
   }
@@ -187,7 +187,7 @@ public class SmallPlayer : Player {
   }
 
   public override void XButtonDown(XboxController controller) {
-    Stun();
+    //Stun();
   }
   public override void Move(float xMove, float zMove) {
     if (CanMove && (xMove != 0 || zMove != 0)) {
