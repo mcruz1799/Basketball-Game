@@ -10,7 +10,7 @@ public enum GameState { MainMenu, PlayerSelection, Tipoff, InPlay, Overtime, Gam
 
 public static class GameStateExtensions {
   public static bool PlayerMovementAllowed(this GameState state) {
-    return state == InPlay || state == Overtime;
+    return state == InPlay || state == Overtime || state == Tipoff;
   }
 }
 
