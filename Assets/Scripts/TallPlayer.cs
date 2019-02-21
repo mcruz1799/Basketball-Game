@@ -72,10 +72,10 @@ public class TallPlayer : Player {
     Above = null;
   }
 
-  public override void Stun() {
-    base.Stun();
+  public override void Stun(float stunTime) {
+    base.Stun(stunTime);
     if (Above != null) {
-      Above.Stun();
+      Above.Stun(stunTime);
     }
   }
 
@@ -93,10 +93,10 @@ public class TallPlayer : Player {
 
   
 
-  protected override IEnumerator StunRoutine() {
+  protected override IEnumerator StunRoutine(float stunTime) {
     idleIsFlashing = true;
     Coroutine flashRoutine = StartCoroutine(FlashSprite()); //Want this running concurrently with StunRoutine
-    yield return base.StunRoutine();
+    yield return base.StunRoutine(stunTime);
     StopCoroutine(flashRoutine);
     idleIsFlashing = false;
   }
@@ -106,35 +106,23 @@ public class TallPlayer : Player {
     foreach (Collider h in hits)
     {
         Player other = h.GetComponent<Player>();
-        if (other != null && other != this && other.Team != this.Team){
-          Debug.LogFormat("other= {0}", other.Team);
-          other.Stun();
+        if (other != null && other != this && other.Team != this.Team){ //first check if you collide with opposing player
+          if (Above != null && !Above.HasBall && other.GetComponent<TallPlayer>() != null){ //now check for powerstun (if your smallplayer doesnt have the ball and the opponent is a tallplayer) 
+              if (other.GetComponent<TallPlayer>().Above != null) // if that tall player has a smallplayer above them then powerstun and steal
+              {
+                Above.Steal();
+                other.Stun(powerStunTime);
+              }
+            }
+          else //you just collide with another player
+            {
+                other.Stun(regStunTime);
+            }
           SoundManager.Instance.Play(successfulStun);
         }
     }
   }
 
-  // public bool Steal(BoxCollider grabHitbox) {
-  //   if (HasBall || !CanSteal) {
-  //     Debug.LogFormat("Cannot steal.  HasBall: {0}   stealCooldownRemaining: {1}", HasBall, stealCooldownRemaining);
-  //     return false;
-  //   }
-
-  //   Collider[] hits = Physics.OverlapBox(grabHitbox.transform.TransformPoint(grabHitbox.center), grabHitbox.bounds.extents);
-  //   foreach (Collider h in hits) {
-  //     BallUserComponent other = h.GetComponent<BallUserComponent>();
-  //     if (other != null && other.heldBall != null) {
-  //       stealCooldownRemaining = stealCooldown;
-  //       HoldBall(other.heldBall);
-  //       other.heldBall = null;
-  //       SoundManager.Instance.Play(successfulSteal);
-  //       return true;
-  //     }
-  //   }
-
-  //   Debug.Log("Nobody to Steal from detected");
-  //   return false;
-  // }
   //
   //IXzController
   //
@@ -163,11 +151,11 @@ public class TallPlayer : Player {
     if (Above == null) {
       //Steal();
     } else {
-      ThrowSmallPlayer();
+      //ThrowSmallPlayer();
     }
   }
   public override void XButtonDown(XboxController controller) {
-    Stun();
+    //Stun();
   }
   public override void Move(float xMove, float zMove) {
     if (CanMove && (xMove != 0 || zMove != 0)) {

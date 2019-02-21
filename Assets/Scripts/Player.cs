@@ -28,6 +28,8 @@ public abstract class Player : MonoBehaviour, IPlayer {
 #pragma warning restore 0649
 
   [SerializeField] protected AudioClip successfulStun;
+  protected float regStunTime = 2f;
+  protected float powerStunTime = 5f;
   public Transform OriginalParent { get; private set; }
 
   private PlayerMover xzController;
@@ -62,14 +64,14 @@ public abstract class Player : MonoBehaviour, IPlayer {
   //Stun functionality
   private bool IsStunned { get; set; }
 
-  protected virtual IEnumerator StunRoutine() {
-    yield return new WaitForSeconds(2f);
+  protected virtual IEnumerator StunRoutine(float stunTime) {
+    yield return new WaitForSeconds(stunTime);
     IsStunned = false;
   }
-  public virtual void Stun() {
+  public virtual void Stun(float stunTime) {
     if (!IsStunned) {
       IsStunned = true;
-      StartCoroutine(StunRoutine());
+      StartCoroutine(StunRoutine(stunTime));
     }
   }
 
