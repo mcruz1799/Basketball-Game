@@ -182,7 +182,7 @@ public class SmallPlayer : Player {
     Stun();
   }
   public override void Move(float xMove, float zMove) {
-    if (xMove != 0 || zMove != 0) {
+    if (CanMove && (xMove != 0 || zMove != 0)) {
       idleAnimation.IsVisible = false;
       runAnimation.FlipX = zMove > 0;
       idleAnimation.FlipX = runAnimation.FlipX;
