@@ -43,10 +43,10 @@ public class BallUserComponent : MonoBehaviour {
     }
   }
 
-  public bool Steal(BoxCollider grabHitbox) {
+  public Player Steal(BoxCollider grabHitbox) {
     if (HasBall || !CanSteal) {
       Debug.LogFormat("Cannot steal.  HasBall: {0}   stealCooldownRemaining: {1}", HasBall, stealCooldownRemaining);
-      return false;
+      return null;
     }
 
     Collider[] hits = Physics.OverlapBox(grabHitbox.transform.TransformPoint(grabHitbox.center), grabHitbox.bounds.extents);
@@ -57,12 +57,12 @@ public class BallUserComponent : MonoBehaviour {
         HoldBall(other.heldBall);
         other.heldBall = null;
         SoundManager.Instance.Play(successfulSteal);
-        return true;
+        return h.GetComponent<Player>();
       }
     }
 
     Debug.Log("Nobody to Steal from detected");
-    return false;
+    return null;
   }
 
   public void Pass() {

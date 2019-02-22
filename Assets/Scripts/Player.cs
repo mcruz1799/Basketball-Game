@@ -22,6 +22,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
   [SerializeField] private ScoreComponent.PlayerType _team;
   [SerializeField] private SimpleHealthBar staminaBar;
   [SerializeField] private Sprite _icon;
+  [SerializeField] private SpriteAnimator powEffect;
   [SerializeField] private TrailRenderer dashTrail;
 #pragma warning restore 0649
 
@@ -110,7 +111,9 @@ public abstract class Player : MonoBehaviour, IPlayer {
   // }
 
   public bool Steal() {
-    if (ballUserComponent.Steal(grabHitbox)) {
+    Player p = ballUserComponent.Steal(grabHitbox);
+    if (p) {
+      StartCoroutine(p.FlashPow());
       GameManager.S.NotifyOfBallOwnership(Team);
       return true;
     } else {
@@ -164,6 +167,14 @@ public abstract class Player : MonoBehaviour, IPlayer {
       }
       staminaBar.UpdateBar(dashTimer, .9f);
     }
+  }
+
+  private IEnumerator FlashPow()
+  {
+    Debug.Log("Reaching here.");
+    powEffect.IsVisible = true;
+    yield return new WaitForSeconds(0.4f);
+    powEffect.IsVisible = false;
   }
 
   protected abstract void PerformDashAction(); //will be defined as Steal in SmallPlayer and Stun in TallPlayer
