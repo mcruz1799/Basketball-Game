@@ -155,6 +155,9 @@ public class SmallPlayer : Player {
   }
 
   protected override void PerformDashAction(){ //STEAL
+    if (!CanMove) {
+      return;
+    }
     Steal();
   }
 
