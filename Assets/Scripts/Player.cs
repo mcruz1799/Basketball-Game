@@ -113,7 +113,8 @@ public abstract class Player : MonoBehaviour, IPlayer {
   public bool Steal() {
     Player p = ballUserComponent.Steal(grabHitbox);
     if (p) {
-      StartCoroutine(p.FlashPow());
+      //StartCoroutine(p.FlashPow());
+      GameManager.S.Ball.PowAnimation();
       GameManager.S.NotifyOfBallOwnership(Team);
       return true;
     } else {

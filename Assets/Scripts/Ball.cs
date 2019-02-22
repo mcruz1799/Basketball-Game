@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour, IBall {
 #pragma warning disable 0649
   [Range(1f, 100f)] [SerializeField] private float moveAnimationSpeed = 1f;
+  [SerializeField] private SpriteAnimator powEffect;
 #pragma warning restore 0649
 
   private Vector3? targetLocalPosition;
@@ -49,5 +50,18 @@ public class Ball : MonoBehaviour, IBall {
       }
       yield return null;
     }
+  }
+
+  public void PowAnimation()
+  {
+    StartCoroutine(FlashPow());
+  }
+
+  private IEnumerator FlashPow()
+  {
+    Debug.Log("Reaching here.");
+    powEffect.IsVisible = true;
+    yield return new WaitForSeconds(0.4f);
+    powEffect.IsVisible = false;
   }
 }

@@ -7,4 +7,5 @@ public interface IBall {
 
   void SetPosition(Vector3 newLocalPosition, bool animateChange=true);
   void SetParent(Transform newParent);
+  void PowAnimation();
 }
