@@ -188,13 +188,12 @@ public class InputManager : MonoBehaviour {
     }
   }
 
+  private static List<SelectionAction> selectionCycle =
+      new List<SelectionAction>() { SelectionAction.Small1, SelectionAction.Tall1, SelectionAction.Small2, SelectionAction.Tall2 };
   private SelectionAction ShiftSelection(bool direction,int index) //True is Up, False is down
   {
-    List<SelectionAction> cycle = 
-      new List<SelectionAction>() { SelectionAction.Small1, SelectionAction.Tall1, SelectionAction.Small2, SelectionAction.Tall2 };
-    SelectionAction action = currentSelection[index];
-
-    return cycle[(index + cycle.Count + (direction ? -1 : 1)) % cycle.Count];
+    int cycleIndex = selectionCycle.FindIndex(x => x == currentSelection[index]);
+    return selectionCycle[(cycleIndex + selectionCycle.Count + (direction ? -1 : 1)) % selectionCycle.Count];
   }
 
   private void Select(XboxController controller, SelectionAction action) {
