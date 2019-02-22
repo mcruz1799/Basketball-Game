@@ -168,19 +168,21 @@ public class InputManager : MonoBehaviour {
       } */
 
       if (XCI.GetButtonDown(XboxButton.DPadUp,controller)) {
-        SelectionAction newAction = shiftSelection(true, (int)controller);
-        currentSelection[(int)controller] = newAction;
+        int index = (int)controller - 1;
+        SelectionAction newAction = shiftSelection(true, index);
+        currentSelection[index] = newAction;
         Select(controller, newAction);
       }
 
       if (XCI.GetButtonDown(XboxButton.DPadDown,controller)) {
-        SelectionAction newAction = shiftSelection(true, (int)controller);
-        currentSelection[(int)controller] = newAction;
+        int index = (int)controller - 1;
+        SelectionAction newAction = shiftSelection(true, index);
+        currentSelection[index] = newAction;
         Select(controller, newAction);
       }
 
       //If you've selected a player, press Start to confirm it
-      if (XCI.GetButtonDown(XboxButton.A,controller)) {
+      if (XCI.GetButtonDown(XboxButton.Start, controller) || XCI.GetButtonDown(XboxButton.A,controller)) {
         Select(controller, SelectionAction.Confirm);
       }
     }
@@ -188,7 +190,7 @@ public class InputManager : MonoBehaviour {
 
   private SelectionAction shiftSelection(bool direction,int index) //True is Up, False is down
   {
-    SelectionAction action = currentSelection[index-1];
+    SelectionAction action = currentSelection[index];
     if (direction) {
       switch (action) {
         case SelectionAction.Small1:
