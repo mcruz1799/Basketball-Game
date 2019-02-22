@@ -102,6 +102,9 @@ public class TallPlayer : Player {
   }
 
   protected override void PerformDashAction(){ //STUN
+    if (!CanMove) {
+      return;
+    }
     Collider[] hits = Physics.OverlapBox(grabHitbox.transform.TransformPoint(grabHitbox.center), grabHitbox.bounds.extents);
     foreach (Collider h in hits)
     {
