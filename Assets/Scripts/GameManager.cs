@@ -226,6 +226,10 @@ public class GameManager : MonoBehaviour {
     Application.Quit();
   }
 
+  public void ReturnMenu(){
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+  }
+
   public void RestartGame() {
     //TODO: change to load scene of main menu
     ScoreTeam1 = 0;
