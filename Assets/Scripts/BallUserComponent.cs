@@ -53,11 +53,15 @@ public class BallUserComponent : MonoBehaviour {
     foreach (Collider h in hits) {
       BallUserComponent other = h.GetComponent<BallUserComponent>();
       if (other != null && other.heldBall != null) {
-        stealCooldownRemaining = stealCooldown;
-        HoldBall(other.heldBall);
-        other.heldBall = null;
-        SoundManager.Instance.Play(successfulSteal);
-        return h.GetComponent<Player>();
+        if (other.GetComponent<TallPlayer>() != null){
+          if (other.GetComponent<TallPlayer>().Above == null){
+            stealCooldownRemaining = stealCooldown;
+            HoldBall(other.heldBall);
+            other.heldBall = null;
+            SoundManager.Instance.Play(successfulSteal);
+            return h.GetComponent<Player>();
+          }
+        } 
       }
     }
 
