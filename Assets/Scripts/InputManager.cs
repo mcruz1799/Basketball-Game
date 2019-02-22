@@ -97,7 +97,7 @@ public class InputManager : MonoBehaviour {
       MainGameInputChecks(XboxController.Second);
       MainGameInputChecks(XboxController.Third);
       MainGameInputChecks(XboxController.Fourth);
-      DebugInputChecks();
+  //    DebugInputChecks();
 
       yield return null;
     }
