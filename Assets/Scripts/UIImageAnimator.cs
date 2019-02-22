@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(UnityEngine.UI.Image))]
 public class UIImageAnimator : MonoBehaviour, ISpriteAnimator {
 #pragma warning disable 0649
   [SerializeField] private List<Sprite> sprites;
