@@ -13,11 +13,6 @@ public class PlayerSelectionGUI : MonoBehaviour {
   [SerializeField] private Image controller3PlayerImage;
   [SerializeField] private Image controller4PlayerImage;
 
-  [SerializeField] private Text controller1Prompt;
-  [SerializeField] private Text controller2Prompt;
-  [SerializeField] private Text controller3Prompt;
-  [SerializeField] private Text controller4Prompt;
-
   [SerializeField] private RawImage controller1X;
   [SerializeField] private RawImage controller1Ball;
   [SerializeField] private RawImage controller2X;
@@ -49,8 +44,7 @@ public class PlayerSelectionGUI : MonoBehaviour {
     foreach (KeyValuePair<XboxController, InputManager.PlayerSelectionInfo> info in InputManager.S.ControllerMap) {
       Sprite sprite = info.Value.player.Icon;
       bool isConfirmed = info.Value.isConfirmed;
-      Color textColor = isConfirmed ? Color.green : Color.red;
-      string text = isConfirmed ? "CONFIRMED" : "Press Start";
+
       switch (info.Key) {
         case XboxController.First:
           controller1PlayerImage.sprite = sprite;
@@ -65,8 +59,6 @@ public class PlayerSelectionGUI : MonoBehaviour {
              controller1Ball.gameObject.SetActive(false);
              controller1X.gameObject.SetActive(true);
           }
-          controller1Prompt.color = textColor;
-          controller1Prompt.text = text;
           break;
         case XboxController.Second:
           controller2PlayerImage.sprite = sprite;
@@ -81,8 +73,6 @@ public class PlayerSelectionGUI : MonoBehaviour {
              controller2Ball.gameObject.SetActive(false);
              controller2X.gameObject.SetActive(true);
           }
-          controller2Prompt.color = textColor;
-          controller2Prompt.text = text;
           break;
         case XboxController.Third:
           controller3PlayerImage.sprite = sprite;
@@ -97,8 +87,6 @@ public class PlayerSelectionGUI : MonoBehaviour {
              controller3Ball.gameObject.SetActive(false);
              controller3X.gameObject.SetActive(true);
           }
-          controller3Prompt.color = textColor;
-          controller3Prompt.text = text;
           break;
         case XboxController.Fourth:
           controller4PlayerImage.sprite = sprite;
@@ -113,8 +101,6 @@ public class PlayerSelectionGUI : MonoBehaviour {
              controller4Ball.gameObject.SetActive(false);
              controller4X.gameObject.SetActive(true);
           }
-          controller4Prompt.color = textColor;
-          controller4Prompt.text = text;
           break;
         default:
           Debug.LogError("Illegal XboxController key detected in InputManager.ControllerMap");
