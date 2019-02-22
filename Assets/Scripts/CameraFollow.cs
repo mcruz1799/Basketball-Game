@@ -62,7 +62,7 @@ public class CameraFollow : MonoBehaviour
       if (!onScreen) {
         Debug.Log("Player " + i + " is offscreen.");
           if (screenPoint.x < 0) leftarrow.SetActive(true);
-          else rightarrow.SetActive(true);
+          else if (screenPoint.x > 1) rightarrow.SetActive(true);
       } else { //They are on screen, make sure the arrows are inactive.
           leftarrow.SetActive(false);
           rightarrow.SetActive(false);
