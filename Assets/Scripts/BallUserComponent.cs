@@ -61,7 +61,14 @@ public class BallUserComponent : MonoBehaviour {
             SoundManager.Instance.Play(successfulSteal);
             return h.GetComponent<Player>();
           }
-        } 
+        }
+        else{
+          stealCooldownRemaining = stealCooldown;
+            HoldBall(other.heldBall);
+            other.heldBall = null;
+            SoundManager.Instance.Play(successfulSteal);
+            return h.GetComponent<Player>();
+        }
       }
     }
 
