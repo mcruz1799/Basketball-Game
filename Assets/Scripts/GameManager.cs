@@ -54,6 +54,9 @@ public class GameManager : MonoBehaviour {
   //Sound Effects
   [SerializeField] private AudioClip scoreSound;
   [SerializeField] private AudioClip endBuzzer;
+  [SerializeField] private AudioClip menuSong;
+  [SerializeField] private AudioClip courtSong;
+
 
   private Vector3 velocity = Vector3.zero;
 #pragma warning restore 0649
@@ -115,6 +118,7 @@ public class GameManager : MonoBehaviour {
     _smallPlayer2.transform.position = sp2_tipoff.transform.position;
     _tallPlayer1.transform.position = tp1_tipoff.transform.position;
     _tallPlayer2.transform.position = tp2_tipoff.transform.position;
+    SoundManager.Instance.PlayMusic(menuSong);
   }
 
     //For use by the start button in the main menu
@@ -137,6 +141,7 @@ public class GameManager : MonoBehaviour {
   }
 
   private void StartGame() {
+    SoundManager.Instance.PlayMusic(courtSong);
     Ball.SetParent(null);
     Ball.SetPosition(ballInitialPosition);
 

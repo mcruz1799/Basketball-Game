@@ -414,6 +414,8 @@ MonoBehaviour:
   tp2_tipoff: {fileID: 203325552}
   scoreSound: {fileID: 8300000, guid: 81be469b536ae3d42934c673edcf0408, type: 3}
   endBuzzer: {fileID: 8300000, guid: 7ac21c0fbb63b604988ca1ea1413c33c, type: 3}
+  menuSong: {fileID: 8300000, guid: b0be7b9363f3d134ab09244fe67b2e3d, type: 3}
+  courtSong: {fileID: 8300000, guid: f9689db42445a4549883b91d1123a1f8, type: 3}
 --- !u!4 &27933165
 Transform:
   m_ObjectHideFlags: 0
