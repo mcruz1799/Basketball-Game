@@ -169,14 +169,14 @@ public class InputManager : MonoBehaviour {
 
       if (XCI.GetButtonDown(XboxButton.DPadUp,controller)) {
         int index = (int)controller - 1;
-        SelectionAction newAction = shiftSelection(true, index);
+        SelectionAction newAction = ShiftSelection(true, index);
         currentSelection[index] = newAction;
         Select(controller, newAction);
       }
 
       if (XCI.GetButtonDown(XboxButton.DPadDown,controller)) {
         int index = (int)controller - 1;
-        SelectionAction newAction = shiftSelection(true, index);
+        SelectionAction newAction = ShiftSelection(true, index);
         currentSelection[index] = newAction;
         Select(controller, newAction);
       }
@@ -188,36 +188,13 @@ public class InputManager : MonoBehaviour {
     }
   }
 
-  private SelectionAction shiftSelection(bool direction,int index) //True is Up, False is down
+  private SelectionAction ShiftSelection(bool direction,int index) //True is Up, False is down
   {
+    List<SelectionAction> cycle = 
+      new List<SelectionAction>() { SelectionAction.Small1, SelectionAction.Tall1, SelectionAction.Small2, SelectionAction.Tall2 };
     SelectionAction action = currentSelection[index];
-    if (direction) {
-      switch (action) {
-        case SelectionAction.Small1:
-          return SelectionAction.Tall2;
-        case SelectionAction.Small2:
-          return SelectionAction.Tall1;
-        case SelectionAction.Tall1:
-          return SelectionAction.Small1;
-        case SelectionAction.Tall2:
-          return SelectionAction.Small2;
-        default:
-          return SelectionAction.Tall2;
-      } 
-    } else {
-      switch (action) {
-        case SelectionAction.Small1:
-          return SelectionAction.Tall1;
-        case SelectionAction.Small2:
-          return SelectionAction.Tall2;
-        case SelectionAction.Tall1:
-          return SelectionAction.Small2;
-        case SelectionAction.Tall2:
-          return SelectionAction.Small1;
-        default:
-          return SelectionAction.Small2;
-      }
-    }
+
+    return cycle[(index + cycle.Count + (direction ? -1 : 1)) % cycle.Count];
   }
 
   private void Select(XboxController controller, SelectionAction action) {
