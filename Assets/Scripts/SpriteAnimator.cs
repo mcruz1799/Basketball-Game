@@ -26,7 +26,7 @@ public class SpriteAnimator : MonoBehaviour, ISpriteAnimator {
   [SerializeField] private bool initialIsLooping = false;
 #pragma warning restore 0649
 
-  private SpriteRenderer spriteRenderer;
+  public SpriteRenderer spriteRenderer;
 
   private bool _isVisible;
   public bool IsVisible {

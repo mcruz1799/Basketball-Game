@@ -20,6 +20,8 @@ public class TallPlayer : Player {
   public SmallPlayer Above { get; private set; }
   public override bool CanReceivePass => base.CanReceivePass && Above == null;
 
+  private bool idleIsFlashing;
+
   public override float Speed {
     get {
       float carryPenalty = Above == null ? 1f : 0.5f;
@@ -34,14 +36,11 @@ public class TallPlayer : Player {
   }
 
   public bool ThrowSmallPlayer() {
-    Debug.Log("Above:" + Above);
     if (Above == null || !Above.OnThrown(XLook, ZLook)) {
-      Debug.Log("Throw false.");
       return false;
     }
 
     Above = null;
-    Debug.Log("Throw True.");
     return true;
   }
 
@@ -73,12 +72,60 @@ public class TallPlayer : Player {
     Above = null;
   }
 
-  public override void Stun() {
-    base.Stun();
+  public override void Stun(float stunTime) {
+    base.Stun(stunTime);
     if (Above != null) {
-      Above.Stun();
+      Above.Stun(stunTime);
     }
   }
+
+
+
+
+  private IEnumerator FlashSprite() {
+    while (true) {
+      idleAnimation.IsVisible = false;
+      yield return new WaitForSeconds(.5f);
+      idleAnimation.IsVisible = true;
+      yield return new WaitForSeconds(.5f);
+    }
+  }
+
+  
+
+  protected override IEnumerator StunRoutine(float stunTime) {
+    idleIsFlashing = true;
+    Coroutine flashRoutine = StartCoroutine(FlashSprite()); //Want this running concurrently with StunRoutine
+    yield return base.StunRoutine(stunTime);
+    StopCoroutine(flashRoutine);
+    idleIsFlashing = false;
+  }
+
+  protected override void PerformDashAction(){ //STUN
+    Collider[] hits = Physics.OverlapBox(grabHitbox.transform.TransformPoint(grabHitbox.center), grabHitbox.bounds.extents);
+    foreach (Collider h in hits)
+    {
+        Player other = h.GetComponent<Player>();
+        if (other != null && other != this && other.Team != this.Team){ //first check if you collide with opposing player
+          if (Above != null && !Above.HasBall && other.GetComponent<TallPlayer>() != null){ //now check for powerstun (if your smallplayer doesnt have the ball and the opponent is a tallplayer) 
+              if (other.GetComponent<TallPlayer>().Above != null) // if that tall player has a smallplayer above them then powerstun and steal
+              {
+                Above.Steal();
+                other.Stun(powerStunTime);
+              }
+            }
+          else //you just collide with another player
+            {
+                other.Stun(regStunTime);
+            }
+          SoundManager.Instance.Play(successfulStun);
+        }
+    }
+  }
+
+  //
+  //IXzController
+  //
 
   /*
    Possibilities of Pressing A:
@@ -87,11 +134,12 @@ public class TallPlayer : Player {
    Pick-Up Small Player: If Player is in range, can pickup the small player.
   */
   public override void AButtonDown(XboxController controller) {
-    if (HasBall) {
-      Pass();
-    } else {
-      GameManager.S.CheckTipOff(controller);
+    if (Above == null) {
       PickUpSmallPlayer();
+      //Pass();
+    } else {
+      ThrowSmallPlayer();
+      //GameManager.S.CheckTipOff(controller);
     }
   }
   public override void RTButtonDown(XboxController controller) {
@@ -100,18 +148,8 @@ public class TallPlayer : Player {
   public override void RTButtonUp(XboxController controller) {
     StopDashing();
   }
-  public override void BButtonDown(XboxController controller) {
-    if (Above == null) {
-      Steal();
-    } else {
-      ThrowSmallPlayer();
-    }
-  }
-  public override void XButtonDown(XboxController controller) {
-    Stun();
-  }
   public override void Move(float xMove, float zMove) {
-    if (xMove != 0 || zMove != 0) {
+    if (CanMove && (xMove != 0 || zMove != 0)) {
       idleAnimation.IsVisible = false;
       runAnimation.FlipX = zMove > 0;
       idleAnimation.FlipX = runAnimation.FlipX;
@@ -121,7 +159,7 @@ public class TallPlayer : Player {
       }
     } else {
       runAnimation.IsVisible = false;
-      if (!idleAnimation.IsVisible) {
+      if (!idleAnimation.IsVisible && !idleIsFlashing) {
         idleAnimation.IsVisible = true;
         idleAnimation.StartFromFirstFrame();
       }

@@ -10,7 +10,7 @@ public enum GameState { MainMenu, PlayerSelection, Tipoff, InPlay, Overtime, Gam
 
 public static class GameStateExtensions {
   public static bool PlayerMovementAllowed(this GameState state) {
-    return state == Tipoff || state == InPlay || state == Overtime;
+    return state == InPlay || state == Overtime || state == Tipoff;
   }
 }
 
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private AudioClip scoreSound;
   [SerializeField] private AudioClip endBuzzer;
 
-  [SerializeField] public GameObject arrow;
+  private Vector3 velocity = Vector3.zero;
 #pragma warning restore 0649
 
   public IBall Ball { get; private set; }
@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour {
   public int ScoreTeam1 { get; private set; }
   public int ScoreTeam2 { get; private set; }
   public float CurrentTime { get; private set; }
+  
 
   /********************************************************
                      UI ELEMENTS TO ADD:
@@ -105,13 +106,15 @@ public class GameManager : MonoBehaviour {
     TallPlayer1 = _tallPlayer1;
     SmallPlayer2 = _smallPlayer2;
     TallPlayer2 = _tallPlayer2;
-
-    //Start from main menu
   }
 
-  private void Start()
-  {
+  private void Start() {
+    //Start from main menu
     State = MainMenu;
+    _smallPlayer1.transform.position = sp1_tipoff.transform.position;
+    _smallPlayer2.transform.position = sp2_tipoff.transform.position;
+    _tallPlayer1.transform.position = tp1_tipoff.transform.position;
+    _tallPlayer2.transform.position = tp2_tipoff.transform.position;
   }
 
     //For use by the start button in the main menu
@@ -188,25 +191,35 @@ public class GameManager : MonoBehaviour {
   //Scoring, to be called from player script
   public void UpdateScore(ScoreComponent.PlayerType p, int i) {
     Ball.SetParent(null);
-    Ball.SetPosition(ballInitialPosition);
     SoundManager.Instance.Play(scoreSound);
+
+    //Everyone releases the ball
     SmallPlayer1.HoldBall(null);
     SmallPlayer2.HoldBall(null);
     TallPlayer1.HoldBall(null);
     TallPlayer2.HoldBall(null);
+
+    //Reset everyone's position
+    ResetAfterScore();
+
+    //Team who didn't score gets the ball
     if (p == ScoreComponent.PlayerType.team1) {
       ScoreTeam1 += i;
       SmallPlayer1.HoldBall(Ball);
+      _ball.transform.localPosition = Vector3.zero;
     } else {
       ScoreTeam2 += i;
       SmallPlayer2.HoldBall(Ball);
+      _ball.transform.localPosition = Vector3.zero;
     }
-    MainGameGUI.S.UpdateScores();
 
+    //Tell GUI to update the scores
+    MainGameGUI.S.UpdateScores(p);
+
+    //End the game if we were in overtime
     if (State == Overtime) {
       EndGame();
     }
-    ResetAfterScore();
   }
 
   public void QuitGame() {
@@ -218,9 +231,8 @@ public class GameManager : MonoBehaviour {
     ScoreTeam1 = 0;
     ScoreTeam2 = 0;
     State = Tipoff;
-    //somehow reset player positions?
-    ResetAfterScore();
 
+    ResetAfterScore();
 
     _smallPlayer1.transform.position = sp1_tipoff.transform.position;
     _smallPlayer2.transform.position = sp2_tipoff.transform.position;
@@ -244,7 +256,7 @@ public class GameManager : MonoBehaviour {
     EndGame();
   }
 
-  public void ResetAfterScore() {
+  private void ResetAfterScore() {
     _smallPlayer1.transform.position = new Vector3(0, 0, 0);
     _smallPlayer2.transform.position = new Vector3(0, 0, 0);
     _tallPlayer1.transform.position = new Vector3(0, 0, 0);
@@ -256,7 +268,7 @@ public class GameManager : MonoBehaviour {
     _smallPlayer2.transform.position = sp2_spawn.transform.position;
     _tallPlayer1.transform.position = tp1_spawn.transform.position;
     _tallPlayer2.transform.position = tp2_spawn.transform.position;
-   }
+  }
 
   //Players can check for tip-off priority.
   public void CheckTipOff(XboxController controller) {

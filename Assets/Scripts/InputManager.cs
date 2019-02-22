@@ -69,9 +69,7 @@ public class InputManager : MonoBehaviour {
       if (Input.GetKeyDown(KeyCode.A)) {
         player.AButtonDown(XboxController.Second);
       }
-      if (Input.GetKeyDown(KeyCode.B)) {
-        player.BButtonDown(XboxController.Second);
-      }
+
       //if (XCI.GetAxis(XboxAxis.RightTrigger, controller) >= .3f) {
       //  player.RTButtonDown(controller);
       //}
@@ -214,17 +212,16 @@ public class InputManager : MonoBehaviour {
       float zMove = XCI.GetAxis(XboxAxis.LeftStickY, controller);
       zMove = zMove < -threshold ? -1f : zMove > threshold ? 1f : 0f;
 
-      player.Move(zMove, -xMove);
-      if (!(xMove == 0 && zMove == 0)) {
-        player.SetRotation(zMove, -xMove);
-      }
+      if (GameManager.S.State != GameState.Tipoff) {
+        player.Move(zMove, -xMove);
+        if (!(xMove == 0 && zMove == 0)) {
+          player.SetRotation(zMove, -xMove);
+        }
+      } else { player.Move(0, 0); }
 
       //Check button presses
       if (XCI.GetButtonDown(XboxButton.A, controller)) {
         player.AButtonDown(controller);
-      }
-      if (XCI.GetButtonDown(XboxButton.B, controller)) {
-        player.BButtonDown(controller);
       }
       if (XCI.GetAxis(XboxAxis.RightTrigger, controller) >= .3f) {
         player.RTButtonDown(controller);

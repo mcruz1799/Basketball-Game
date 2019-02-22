@@ -15,6 +15,7 @@ public class SmallPlayer : Player {
   //USE THE ISpriteAnimator FIELDS INSTEAD
   [SerializeField] private SpriteAnimator _spIdle;
   [SerializeField] private SpriteAnimator _spRun;
+  private Vector3 startingScale;
 #pragma warning restore 0649
 
   public override bool CanMove => base.CanMove && Below == null;
@@ -23,6 +24,7 @@ public class SmallPlayer : Player {
   private ISpriteAnimator idleAnimation;
   private ISpriteAnimator runAnimation;
 
+  private bool idleIsFlashing = false;
   protected override void Awake() {
     base.Awake();
 
@@ -32,6 +34,8 @@ public class SmallPlayer : Player {
 
     idleAnimation.IsLooping = true;
     runAnimation.IsLooping = true;
+
+    startingScale = transform.localScale;
   }
 
   //
@@ -48,6 +52,7 @@ public class SmallPlayer : Player {
     //Below is no longer carrying me
     Below.OnAboveJumpingOff();
     Below = null;
+    transform.localScale = startingScale;
     return true;
   }
 
@@ -121,14 +126,36 @@ public class SmallPlayer : Player {
 
     if (nearestPlayer != null) {
       Debug.Log("Threw SmallPlayer into another player, stunning them  :D");
-      nearestPlayer.Stun();
+      //nearestPlayer.Stun();
     }
     Below = null;
 
     throwDestination.y = yGround + transform.lossyScale.y / 2 + .2f;
     transform.SetParent(OriginalParent, true);
     transform.position = throwDestination;
+    transform.localScale = startingScale;
     return true;
+  }
+
+  private IEnumerator FlashSprite() {
+    while (true) {
+      idleAnimation.IsVisible = false;
+      yield return new WaitForSeconds(.5f);
+      idleAnimation.IsVisible = true;
+      yield return new WaitForSeconds(.5f);
+    }
+  }
+
+  protected override IEnumerator StunRoutine(float stunTime) {
+    idleIsFlashing = true;
+    Coroutine flashRoutine = StartCoroutine(FlashSprite()); //Want this running concurrently with StunRoutine
+    yield return base.StunRoutine(stunTime);
+    StopCoroutine(flashRoutine);
+    idleIsFlashing = false;
+  }
+
+  protected override void PerformDashAction(){ //STEAL
+    Steal();
   }
 
 
@@ -142,12 +169,8 @@ public class SmallPlayer : Player {
    Pass: If Player has the ball, pass it.
   */
   public override void AButtonDown(XboxController controller) {
-    if (HasBall) {
-      Pass();
-    } else {
-      GameManager.S.CheckTipOff(controller);
-      JumpOffPlayer();
-    }
+    GameManager.S.CheckTipOff(controller);
+      //JumpOffPlayer();
   }
   public override void RTButtonDown(XboxController controller) {
     StartDashing();
@@ -155,15 +178,9 @@ public class SmallPlayer : Player {
   public override void RTButtonUp(XboxController controller) {
     StopDashing();
   }
-  public override void BButtonDown(XboxController controller) {
-    Steal();
-  }
-
-  public override void XButtonDown(XboxController controller) {
-    Stun();
-  }
+  
   public override void Move(float xMove, float zMove) {
-    if (xMove != 0 || zMove != 0) {
+    if (CanMove && (xMove != 0 || zMove != 0)) {
       idleAnimation.IsVisible = false;
       runAnimation.FlipX = zMove > 0;
       idleAnimation.FlipX = runAnimation.FlipX;
@@ -173,7 +190,7 @@ public class SmallPlayer : Player {
       }
     } else {
       runAnimation.IsVisible = false;
-      if (!idleAnimation.IsVisible) {
+      if (!idleAnimation.IsVisible && !idleIsFlashing) {
         idleAnimation.IsVisible = true;
         idleAnimation.StartFromFirstFrame();
       }

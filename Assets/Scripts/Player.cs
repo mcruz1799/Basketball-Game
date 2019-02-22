@@ -11,8 +11,6 @@ public interface IPlayer : IBallUser, IXzController {
   ScoreComponent.PlayerType Team { get; }
 
   void AButtonDown(XboxController controller);
-  void BButtonDown(XboxController controller);
-  void XButtonDown(XboxController controller);
   void RTButtonDown(XboxController controller);
   void RTButtonUp(XboxController controller);
 }
@@ -24,8 +22,12 @@ public abstract class Player : MonoBehaviour, IPlayer {
   [SerializeField] private ScoreComponent.PlayerType _team;
   [SerializeField] private SimpleHealthBar staminaBar;
   [SerializeField] private Sprite _icon;
+  [SerializeField] private TrailRenderer dashTrail;
 #pragma warning restore 0649
 
+  [SerializeField] protected AudioClip successfulStun;
+  protected float regStunTime = 2f;
+  protected float powerStunTime = 5f;
   public Transform OriginalParent { get; private set; }
 
   private PlayerMover xzController;
@@ -40,8 +42,6 @@ public abstract class Player : MonoBehaviour, IPlayer {
   public virtual bool CanRotate => !IsStunned;
   public virtual bool CanMove => !IsStunned;
   public abstract void AButtonDown(XboxController controller);
-  public abstract void BButtonDown(XboxController controller);
-  public abstract void XButtonDown(XboxController controller);
   public abstract void RTButtonDown(XboxController controller);
   public abstract void RTButtonUp(XboxController controller);
 
@@ -59,14 +59,15 @@ public abstract class Player : MonoBehaviour, IPlayer {
 
   //Stun functionality
   private bool IsStunned { get; set; }
-  private IEnumerator StunRoutine() {
-    yield return new WaitForSeconds(2f);
+
+  protected virtual IEnumerator StunRoutine(float stunTime) {
+    yield return new WaitForSeconds(stunTime);
     IsStunned = false;
   }
-  public virtual void Stun() {
+  public virtual void Stun(float stunTime) {
     if (!IsStunned) {
       IsStunned = true;
-      StartCoroutine(StunRoutine());
+      StartCoroutine(StunRoutine(stunTime));
     }
   }
 
@@ -104,16 +105,17 @@ public abstract class Player : MonoBehaviour, IPlayer {
 
   public bool HasBall => ballUserComponent.HasBall;
 
-  public void Pass() {
-    ballUserComponent.Pass();
-  }
+  // public void Pass() {
+  //   ballUserComponent.Pass();
+  // }
 
   public bool Steal() {
-        if (ballUserComponent.Steal(grabHitbox)) {
-            GameManager.S.NotifyOfBallOwnership(Team);
-            return true;
-        }
-        else return false;
+    if (ballUserComponent.Steal(grabHitbox)) {
+      GameManager.S.NotifyOfBallOwnership(Team);
+      return true;
+    } else {
+      return false;
+    }
   }
 
   public void HoldBall(IBall ball) {
@@ -132,11 +134,13 @@ public abstract class Player : MonoBehaviour, IPlayer {
   public void StartDashing() {
     if (!dashRefillPenalty) {
       IsDashing = true;
+      dashTrail.emitting = true;
     }
   }
 
   public void StopDashing() {
     IsDashing = false;
+    dashTrail.emitting = false;
   }
 
   private IEnumerator DashRoutine() {
@@ -144,6 +148,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
       yield return new WaitForSeconds(0.1f);
 
       if (IsDashing) {
+        PerformDashAction();
         dashTimer -= 0.1f;
         if (dashTimer <= 0f) {
           dashTimer = 0f;
@@ -160,4 +165,6 @@ public abstract class Player : MonoBehaviour, IPlayer {
       staminaBar.UpdateBar(dashTimer, .9f);
     }
   }
+
+  protected abstract void PerformDashAction(); //will be defined as Steal in SmallPlayer and Stun in TallPlayer
 }

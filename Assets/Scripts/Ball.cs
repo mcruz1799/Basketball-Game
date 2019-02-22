@@ -16,14 +16,16 @@ public class Ball : MonoBehaviour, IBall {
   }
 
   //For use only in BallUserComponent.HoldBall
-  public void SetPosition(Vector3 newLocalPosition) {
+  public void SetPosition(Vector3 newLocalPosition, bool animateChange=true) {
     if (transform.parent != null) {
       newLocalPosition.x /= transform.parent.lossyScale.x;
       newLocalPosition.y /= transform.parent.lossyScale.y;
       newLocalPosition.z /= transform.parent.lossyScale.z;
-      targetLocalPosition = newLocalPosition;
-    } else {
-      targetLocalPosition = newLocalPosition;
+    }
+    targetLocalPosition = newLocalPosition;
+    if (!animateChange) {
+      transform.localPosition = targetLocalPosition.Value;
+      targetLocalPosition = null;
     }
   }
 
@@ -38,7 +40,7 @@ public class Ball : MonoBehaviour, IBall {
         yield return new WaitUntil(() => targetLocalPosition.HasValue);
       }
 
-      Vector3 selfToTarget = (targetLocalPosition.Value - transform.localPosition);
+      Vector3 selfToTarget = targetLocalPosition.Value - transform.localPosition;
       if (selfToTarget.sqrMagnitude < 0.04f) {
         transform.localPosition = targetLocalPosition.Value;
         targetLocalPosition = null;
