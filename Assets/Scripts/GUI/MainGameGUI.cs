@@ -83,7 +83,7 @@ public class MainGameGUI : MonoBehaviour {
     string winningTeam;
     if (p == ScoreComponent.PlayerType.team1) winningTeam = "Team BB";
     else winningTeam = "Team SS";
-    scoringScreen.transform.GetChild(0).GetComponent<Text>().text = 
+    scoringScreen.transform.GetComponentsInChildren<Text>()[0].text = 
       winningTeam + " SCORED \n BB: " + team1ScoreText.text + 
         " - SS: " + team2ScoreText.text;
     yield return new WaitForSeconds(2);
