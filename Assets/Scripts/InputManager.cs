@@ -26,6 +26,8 @@ public class InputManager : MonoBehaviour {
   private Dictionary<XboxController, PlayerSelectionInfo> controllerMap;
   public IReadOnlyDictionary<XboxController, PlayerSelectionInfo> ControllerMap => controllerMap;
 
+  private SelectionAction[] currentSelection = new SelectionAction[4]; //Stores the current selections of the players.
+
   private void Awake() {
     Countdown = Mathf.CeilToInt(countdownLength);
     if (S == null) {
@@ -48,6 +50,11 @@ public class InputManager : MonoBehaviour {
     Select(XboxController.Second, SelectionAction.Confirm);
     Select(XboxController.Third, SelectionAction.Confirm);
     Select(XboxController.Fourth, SelectionAction.Confirm);
+
+    currentSelection[0] = SelectionAction.Small1;
+    currentSelection[1] = SelectionAction.Tall1;
+    currentSelection[2] = SelectionAction.Small2;
+    currentSelection[3] = SelectionAction.Tall2;
 
     StartCoroutine(InputReadingRoutine());
     StartCoroutine(PlayerSelectionRoutine());
@@ -146,6 +153,7 @@ public class InputManager : MonoBehaviour {
     if (GameManager.S.State == GameState.PlayerSelection) {
 
       //Select a player with A/B/X/Y (does not confirm the selection)
+      /*
       if (XCI.GetButtonDown(XboxButton.A, controller)) {
         Select(controller, SelectionAction.Small1);
       }
@@ -157,11 +165,55 @@ public class InputManager : MonoBehaviour {
       }
       if (XCI.GetButtonDown(XboxButton.Y, controller)) {
         Select(controller, SelectionAction.Tall2);
+      } */
+
+      if (XCI.GetButtonDown(XboxButton.DPadUp,controller)) {
+        SelectionAction newAction = shiftSelection(true, (int)controller);
+        currentSelection[(int)controller] = newAction;
+        Select(controller, newAction);
+      }
+
+      if (XCI.GetButtonDown(XboxButton.DPadDown,controller)) {
+        SelectionAction newAction = shiftSelection(true, (int)controller);
+        currentSelection[(int)controller] = newAction;
+        Select(controller, newAction);
       }
 
       //If you've selected a player, press Start to confirm it
-      if (XCI.GetButtonDown(XboxButton.Start, controller)) {
+      if (XCI.GetButtonDown(XboxButton.A,controller)) {
         Select(controller, SelectionAction.Confirm);
+      }
+    }
+  }
+
+  private SelectionAction shiftSelection(bool direction,int index) //True is Up, False is down
+  {
+    SelectionAction action = currentSelection[index-1];
+    if (direction) {
+      switch (action) {
+        case SelectionAction.Small1:
+          return SelectionAction.Tall2;
+        case SelectionAction.Small2:
+          return SelectionAction.Tall1;
+        case SelectionAction.Tall1:
+          return SelectionAction.Small1;
+        case SelectionAction.Tall2:
+          return SelectionAction.Small2;
+        default:
+          return SelectionAction.Tall2;
+      } 
+    } else {
+      switch (action) {
+        case SelectionAction.Small1:
+          return SelectionAction.Tall1;
+        case SelectionAction.Small2:
+          return SelectionAction.Tall2;
+        case SelectionAction.Tall1:
+          return SelectionAction.Small2;
+        case SelectionAction.Tall2:
+          return SelectionAction.Small1;
+        default:
+          return SelectionAction.Small2;
       }
     }
   }
