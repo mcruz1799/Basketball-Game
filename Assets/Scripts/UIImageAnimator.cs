@@ -2,31 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ISpriteAnimator {
-  bool IsVisible { get; set; }
-  bool IsLooping { get; set; }
-  bool IsPaused { get; set; }
-  bool IsDone { get; }
-
-  bool FlipX { get; set; }
-  bool FlipY { get; set; }
-
-  //How many frames to wait in between each sprite of the animation
-  int FramesPerSprite { get; set; }
-
-  //Set the animation to run from its first frame, even if mid-animation
-  void StartFromFirstFrame();
-}
-
 [RequireComponent(typeof(SpriteRenderer))]
-public class SpriteAnimator : MonoBehaviour, ISpriteAnimator {
+public class UIImageAnimator : MonoBehaviour, ISpriteAnimator {
 #pragma warning disable 0649
   [SerializeField] private List<Sprite> sprites;
   [SerializeField] private bool initialIsVisible = true;
   [SerializeField] private bool initialIsLooping = false;
 #pragma warning restore 0649
 
-  private SpriteRenderer spriteRenderer;
+  private UnityEngine.UI.Image image;
 
   private bool _isVisible;
   public bool IsVisible {
@@ -35,15 +19,15 @@ public class SpriteAnimator : MonoBehaviour, ISpriteAnimator {
     }
     set {
       _isVisible = value;
-      spriteRenderer.enabled = IsVisible;
+      image.enabled = IsVisible;
     }
   }
   public bool IsLooping { get; set; }
   public bool IsPaused { get; set; }
   public bool IsDone { get; private set; }
 
-  public bool FlipX { get => spriteRenderer.flipX; set => spriteRenderer.flipX = value; }
-  public bool FlipY { get => spriteRenderer.flipY; set => spriteRenderer.flipY = value; }
+  public bool FlipX { get => false; set => Debug.LogError("Unsupported operation"); }
+  public bool FlipY { get => false; set => Debug.LogError("Unsupported operation"); }
 
   [SerializeField] private int _framesPerSprite;
   public int FramesPerSprite { get { return _framesPerSprite; } set { _framesPerSprite = value; } }
@@ -51,7 +35,7 @@ public class SpriteAnimator : MonoBehaviour, ISpriteAnimator {
   private bool animateFromStartFlag;
 
   private void Awake() {
-    spriteRenderer = GetComponent<SpriteRenderer>();
+    image = GetComponent<UnityEngine.UI.Image>();
 
     IsVisible = initialIsVisible;
     IsLooping = initialIsLooping;
@@ -100,9 +84,9 @@ public class SpriteAnimator : MonoBehaviour, ISpriteAnimator {
         if (animateFromStartFlag) {
           break;
         }
-        
+
         //Display the next sprite in sprites
-        spriteRenderer.sprite = sprite;
+        image.sprite = sprite;
       }
       IsDone = true;
     }
