@@ -3613,6 +3613,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783683126}
   m_CullTransparentMesh: 0
+--- !u!1 &795590234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 795590236}
+  - component: {fileID: 795590235}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &795590235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795590234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c552a7c2e1fe0cd43854f670899a6733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownLength: 10
+--- !u!4 &795590236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795590234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 426.94827, y: 248.71098, z: -7.294402}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &799295546
 GameObject:
   m_ObjectHideFlags: 0
@@ -10375,14 +10419,15 @@ MonoBehaviour:
   controller2Prompt: {fileID: 833328584}
   controller3Prompt: {fileID: 433293248}
   controller4Prompt: {fileID: 253927325}
-  controller1X: {fileID: 0}
-  controller1Ball: {fileID: 0}
-  controller2X: {fileID: 0}
-  controller2Ball: {fileID: 0}
-  controller3X: {fileID: 0}
-  controller3Ball: {fileID: 0}
-  controller4X: {fileID: 0}
-  controller4Ball: {fileID: 0}
+  controller1X: {fileID: 783683128}
+  controller1Ball: {fileID: 312052663}
+  controller2X: {fileID: 2146383604}
+  controller2Ball: {fileID: 1263605867}
+  controller3X: {fileID: 815328974}
+  controller3Ball: {fileID: 1784857491}
+  controller4X: {fileID: 1532350726}
+  controller4Ball: {fileID: 1515368833}
+  selectSound: {fileID: 8300000, guid: e7f4cff8e9dac0745af2522990fa5539, type: 3}
 --- !u!114 &2126280698
 MonoBehaviour:
   m_ObjectHideFlags: 0
