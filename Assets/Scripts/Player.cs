@@ -24,6 +24,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
   [SerializeField] private Sprite _icon;
   [SerializeField] private SpriteAnimator powEffect;
   [SerializeField] private TrailRenderer dashTrail;
+  [SerializeField] private AudioClip stunSound;
 #pragma warning restore 0649
 
   [SerializeField] protected AudioClip successfulStun;
@@ -67,6 +68,7 @@ public abstract class Player : MonoBehaviour, IPlayer {
   }
   public virtual void Stun(float stunTime) {
     if (!IsStunned) {
+      SoundManager.Instance.Play(stunSound);
       IsStunned = true;
       StartCoroutine(StunRoutine(stunTime));
     }

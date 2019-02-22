@@ -1367,7 +1367,7 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 01a7b306f7abb0f4897a74ee02570756, type: 3}
   powEffect: {fileID: 0}
   dashTrail: {fileID: 204880735}
-  stunSound: {fileID: 8300000, guid: fa767f84997f4e4448e62fd04388b646, type: 3}
+  stunSound: {fileID: 8300000, guid: 07c39185895c50b4aaf8fadd7c27d6c0, type: 3}
   successfulStun: {fileID: 0}
   throwDistance: 3
   _spIdle: {fileID: 1850059650}
@@ -6628,7 +6628,7 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: dbb3d4ea2f5e22140b5efb08466f7ec7, type: 3}
   powEffect: {fileID: 0}
   dashTrail: {fileID: 845735878}
-  stunSound: {fileID: 8300000, guid: fa767f84997f4e4448e62fd04388b646, type: 3}
+  stunSound: {fileID: 8300000, guid: 07c39185895c50b4aaf8fadd7c27d6c0, type: 3}
   successfulStun: {fileID: 0}
   _tpIdle: {fileID: 1004947071}
   _tpRun: {fileID: 2009897663}
@@ -16331,7 +16331,7 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: abbbc13a6b7fdd0499d9914f6572bda8, type: 3}
   powEffect: {fileID: 0}
   dashTrail: {fileID: 1982353497}
-  stunSound: {fileID: 8300000, guid: fa767f84997f4e4448e62fd04388b646, type: 3}
+  stunSound: {fileID: 8300000, guid: 07c39185895c50b4aaf8fadd7c27d6c0, type: 3}
   successfulStun: {fileID: 0}
   _tpIdle: {fileID: 1864007666}
   _tpRun: {fileID: 170492886}
@@ -16985,7 +16985,7 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: b72a33a81fb49f5438b732ec194778c5, type: 3}
   powEffect: {fileID: 0}
   dashTrail: {fileID: 2029042020}
-  stunSound: {fileID: 8300000, guid: fa767f84997f4e4448e62fd04388b646, type: 3}
+  stunSound: {fileID: 8300000, guid: 07c39185895c50b4aaf8fadd7c27d6c0, type: 3}
   successfulStun: {fileID: 0}
   throwDistance: 3
   _spIdle: {fileID: 610052506}
